@@ -17,6 +17,19 @@ export function normalizeHost(url: string) {
   }
 }
 
+export function normalizeListingUrl(url: string) {
+  try {
+    const parsed = new URL(url);
+    parsed.hash = "";
+    parsed.search = "";
+    const host = parsed.hostname.replace(/^www\./, "").toLowerCase();
+    const pathname = parsed.pathname.replace(/\/$/, "") || "/";
+    return `${parsed.protocol}//${host}${pathname}`.toLowerCase();
+  } catch {
+    return url.toLowerCase();
+  }
+}
+
 export function parsePrices(prices: string): {
   priceType: PriceType;
   priceMin: number | null;
