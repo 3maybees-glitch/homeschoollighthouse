@@ -1,0 +1,4 @@
+title,website_url,listing_type,format,price_type,price_min,price_max,short_description,description,city,state,country,age_min,age_max,is_featured,philosophies,values,religions,subjects
+Saxon Math,https://www.hmhco.com/programs/saxon-math,curriculum,hybrid,one_time,65,120,Spiral math curriculum for K-12.,Complete spiral math program with incremental development and continual review.,,,US,5,18,true,classical|eclectic,parent_led,secular|christian,math
+Austin Homeschool Co-op,https://example.com/austin-coop,coop,in_person,subscription,40,60,Weekly co-op classes in Austin.,Parent-led co-op offering enrichment and core classes for elementary and middle school.,Austin,TX,US,5,14,false,eclectic|charlotte_mason,,secular,art|music|science
+Example Online Tutor,https://example.com/tutor,tutor,online,one_time,35,75,Live online math tutoring.,One-on-one virtual tutoring for homeschool students in math and science.,,,US,10,18,false,eclectic,,secular,math|science
