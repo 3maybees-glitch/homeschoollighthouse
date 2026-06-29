@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { brand } from "@/lib/brand-vocabulary";
 import { getSessionProfile } from "@/lib/auth/session";
+import { CaptainLogPanels } from "@/components/account/captains-log-panels";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
@@ -34,30 +35,24 @@ export default async function AccountPage() {
               </p>
             ) : (
               <p className="text-sm text-slate-600">
-                Sign in with Supabase Auth to save favorites and manage billing.
+                Your Captain&apos;s Log tracks anchored resources and charted courses for this browser.
               </p>
             )}
-            {profile?.tier !== "premium" ? (
-              <Button asChild>
-                <Link href="/pricing">{brand.upgrade.title}</Link>
-              </Button>
-            ) : null}
+            <div className="flex flex-wrap gap-3">
+              {profile?.tier !== "premium" ? (
+                <Button asChild>
+                  <Link href="/pricing">{brand.upgrade.title}</Link>
+                </Button>
+              ) : (
+                <Button asChild variant="outline">
+                  <Link href="/ai">{brand.ai.title}</Link>
+                </Button>
+              )}
+            </div>
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>{brand.favorites}</CardTitle>
-            <CardDescription>Saved listings will appear here in Phase 2.</CardDescription>
-          </CardHeader>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>{brand.savedSearches}</CardTitle>
-            <CardDescription>Saved filter combinations will appear here in Phase 2.</CardDescription>
-          </CardHeader>
-        </Card>
+        <CaptainLogPanels tier={profile?.tier ?? "free"} />
       </div>
     </div>
   );

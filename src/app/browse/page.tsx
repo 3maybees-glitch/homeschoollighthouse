@@ -1,7 +1,8 @@
 import { FilterPanel } from "@/components/directory/filter-panel";
 import { ListingGrid } from "@/components/directory/listing-grid";
 import { SortGroupControls } from "@/components/directory/sort-group-controls";
-import { filterListings, parseFilterState } from "@/lib/directory/query-listings";
+import { SaveSearchButton } from "@/components/community/save-search-button";
+import { filterListings, filtersToSearchParams, parseFilterState } from "@/lib/directory/query-listings";
 import { getUserTier } from "@/lib/auth/session";
 
 export default async function BrowsePage({
@@ -13,6 +14,7 @@ export default async function BrowsePage({
   const filters = parseFilterState(params);
   const tier = await getUserTier();
   const result = filterListings(filters, tier);
+  const queryString = filtersToSearchParams(filters).toString();
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
@@ -21,7 +23,10 @@ export default async function BrowsePage({
           <FilterPanel initialFilters={filters} tier={tier} />
         </aside>
         <div className="space-y-6">
-          <SortGroupControls filters={filters} tier={tier} total={result.total} />
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <SortGroupControls filters={filters} tier={tier} total={result.total} />
+            <SaveSearchButton queryString={queryString} tier={tier} />
+          </div>
           <ListingGrid listings={result.listings} grouped={result.grouped} />
         </div>
       </div>

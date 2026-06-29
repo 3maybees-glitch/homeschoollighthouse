@@ -2,8 +2,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ExternalLink, MapPin, Star } from "lucide-react";
 import { getListingBySlug } from "@/data/seed-listings";
+import { getReviewsForListing } from "@/data/seed-reviews";
+import { memoryStore } from "@/lib/store/memory-store";
 import { brand } from "@/lib/brand-vocabulary";
+import { getUserTier } from "@/lib/auth/session";
 import { listingTypeOptions } from "@/lib/directory/filter-config";
+import { FavoriteButton } from "@/components/community/favorite-button";
+import { ReviewsSection } from "@/components/community/reviews-section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -18,13 +23,20 @@ export default async function ListingPage({
   const listing = getListingBySlug(slug);
   if (!listing) notFound();
 
+  const tier = await getUserTier();
+  const seedReviews = getReviewsForListing(listing.id, listing.slug);
+  const dynamicReviews = memoryStore.listReviews(listing.id, listing.slug);
+  const reviews = [...dynamicReviews, ...seedReviews.filter(
+    (seed) => !dynamicReviews.some((review) => review.id === seed.id),
+  )];
+
   const typeLabel =
     listingTypeOptions.find((option) => option.value === listing.listingType)?.label ??
     listing.listingType;
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6">
-      <div className="mb-6">
+    <div className="mx-auto max-w-5xl space-y-8 px-4 py-10 sm:px-6">
+      <div>
         <Link href="/browse" className="text-sm font-medium text-amber-700 hover:underline">
           ← Back to {brand.browse.title}
         </Link>
@@ -67,13 +79,23 @@ export default async function ListingPage({
             <InfoBlock title="Subjects" items={listing.subjects} />
           </div>
 
-          <Button asChild size="lg">
-            <a href={listing.websiteUrl} target="_blank" rel="noreferrer">
-              Visit Resource <ExternalLink className="h-4 w-4" />
-            </a>
-          </Button>
+          <div className="flex flex-wrap items-center gap-4">
+            <Button asChild size="lg">
+              <a href={listing.websiteUrl} target="_blank" rel="noreferrer">
+                Visit Resource <ExternalLink className="h-4 w-4" />
+              </a>
+            </Button>
+            <FavoriteButton listingId={listing.id} listingSlug={listing.slug} tier={tier} />
+          </div>
         </CardContent>
       </Card>
+
+      <ReviewsSection
+        listingId={listing.id}
+        listingSlug={listing.slug}
+        tier={tier}
+        initialReviews={reviews}
+      />
     </div>
   );
 }
