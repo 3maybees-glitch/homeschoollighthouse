@@ -3,6 +3,7 @@ import apologiaImportedJson from "@/data/apologia-imported.json";
 import a2zImportedJson from "@/data/a2z-imported.json";
 import homeschoolComImportedJson from "@/data/homeschool-com-imported.json";
 import mathUSeeImportedJson from "@/data/math-u-see-imported.json";
+import tied2TeachingImportedJson from "@/data/tied2teaching-imported.json";
 import thsmImportedJson from "@/data/thsm-imported.json";
 import { apologiaRowToSeedInput, type ApologiaCsvRow } from "@/lib/import/apologia-csv";
 import { a2zRowToSeedInput, type A2zCsvRow } from "@/lib/import/a2z-csv";
@@ -11,6 +12,10 @@ import {
   type HomeschoolComCsvRow,
 } from "@/lib/import/homeschool-com-csv";
 import { mathUSeeRowToSeedInput, type MathUSeeCsvRow } from "@/lib/import/math-u-see-csv";
+import {
+  tied2TeachingRowToSeedInput,
+  type Tied2TeachingCsvRow,
+} from "@/lib/import/tied2teaching-csv";
 import {
   normalizeListingUrl,
   thsmRowToSeedInput,
@@ -248,6 +253,9 @@ const mathUSeeImported: SeedInput[] = (mathUSeeImportedJson as MathUSeeCsvRow[])
 const apologiaImported: SeedInput[] = (apologiaImportedJson as ApologiaCsvRow[]).map(
   apologiaRowToSeedInput,
 );
+const tied2TeachingImported: SeedInput[] = (tied2TeachingImportedJson as Tied2TeachingCsvRow[]).map(
+  tied2TeachingRowToSeedInput,
+);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -268,7 +276,8 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("thehomeschoolmom.com") &&
         !existing.description?.includes("homeschool.com/resource-guide") &&
         !existing.description?.includes("A2Z Homeschooling archive") &&
-        !existing.description?.includes("Apologia product:")
+        !existing.description?.includes("Apologia product:") &&
+        !existing.description?.includes("Tied 2 Teaching resource:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -289,12 +298,15 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
 const allListings = mergeSeedInputs(
   mergeSeedInputs(
     mergeSeedInputs(
-      mergeSeedInputs(mergeSeedInputs(rawListings, thsmImported), homeschoolComImported),
-      a2zImported,
+      mergeSeedInputs(
+        mergeSeedInputs(mergeSeedInputs(rawListings, thsmImported), homeschoolComImported),
+        a2zImported,
+      ),
+      mathUSeeImported,
     ),
-    mathUSeeImported,
+    apologiaImported,
   ),
-  apologiaImported,
+  tied2TeachingImported,
 );
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
