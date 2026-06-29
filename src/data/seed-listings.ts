@@ -1,6 +1,8 @@
 import type { Listing, ListingFormat, ListingType, PriceType } from "@/types/listing";
+import a2zImportedJson from "@/data/a2z-imported.json";
 import homeschoolComImportedJson from "@/data/homeschool-com-imported.json";
 import thsmImportedJson from "@/data/thsm-imported.json";
+import { a2zRowToSeedInput, type A2zCsvRow } from "@/lib/import/a2z-csv";
 import {
   homeschoolComRowToSeedInput,
   type HomeschoolComCsvRow,
@@ -231,6 +233,7 @@ const thsmImported: SeedInput[] = (thsmImportedJson as ThsmCsvRow[]).map(thsmRow
 const homeschoolComImported: SeedInput[] = (homeschoolComImportedJson as HomeschoolComCsvRow[]).map(
   homeschoolComRowToSeedInput
 );
+const a2zImported: SeedInput[] = (a2zImportedJson as A2zCsvRow[]).map(a2zRowToSeedInput);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byHost = new Map<string, number>();
@@ -249,7 +252,8 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
       if (
         item.description &&
         !existing.description?.includes("thehomeschoolmom.com") &&
-        !existing.description?.includes("homeschool.com/resource-guide")
+        !existing.description?.includes("homeschool.com/resource-guide") &&
+        !existing.description?.includes("A2Z Homeschooling archive")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -268,8 +272,8 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
 }
 
 const allListings = mergeSeedInputs(
-  mergeSeedInputs(rawListings, thsmImported),
-  homeschoolComImported
+  mergeSeedInputs(mergeSeedInputs(rawListings, thsmImported), homeschoolComImported),
+  a2zImported
 );
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
