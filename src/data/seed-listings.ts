@@ -1,6 +1,8 @@
 import type { Listing, ListingFormat, ListingType, PriceType } from "@/types/listing";
+import thsmImportedJson from "@/data/thsm-imported.json";
+import { normalizeHost, thsmRowToSeedInput, type ThsmCsvRow } from "@/lib/import/thsm-csv";
 
-type SeedInput = {
+export type SeedInput = {
   title: string;
   listingType: ListingType;
   format: ListingFormat;
@@ -220,7 +222,42 @@ const rawListings: SeedInput[] = [
   { title: "Honolulu Homeschool Ohana", listingType: "support_group", format: "in_person", priceType: "free", websiteUrl: "https://www.honoluluhomeschool.org", city: "Honolulu", state: "HI", ageMin: 4, ageMax: 18 },
 ];
 
-export const seedListings: Listing[] = rawListings.map((listing, index) => buildListing(listing, index));
+const thsmImported: SeedInput[] = (thsmImportedJson as ThsmCsvRow[]).map(thsmRowToSeedInput);
+
+function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
+  const byHost = new Map<string, number>();
+  const merged = base.map((item) => ({ ...item }));
+
+  merged.forEach((item, index) => {
+    byHost.set(normalizeHost(item.websiteUrl), index);
+  });
+
+  for (const item of imported) {
+    const host = normalizeHost(item.websiteUrl);
+    const existingIndex = byHost.get(host);
+
+    if (existingIndex != null) {
+      const existing = merged[existingIndex];
+      if (item.description && !existing.description?.includes("thehomeschoolmom.com")) {
+        existing.description = [existing.description, item.description].filter(Boolean).join(" ");
+      }
+      if (item.priceMin != null && existing.priceMin == null) existing.priceMin = item.priceMin;
+      if (item.priceMax != null && existing.priceMax == null) existing.priceMax = item.priceMax;
+      if (item.ageMin != null && existing.ageMin == null) existing.ageMin = item.ageMin;
+      if (item.ageMax != null && existing.ageMax == null) existing.ageMax = item.ageMax;
+      continue;
+    }
+
+    merged.push(item);
+    byHost.set(host, merged.length - 1);
+  }
+
+  return merged;
+}
+
+const allListings = mergeSeedInputs(rawListings, thsmImported);
+
+export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
 
 export function getListingBySlug(slug: string) {
   return seedListings.find((listing) => listing.slug === slug) ?? null;
