@@ -1,9 +1,12 @@
 import { randomUUID } from "crypto";
 import type { Favorite, Review, SavedSearch, Submission } from "@/types/community";
+import type { Listing } from "@/types/listing";
 import { seedReviews } from "@/data/seed-reviews";
+import { submissionToListing } from "@/lib/listings/submission-to-listing";
 
 const reviews: Review[] = [...seedReviews];
 const submissions: Submission[] = [];
+const publishedListings: Listing[] = [];
 const favorites: Favorite[] = [];
 const savedSearches: SavedSearch[] = [];
 
@@ -48,7 +51,22 @@ export const memoryStore = {
     const submission = submissions.find((item) => item.id === id);
     if (!submission) return null;
     submission.status = status;
+
+    if (status === "approved") {
+      const listing = submissionToListing(submission);
+      const existingIndex = publishedListings.findIndex((item) => item.id === listing.id);
+      if (existingIndex === -1) {
+        publishedListings.unshift(listing);
+      } else {
+        publishedListings[existingIndex] = listing;
+      }
+    }
+
     return submission;
+  },
+
+  getPublishedListings() {
+    return [...publishedListings];
   },
 
   listFavorites(userId: string) {

@@ -1,4 +1,4 @@
-import { seedListings } from "@/data/seed-listings";
+import { getAllListings } from "@/lib/listings/catalog";
 import type { Listing } from "@/types/listing";
 import type { AiRecommendation } from "@/types/community";
 
@@ -75,8 +75,9 @@ function buildReason(listing: Listing, tokens: string[]) {
 }
 
 export function recommendListings(query: string, limit = 5): AiRecommendation[] {
+  const listings = getAllListings();
   const tokens = tokenize(query);
-  const ranked = seedListings
+  const ranked = listings
     .map((listing) => ({
       listing,
       score: scoreListing(listing, tokens),
@@ -86,7 +87,7 @@ export function recommendListings(query: string, limit = 5): AiRecommendation[] 
     .slice(0, limit);
 
   if (!ranked.length) {
-    return seedListings
+    return listings
       .filter((listing) => listing.isFeatured)
       .slice(0, limit)
       .map((listing) => ({

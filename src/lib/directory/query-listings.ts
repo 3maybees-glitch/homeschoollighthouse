@@ -4,7 +4,7 @@ import {
   philosophyOptions,
 } from "@/lib/directory/filter-config";
 import { sanitizeFiltersForTier } from "@/lib/directory/premium-gates";
-import { seedListings } from "@/data/seed-listings";
+import { getAllListings } from "@/lib/listings/catalog";
 import type {
   FilterState,
   GroupedListings,
@@ -180,7 +180,8 @@ export function filterListings(
 ): ListingsResult {
   const activeFilters = sanitizeFiltersForTier(filters, tier);
 
-  const filtered = seedListings.filter((listing) => {
+  const allListings = getAllListings();
+  const filtered = allListings.filter((listing) => {
     if (!matchesQuery(listing, activeFilters.q)) return false;
     if (activeFilters.types?.length && !activeFilters.types.includes(listing.listingType)) {
       return false;
@@ -210,7 +211,7 @@ export function filterListings(
     listings: sorted,
     grouped,
     total: sorted.length,
-    facets: buildFacets(seedListings),
+    facets: buildFacets(allListings),
   };
 }
 

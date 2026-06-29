@@ -35,7 +35,10 @@ export default async function AccountPage() {
               </p>
             ) : (
               <p className="text-sm text-slate-600">
-                Your Captain&apos;s Log tracks anchored resources and charted courses for this browser.
+                <Link href="/login?next=/account" className="font-medium text-amber-700 hover:underline">
+                  Sign in
+                </Link>{" "}
+                to sync your Captain&apos;s Log across devices.
               </p>
             )}
             <div className="flex flex-wrap gap-3">

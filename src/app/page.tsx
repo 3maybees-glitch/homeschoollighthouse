@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Compass, Filter, Sparkles, Star } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
-import { getFeaturedListings } from "@/data/seed-listings";
+import { getFeaturedListings } from "@/lib/listings/catalog";
 import { listingTypeOptions } from "@/lib/directory/filter-config";
 import { Button } from "@/components/ui/button";
 import { ListingCard } from "@/components/directory/listing-card";
@@ -89,7 +89,7 @@ export default function HomePage() {
           {listingTypeOptions.map((option) => (
             <Link
               key={option.value}
-              href={`/browse?types=${option.value}`}
+              href={`/browse/${option.value}`}
               className="rounded-full border bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:border-amber-300 hover:bg-amber-50"
             >
               {option.label}

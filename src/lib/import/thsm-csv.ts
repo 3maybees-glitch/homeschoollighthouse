@@ -17,7 +17,7 @@ export function normalizeHost(url: string) {
   }
 }
 
-function parsePrices(prices: string): {
+export function parsePrices(prices: string): {
   priceType: PriceType;
   priceMin: number | null;
   priceMax: number | null;

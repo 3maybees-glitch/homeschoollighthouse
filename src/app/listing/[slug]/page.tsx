@@ -1,18 +1,52 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { ExternalLink, MapPin, Star } from "lucide-react";
-import { getListingBySlug } from "@/data/seed-listings";
 import { getReviewsForListing } from "@/data/seed-reviews";
 import { memoryStore } from "@/lib/store/memory-store";
 import { brand } from "@/lib/brand-vocabulary";
 import { getUserTier } from "@/lib/auth/session";
+import { getListingBySlug } from "@/lib/listings/catalog";
 import { listingTypeOptions } from "@/lib/directory/filter-config";
+import { buildListingJsonLd } from "@/lib/seo/listing-jsonld";
 import { FavoriteButton } from "@/components/community/favorite-button";
 import { ReviewsSection } from "@/components/community/reviews-section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatAgeRange, formatPrice } from "@/lib/utils";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const listing = getListingBySlug(slug);
+  if (!listing) return {};
+
+  const typeLabel =
+    listingTypeOptions.find((option) => option.value === listing.listingType)?.label ??
+    listing.listingType;
+
+  return {
+    title: listing.title,
+    description: listing.shortDescription,
+    openGraph: {
+      title: listing.title,
+      description: listing.shortDescription,
+      type: "website",
+      url: `/listing/${listing.slug}`,
+    },
+    keywords: [
+      listing.title,
+      typeLabel,
+      ...listing.philosophies,
+      ...listing.subjects,
+      listing.state ?? "homeschool",
+    ].filter(Boolean),
+  };
+}
 
 export default async function ListingPage({
   params,
@@ -26,16 +60,24 @@ export default async function ListingPage({
   const tier = await getUserTier();
   const seedReviews = getReviewsForListing(listing.id, listing.slug);
   const dynamicReviews = memoryStore.listReviews(listing.id, listing.slug);
-  const reviews = [...dynamicReviews, ...seedReviews.filter(
-    (seed) => !dynamicReviews.some((review) => review.id === seed.id),
-  )];
+  const reviews = [
+    ...dynamicReviews,
+    ...seedReviews.filter((seed) => !dynamicReviews.some((review) => review.id === seed.id)),
+  ];
 
   const typeLabel =
     listingTypeOptions.find((option) => option.value === listing.listingType)?.label ??
     listing.listingType;
 
+  const jsonLd = buildListingJsonLd(listing);
+
   return (
     <div className="mx-auto max-w-5xl space-y-8 px-4 py-10 sm:px-6">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <div>
         <Link href="/browse" className="text-sm font-medium text-amber-700 hover:underline">
           ← Back to {brand.browse.title}
@@ -47,7 +89,9 @@ export default async function ListingPage({
           <div className="flex flex-wrap gap-2">
             <Badge>{typeLabel}</Badge>
             <Badge className="bg-slate-100 text-slate-700">{listing.format.replace("_", " ")}</Badge>
-            {listing.isFeatured ? <Badge className="bg-amber-500 text-white">Bright Beacon</Badge> : null}
+            {listing.isFeatured ? (
+              <Badge className="bg-amber-500 text-white">Bright Beacon</Badge>
+            ) : null}
           </div>
           <CardTitle className="text-3xl">{listing.title}</CardTitle>
           <p className="text-slate-600">{listing.shortDescription}</p>

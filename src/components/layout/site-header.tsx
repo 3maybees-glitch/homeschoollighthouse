@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Lightbulb } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
+import { AuthNav } from "@/components/auth/auth-nav";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
@@ -37,9 +38,12 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Button asChild size="sm">
-          <Link href="/browse">{brand.search.title}</Link>
-        </Button>
+        <div className="flex items-center gap-3">
+          <AuthNav />
+          <Button asChild size="sm">
+            <Link href="/browse">{brand.search.title}</Link>
+          </Button>
+        </div>
       </div>
     </header>
   );
