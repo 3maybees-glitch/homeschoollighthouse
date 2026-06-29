@@ -1,12 +1,14 @@
 import type { Listing, ListingFormat, ListingType, PriceType } from "@/types/listing";
 import a2zImportedJson from "@/data/a2z-imported.json";
 import homeschoolComImportedJson from "@/data/homeschool-com-imported.json";
+import mathUSeeImportedJson from "@/data/math-u-see-imported.json";
 import thsmImportedJson from "@/data/thsm-imported.json";
 import { a2zRowToSeedInput, type A2zCsvRow } from "@/lib/import/a2z-csv";
 import {
   homeschoolComRowToSeedInput,
   type HomeschoolComCsvRow,
 } from "@/lib/import/homeschool-com-csv";
+import { mathUSeeRowToSeedInput, type MathUSeeCsvRow } from "@/lib/import/math-u-see-csv";
 import { normalizeHost, thsmRowToSeedInput, type ThsmCsvRow } from "@/lib/import/thsm-csv";
 
 export type SeedInput = {
@@ -234,6 +236,9 @@ const homeschoolComImported: SeedInput[] = (homeschoolComImportedJson as Homesch
   homeschoolComRowToSeedInput,
 );
 const a2zImported: SeedInput[] = (a2zImportedJson as A2zCsvRow[]).map(a2zRowToSeedInput);
+const mathUSeeImported: SeedInput[] = (mathUSeeImportedJson as MathUSeeCsvRow[]).map(
+  mathUSeeRowToSeedInput,
+);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byHost = new Map<string, number>();
@@ -272,8 +277,11 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
 }
 
 const allListings = mergeSeedInputs(
-  mergeSeedInputs(mergeSeedInputs(rawListings, thsmImported), homeschoolComImported),
-  a2zImported,
+  mergeSeedInputs(
+    mergeSeedInputs(mergeSeedInputs(rawListings, thsmImported), homeschoolComImported),
+    a2zImported,
+  ),
+  mathUSeeImported,
 );
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
