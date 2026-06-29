@@ -17,7 +17,7 @@ export function normalizeHost(url: string) {
   }
 }
 
-function parsePrices(prices: string): {
+export function parsePrices(prices: string): {
   priceType: PriceType;
   priceMin: number | null;
   priceMax: number | null;
@@ -70,6 +70,12 @@ export function parseAgeRange(grades: string): { ageMin: number | null; ageMax: 
 
   const text = grades.toLowerCase();
   if (text.includes("k-12") || text.includes("k–12")) return { ageMin: 5, ageMax: 18 };
+  if (
+    (text.includes("pre-k") || text.includes("prek") || text.includes("preschool")) &&
+    (text.includes("12th") || text.includes("12"))
+  ) {
+    return { ageMin: 4, ageMax: 18 };
+  }
 
   const range = text.match(/(\d{1,2})\s*[-–]\s*(\d{1,2})/);
   if (range) {
