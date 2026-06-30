@@ -17,6 +17,9 @@ function asListingType(value: string): ListingType {
     "online_course",
     "field_trip",
     "supplement",
+    "conference",
+    "scholarship",
+    "standardized_test",
     "other",
   ];
   return allowed.includes(value as ListingType) ? (value as ListingType) : "other";

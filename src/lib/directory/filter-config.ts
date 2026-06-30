@@ -8,6 +8,9 @@ export const listingTypeOptions: { value: ListingType; label: string }[] = [
   { value: "tutor", label: "Tutor" },
   { value: "support_group", label: "Support Group" },
   { value: "field_trip", label: "Field Trip" },
+  { value: "conference", label: "Conference" },
+  { value: "scholarship", label: "College Scholarship" },
+  { value: "standardized_test", label: "Standardized Test" },
   { value: "supplement", label: "Supplement" },
   { value: "other", label: "Other" },
 ];
@@ -66,13 +69,49 @@ export const subjectOptions = [
   "music",
   "foreign_language",
   "electives",
+  "college_prep",
+  "standardized_testing",
+  "clt",
+  "sat",
+  "act",
+  "psat",
+  "ap_exams",
 ].map((value) => ({
   value,
-  label: value
+  label: formatSubjectLabel(value),
+}));
+
+export const collegePrepTypeOptions = listingTypeOptions.filter((option) =>
+  ["conference", "scholarship", "standardized_test"].includes(option.value),
+);
+
+export const testFilterOptions = [
+  { value: "clt", label: "CLT" },
+  { value: "sat", label: "SAT" },
+  { value: "act", label: "ACT" },
+  { value: "psat", label: "PSAT/NMSQT" },
+  { value: "ap_exams", label: "AP Exams" },
+  { value: "standardized_testing", label: "All Standardized Tests" },
+];
+
+function formatSubjectLabel(value: string) {
+  const labels: Record<string, string> = {
+    college_prep: "College Prep",
+    standardized_testing: "Standardized Testing",
+    clt: "CLT",
+    sat: "SAT",
+    act: "ACT",
+    psat: "PSAT/NMSQT",
+    ap_exams: "AP Exams",
+  };
+
+  if (labels[value]) return labels[value];
+
+  return value
     .split("_")
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" "),
-}));
+    .join(" ");
+}
 
 export const usStates = [
   "AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA",

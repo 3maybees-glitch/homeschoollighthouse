@@ -6,6 +6,9 @@ export type ListingType =
   | "online_course"
   | "field_trip"
   | "supplement"
+  | "conference"
+  | "scholarship"
+  | "standardized_test"
   | "other";
 
 export type ListingFormat = "online" | "in_person" | "hybrid";

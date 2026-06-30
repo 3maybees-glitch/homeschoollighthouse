@@ -20,6 +20,7 @@ function matchesQuery(listing: Listing, q?: string) {
     listing.title,
     listing.shortDescription,
     listing.description,
+    listing.listingType.replace(/_/g, " "),
     listing.city ?? "",
     listing.state ?? "",
     ...listing.philosophies,

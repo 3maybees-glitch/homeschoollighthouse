@@ -7,6 +7,8 @@ import {
   MapPinned,
   MonitorPlay,
   Puzzle,
+  ScrollText,
+  Trophy,
   Users,
 } from "lucide-react";
 import { listingTypeOptions } from "@/lib/directory/filter-config";
@@ -18,6 +20,9 @@ const categoryIcons: Record<string, typeof BookOpen> = {
   tutor: GraduationCap,
   support_group: HeartHandshake,
   field_trip: MapPinned,
+  conference: Users,
+  scholarship: Trophy,
+  standardized_test: ScrollText,
   supplement: Puzzle,
   other: Compass,
 };
