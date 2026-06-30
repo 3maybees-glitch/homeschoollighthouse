@@ -1,0 +1,66 @@
+[
+  {
+    "title": "HSLDA Membership",
+    "website_url": "https://hslda.org/membership",
+    "source": "HSLDA",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15-$1500",
+    "description": "Get affordable legal support for homeschooling today. Learn more about the benefits, price, and eligibility. Discount for military & first responders"
+  },
+  {
+    "title": "HSLDA Membership",
+    "website_url": "https://hslda.org/jointoday",
+    "source": "HSLDA",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15-$1500",
+    "description": "Get affordable legal support for homeschooling today. Learn more about the benefits, price, and eligibility. Discount for military & first responders"
+  },
+  {
+    "title": "Homeschool Laws By State",
+    "website_url": "https://hslda.org/laws",
+    "source": "HSLDA",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "Free",
+    "description": "Choose your state or territory to get detailed information on how to withdraw from public school, homeschooling requirements including testing & mandatory subjects, plus resources and more."
+  },
+  {
+    "title": "Homeschool Laws By State",
+    "website_url": "https://hslda.org/legal",
+    "source": "HSLDA",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "Contact for pricing",
+    "description": "Choose your state or territory to get detailed information on how to withdraw from public school, homeschooling requirements including testing & mandatory subjects, plus resources and more."
+  },
+  {
+    "title": "Homeschooling With Special Needs",
+    "website_url": "https://hslda.org/teaching-my-kids/special-needs",
+    "source": "HSLDA",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "Contact for pricing",
+    "description": "Homeschooling offers you the freedom and flexibility to individualize your child's education by molding curriculum and schedules to meet their needs."
+  },
+  {
+    "title": "HSLDA Lifetime Membership",
+    "website_url": "https://hslda.org/membership",
+    "source": "HSLDA",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$1500.00",
+    "description": "Homeschool Legal Defense Association membership plan."
+  },
+  {
+    "title": "HSLDA Pay Yearly Membership",
+    "website_url": "https://hslda.org/membership",
+    "source": "HSLDA",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$150.00",
+    "description": "Homeschool Legal Defense Association membership plan."
+  },
+  {
+    "title": "HSLDA Pay Monthly Membership",
+    "website_url": "https://hslda.org/membership",
+    "source": "HSLDA",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00/month",
+    "description": "Homeschool Legal Defense Association membership plan."
+  }
+]

@@ -123,6 +123,20 @@ scrape_and_sync scripts/scrape-masterbooks.py "Master Books" \
   data/masterbooks-scraped.json src/data/masterbooks-imported.json false
 scrape_and_sync scripts/scrape-sonlight.py "Sonlight" \
   data/sonlight-scraped.json src/data/sonlight-imported.json false
+scrape_and_sync scripts/scrape-home-school.py "Homeschool World" \
+  data/home-school-scraped.json src/data/home-school-imported.json true
+scrape_and_sync scripts/scrape-hslda.py "HSLDA" \
+  data/hslda-scraped.json src/data/hslda-imported.json true
+scrape_and_sync scripts/scrape-well-trained-mind.py "Well-Trained Mind" \
+  data/well-trained-mind-scraped.json src/data/well-trained-mind-imported.json false
+scrape_and_sync scripts/scrape-homeschool-reviews.py "HomeschoolReviews.com" \
+  data/homeschool-reviews-scraped.json src/data/homeschool-reviews-imported.json true
+scrape_and_sync scripts/scrape-secular-homeschool.py "Secular Homeschool" \
+  data/secular-homeschool-scraped.json src/data/secular-homeschool-imported.json true
+scrape_and_sync scripts/scrape-the-old-schoolhouse.py "The Old Schoolhouse Store" \
+  data/the-old-schoolhouse-scraped.json src/data/the-old-schoolhouse-imported.json true
+scrape_and_sync scripts/scrape-family-education.py "FamilyEducation" \
+  data/family-education-scraped.json src/data/family-education-imported.json false
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \
