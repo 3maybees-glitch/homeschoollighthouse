@@ -82,8 +82,8 @@ export function HomeHero() {
 
             <div className="relative space-y-6">
               <div className="flex items-center gap-4">
-                <div className="h-20 w-20 shrink-0 overflow-hidden rounded-2xl bg-white/90 p-1 shadow-lg shadow-[var(--color-beam)]/30">
-                  <BrandLogoVideo className="h-full w-full" />
+                <div className="h-20 w-20 shrink-0 overflow-hidden rounded-2xl shadow-lg shadow-[var(--color-beam)]/30">
+                  <BrandLogoVideo className="h-full w-full scale-[1.12] object-cover" />
                 </div>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-beam)]">
