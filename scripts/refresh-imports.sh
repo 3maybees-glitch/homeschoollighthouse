@@ -157,6 +157,8 @@ scrape_and_sync scripts/scrape-journey-homeschool-academy.py "Journey Homeschool
   data/journey-homeschool-academy-scraped.json src/data/journey-homeschool-academy-imported.json true
 scrape_and_sync scripts/scrape-outschool-electives.py "Outschool Electives" \
   data/outschool-electives-scraped.json src/data/outschool-electives-imported.json true
+scrape_and_sync scripts/scrape-heav.py "HEAV (Virginia)" \
+  data/heav-scraped.json src/data/heav-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \
