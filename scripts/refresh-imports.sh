@@ -61,6 +61,12 @@ scrape_and_sync scripts/scrape-simply-charlotte-mason.py "Simply Charlotte Mason
   data/simply-charlotte-mason-scraped.json src/data/simply-charlotte-mason-imported.json true
 scrape_and_sync scripts/scrape-iew.py "IEW" \
   data/iew-scraped.json src/data/iew-imported.json true
+scrape_and_sync scripts/scrape-theorytime.py "Theory Time" \
+  data/theorytime-scraped.json src/data/theorytime-imported.json true
+scrape_and_sync scripts/scrape-drivethruhistory.py "Drive Thru History" \
+  data/drivethruhistory-scraped.json src/data/drivethruhistory-imported.json true
+scrape_and_sync scripts/scrape-maybee-faith.py "Maybee Creations Faith" \
+  data/maybee-faith-scraped.json src/data/maybee-faith-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \
