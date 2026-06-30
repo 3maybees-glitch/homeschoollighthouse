@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Home",
+    "website_url": "https://www.civiced.org/",
+    "source": "Center for Civic Education",
+    "grades_or_ages": "Grades 4-12",
+    "prices_mentioned": "$.",
+    "description": "Home"
+  },
+  {
+    "title": "Project Citizen",
+    "website_url": "https://www.civiced.org/programs/project-citizen",
+    "source": "Center for Civic Education",
+    "grades_or_ages": "Grades 4-12",
+    "prices_mentioned": "$.",
+    "description": "Project Citizen"
+  }
+]
