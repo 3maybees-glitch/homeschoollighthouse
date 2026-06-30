@@ -4,6 +4,24 @@ import allAboutLearningImportedJson from "@/data/all-about-learning-imported.jso
 import amblesideOnlineImportedJson from "@/data/ambleside-online-imported.json";
 import classicalConversationsImportedJson from "@/data/classical-conversations-imported.json";
 import easyPeasyImportedJson from "@/data/easy-peasy-imported.json";
+import homeschoolLanguagesImportedJson from "@/data/homeschool-languages-imported.json";
+import breakingTheBarrierImportedJson from "@/data/breaking-the-barrier-imported.json";
+import braveWriterImportedJson from "@/data/brave-writer-imported.json";
+import calicoSpanishImportedJson from "@/data/calico-spanish-imported.json";
+import spellingYouSeeImportedJson from "@/data/spelling-you-see-imported.json";
+import spellingPowerImportedJson from "@/data/spelling-power-imported.json";
+import sequentialSpellingImportedJson from "@/data/sequential-spelling-imported.json";
+import essentialsInWritingImportedJson from "@/data/essentials-in-writing-imported.json";
+import writeshopImportedJson from "@/data/writeshop-imported.json";
+import writeathomeImportedJson from "@/data/writeathome-imported.json";
+import artisticPursuitsImportedJson from "@/data/artistic-pursuits-imported.json";
+import schoolhouseTeachersImportedJson from "@/data/schoolhouse-teachers-imported.json";
+import freedomHomeschoolingImportedJson from "@/data/freedom-homeschooling-imported.json";
+import miacademyImportedJson from "@/data/miacademy-imported.json";
+import bjuPressImportedJson from "@/data/bju-press-imported.json";
+import rosettaStoneImportedJson from "@/data/rosetta-stone-imported.json";
+import masterbooksImportedJson from "@/data/masterbooks-imported.json";
+import sonlightImportedJson from "@/data/sonlight-imported.json";
 import memoriaPressImportedJson from "@/data/memoria-press-imported.json";
 import oakMeadowImportedJson from "@/data/oak-meadow-imported.json";
 import teachingTextbooksImportedJson from "@/data/teaching-textbooks-imported.json";
@@ -28,6 +46,45 @@ import {
   type ClassicalConversationsCsvRow,
 } from "@/lib/import/classical-conversations-csv";
 import { easyPeasyRowToSeedInput, type EasyPeasyCsvRow } from "@/lib/import/easy-peasy-csv";
+import {
+  homeschoolLanguagesRowToSeedInput,
+  type HomeschoolLanguagesCsvRow,
+} from "@/lib/import/homeschool-languages-csv";
+import {
+  breakingTheBarrierRowToSeedInput,
+  type BreakingTheBarrierCsvRow,
+} from "@/lib/import/breaking-the-barrier-csv";
+import { braveWriterRowToSeedInput, type BraveWriterCsvRow } from "@/lib/import/brave-writer-csv";
+import { calicoSpanishRowToSeedInput, type CalicoSpanishCsvRow } from "@/lib/import/calico-spanish-csv";
+import { spellingYouSeeRowToSeedInput, type SpellingYouSeeCsvRow } from "@/lib/import/spelling-you-see-csv";
+import { spellingPowerRowToSeedInput, type SpellingPowerCsvRow } from "@/lib/import/spelling-power-csv";
+import {
+  sequentialSpellingRowToSeedInput,
+  type SequentialSpellingCsvRow,
+} from "@/lib/import/sequential-spelling-csv";
+import {
+  essentialsInWritingRowToSeedInput,
+  type EssentialsInWritingCsvRow,
+} from "@/lib/import/essentials-in-writing-csv";
+import { writeshopRowToSeedInput, type WriteshopCsvRow } from "@/lib/import/writeshop-csv";
+import { writeathomeRowToSeedInput, type WriteathomeCsvRow } from "@/lib/import/writeathome-csv";
+import {
+  artisticPursuitsRowToSeedInput,
+  type ArtisticPursuitsCsvRow,
+} from "@/lib/import/artistic-pursuits-csv";
+import {
+  schoolhouseTeachersRowToSeedInput,
+  type SchoolhouseTeachersCsvRow,
+} from "@/lib/import/schoolhouse-teachers-csv";
+import {
+  freedomHomeschoolingRowToSeedInput,
+  type FreedomHomeschoolingCsvRow,
+} from "@/lib/import/freedom-homeschooling-csv";
+import { miacademyRowToSeedInput, type MiacademyCsvRow } from "@/lib/import/miacademy-csv";
+import { bjuPressRowToSeedInput, type BjuPressCsvRow } from "@/lib/import/bju-press-csv";
+import { rosettaStoneRowToSeedInput, type RosettaStoneCsvRow } from "@/lib/import/rosetta-stone-csv";
+import { masterbooksRowToSeedInput, type MasterbooksCsvRow } from "@/lib/import/masterbooks-csv";
+import { sonlightRowToSeedInput, type SonlightCsvRow } from "@/lib/import/sonlight-csv";
 import { memoriaPressRowToSeedInput, type MemoriaPressCsvRow } from "@/lib/import/memoria-press-csv";
 import { oakMeadowRowToSeedInput, type OakMeadowCsvRow } from "@/lib/import/oak-meadow-csv";
 import {
@@ -342,6 +399,60 @@ const teachingTextbooksImported: SeedInput[] = (
 const easyPeasyImported: SeedInput[] = (easyPeasyImportedJson as EasyPeasyCsvRow[]).map(
   easyPeasyRowToSeedInput,
 );
+const homeschoolLanguagesImported: SeedInput[] = (
+  homeschoolLanguagesImportedJson as HomeschoolLanguagesCsvRow[]
+).map(homeschoolLanguagesRowToSeedInput);
+const breakingTheBarrierImported: SeedInput[] = (
+  breakingTheBarrierImportedJson as BreakingTheBarrierCsvRow[]
+).map(breakingTheBarrierRowToSeedInput);
+const braveWriterImported: SeedInput[] = (braveWriterImportedJson as BraveWriterCsvRow[]).map(
+  braveWriterRowToSeedInput,
+);
+const calicoSpanishImported: SeedInput[] = (calicoSpanishImportedJson as CalicoSpanishCsvRow[]).map(
+  calicoSpanishRowToSeedInput,
+);
+const spellingYouSeeImported: SeedInput[] = (
+  spellingYouSeeImportedJson as SpellingYouSeeCsvRow[]
+).map(spellingYouSeeRowToSeedInput);
+const spellingPowerImported: SeedInput[] = (spellingPowerImportedJson as SpellingPowerCsvRow[]).map(
+  spellingPowerRowToSeedInput,
+);
+const sequentialSpellingImported: SeedInput[] = (
+  sequentialSpellingImportedJson as SequentialSpellingCsvRow[]
+).map(sequentialSpellingRowToSeedInput);
+const essentialsInWritingImported: SeedInput[] = (
+  essentialsInWritingImportedJson as EssentialsInWritingCsvRow[]
+).map(essentialsInWritingRowToSeedInput);
+const writeshopImported: SeedInput[] = (writeshopImportedJson as WriteshopCsvRow[]).map(
+  writeshopRowToSeedInput,
+);
+const writeathomeImported: SeedInput[] = (writeathomeImportedJson as WriteathomeCsvRow[]).map(
+  writeathomeRowToSeedInput,
+);
+const artisticPursuitsImported: SeedInput[] = (
+  artisticPursuitsImportedJson as ArtisticPursuitsCsvRow[]
+).map(artisticPursuitsRowToSeedInput);
+const schoolhouseTeachersImported: SeedInput[] = (
+  schoolhouseTeachersImportedJson as SchoolhouseTeachersCsvRow[]
+).map(schoolhouseTeachersRowToSeedInput);
+const freedomHomeschoolingImported: SeedInput[] = (
+  freedomHomeschoolingImportedJson as FreedomHomeschoolingCsvRow[]
+).map(freedomHomeschoolingRowToSeedInput);
+const miacademyImported: SeedInput[] = (miacademyImportedJson as MiacademyCsvRow[]).map(
+  miacademyRowToSeedInput,
+);
+const bjuPressImported: SeedInput[] = (bjuPressImportedJson as BjuPressCsvRow[]).map(
+  bjuPressRowToSeedInput,
+);
+const rosettaStoneImported: SeedInput[] = (rosettaStoneImportedJson as RosettaStoneCsvRow[]).map(
+  rosettaStoneRowToSeedInput,
+);
+const masterbooksImported: SeedInput[] = (masterbooksImportedJson as MasterbooksCsvRow[]).map(
+  masterbooksRowToSeedInput,
+);
+const sonlightImported: SeedInput[] = (sonlightImportedJson as SonlightCsvRow[]).map(
+  sonlightRowToSeedInput,
+);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -379,7 +490,25 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("AmblesideOnline resource:") &&
         !existing.description?.includes("All About Learning Press product:") &&
         !existing.description?.includes("Teaching Textbooks resource:") &&
-        !existing.description?.includes("Easy Peasy All-in-One resource:")
+        !existing.description?.includes("Easy Peasy All-in-One resource:") &&
+        !existing.description?.includes("Homeschool Languages resource:") &&
+        !existing.description?.includes("Breaking the Barrier resource:") &&
+        !existing.description?.includes("Brave Writer resource:") &&
+        !existing.description?.includes("Calico Spanish resource:") &&
+        !existing.description?.includes("Spelling You See resource:") &&
+        !existing.description?.includes("Spelling Power resource:") &&
+        !existing.description?.includes("Sequential Spelling resource:") &&
+        !existing.description?.includes("Essentials in Writing resource:") &&
+        !existing.description?.includes("WriteShop resource:") &&
+        !existing.description?.includes("WriteAtHome resource:") &&
+        !existing.description?.includes("ARTistic Pursuits resource:") &&
+        !existing.description?.includes("Schoolhouse Teachers resource:") &&
+        !existing.description?.includes("Freedom Homeschooling resource:") &&
+        !existing.description?.includes("Miacademy resource:") &&
+        !existing.description?.includes("BJU Press Homeschool resource:") &&
+        !existing.description?.includes("Rosetta Stone resource:") &&
+        !existing.description?.includes("Master Books resource:") &&
+        !existing.description?.includes("Sonlight resource:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -397,7 +526,33 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   return merged;
 }
 
-const allListings = mergeSeedInputs(
+const batch4Imported = mergeSeedInputs(
+  mergeSeedInputs(
+    mergeSeedInputs(
+      mergeSeedInputs(homeschoolLanguagesImported, breakingTheBarrierImported),
+      mergeSeedInputs(braveWriterImported, calicoSpanishImported),
+    ),
+    mergeSeedInputs(
+      mergeSeedInputs(spellingYouSeeImported, spellingPowerImported),
+      mergeSeedInputs(
+        sequentialSpellingImported,
+        mergeSeedInputs(essentialsInWritingImported, writeshopImported),
+      ),
+    ),
+  ),
+  mergeSeedInputs(
+    mergeSeedInputs(
+      mergeSeedInputs(writeathomeImported, artisticPursuitsImported),
+      mergeSeedInputs(schoolhouseTeachersImported, freedomHomeschoolingImported),
+    ),
+    mergeSeedInputs(
+      mergeSeedInputs(miacademyImported, bjuPressImported),
+      mergeSeedInputs(rosettaStoneImported, mergeSeedInputs(masterbooksImported, sonlightImported)),
+    ),
+  ),
+);
+
+const priorImported = mergeSeedInputs(
   mergeSeedInputs(
     mergeSeedInputs(
       mergeSeedInputs(
@@ -440,6 +595,8 @@ const allListings = mergeSeedInputs(
     ),
   ),
 );
+
+const allListings = mergeSeedInputs(priorImported, batch4Imported);
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
 

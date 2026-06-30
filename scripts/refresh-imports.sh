@@ -87,6 +87,42 @@ scrape_and_sync scripts/scrape-teaching-textbooks.py "Teaching Textbooks" \
   data/teaching-textbooks-scraped.json src/data/teaching-textbooks-imported.json true
 scrape_and_sync scripts/scrape-easy-peasy.py "Easy Peasy All-in-One Homeschool" \
   data/easy-peasy-scraped.json src/data/easy-peasy-imported.json true
+scrape_and_sync scripts/scrape-homeschool-languages.py "Homeschool Languages" \
+  data/homeschool-languages-scraped.json src/data/homeschool-languages-imported.json true
+scrape_and_sync scripts/scrape-breaking-the-barrier.py "Breaking the Barrier" \
+  data/breaking-the-barrier-scraped.json src/data/breaking-the-barrier-imported.json true
+scrape_and_sync scripts/scrape-brave-writer.py "Brave Writer" \
+  data/brave-writer-scraped.json src/data/brave-writer-imported.json true
+scrape_and_sync scripts/scrape-calico-spanish.py "Calico Spanish" \
+  data/calico-spanish-scraped.json src/data/calico-spanish-imported.json true
+scrape_and_sync scripts/scrape-spelling-you-see.py "Spelling You See" \
+  data/spelling-you-see-scraped.json src/data/spelling-you-see-imported.json true
+scrape_and_sync scripts/scrape-spelling-power.py "Spelling Power" \
+  data/spelling-power-scraped.json src/data/spelling-power-imported.json true
+scrape_and_sync scripts/scrape-sequential-spelling.py "Sequential Spelling" \
+  data/sequential-spelling-scraped.json src/data/sequential-spelling-imported.json true
+scrape_and_sync scripts/scrape-essentials-in-writing.py "Essentials in Writing" \
+  data/essentials-in-writing-scraped.json src/data/essentials-in-writing-imported.json true
+scrape_and_sync scripts/scrape-writeshop.py "WriteShop" \
+  data/writeshop-scraped.json src/data/writeshop-imported.json true
+scrape_and_sync scripts/scrape-writeathome.py "WriteAtHome" \
+  data/writeathome-scraped.json src/data/writeathome-imported.json true
+scrape_and_sync scripts/scrape-artistic-pursuits.py "ARTistic Pursuits" \
+  data/artistic-pursuits-scraped.json src/data/artistic-pursuits-imported.json true
+scrape_and_sync scripts/scrape-schoolhouse-teachers.py "Schoolhouse Teachers" \
+  data/schoolhouse-teachers-scraped.json src/data/schoolhouse-teachers-imported.json true
+scrape_and_sync scripts/scrape-freedom-homeschooling.py "Freedom Homeschooling" \
+  data/freedom-homeschooling-scraped.json src/data/freedom-homeschooling-imported.json true
+scrape_and_sync scripts/scrape-miacademy.py "Miacademy" \
+  data/miacademy-scraped.json src/data/miacademy-imported.json true
+scrape_and_sync scripts/scrape-bju-press.py "BJU Press Homeschool" \
+  data/bju-press-scraped.json src/data/bju-press-imported.json true
+scrape_and_sync scripts/scrape-rosetta-stone.py "Rosetta Stone" \
+  data/rosetta-stone-scraped.json src/data/rosetta-stone-imported.json true
+scrape_and_sync scripts/scrape-masterbooks.py "Master Books" \
+  data/masterbooks-scraped.json src/data/masterbooks-imported.json false
+scrape_and_sync scripts/scrape-sonlight.py "Sonlight" \
+  data/sonlight-scraped.json src/data/sonlight-imported.json false
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \
