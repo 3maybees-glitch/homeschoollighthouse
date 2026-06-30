@@ -4,8 +4,8 @@ export const brand = {
   heroTagline: "Follow the Light to Your Family's Perfect Homeschool Path",
   search: {
     title: "Chart Your Course",
-    placeholder: "Search curricula, classes, co-ops, and more…",
-    hint: "Try: Charlotte Mason math Virginia",
+    placeholder: "Search curricula, conferences, CLT, scholarships…",
+    hint: "Try: CLT, homeschool convention, college scholarship Virginia",
   },
   browse: {
     title: "Chart Your Course",

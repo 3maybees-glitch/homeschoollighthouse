@@ -10,38 +10,89 @@ export type HeavCsvRow = {
   description: string;
 };
 
-function inferListingType(url: string, title: string): ListingType {
-  const haystack = `${url} ${title}`.toLowerCase();
+function inferTestSubjects(title: string, description: string, url: string): string[] {
+  const haystack = `${title} ${description} ${url}`.toLowerCase();
+  const subjects = new Set<string>(["standardized_testing"]);
+
+  if (haystack.includes("clt") || haystack.includes("classic learning test")) {
+    subjects.add("clt");
+  }
+  if (haystack.includes("sat") || haystack.includes("psat")) {
+    subjects.add("sat");
+  }
+  if (haystack.includes("psat")) {
+    subjects.add("psat");
+  }
+  if (/\bact\b/.test(haystack)) {
+    subjects.add("act");
+  }
+  if (haystack.includes(" ap ") || haystack.includes("advanced placement")) {
+    subjects.add("ap_exams");
+  }
+
+  return Array.from(subjects);
+}
+
+function inferListingType(url: string, title: string, description: string): ListingType {
+  const haystack = `${url} ${title} ${description}`.toLowerCase();
+
+  if (
+    haystack.includes("convention") ||
+    haystack.includes("conference") ||
+    haystack.includes("leadership-conference") ||
+    haystack.includes("special-needs-conference")
+  ) {
+    return "conference";
+  }
+
+  if (haystack.includes("scholarship")) {
+    return "scholarship";
+  }
+
+  if (
+    haystack.includes("testing") ||
+    haystack.includes("standardized") ||
+    haystack.includes("evaluator") ||
+    haystack.includes("tester") ||
+    haystack.includes("clt") ||
+    haystack.includes(" sat") ||
+    haystack.includes("psat") ||
+    haystack.includes("interpreting-test") ||
+    haystack.includes("test-scores")
+  ) {
+    return "standardized_test";
+  }
+
   if (
     haystack.includes("field-trip") ||
     haystack.includes("field-trips") ||
-    haystack.includes("convention") ||
     haystack.includes("graduation") ||
     haystack.includes("capitol") ||
     haystack.includes("homeschool-days")
   ) {
     return "field_trip";
   }
+
   if (
     haystack.includes("support-group") ||
     haystack.includes("membership") ||
     haystack.includes("joinrenew") ||
     haystack.includes("member-benefits") ||
-    haystack.includes("mentor-program") ||
-    haystack.includes("scholarship")
+    haystack.includes("mentor-program")
   ) {
     return "support_group";
   }
+
   if (
     haystack.includes("law") ||
     haystack.includes("notice-of-intent") ||
     haystack.includes("compliance") ||
-    haystack.includes("testing") ||
     haystack.includes("transcript") ||
     haystack.includes("legislative")
   ) {
     return "supplement";
   }
+
   if (
     haystack.includes("e-book") ||
     haystack.includes("planner") ||
@@ -51,12 +102,14 @@ function inferListingType(url: string, title: string): ListingType {
   ) {
     return "curriculum";
   }
+
   return "support_group";
 }
 
 function inferFormat(url: string, listingType: ListingType): ListingFormat {
   const haystack = url.toLowerCase();
   if (
+    listingType === "conference" ||
     listingType === "field_trip" ||
     haystack.includes("convention") ||
     haystack.includes("graduation") ||
@@ -73,10 +126,31 @@ function inferFormat(url: string, listingType: ListingType): ListingFormat {
   return "hybrid";
 }
 
+function inferSubjects(
+  listingType: ListingType,
+  title: string,
+  description: string,
+  url: string,
+): string[] {
+  if (listingType === "standardized_test") {
+    return inferTestSubjects(title, description, url);
+  }
+  if (listingType === "scholarship") {
+    return ["college_prep"];
+  }
+  if (listingType === "conference") {
+    return ["college_prep"];
+  }
+  if (listingType === "supplement") {
+    return ["electives"];
+  }
+  return ["electives"];
+}
+
 export function heavRowToSeedInput(row: HeavCsvRow) {
   const { priceType, priceMin, priceMax } = parsePrices(row.prices_mentioned);
   const { ageMin, ageMax } = parseAgeRange(row.grades_or_ages);
-  const listingType = inferListingType(row.website_url, row.title);
+  const listingType = inferListingType(row.website_url, row.title, row.description);
   const format = inferFormat(row.website_url, listingType);
   const resolvedPriceType = (row.prices_mentioned ? priceType : "contact") as PriceType;
 
@@ -94,7 +168,7 @@ export function heavRowToSeedInput(row: HeavCsvRow) {
     ageMax: ageMax ?? 18,
     philosophies: ["eclectic", "religious"],
     religions: ["christian"],
-    subjects: listingType === "supplement" ? ["electives"] : ["electives"],
+    subjects: inferSubjects(listingType, row.title, row.description, row.website_url),
     description: [row.description?.trim(), `HEAV resource: ${row.website_url}`]
       .filter(Boolean)
       .join(" "),

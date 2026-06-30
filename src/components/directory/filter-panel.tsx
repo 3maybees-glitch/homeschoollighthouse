@@ -6,11 +6,13 @@ import { useMemo, useState, useTransition } from "react";
 import { Lock } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
 import {
+  collegePrepTypeOptions,
   formatOptions,
   listingTypeOptions,
   philosophyOptions,
   religionOptions,
   subjectOptions,
+  testFilterOptions,
   usStates,
   valuesOptions,
 } from "@/lib/directory/filter-config";
@@ -149,6 +151,27 @@ export function FilterPanel({
           </div>
         </div>
       ) : null}
+
+      <div className="rounded-[1.75rem] border border-[var(--color-border)] bg-white/90 p-5 shadow-sm">
+        <p className="font-semibold text-[var(--color-navy-deep)]">College Prep</p>
+        <p className="mt-1 text-sm text-[var(--color-muted-foreground)]">
+          Conferences, college scholarships, and tests like CLT
+        </p>
+        <div className="mt-4 space-y-6">
+          <CheckboxGroup
+            title="Resource Type"
+            options={collegePrepTypeOptions}
+            selected={filters.types ?? []}
+            onToggle={(value) => toggleValue("types", value)}
+          />
+          <CheckboxGroup
+            title="College Entrance Tests"
+            options={testFilterOptions}
+            selected={filters.subjects ?? []}
+            onToggle={(value) => toggleValue("subjects", value)}
+          />
+        </div>
+      </div>
 
       <div className="rounded-[1.75rem] border border-[var(--color-border)] bg-white/90 p-5 shadow-sm">
         <p className="font-semibold text-[var(--color-navy-deep)]">{brand.filters.basic}</p>
