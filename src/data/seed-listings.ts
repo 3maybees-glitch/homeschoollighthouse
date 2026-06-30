@@ -39,6 +39,7 @@ import geographyMattersImportedJson from "@/data/geography-matters-imported.json
 import natureStudyImportedJson from "@/data/nature-study-imported.json";
 import journeyHomeschoolAcademyImportedJson from "@/data/journey-homeschool-academy-imported.json";
 import outschoolElectivesImportedJson from "@/data/outschool-electives-imported.json";
+import heavImportedJson from "@/data/heav-imported.json";
 import memoriaPressImportedJson from "@/data/memoria-press-imported.json";
 import oakMeadowImportedJson from "@/data/oak-meadow-imported.json";
 import teachingTextbooksImportedJson from "@/data/teaching-textbooks-imported.json";
@@ -152,6 +153,7 @@ import {
   outschoolElectivesRowToSeedInput,
   type OutschoolElectivesCsvRow,
 } from "@/lib/import/outschool-electives-csv";
+import { heavRowToSeedInput, type HeavCsvRow } from "@/lib/import/heav-csv";
 import { memoriaPressRowToSeedInput, type MemoriaPressCsvRow } from "@/lib/import/memoria-press-csv";
 import { oakMeadowRowToSeedInput, type OakMeadowCsvRow } from "@/lib/import/oak-meadow-csv";
 import {
@@ -569,6 +571,7 @@ const journeyHomeschoolAcademyImported: SeedInput[] = (
 const outschoolElectivesImported: SeedInput[] = (
   outschoolElectivesImportedJson as OutschoolElectivesCsvRow[]
 ).map(outschoolElectivesRowToSeedInput);
+const heavImported: SeedInput[] = (heavImportedJson as HeavCsvRow[]).map(heavRowToSeedInput);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -641,7 +644,8 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("Geography Matters resource:") &&
         !existing.description?.includes("Nature Study Resources resource:") &&
         !existing.description?.includes("Journey Homeschool Academy resource:") &&
-        !existing.description?.includes("Outschool resource:")
+        !existing.description?.includes("Outschool resource:") &&
+        !existing.description?.includes("HEAV resource:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -754,9 +758,11 @@ const batch6Imported = mergeSeedInputs(
   ),
 );
 
+const batch7Imported = heavImported;
+
 const allListings = mergeSeedInputs(
   mergeSeedInputs(mergeSeedInputs(priorImported, batch4Imported), batch5Imported),
-  batch6Imported,
+  mergeSeedInputs(batch6Imported, batch7Imported),
 );
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
