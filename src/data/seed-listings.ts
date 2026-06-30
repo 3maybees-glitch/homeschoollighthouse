@@ -1,15 +1,25 @@
 import type { Listing, ListingFormat, ListingType, PriceType } from "@/types/listing";
 import apologiaImportedJson from "@/data/apologia-imported.json";
 import a2zImportedJson from "@/data/a2z-imported.json";
+import abekaImportedJson from "@/data/abeka-imported.json";
+import bjupressImportedJson from "@/data/bjupress-imported.json";
+import goodAndBeautifulImportedJson from "@/data/goodandbeautiful-imported.json";
 import homeschoolComImportedJson from "@/data/homeschool-com-imported.json";
 import iewImportedJson from "@/data/iew-imported.json";
 import mysteryOfHistoryImportedJson from "@/data/mystery-of-history-imported.json";
 import mathUSeeImportedJson from "@/data/math-u-see-imported.json";
 import simplyCharlotteMasonImportedJson from "@/data/simply-charlotte-mason-imported.json";
+import sonlightImportedJson from "@/data/sonlight-imported.json";
 import tied2TeachingImportedJson from "@/data/tied2teaching-imported.json";
 import thsmImportedJson from "@/data/thsm-imported.json";
 import { apologiaRowToSeedInput, type ApologiaCsvRow } from "@/lib/import/apologia-csv";
 import { a2zRowToSeedInput, type A2zCsvRow } from "@/lib/import/a2z-csv";
+import { abekaRowToSeedInput, type AbekaCsvRow } from "@/lib/import/abeka-csv";
+import { bjupressRowToSeedInput, type BjupressCsvRow } from "@/lib/import/bjupress-csv";
+import {
+  goodAndBeautifulRowToSeedInput,
+  type GoodAndBeautifulCsvRow,
+} from "@/lib/import/goodandbeautiful-csv";
 import {
   homeschoolComRowToSeedInput,
   type HomeschoolComCsvRow,
@@ -24,6 +34,7 @@ import {
   simplyCharlotteMasonRowToSeedInput,
   type SimplyCharlotteMasonCsvRow,
 } from "@/lib/import/simply-charlotte-mason-csv";
+import { sonlightRowToSeedInput, type SonlightCsvRow } from "@/lib/import/sonlight-csv";
 import {
   tied2TeachingRowToSeedInput,
   type Tied2TeachingCsvRow,
@@ -275,6 +286,16 @@ const simplyCharlotteMasonImported: SeedInput[] = (
   simplyCharlotteMasonImportedJson as SimplyCharlotteMasonCsvRow[]
 ).map(simplyCharlotteMasonRowToSeedInput);
 const iewImported: SeedInput[] = (iewImportedJson as IewCsvRow[]).map(iewRowToSeedInput);
+const bjupressImported: SeedInput[] = (bjupressImportedJson as BjupressCsvRow[]).map(
+  bjupressRowToSeedInput,
+);
+const abekaImported: SeedInput[] = (abekaImportedJson as AbekaCsvRow[]).map(abekaRowToSeedInput);
+const goodAndBeautifulImported: SeedInput[] = (
+  goodAndBeautifulImportedJson as GoodAndBeautifulCsvRow[]
+).map(goodAndBeautifulRowToSeedInput);
+const sonlightImported: SeedInput[] = (sonlightImportedJson as SonlightCsvRow[]).map(
+  sonlightRowToSeedInput,
+);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -299,7 +320,11 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("Tied 2 Teaching resource:") &&
         !existing.description?.includes("The Mystery of History product:") &&
         !existing.description?.includes("Simply Charlotte Mason product:") &&
-        !existing.description?.includes("IEW product:")
+        !existing.description?.includes("IEW product:") &&
+        !existing.description?.includes("BJU Press product:") &&
+        !existing.description?.includes("Abeka product:") &&
+        !existing.description?.includes("The Good and the Beautiful product:") &&
+        !existing.description?.includes("Sonlight product:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -337,7 +362,10 @@ const allListings = mergeSeedInputs(
     ),
     simplyCharlotteMasonImported,
   ),
-  iewImported,
+  mergeSeedInputs(
+    mergeSeedInputs(mergeSeedInputs(iewImported, bjupressImported), abekaImported),
+    mergeSeedInputs(goodAndBeautifulImported, sonlightImported),
+  ),
 );
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
