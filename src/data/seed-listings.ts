@@ -4,8 +4,12 @@ import a2zImportedJson from "@/data/a2z-imported.json";
 import homeschoolComImportedJson from "@/data/homeschool-com-imported.json";
 import iewImportedJson from "@/data/iew-imported.json";
 import mysteryOfHistoryImportedJson from "@/data/mystery-of-history-imported.json";
+import maybeeFreedomImportedJson from "@/data/maybee-freedom-imported.json";
+import maybeeFaithImportedJson from "@/data/maybee-faith-imported.json";
 import mathUSeeImportedJson from "@/data/math-u-see-imported.json";
 import simplyCharlotteMasonImportedJson from "@/data/simply-charlotte-mason-imported.json";
+import driveThruHistoryImportedJson from "@/data/drivethruhistory-imported.json";
+import theoryTimeImportedJson from "@/data/theorytime-imported.json";
 import tied2TeachingImportedJson from "@/data/tied2teaching-imported.json";
 import thsmImportedJson from "@/data/thsm-imported.json";
 import { apologiaRowToSeedInput, type ApologiaCsvRow } from "@/lib/import/apologia-csv";
@@ -15,6 +19,14 @@ import {
   type HomeschoolComCsvRow,
 } from "@/lib/import/homeschool-com-csv";
 import { iewRowToSeedInput, type IewCsvRow } from "@/lib/import/iew-csv";
+import {
+  maybeeFreedomRowToSeedInput,
+  type MaybeeFreedomCsvRow,
+} from "@/lib/import/maybee-freedom-csv";
+import {
+  maybeeFaithRowToSeedInput,
+  type MaybeeFaithCsvRow,
+} from "@/lib/import/maybee-faith-csv";
 import { mathUSeeRowToSeedInput, type MathUSeeCsvRow } from "@/lib/import/math-u-see-csv";
 import {
   mysteryOfHistoryRowToSeedInput,
@@ -24,6 +36,14 @@ import {
   simplyCharlotteMasonRowToSeedInput,
   type SimplyCharlotteMasonCsvRow,
 } from "@/lib/import/simply-charlotte-mason-csv";
+import {
+  driveThruHistoryRowToSeedInput,
+  type DriveThruHistoryCsvRow,
+} from "@/lib/import/drivethruhistory-csv";
+import {
+  theoryTimeRowToSeedInput,
+  type TheoryTimeCsvRow,
+} from "@/lib/import/theorytime-csv";
 import {
   tied2TeachingRowToSeedInput,
   type Tied2TeachingCsvRow,
@@ -275,6 +295,18 @@ const simplyCharlotteMasonImported: SeedInput[] = (
   simplyCharlotteMasonImportedJson as SimplyCharlotteMasonCsvRow[]
 ).map(simplyCharlotteMasonRowToSeedInput);
 const iewImported: SeedInput[] = (iewImportedJson as IewCsvRow[]).map(iewRowToSeedInput);
+const theoryTimeImported: SeedInput[] = (theoryTimeImportedJson as TheoryTimeCsvRow[]).map(
+  theoryTimeRowToSeedInput,
+);
+const driveThruHistoryImported: SeedInput[] = (
+  driveThruHistoryImportedJson as DriveThruHistoryCsvRow[]
+).map(driveThruHistoryRowToSeedInput);
+const maybeeFaithImported: SeedInput[] = (maybeeFaithImportedJson as MaybeeFaithCsvRow[]).map(
+  maybeeFaithRowToSeedInput,
+);
+const maybeeFreedomImported: SeedInput[] = (maybeeFreedomImportedJson as MaybeeFreedomCsvRow[]).map(
+  maybeeFreedomRowToSeedInput,
+);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -299,7 +331,11 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("Tied 2 Teaching resource:") &&
         !existing.description?.includes("The Mystery of History product:") &&
         !existing.description?.includes("Simply Charlotte Mason product:") &&
-        !existing.description?.includes("IEW product:")
+        !existing.description?.includes("IEW product:") &&
+        !existing.description?.includes("Theory Time product:") &&
+        !existing.description?.includes("Drive Thru History product:") &&
+        !existing.description?.includes("Maybee Creations Faith product:") &&
+        !existing.description?.includes("Maybee Creations Freedom product:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -337,7 +373,13 @@ const allListings = mergeSeedInputs(
     ),
     simplyCharlotteMasonImported,
   ),
-  iewImported,
+  mergeSeedInputs(
+    mergeSeedInputs(
+      mergeSeedInputs(mergeSeedInputs(iewImported, theoryTimeImported), driveThruHistoryImported),
+      maybeeFaithImported,
+    ),
+    maybeeFreedomImported,
+  ),
 );
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
