@@ -67,6 +67,8 @@ scrape_and_sync scripts/scrape-drivethruhistory.py "Drive Thru History" \
   data/drivethruhistory-scraped.json src/data/drivethruhistory-imported.json true
 scrape_and_sync scripts/scrape-maybee-faith.py "Maybee Creations Faith" \
   data/maybee-faith-scraped.json src/data/maybee-faith-imported.json true
+scrape_and_sync scripts/scrape-maybee-freedom.py "Maybee Creations Freedom" \
+  data/maybee-freedom-scraped.json src/data/maybee-freedom-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \

@@ -4,6 +4,7 @@ import a2zImportedJson from "@/data/a2z-imported.json";
 import homeschoolComImportedJson from "@/data/homeschool-com-imported.json";
 import iewImportedJson from "@/data/iew-imported.json";
 import mysteryOfHistoryImportedJson from "@/data/mystery-of-history-imported.json";
+import maybeeFreedomImportedJson from "@/data/maybee-freedom-imported.json";
 import maybeeFaithImportedJson from "@/data/maybee-faith-imported.json";
 import mathUSeeImportedJson from "@/data/math-u-see-imported.json";
 import simplyCharlotteMasonImportedJson from "@/data/simply-charlotte-mason-imported.json";
@@ -18,6 +19,10 @@ import {
   type HomeschoolComCsvRow,
 } from "@/lib/import/homeschool-com-csv";
 import { iewRowToSeedInput, type IewCsvRow } from "@/lib/import/iew-csv";
+import {
+  maybeeFreedomRowToSeedInput,
+  type MaybeeFreedomCsvRow,
+} from "@/lib/import/maybee-freedom-csv";
 import {
   maybeeFaithRowToSeedInput,
   type MaybeeFaithCsvRow,
@@ -299,6 +304,9 @@ const driveThruHistoryImported: SeedInput[] = (
 const maybeeFaithImported: SeedInput[] = (maybeeFaithImportedJson as MaybeeFaithCsvRow[]).map(
   maybeeFaithRowToSeedInput,
 );
+const maybeeFreedomImported: SeedInput[] = (maybeeFreedomImportedJson as MaybeeFreedomCsvRow[]).map(
+  maybeeFreedomRowToSeedInput,
+);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -326,7 +334,8 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("IEW product:") &&
         !existing.description?.includes("Theory Time product:") &&
         !existing.description?.includes("Drive Thru History product:") &&
-        !existing.description?.includes("Maybee Creations Faith product:")
+        !existing.description?.includes("Maybee Creations Faith product:") &&
+        !existing.description?.includes("Maybee Creations Freedom product:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -365,8 +374,11 @@ const allListings = mergeSeedInputs(
     simplyCharlotteMasonImported,
   ),
   mergeSeedInputs(
-    mergeSeedInputs(mergeSeedInputs(iewImported, theoryTimeImported), driveThruHistoryImported),
-    maybeeFaithImported,
+    mergeSeedInputs(
+      mergeSeedInputs(mergeSeedInputs(iewImported, theoryTimeImported), driveThruHistoryImported),
+      maybeeFaithImported,
+    ),
+    maybeeFreedomImported,
   ),
 );
 
