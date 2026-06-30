@@ -59,11 +59,17 @@ jobs:
             - The Mystery of History
             - Simply Charlotte Mason
             - IEW (Institute for Excellence in Writing)
+            - BJU Press
+            - Abeka
+            - The Good and the Beautiful
+            - Sonlight
+            - Master Books
+            - My Father's World
             - Homeschool.com Curriculum Finder
             - A2Z Homeschooling archive
 
             `npm run build` passed in CI. Review listing count changes, then merge to deploy.
 
-            **Note:** A2Z refresh uses Firecrawl when `FIRECRAWL_API_KEY` is configured in repo secrets. If absent, the workflow keeps the existing A2Z import file.
+            **Note:** A2Z and BJU Press refreshes use Firecrawl when `FIRECRAWL_API_KEY` is configured in repo secrets. If absent, the workflow keeps the existing import files.
 
             Triggered by: ${{ github.event_name }}
