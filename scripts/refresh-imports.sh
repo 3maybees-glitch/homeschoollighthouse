@@ -63,6 +63,8 @@ scrape_and_sync scripts/scrape-iew.py "IEW" \
   data/iew-scraped.json src/data/iew-imported.json true
 scrape_and_sync scripts/scrape-bjupress.py "BJU Press" \
   data/bjupress-scraped.json src/data/bjupress-imported.json false
+scrape_and_sync scripts/scrape-abeka.py "Abeka" \
+  data/abeka-scraped.json src/data/abeka-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \

@@ -21,10 +21,17 @@ export function normalizeListingUrl(url: string) {
   try {
     const parsed = new URL(url);
     parsed.hash = "";
-    parsed.search = "";
     const host = parsed.hostname.replace(/^www\./, "").toLowerCase();
     const pathname = parsed.pathname.replace(/\/$/, "") || "/";
-    return `${parsed.protocol}//${host}${pathname}`.toLowerCase();
+    const params = new URLSearchParams(parsed.search);
+    const identityKeys = ["sbn", "id", "sku", "product_id", "productid", "childsbn"];
+    const preserved = new URLSearchParams();
+    for (const key of identityKeys) {
+      const value = params.get(key);
+      if (value) preserved.set(key, value);
+    }
+    const search = preserved.toString();
+    return `${parsed.protocol}//${host}${pathname}${search ? `?${search}` : ""}`.toLowerCase();
   } catch {
     return url.toLowerCase();
   }
