@@ -1,5 +1,15 @@
 import type { FilterState, SubscriptionTier } from "@/types/listing";
 
+export const FREE_SUBJECT_TAGS = new Set([
+  "college_prep",
+  "standardized_testing",
+  "clt",
+  "sat",
+  "act",
+  "psat",
+  "ap_exams",
+]);
+
 const premiumFilterKeys = new Set([
   "philosophies",
   "values",
@@ -13,11 +23,18 @@ const premiumFilterKeys = new Set([
 const premiumSorts = new Set(["price_low", "price_high", "distance"]);
 const premiumGroupBy = new Set(["philosophy", "state", "price"]);
 
+function splitSubjects(subjects?: string[]) {
+  const freeSubjects = subjects?.filter((subject) => FREE_SUBJECT_TAGS.has(subject)) ?? [];
+  const premiumSubjects = subjects?.filter((subject) => !FREE_SUBJECT_TAGS.has(subject)) ?? [];
+  return { freeSubjects, premiumSubjects };
+}
+
 export function isPremiumFilterActive(filters: FilterState) {
+  const { premiumSubjects } = splitSubjects(filters.subjects);
   if (filters.philosophies?.length) return true;
   if (filters.values?.length) return true;
   if (filters.religions?.length) return true;
-  if (filters.subjects?.length) return true;
+  if (premiumSubjects.length) return true;
   if (filters.minRating != null) return true;
   if (filters.state) return true;
   if (filters.priceRange) return true;
@@ -41,6 +58,10 @@ export function canUseFilter(
   if (filterKey === "groupBy" && typeof value === "string" && premiumGroupBy.has(value)) {
     return false;
   }
+  if (filterKey === "subjects" && Array.isArray(value)) {
+    const { premiumSubjects } = splitSubjects(value);
+    return premiumSubjects.length === 0;
+  }
   if (premiumFilterKeys.has(filterKey)) {
     if (Array.isArray(value)) return value.length === 0;
     return value == null || value === "";
@@ -54,12 +75,14 @@ export function sanitizeFiltersForTier(
 ): FilterState {
   if (tier === "premium") return filters;
 
+  const { freeSubjects } = splitSubjects(filters.subjects);
+
   return {
     ...filters,
     philosophies: undefined,
     values: undefined,
     religions: undefined,
-    subjects: undefined,
+    subjects: freeSubjects.length ? freeSubjects : undefined,
     minRating: undefined,
     state: undefined,
     priceRange: undefined,
