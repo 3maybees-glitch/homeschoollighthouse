@@ -63,6 +63,8 @@ scrape_and_sync scripts/scrape-iew.py "IEW" \
   data/iew-scraped.json src/data/iew-imported.json true
 scrape_and_sync scripts/scrape-theorytime.py "Theory Time" \
   data/theorytime-scraped.json src/data/theorytime-imported.json true
+scrape_and_sync scripts/scrape-drivethruhistory.py "Drive Thru History" \
+  data/drivethruhistory-scraped.json src/data/drivethruhistory-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \

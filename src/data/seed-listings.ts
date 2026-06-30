@@ -6,6 +6,7 @@ import iewImportedJson from "@/data/iew-imported.json";
 import mysteryOfHistoryImportedJson from "@/data/mystery-of-history-imported.json";
 import mathUSeeImportedJson from "@/data/math-u-see-imported.json";
 import simplyCharlotteMasonImportedJson from "@/data/simply-charlotte-mason-imported.json";
+import driveThruHistoryImportedJson from "@/data/drivethruhistory-imported.json";
 import theoryTimeImportedJson from "@/data/theorytime-imported.json";
 import tied2TeachingImportedJson from "@/data/tied2teaching-imported.json";
 import thsmImportedJson from "@/data/thsm-imported.json";
@@ -25,6 +26,10 @@ import {
   simplyCharlotteMasonRowToSeedInput,
   type SimplyCharlotteMasonCsvRow,
 } from "@/lib/import/simply-charlotte-mason-csv";
+import {
+  driveThruHistoryRowToSeedInput,
+  type DriveThruHistoryCsvRow,
+} from "@/lib/import/drivethruhistory-csv";
 import {
   theoryTimeRowToSeedInput,
   type TheoryTimeCsvRow,
@@ -283,6 +288,9 @@ const iewImported: SeedInput[] = (iewImportedJson as IewCsvRow[]).map(iewRowToSe
 const theoryTimeImported: SeedInput[] = (theoryTimeImportedJson as TheoryTimeCsvRow[]).map(
   theoryTimeRowToSeedInput,
 );
+const driveThruHistoryImported: SeedInput[] = (
+  driveThruHistoryImportedJson as DriveThruHistoryCsvRow[]
+).map(driveThruHistoryRowToSeedInput);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -308,7 +316,8 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("The Mystery of History product:") &&
         !existing.description?.includes("Simply Charlotte Mason product:") &&
         !existing.description?.includes("IEW product:") &&
-        !existing.description?.includes("Theory Time product:")
+        !existing.description?.includes("Theory Time product:") &&
+        !existing.description?.includes("Drive Thru History product:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -346,7 +355,7 @@ const allListings = mergeSeedInputs(
     ),
     simplyCharlotteMasonImported,
   ),
-  mergeSeedInputs(iewImported, theoryTimeImported),
+  mergeSeedInputs(mergeSeedInputs(iewImported, theoryTimeImported), driveThruHistoryImported),
 );
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
