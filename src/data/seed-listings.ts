@@ -3,6 +3,7 @@ import apologiaImportedJson from "@/data/apologia-imported.json";
 import a2zImportedJson from "@/data/a2z-imported.json";
 import abekaImportedJson from "@/data/abeka-imported.json";
 import bjupressImportedJson from "@/data/bjupress-imported.json";
+import goodAndBeautifulImportedJson from "@/data/goodandbeautiful-imported.json";
 import homeschoolComImportedJson from "@/data/homeschool-com-imported.json";
 import iewImportedJson from "@/data/iew-imported.json";
 import mysteryOfHistoryImportedJson from "@/data/mystery-of-history-imported.json";
@@ -14,6 +15,10 @@ import { apologiaRowToSeedInput, type ApologiaCsvRow } from "@/lib/import/apolog
 import { a2zRowToSeedInput, type A2zCsvRow } from "@/lib/import/a2z-csv";
 import { abekaRowToSeedInput, type AbekaCsvRow } from "@/lib/import/abeka-csv";
 import { bjupressRowToSeedInput, type BjupressCsvRow } from "@/lib/import/bjupress-csv";
+import {
+  goodAndBeautifulRowToSeedInput,
+  type GoodAndBeautifulCsvRow,
+} from "@/lib/import/goodandbeautiful-csv";
 import {
   homeschoolComRowToSeedInput,
   type HomeschoolComCsvRow,
@@ -283,6 +288,9 @@ const bjupressImported: SeedInput[] = (bjupressImportedJson as BjupressCsvRow[])
   bjupressRowToSeedInput,
 );
 const abekaImported: SeedInput[] = (abekaImportedJson as AbekaCsvRow[]).map(abekaRowToSeedInput);
+const goodAndBeautifulImported: SeedInput[] = (
+  goodAndBeautifulImportedJson as GoodAndBeautifulCsvRow[]
+).map(goodAndBeautifulRowToSeedInput);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -309,7 +317,8 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("Simply Charlotte Mason product:") &&
         !existing.description?.includes("IEW product:") &&
         !existing.description?.includes("BJU Press product:") &&
-        !existing.description?.includes("Abeka product:")
+        !existing.description?.includes("Abeka product:") &&
+        !existing.description?.includes("The Good and the Beautiful product:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -347,7 +356,10 @@ const allListings = mergeSeedInputs(
     ),
     simplyCharlotteMasonImported,
   ),
-  mergeSeedInputs(mergeSeedInputs(iewImported, bjupressImported), abekaImported),
+  mergeSeedInputs(
+    mergeSeedInputs(mergeSeedInputs(iewImported, bjupressImported), abekaImported),
+    goodAndBeautifulImported,
+  ),
 );
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
