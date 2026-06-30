@@ -1,4 +1,8 @@
 import { NextResponse } from "next/server";
+import {
+  enrichSubmissionWithGeocode,
+  validateSubmissionInput,
+} from "@/lib/listings/submission-validation";
 import { memoryStore } from "@/lib/store/memory-store";
 
 export async function GET(request: Request) {
@@ -15,17 +19,14 @@ export async function GET(request: Request) {
 
 export async function POST(request: Request) {
   const body = await request.json();
-  if (!body.title || !body.websiteUrl || !body.description) {
-    return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
+  const validated = validateSubmissionInput(body);
+
+  if ("error" in validated) {
+    return NextResponse.json({ error: validated.error }, { status: 400 });
   }
 
-  const submission = memoryStore.addSubmission({
-    title: body.title,
-    websiteUrl: body.websiteUrl,
-    listingType: body.listingType ?? "other",
-    description: body.description,
-    submitterEmail: body.submitterEmail,
-  });
+  const enriched = await enrichSubmissionWithGeocode(validated.data);
+  const submission = memoryStore.addSubmission(enriched);
 
   return NextResponse.json({ submission }, { status: 201 });
 }

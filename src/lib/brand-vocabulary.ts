@@ -54,6 +54,15 @@ export const brand = {
   submit: {
     title: "Send a Signal",
     subtitle: "Share a resource to help other families navigate",
+    locationTitle: "Harbor location",
+    locationSubtitle:
+      "Co-ops, support groups, and field trips need a city and state so they can appear on the Local Harbors map.",
+    formatLabel: "How do families participate?",
+    cityLabel: "City",
+    cityPlaceholder: "e.g. Austin",
+    stateLabel: "State",
+    statePlaceholder: "Select state",
+    mapNote: "We geocode this location automatically when your submission is approved.",
   },
   reviews: "Signals from the Fleet",
   featured: "Bright Beacons",

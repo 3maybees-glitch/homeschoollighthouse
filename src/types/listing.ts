@@ -25,6 +25,8 @@ export type GroupByOption = "none" | "category" | "philosophy" | "state" | "form
 
 export type SubscriptionTier = "free" | "premium";
 
+export type GeocodePrecision = "city" | "state" | "nominatim";
+
 export interface Listing {
   id: string;
   slug: string;
@@ -41,6 +43,9 @@ export interface Listing {
   city?: string | null;
   state?: string | null;
   country?: string | null;
+  latitude?: number | null;
+  longitude?: number | null;
+  geocodePrecision?: GeocodePrecision | null;
   isVirtual: boolean;
   ageMin: number | null;
   ageMax: number | null;
