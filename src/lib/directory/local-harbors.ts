@@ -1,8 +1,9 @@
+import { LOCAL_HARBOR_TYPES } from "@/lib/directory/local-harbor-types";
 import { getAllListings } from "@/lib/listings/catalog";
 import { buildMapMarkers } from "@/lib/geo/listing-coordinates";
 import type { Listing, ListingType } from "@/types/listing";
 
-export const LOCAL_HARBOR_TYPES: ListingType[] = ["support_group", "coop", "field_trip"];
+export { LOCAL_HARBOR_TYPES };
 
 export function isLocalHarborListing(listing: Listing) {
   if (!listing.state) return false;

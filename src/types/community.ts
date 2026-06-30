@@ -10,6 +10,8 @@ export interface Review {
   helpfulCount: number;
 }
 
+import type { GeocodePrecision, ListingFormat } from "@/types/listing";
+
 export type SubmissionStatus = "pending" | "approved" | "rejected";
 
 export interface Submission {
@@ -19,6 +21,13 @@ export interface Submission {
   listingType: string;
   description: string;
   submitterEmail?: string;
+  format?: ListingFormat;
+  city?: string | null;
+  state?: string | null;
+  country?: string | null;
+  latitude?: number | null;
+  longitude?: number | null;
+  geocodePrecision?: GeocodePrecision | null;
   status: SubmissionStatus;
   createdAt: string;
 }

@@ -84,7 +84,13 @@ export function AdminQueue() {
               <div>
                 <h2 className="text-xl font-semibold text-slate-900">{submission.title}</h2>
                 <p className="mt-1 text-sm text-slate-500">
-                  {submission.listingType} · {new Date(submission.createdAt).toLocaleString()}
+                  {submission.listingType}
+                  {submission.format ? ` · ${submission.format.replace("_", " ")}` : ""}
+                  {submission.city || submission.state
+                    ? ` · ${[submission.city, submission.state].filter(Boolean).join(", ")}`
+                    : ""}
+                  {" · "}
+                  {new Date(submission.createdAt).toLocaleString()}
                 </p>
                 <a
                   href={submission.websiteUrl}
@@ -109,6 +115,12 @@ export function AdminQueue() {
               </div>
             </div>
             <p className="mt-4 text-sm leading-6 text-slate-700">{submission.description}</p>
+            {submission.latitude != null && submission.longitude != null ? (
+              <p className="mt-3 text-xs text-[var(--color-accent)]">
+                Harbor pin charted at {submission.latitude.toFixed(4)}, {submission.longitude.toFixed(4)}
+                {submission.geocodePrecision ? ` (${submission.geocodePrecision})` : ""}
+              </p>
+            ) : null}
             {submission.submitterEmail ? (
               <p className="mt-3 text-xs text-slate-500">Submitted by {submission.submitterEmail}</p>
             ) : null}

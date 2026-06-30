@@ -5,7 +5,7 @@ export interface MapMarker {
   listing: Listing;
   lat: number;
   lng: number;
-  precision: "city" | "state";
+  precision: "exact" | "city" | "state" | "nominatim";
 }
 
 function hashString(value: string) {
@@ -25,6 +25,15 @@ function jitterCoordinates(lat: number, lng: number, seed: string) {
 }
 
 export function resolveListingCoordinates(listing: Listing): MapMarker | null {
+  if (listing.latitude != null && listing.longitude != null) {
+    return {
+      listing,
+      lat: listing.latitude,
+      lng: listing.longitude,
+      precision: listing.geocodePrecision === "state" ? "state" : "exact",
+    };
+  }
+
   if (!listing.state) return null;
 
   const stateKey = listing.state.toUpperCase();
