@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { Anchor, Compass, MapPin, Sparkles } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
 import { HeroSearch } from "@/components/home/hero-search";
+import { BrandLogoVideo } from "@/components/brand/brand-logo-video";
 
 const quickChips = [
   {
@@ -81,13 +82,8 @@ export function HomeHero() {
 
             <div className="relative space-y-6">
               <div className="flex items-center gap-4">
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--color-beam)] text-[var(--color-navy-deep)] shadow-lg shadow-[var(--color-beam)]/30">
-                  <svg viewBox="0 0 64 64" className="h-10 w-10" aria-hidden="true">
-                    <path
-                      fill="currentColor"
-                      d="M32 8c-2 0-4 2-4 4v8l-8 4v4l12-2 12 2v-4l-8-4v-8c0-2-2-4-4-4zm-14 22 6 28h16l6-28H18zm8 8h12l-2 10H28l-2-10z"
-                    />
-                  </svg>
+                <div className="h-20 w-20 shrink-0 overflow-hidden rounded-2xl bg-white/90 p-1 shadow-lg shadow-[var(--color-beam)]/30">
+                  <BrandLogoVideo className="h-full w-full" />
                 </div>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-beam)]">

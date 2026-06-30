@@ -2,7 +2,7 @@ import Link from "next/link";
 import { brand } from "@/lib/brand-vocabulary";
 import { AuthNav } from "@/components/auth/auth-nav";
 import { MobileNav } from "@/components/layout/mobile-nav";
-import { LighthouseIcon } from "@/components/icons/lighthouse-icon";
+import { BrandLogoVideo } from "@/components/brand/brand-logo-video";
 import { Button } from "@/components/ui/button";
 
 const navItems = [
@@ -18,8 +18,8 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-white/50 bg-white/85 backdrop-blur-md">
       <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6">
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--color-secondary)] text-[var(--color-beam)] shadow-lg shadow-[rgba(0,31,63,0.18)]">
-            <LighthouseIcon className="h-6 w-6" />
+          <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-2xl bg-[var(--color-cream)] shadow-lg shadow-[rgba(0,31,63,0.12)]">
+            <BrandLogoVideo className="h-full w-full" />
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-accent)]">
