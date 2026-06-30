@@ -80,6 +80,8 @@ if ! "$PYTHON" -c "import pypdf" 2>/dev/null; then
 fi
 scrape_and_sync scripts/scrape-chaoa.py "Christian Academy of America" \
   data/chaoa-scraped.json src/data/chaoa-imported.json true
+scrape_and_sync scripts/scrape-time4learning.py "Time4Learning" \
+  data/time4learning-scraped.json src/data/time4learning-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \
