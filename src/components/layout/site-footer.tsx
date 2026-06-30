@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { brand } from "@/lib/brand-vocabulary";
 import { listingTypeOptions } from "@/lib/directory/filter-config";
+import { BrandLogoVideo } from "@/components/brand/brand-logo-video";
 import { NewsletterSignup } from "@/components/layout/newsletter-signup";
 
 const footerLinks = [
@@ -19,7 +20,12 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <div>
-            <p className="font-display text-2xl font-semibold text-white">{brand.siteName}</p>
+            <Link href="/" className="inline-flex items-center gap-4">
+              <div className="h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-white/10 p-1">
+                <BrandLogoVideo className="h-full w-full" />
+              </div>
+              <p className="font-display text-2xl font-semibold text-white">{brand.siteName}</p>
+            </Link>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-slate-400">{brand.tagline}</p>
             <p className="mt-4 text-sm text-slate-500">
               Guiding families through trusted homeschool waters with {brand.stats.listings}{" "}
