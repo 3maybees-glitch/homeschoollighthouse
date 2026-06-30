@@ -1,21 +1,27 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #f8fafc;
-  --color-foreground: #0f172a;
+  --color-background: #f7f9fc;
+  --color-foreground: #001428;
   --color-card: #ffffff;
-  --color-card-foreground: #0f172a;
-  --color-primary: #d97706;
-  --color-primary-foreground: #fffbeb;
-  --color-secondary: #1e3a5f;
-  --color-secondary-foreground: #eff6ff;
-  --color-muted: #e2e8f0;
-  --color-muted-foreground: #475569;
-  --color-accent: #fef3c7;
-  --color-accent-foreground: #92400e;
-  --color-border: #cbd5e1;
-  --color-ring: #f59e0b;
-  --font-sans: var(--font-geist-sans);
+  --color-card-foreground: #001428;
+  --color-primary: #e6b422;
+  --color-primary-foreground: #001428;
+  --color-secondary: #001f3f;
+  --color-secondary-foreground: #f8fafc;
+  --color-muted: #dce8f0;
+  --color-muted-foreground: #3d5a73;
+  --color-accent: #2a9d8f;
+  --color-accent-foreground: #f0fdfa;
+  --color-border: #c5d4e3;
+  --color-ring: #e6b422;
+  --color-beam: #ffd966;
+  --color-seafoam: #2a9d8f;
+  --color-navy-deep: #001428;
+  --color-navy: #001f3f;
+  --color-cream: #faf8f3;
+  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-source-serif);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -24,7 +30,10 @@
 }
 
 body {
-  background: radial-gradient(circle at top, #fff7ed 0%, #f8fafc 35%, #eff6ff 100%);
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(230, 180, 34, 0.12), transparent 55%),
+    radial-gradient(ellipse 80% 50% at 100% 0%, rgba(42, 157, 143, 0.08), transparent 50%),
+    linear-gradient(180deg, #faf8f3 0%, #f7f9fc 40%, #eef4f8 100%);
   color: var(--color-foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
 }
@@ -32,4 +41,37 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+}
+
+.hero-beam {
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 38%,
+    rgba(255, 217, 102, 0.08) 44%,
+    rgba(255, 217, 102, 0.22) 50%,
+    rgba(255, 217, 102, 0.08) 56%,
+    transparent 62%,
+    transparent 100%
+  );
+}
+
+.wave-divider {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='%23001f3f' d='M0 32c120-16 240-16 360 0s240 16 360 0 240-16 360 0 240 16 360 0v16H0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

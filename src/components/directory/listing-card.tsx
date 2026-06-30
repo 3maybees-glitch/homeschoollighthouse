@@ -12,28 +12,37 @@ export function ListingCard({ listing }: { listing: Listing }) {
     listing.listingType;
 
   return (
-    <Card className="h-full transition hover:-translate-y-0.5 hover:shadow-md">
+    <Card className="group h-full border-[var(--color-border)] bg-white transition hover:-translate-y-1 hover:border-[var(--color-primary)]/30 hover:shadow-lg hover:shadow-[rgba(0,31,63,0.08)]">
       <CardHeader>
         <div className="flex items-start justify-between gap-3">
           <div className="space-y-2">
             <div className="flex flex-wrap gap-2">
-              <Badge>{typeLabel}</Badge>
-              {listing.isFeatured ? <Badge className="bg-amber-500 text-white">Bright Beacon</Badge> : null}
+              <Badge className="bg-[var(--color-secondary)]/10 text-[var(--color-secondary)]">
+                {typeLabel}
+              </Badge>
+              {listing.isFeatured ? (
+                <Badge className="bg-[var(--color-primary)] text-[var(--color-primary-foreground)]">
+                  Bright Beacon
+                </Badge>
+              ) : null}
             </div>
             <CardTitle>
-              <Link href={`/listing/${listing.slug}`} className="hover:text-amber-700">
+              <Link
+                href={`/listing/${listing.slug}`}
+                className="font-display text-[var(--color-navy-deep)] transition group-hover:text-[var(--color-secondary)]"
+              >
                 {listing.title}
               </Link>
             </CardTitle>
             <CardDescription>{listing.shortDescription}</CardDescription>
           </div>
-          <ArrowUpRight className="h-4 w-4 shrink-0 text-slate-400" />
+          <ArrowUpRight className="h-4 w-4 shrink-0 text-[var(--color-muted-foreground)] transition group-hover:text-[var(--color-primary)]" />
         </div>
       </CardHeader>
-      <CardContent className="space-y-3 text-sm text-slate-600">
+      <CardContent className="space-y-3 text-sm text-[var(--color-muted-foreground)]">
         <div className="flex flex-wrap gap-4">
           <span className="inline-flex items-center gap-1">
-            <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+            <Star className="h-4 w-4 fill-[var(--color-primary)] text-[var(--color-primary)]" />
             {listing.ratingAvg.toFixed(1)} ({listing.ratingCount})
           </span>
           <span>{formatPrice(listing.priceMin, listing.priceMax, listing.priceType)}</span>
@@ -50,7 +59,7 @@ export function ListingCard({ listing }: { listing: Listing }) {
         )}
         <div className="flex flex-wrap gap-2">
           {listing.philosophies.slice(0, 3).map((philosophy) => (
-            <Badge key={philosophy} className="bg-slate-100 text-slate-700">
+            <Badge key={philosophy} className="bg-[var(--color-muted)]/60 text-[var(--color-muted-foreground)]">
               {philosophy.replaceAll("_", " ")}
             </Badge>
           ))}
