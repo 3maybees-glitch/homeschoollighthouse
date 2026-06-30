@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { brand } from "@/lib/brand-vocabulary";
 import { listingTypeOptions } from "@/lib/directory/filter-config";
+import { NewsletterSignup } from "@/components/layout/newsletter-signup";
 
 const footerLinks = [
   { href: "/browse", label: brand.nav.chart },
+  { href: "/harbors", label: brand.nav.harbors },
   { href: "/browse?featured=1", label: brand.featured },
   { href: "/ai", label: brand.ai.title },
   { href: "/pricing", label: brand.nav.premium },
@@ -62,12 +64,9 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p className="text-sm font-semibold text-white">{brand.newsletter.title}</p>
-            <p className="mt-1 text-sm text-slate-500">{brand.newsletter.subtitle}</p>
-          </div>
-          <p className="text-xs text-slate-500">
+        <div className="mt-12 grid gap-8 border-t border-white/10 pt-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+          <NewsletterSignup />
+          <p className="text-xs text-slate-500 lg:text-right">
             © {new Date().getFullYear()} Homeschool Lighthouse. All rights reserved.
           </p>
         </div>

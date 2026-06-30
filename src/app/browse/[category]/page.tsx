@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { FilterPanel } from "@/components/directory/filter-panel";
 import { ListingGrid } from "@/components/directory/listing-grid";
 import { SortGroupControls } from "@/components/directory/sort-group-controls";
+import { BrowseHero } from "@/components/directory/browse-hero";
 import { SaveSearchButton } from "@/components/community/save-search-button";
 import { brand } from "@/lib/brand-vocabulary";
 import { listingTypeOptions } from "@/lib/directory/filter-config";
@@ -55,28 +56,24 @@ export default async function CategoryBrowsePage({
   const queryString = filtersToSearchParams(filters).toString();
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
-      <div className="mb-8 space-y-2">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">
-          {brand.browse.title}
-        </p>
-        <h1 className="text-4xl font-bold text-slate-950">{option.label}</h1>
-        <p className="max-w-3xl text-slate-600">
-          Explore trusted {option.label.toLowerCase()} resources for homeschool families. Use filters
-          to narrow by philosophy, age, format, and more.
-        </p>
-      </div>
+    <div>
+      <BrowseHero
+        title={option.label}
+        description={`Explore trusted ${option.label.toLowerCase()} resources for homeschool families. Use filters to narrow by philosophy, age, format, and more.`}
+      />
 
-      <div className="grid gap-8 lg:grid-cols-[320px_1fr]">
-        <aside>
-          <FilterPanel initialFilters={filters} tier={tier} />
-        </aside>
-        <div className="space-y-6">
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <SortGroupControls filters={filters} tier={tier} total={result.total} />
-            <SaveSearchButton queryString={queryString} tier={tier} />
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+        <div className="grid gap-8 lg:grid-cols-[320px_1fr]">
+          <aside>
+            <FilterPanel initialFilters={filters} tier={tier} />
+          </aside>
+          <div className="space-y-6">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <SortGroupControls filters={filters} tier={tier} total={result.total} />
+              <SaveSearchButton queryString={queryString} tier={tier} />
+            </div>
+            <ListingGrid listings={result.listings} grouped={result.grouped} />
           </div>
-          <ListingGrid listings={result.listings} grouped={result.grouped} />
         </div>
       </div>
     </div>

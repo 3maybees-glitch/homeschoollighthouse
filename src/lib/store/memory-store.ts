@@ -1,5 +1,6 @@
 import { randomUUID } from "crypto";
 import type { Favorite, Review, SavedSearch, Submission } from "@/types/community";
+import type { NewsletterSubscriber } from "@/types/newsletter";
 import type { Listing } from "@/types/listing";
 import { seedReviews } from "@/data/seed-reviews";
 import { submissionToListing } from "@/lib/listings/submission-to-listing";
@@ -9,6 +10,7 @@ const submissions: Submission[] = [];
 const publishedListings: Listing[] = [];
 const favorites: Favorite[] = [];
 const savedSearches: SavedSearch[] = [];
+const newsletterSubscribers: NewsletterSubscriber[] = [];
 
 export const memoryStore = {
   listReviews(listingId?: string, listingSlug?: string) {
@@ -124,5 +126,23 @@ export const memoryStore = {
     if (index === -1) return false;
     savedSearches.splice(index, 1);
     return true;
+  },
+
+  addNewsletterSubscriber(email: string) {
+    const normalized = email.trim().toLowerCase();
+    const existing = newsletterSubscribers.find((subscriber) => subscriber.email === normalized);
+    if (existing) return existing;
+
+    const subscriber: NewsletterSubscriber = {
+      id: randomUUID(),
+      email: normalized,
+      createdAt: new Date().toISOString(),
+    };
+    newsletterSubscribers.unshift(subscriber);
+    return subscriber;
+  },
+
+  listNewsletterSubscribers() {
+    return [...newsletterSubscribers];
   },
 };

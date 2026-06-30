@@ -11,9 +11,11 @@ export function ListingGrid({
 }) {
   if (!listings.length) {
     return (
-      <div className="rounded-3xl border border-dashed border-slate-300 bg-white/70 p-12 text-center">
-        <h3 className="text-xl font-semibold text-slate-900">{brand.empty.title}</h3>
-        <p className="mt-2 text-slate-600">{brand.empty.subtitle}</p>
+      <div className="rounded-[1.75rem] border border-dashed border-[var(--color-border)] bg-white/80 p-12 text-center">
+        <h3 className="font-display text-xl font-semibold text-[var(--color-navy-deep)]">
+          {brand.empty.title}
+        </h3>
+        <p className="mt-2 text-[var(--color-muted-foreground)]">{brand.empty.subtitle}</p>
       </div>
     );
   }
@@ -24,8 +26,12 @@ export function ListingGrid({
         {grouped.map((group) => (
           <section key={group.key} className="space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="text-xl font-semibold text-slate-900">{group.label}</h2>
-              <span className="text-sm text-slate-500">{group.listings.length} beacons</span>
+              <h2 className="font-display text-xl font-semibold text-[var(--color-navy-deep)]">
+                {group.label}
+              </h2>
+              <span className="text-sm text-[var(--color-muted-foreground)]">
+                {group.listings.length} beacons
+              </span>
             </div>
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {group.listings.map((listing) => (
