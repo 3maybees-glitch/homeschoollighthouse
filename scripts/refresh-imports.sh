@@ -55,6 +55,8 @@ scrape_and_sync scripts/scrape-tied2teaching.py "Tied 2 Teaching" \
   data/tied2teaching-scraped.json src/data/tied2teaching-imported.json true
 scrape_and_sync scripts/scrape-math-u-see.py "Math-U-See" \
   data/math-u-see-scraped.json src/data/math-u-see-imported.json true
+scrape_and_sync scripts/scrape-mystery-of-history.py "The Mystery of History" \
+  data/mystery-of-history-scraped.json src/data/mystery-of-history-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \
