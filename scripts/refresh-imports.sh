@@ -137,6 +137,26 @@ scrape_and_sync scripts/scrape-the-old-schoolhouse.py "The Old Schoolhouse Store
   data/the-old-schoolhouse-scraped.json src/data/the-old-schoolhouse-imported.json true
 scrape_and_sync scripts/scrape-family-education.py "FamilyEducation" \
   data/family-education-scraped.json src/data/family-education-imported.json false
+scrape_and_sync scripts/scrape-beautiful-feet.py "Beautiful Feet Books" \
+  data/beautiful-feet-scraped.json src/data/beautiful-feet-imported.json true
+scrape_and_sync scripts/scrape-canon-press.py "Canon Press" \
+  data/canon-press-scraped.json src/data/canon-press-imported.json true
+scrape_and_sync scripts/scrape-bluestocking-press.py "Bluestocking Press" \
+  data/bluestocking-press-scraped.json src/data/bluestocking-press-imported.json true
+scrape_and_sync scripts/scrape-torchlight.py "Torchlight Curriculum" \
+  data/torchlight-scraped.json src/data/torchlight-imported.json true
+scrape_and_sync scripts/scrape-civiced.py "Center for Civic Education" \
+  data/civiced-scraped.json src/data/civiced-imported.json true
+scrape_and_sync scripts/scrape-ramsey-solutions.py "Ramsey Solutions" \
+  data/ramsey-solutions-scraped.json src/data/ramsey-solutions-imported.json true
+scrape_and_sync scripts/scrape-geography-matters.py "Geography Matters" \
+  data/geography-matters-scraped.json src/data/geography-matters-imported.json true
+scrape_and_sync scripts/scrape-nature-study.py "Nature Study Resources" \
+  data/nature-study-scraped.json src/data/nature-study-imported.json true
+scrape_and_sync scripts/scrape-journey-homeschool-academy.py "Journey Homeschool Academy" \
+  data/journey-homeschool-academy-scraped.json src/data/journey-homeschool-academy-imported.json true
+scrape_and_sync scripts/scrape-outschool-electives.py "Outschool Electives" \
+  data/outschool-electives-scraped.json src/data/outschool-electives-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \
