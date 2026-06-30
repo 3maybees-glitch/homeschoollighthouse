@@ -71,6 +71,22 @@ scrape_and_sync scripts/scrape-timberdoodle.py "Timberdoodle" \
   data/timberdoodle-scraped.json src/data/timberdoodle-imported.json false
 scrape_and_sync scripts/scrape-bridgeway.py "Bridgeway Academy" \
   data/bridgeway-scraped.json src/data/bridgeway-imported.json true
+scrape_and_sync scripts/scrape-classical-conversations.py "Classical Conversations" \
+  data/classical-conversations-scraped.json src/data/classical-conversations-imported.json true
+scrape_and_sync scripts/scrape-memoria-press.py "Memoria Press" \
+  data/memoria-press-scraped.json src/data/memoria-press-imported.json true
+scrape_and_sync scripts/scrape-veritas-press.py "Veritas Press" \
+  data/veritas-press-scraped.json src/data/veritas-press-imported.json true
+scrape_and_sync scripts/scrape-oak-meadow.py "Oak Meadow" \
+  data/oak-meadow-scraped.json src/data/oak-meadow-imported.json false
+scrape_and_sync scripts/scrape-ambleside-online.py "AmblesideOnline" \
+  data/ambleside-online-scraped.json src/data/ambleside-online-imported.json true
+scrape_and_sync scripts/scrape-all-about-learning.py "All About Learning Press" \
+  data/all-about-learning-scraped.json src/data/all-about-learning-imported.json true
+scrape_and_sync scripts/scrape-teaching-textbooks.py "Teaching Textbooks" \
+  data/teaching-textbooks-scraped.json src/data/teaching-textbooks-imported.json true
+scrape_and_sync scripts/scrape-easy-peasy.py "Easy Peasy All-in-One Homeschool" \
+  data/easy-peasy-scraped.json src/data/easy-peasy-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \

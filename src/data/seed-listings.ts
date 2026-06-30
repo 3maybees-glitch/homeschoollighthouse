@@ -1,5 +1,13 @@
 import type { Listing, ListingFormat, ListingType, PriceType } from "@/types/listing";
 import acellusImportedJson from "@/data/acellus-imported.json";
+import allAboutLearningImportedJson from "@/data/all-about-learning-imported.json";
+import amblesideOnlineImportedJson from "@/data/ambleside-online-imported.json";
+import classicalConversationsImportedJson from "@/data/classical-conversations-imported.json";
+import easyPeasyImportedJson from "@/data/easy-peasy-imported.json";
+import memoriaPressImportedJson from "@/data/memoria-press-imported.json";
+import oakMeadowImportedJson from "@/data/oak-meadow-imported.json";
+import teachingTextbooksImportedJson from "@/data/teaching-textbooks-imported.json";
+import veritasPressImportedJson from "@/data/veritas-press-imported.json";
 import apologiaImportedJson from "@/data/apologia-imported.json";
 import a2zImportedJson from "@/data/a2z-imported.json";
 import bridgewayImportedJson from "@/data/bridgeway-imported.json";
@@ -13,6 +21,20 @@ import mathUSeeImportedJson from "@/data/math-u-see-imported.json";
 import simplyCharlotteMasonImportedJson from "@/data/simply-charlotte-mason-imported.json";
 import tied2TeachingImportedJson from "@/data/tied2teaching-imported.json";
 import thsmImportedJson from "@/data/thsm-imported.json";
+import { allAboutLearningRowToSeedInput, type AllAboutLearningCsvRow } from "@/lib/import/all-about-learning-csv";
+import { amblesideOnlineRowToSeedInput, type AmblesideOnlineCsvRow } from "@/lib/import/ambleside-online-csv";
+import {
+  classicalConversationsRowToSeedInput,
+  type ClassicalConversationsCsvRow,
+} from "@/lib/import/classical-conversations-csv";
+import { easyPeasyRowToSeedInput, type EasyPeasyCsvRow } from "@/lib/import/easy-peasy-csv";
+import { memoriaPressRowToSeedInput, type MemoriaPressCsvRow } from "@/lib/import/memoria-press-csv";
+import { oakMeadowRowToSeedInput, type OakMeadowCsvRow } from "@/lib/import/oak-meadow-csv";
+import {
+  teachingTextbooksRowToSeedInput,
+  type TeachingTextbooksCsvRow,
+} from "@/lib/import/teaching-textbooks-csv";
+import { veritasPressRowToSeedInput, type VeritasPressCsvRow } from "@/lib/import/veritas-press-csv";
 import { acellusRowToSeedInput, type AcellusCsvRow } from "@/lib/import/acellus-csv";
 import { apologiaRowToSeedInput, type ApologiaCsvRow } from "@/lib/import/apologia-csv";
 import { bridgewayRowToSeedInput, type BridgewayCsvRow } from "@/lib/import/bridgeway-csv";
@@ -296,6 +318,30 @@ const timberdoodleImported: SeedInput[] = (timberdoodleImportedJson as Timberdoo
 const bridgewayImported: SeedInput[] = (bridgewayImportedJson as BridgewayCsvRow[]).map(
   bridgewayRowToSeedInput,
 );
+const classicalConversationsImported: SeedInput[] = (
+  classicalConversationsImportedJson as ClassicalConversationsCsvRow[]
+).map(classicalConversationsRowToSeedInput);
+const memoriaPressImported: SeedInput[] = (memoriaPressImportedJson as MemoriaPressCsvRow[]).map(
+  memoriaPressRowToSeedInput,
+);
+const veritasPressImported: SeedInput[] = (veritasPressImportedJson as VeritasPressCsvRow[]).map(
+  veritasPressRowToSeedInput,
+);
+const oakMeadowImported: SeedInput[] = (oakMeadowImportedJson as OakMeadowCsvRow[]).map(
+  oakMeadowRowToSeedInput,
+);
+const amblesideOnlineImported: SeedInput[] = (
+  amblesideOnlineImportedJson as AmblesideOnlineCsvRow[]
+).map(amblesideOnlineRowToSeedInput);
+const allAboutLearningImported: SeedInput[] = (
+  allAboutLearningImportedJson as AllAboutLearningCsvRow[]
+).map(allAboutLearningRowToSeedInput);
+const teachingTextbooksImported: SeedInput[] = (
+  teachingTextbooksImportedJson as TeachingTextbooksCsvRow[]
+).map(teachingTextbooksRowToSeedInput);
+const easyPeasyImported: SeedInput[] = (easyPeasyImportedJson as EasyPeasyCsvRow[]).map(
+  easyPeasyRowToSeedInput,
+);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -325,7 +371,15 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("Power Homeschool / Acellus resource:") &&
         !existing.description?.includes("IXL resource:") &&
         !existing.description?.includes("Timberdoodle product:") &&
-        !existing.description?.includes("Bridgeway Academy resource:")
+        !existing.description?.includes("Bridgeway Academy resource:") &&
+        !existing.description?.includes("Classical Conversations resource:") &&
+        !existing.description?.includes("Memoria Press product:") &&
+        !existing.description?.includes("Veritas Press resource:") &&
+        !existing.description?.includes("Oak Meadow resource:") &&
+        !existing.description?.includes("AmblesideOnline resource:") &&
+        !existing.description?.includes("All About Learning Press product:") &&
+        !existing.description?.includes("Teaching Textbooks resource:") &&
+        !existing.description?.includes("Easy Peasy All-in-One resource:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -364,13 +418,25 @@ const allListings = mergeSeedInputs(
     simplyCharlotteMasonImported,
   ),
   mergeSeedInputs(
-    iewImported,
     mergeSeedInputs(
+      iewImported,
       mergeSeedInputs(
         mergeSeedInputs(k12Imported, acellusImported),
         mergeSeedInputs(ixlImported, timberdoodleImported),
       ),
+    ),
+    mergeSeedInputs(
       bridgewayImported,
+      mergeSeedInputs(
+        mergeSeedInputs(
+          mergeSeedInputs(classicalConversationsImported, memoriaPressImported),
+          mergeSeedInputs(veritasPressImported, oakMeadowImported),
+        ),
+        mergeSeedInputs(
+          mergeSeedInputs(amblesideOnlineImported, allAboutLearningImported),
+          mergeSeedInputs(teachingTextbooksImported, easyPeasyImported),
+        ),
+      ),
     ),
   ),
 );
