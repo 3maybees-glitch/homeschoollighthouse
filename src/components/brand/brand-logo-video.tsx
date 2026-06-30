@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const LOGO_VIDEO_SRC = "/brand/homeschool-lighthouse-logo.mp4";
@@ -9,50 +9,56 @@ const LOGO_POSTER_SRC = "/brand/homeschool-lighthouse-logo-poster.png";
 export function BrandLogoVideo({
   className,
   plays = 2,
-  showStaticFallback = true,
 }: {
   className?: string;
   plays?: number;
-  showStaticFallback?: boolean;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const playCountRef = useRef(0);
-  const [useStaticLogo, setUseStaticLogo] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncPreference = () => setPrefersReducedMotion(mediaQuery.matches);
 
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (prefersReducedMotion) {
-      setUseStaticLogo(true);
-      return;
-    }
+    syncPreference();
+    mediaQuery.addEventListener("change", syncPreference);
+    return () => mediaQuery.removeEventListener("change", syncPreference);
+  }, []);
 
+  useEffect(() => {
+    playCountRef.current = 0;
+  }, [plays]);
+
+  const attemptPlay = useCallback(() => {
+    const video = videoRef.current;
+    if (!video || prefersReducedMotion) return;
+
+    void video.play()
+      .then(() => {
+        setHasStarted(true);
+      })
+      .catch(() => {
+        // Autoplay can fail before the file is ready; keep the video element and retry.
+      });
+  }, [prefersReducedMotion]);
+
+  const handleEnded = useCallback(() => {
     const video = videoRef.current;
     if (!video) return;
 
-    const handleEnded = () => {
-      playCountRef.current += 1;
-      if (playCountRef.current < plays) {
-        video.currentTime = 0;
-        void video.play();
-        return;
-      }
-      video.pause();
-    };
+    playCountRef.current += 1;
+    if (playCountRef.current < plays) {
+      video.currentTime = 0;
+      void video.play();
+      return;
+    }
 
-    video.addEventListener("ended", handleEnded);
-    playCountRef.current = 0;
-    void video.play().catch(() => {
-      setUseStaticLogo(true);
-    });
-
-    return () => {
-      video.removeEventListener("ended", handleEnded);
-    };
+    video.pause();
   }, [plays]);
 
-  if (useStaticLogo && showStaticFallback) {
+  if (prefersReducedMotion) {
     return (
       <img
         src={LOGO_POSTER_SRC}
@@ -66,10 +72,15 @@ export function BrandLogoVideo({
     <video
       ref={videoRef}
       src={LOGO_VIDEO_SRC}
-      poster={LOGO_POSTER_SRC}
+      poster={hasStarted ? undefined : LOGO_POSTER_SRC}
       muted
+      autoPlay
       playsInline
       preload="auto"
+      onLoadedData={attemptPlay}
+      onCanPlay={attemptPlay}
+      onPlaying={() => setHasStarted(true)}
+      onEnded={handleEnded}
       className={cn("object-contain", className)}
       aria-label="Homeschool Lighthouse logo animation"
     />
