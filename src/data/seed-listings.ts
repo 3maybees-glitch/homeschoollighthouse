@@ -4,6 +4,7 @@ import a2zImportedJson from "@/data/a2z-imported.json";
 import homeschoolComImportedJson from "@/data/homeschool-com-imported.json";
 import iewImportedJson from "@/data/iew-imported.json";
 import mysteryOfHistoryImportedJson from "@/data/mystery-of-history-imported.json";
+import maybeeFaithImportedJson from "@/data/maybee-faith-imported.json";
 import mathUSeeImportedJson from "@/data/math-u-see-imported.json";
 import simplyCharlotteMasonImportedJson from "@/data/simply-charlotte-mason-imported.json";
 import driveThruHistoryImportedJson from "@/data/drivethruhistory-imported.json";
@@ -17,6 +18,10 @@ import {
   type HomeschoolComCsvRow,
 } from "@/lib/import/homeschool-com-csv";
 import { iewRowToSeedInput, type IewCsvRow } from "@/lib/import/iew-csv";
+import {
+  maybeeFaithRowToSeedInput,
+  type MaybeeFaithCsvRow,
+} from "@/lib/import/maybee-faith-csv";
 import { mathUSeeRowToSeedInput, type MathUSeeCsvRow } from "@/lib/import/math-u-see-csv";
 import {
   mysteryOfHistoryRowToSeedInput,
@@ -291,6 +296,9 @@ const theoryTimeImported: SeedInput[] = (theoryTimeImportedJson as TheoryTimeCsv
 const driveThruHistoryImported: SeedInput[] = (
   driveThruHistoryImportedJson as DriveThruHistoryCsvRow[]
 ).map(driveThruHistoryRowToSeedInput);
+const maybeeFaithImported: SeedInput[] = (maybeeFaithImportedJson as MaybeeFaithCsvRow[]).map(
+  maybeeFaithRowToSeedInput,
+);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -317,7 +325,8 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("Simply Charlotte Mason product:") &&
         !existing.description?.includes("IEW product:") &&
         !existing.description?.includes("Theory Time product:") &&
-        !existing.description?.includes("Drive Thru History product:")
+        !existing.description?.includes("Drive Thru History product:") &&
+        !existing.description?.includes("Maybee Creations Faith product:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -355,7 +364,10 @@ const allListings = mergeSeedInputs(
     ),
     simplyCharlotteMasonImported,
   ),
-  mergeSeedInputs(mergeSeedInputs(iewImported, theoryTimeImported), driveThruHistoryImported),
+  mergeSeedInputs(
+    mergeSeedInputs(mergeSeedInputs(iewImported, theoryTimeImported), driveThruHistoryImported),
+    maybeeFaithImported,
+  ),
 );
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
