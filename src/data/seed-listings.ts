@@ -4,6 +4,7 @@ import a2zImportedJson from "@/data/a2z-imported.json";
 import homeschoolComImportedJson from "@/data/homeschool-com-imported.json";
 import mysteryOfHistoryImportedJson from "@/data/mystery-of-history-imported.json";
 import mathUSeeImportedJson from "@/data/math-u-see-imported.json";
+import simplyCharlotteMasonImportedJson from "@/data/simply-charlotte-mason-imported.json";
 import tied2TeachingImportedJson from "@/data/tied2teaching-imported.json";
 import thsmImportedJson from "@/data/thsm-imported.json";
 import { apologiaRowToSeedInput, type ApologiaCsvRow } from "@/lib/import/apologia-csv";
@@ -17,6 +18,10 @@ import {
   mysteryOfHistoryRowToSeedInput,
   type MysteryOfHistoryCsvRow,
 } from "@/lib/import/mystery-of-history-csv";
+import {
+  simplyCharlotteMasonRowToSeedInput,
+  type SimplyCharlotteMasonCsvRow,
+} from "@/lib/import/simply-charlotte-mason-csv";
 import {
   tied2TeachingRowToSeedInput,
   type Tied2TeachingCsvRow,
@@ -264,6 +269,9 @@ const tied2TeachingImported: SeedInput[] = (tied2TeachingImportedJson as Tied2Te
 const mysteryOfHistoryImported: SeedInput[] = (
   mysteryOfHistoryImportedJson as MysteryOfHistoryCsvRow[]
 ).map(mysteryOfHistoryRowToSeedInput);
+const simplyCharlotteMasonImported: SeedInput[] = (
+  simplyCharlotteMasonImportedJson as SimplyCharlotteMasonCsvRow[]
+).map(simplyCharlotteMasonRowToSeedInput);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -286,7 +294,8 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("A2Z Homeschooling archive") &&
         !existing.description?.includes("Apologia product:") &&
         !existing.description?.includes("Tied 2 Teaching resource:") &&
-        !existing.description?.includes("The Mystery of History product:")
+        !existing.description?.includes("The Mystery of History product:") &&
+        !existing.description?.includes("Simply Charlotte Mason product:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -309,16 +318,19 @@ const allListings = mergeSeedInputs(
     mergeSeedInputs(
       mergeSeedInputs(
         mergeSeedInputs(
-          mergeSeedInputs(mergeSeedInputs(rawListings, thsmImported), homeschoolComImported),
-          a2zImported,
+          mergeSeedInputs(
+            mergeSeedInputs(mergeSeedInputs(rawListings, thsmImported), homeschoolComImported),
+            a2zImported,
+          ),
+          mathUSeeImported,
         ),
-        mathUSeeImported,
+        apologiaImported,
       ),
-      apologiaImported,
+      tied2TeachingImported,
     ),
-    tied2TeachingImported,
+    mysteryOfHistoryImported,
   ),
-  mysteryOfHistoryImported,
+  simplyCharlotteMasonImported,
 );
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
