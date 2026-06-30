@@ -75,6 +75,11 @@ scrape_and_sync scripts/scrape-mfwbooks.py "My Father's World" \
   data/mfwbooks-scraped.json src/data/mfwbooks-imported.json true
 scrape_and_sync scripts/scrape-aop.py "Alpha Omega Publications" \
   data/aop-scraped.json src/data/aop-imported.json true
+if ! "$PYTHON" -c "import pypdf" 2>/dev/null; then
+  "$PYTHON" -m pip install pypdf
+fi
+scrape_and_sync scripts/scrape-chaoa.py "Christian Academy of America" \
+  data/chaoa-scraped.json src/data/chaoa-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \

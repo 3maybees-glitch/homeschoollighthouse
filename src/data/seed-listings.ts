@@ -10,6 +10,7 @@ import mysteryOfHistoryImportedJson from "@/data/mystery-of-history-imported.jso
 import mathUSeeImportedJson from "@/data/math-u-see-imported.json";
 import simplyCharlotteMasonImportedJson from "@/data/simply-charlotte-mason-imported.json";
 import aopImportedJson from "@/data/aop-imported.json";
+import chaoaImportedJson from "@/data/chaoa-imported.json";
 import masterbooksImportedJson from "@/data/masterbooks-imported.json";
 import mfwbooksImportedJson from "@/data/mfwbooks-imported.json";
 import sonlightImportedJson from "@/data/sonlight-imported.json";
@@ -19,6 +20,7 @@ import { apologiaRowToSeedInput, type ApologiaCsvRow } from "@/lib/import/apolog
 import { a2zRowToSeedInput, type A2zCsvRow } from "@/lib/import/a2z-csv";
 import { abekaRowToSeedInput, type AbekaCsvRow } from "@/lib/import/abeka-csv";
 import { aopRowToSeedInput, type AopCsvRow } from "@/lib/import/aop-csv";
+import { chaoaRowToSeedInput, type ChaoaCsvRow } from "@/lib/import/chaoa-csv";
 import { bjupressRowToSeedInput, type BjupressCsvRow } from "@/lib/import/bjupress-csv";
 import {
   goodAndBeautifulRowToSeedInput,
@@ -300,6 +302,7 @@ const bjupressImported: SeedInput[] = (bjupressImportedJson as BjupressCsvRow[])
 );
 const abekaImported: SeedInput[] = (abekaImportedJson as AbekaCsvRow[]).map(abekaRowToSeedInput);
 const aopImported: SeedInput[] = (aopImportedJson as AopCsvRow[]).map(aopRowToSeedInput);
+const chaoaImported: SeedInput[] = (chaoaImportedJson as ChaoaCsvRow[]).map(chaoaRowToSeedInput);
 const goodAndBeautifulImported: SeedInput[] = (
   goodAndBeautifulImportedJson as GoodAndBeautifulCsvRow[]
 ).map(goodAndBeautifulRowToSeedInput);
@@ -343,7 +346,8 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("Sonlight product:") &&
         !existing.description?.includes("Master Books product:") &&
         !existing.description?.includes("My Father's World product:") &&
-        !existing.description?.includes("Alpha Omega Publications product:")
+        !existing.description?.includes("Alpha Omega Publications product:") &&
+        !existing.description?.includes("Christian Academy of America resource:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -386,12 +390,15 @@ const allListings = mergeSeedInputs(
     mergeSeedInputs(
       mergeSeedInputs(
         mergeSeedInputs(
-          mergeSeedInputs(goodAndBeautifulImported, sonlightImported),
-          masterbooksImported,
+          mergeSeedInputs(
+            mergeSeedInputs(goodAndBeautifulImported, sonlightImported),
+            masterbooksImported,
+          ),
+          mfwbooksImported,
         ),
-        mfwbooksImported,
+        aopImported,
       ),
-      aopImported,
+      chaoaImported,
     ),
   ),
 );
