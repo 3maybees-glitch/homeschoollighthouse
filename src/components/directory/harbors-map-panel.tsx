@@ -1,14 +1,26 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { MapPin } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
 import { usStates } from "@/lib/directory/filter-config";
 import type { MapMarker } from "@/lib/geo/listing-coordinates";
-import { LocalHarborsMap } from "@/components/directory/local-harbors-map";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+
+const LocalHarborsMap = dynamic(
+  () => import("@/components/directory/local-harbors-map").then((mod) => mod.LocalHarborsMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex h-[520px] w-full items-center justify-center rounded-[1.75rem] border border-[var(--color-border)] bg-white/80 text-sm text-[var(--color-muted-foreground)]">
+        Loading harbor chart…
+      </div>
+    ),
+  },
+);
 
 export function HarborsMapPanel({
   markers,
