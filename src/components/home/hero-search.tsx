@@ -29,7 +29,7 @@ export function HeroSearch() {
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder={brand.search.placeholder}
-          className="h-14 rounded-2xl border-[var(--color-border)] bg-white/95 pl-14 pr-36 text-base shadow-lg shadow-[rgba(0,31,63,0.08)] backdrop-blur focus-visible:ring-[var(--color-ring)]"
+          className="h-14 rounded-2xl border-[var(--color-border)] bg-white/95 pl-14 pr-36 text-base text-black shadow-lg shadow-[rgba(0,31,63,0.08)] backdrop-blur focus-visible:ring-[var(--color-ring)]"
           aria-label="Search homeschool resources"
         />
         <Button
