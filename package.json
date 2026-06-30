@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "refresh-imports": "bash scripts/refresh-imports.sh",
+    "refresh-imports:verify": "npm run refresh-imports && npm run build"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",

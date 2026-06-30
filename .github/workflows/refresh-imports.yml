@@ -1,0 +1,66 @@
+name: Refresh import data
+
+on:
+  schedule:
+    # 06:00 UTC on the 1st of each month
+    - cron: "0 6 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Refresh scraped imports
+        env:
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+        run: npm run refresh-imports
+
+      - name: Verify build
+        run: npm run build
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: chore/refresh-imports
+          delete-branch: true
+          title: "chore: refresh scraped import data"
+          commit-message: "Refresh scraped import data from vendor sites"
+          body: |
+            Automated monthly refresh of vendor scrape data.
+
+            **Sources updated:**
+            - Apologia
+            - Tied 2 Teaching
+            - Math-U-See / Demme Learning
+            - Homeschool.com Curriculum Finder
+            - A2Z Homeschooling archive
+
+            `npm run build` passed in CI. Review listing count changes, then merge to deploy.
+
+            **Note:** A2Z refresh uses Firecrawl when `FIRECRAWL_API_KEY` is configured in repo secrets. If absent, the workflow keeps the existing A2Z import file.
+
+            Triggered by: ${{ github.event_name }}
