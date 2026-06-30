@@ -1,6 +1,11 @@
 import type { Listing, ListingFormat, ListingType, PriceType } from "@/types/listing";
+import acellusImportedJson from "@/data/acellus-imported.json";
 import apologiaImportedJson from "@/data/apologia-imported.json";
 import a2zImportedJson from "@/data/a2z-imported.json";
+import bridgewayImportedJson from "@/data/bridgeway-imported.json";
+import ixlImportedJson from "@/data/ixl-imported.json";
+import k12ImportedJson from "@/data/k12-imported.json";
+import timberdoodleImportedJson from "@/data/timberdoodle-imported.json";
 import homeschoolComImportedJson from "@/data/homeschool-com-imported.json";
 import iewImportedJson from "@/data/iew-imported.json";
 import mysteryOfHistoryImportedJson from "@/data/mystery-of-history-imported.json";
@@ -8,7 +13,12 @@ import mathUSeeImportedJson from "@/data/math-u-see-imported.json";
 import simplyCharlotteMasonImportedJson from "@/data/simply-charlotte-mason-imported.json";
 import tied2TeachingImportedJson from "@/data/tied2teaching-imported.json";
 import thsmImportedJson from "@/data/thsm-imported.json";
+import { acellusRowToSeedInput, type AcellusCsvRow } from "@/lib/import/acellus-csv";
 import { apologiaRowToSeedInput, type ApologiaCsvRow } from "@/lib/import/apologia-csv";
+import { bridgewayRowToSeedInput, type BridgewayCsvRow } from "@/lib/import/bridgeway-csv";
+import { ixlRowToSeedInput, type IxlCsvRow } from "@/lib/import/ixl-csv";
+import { k12RowToSeedInput, type K12CsvRow } from "@/lib/import/k12-csv";
+import { timberdoodleRowToSeedInput, type TimberdoodleCsvRow } from "@/lib/import/timberdoodle-csv";
 import { a2zRowToSeedInput, type A2zCsvRow } from "@/lib/import/a2z-csv";
 import {
   homeschoolComRowToSeedInput,
@@ -275,6 +285,17 @@ const simplyCharlotteMasonImported: SeedInput[] = (
   simplyCharlotteMasonImportedJson as SimplyCharlotteMasonCsvRow[]
 ).map(simplyCharlotteMasonRowToSeedInput);
 const iewImported: SeedInput[] = (iewImportedJson as IewCsvRow[]).map(iewRowToSeedInput);
+const k12Imported: SeedInput[] = (k12ImportedJson as K12CsvRow[]).map(k12RowToSeedInput);
+const acellusImported: SeedInput[] = (acellusImportedJson as AcellusCsvRow[]).map(
+  acellusRowToSeedInput,
+);
+const ixlImported: SeedInput[] = (ixlImportedJson as IxlCsvRow[]).map(ixlRowToSeedInput);
+const timberdoodleImported: SeedInput[] = (timberdoodleImportedJson as TimberdoodleCsvRow[]).map(
+  timberdoodleRowToSeedInput,
+);
+const bridgewayImported: SeedInput[] = (bridgewayImportedJson as BridgewayCsvRow[]).map(
+  bridgewayRowToSeedInput,
+);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -299,7 +320,12 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("Tied 2 Teaching resource:") &&
         !existing.description?.includes("The Mystery of History product:") &&
         !existing.description?.includes("Simply Charlotte Mason product:") &&
-        !existing.description?.includes("IEW product:")
+        !existing.description?.includes("IEW product:") &&
+        !existing.description?.includes("K12 (Stride) product:") &&
+        !existing.description?.includes("Power Homeschool / Acellus resource:") &&
+        !existing.description?.includes("IXL resource:") &&
+        !existing.description?.includes("Timberdoodle product:") &&
+        !existing.description?.includes("Bridgeway Academy resource:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -337,7 +363,16 @@ const allListings = mergeSeedInputs(
     ),
     simplyCharlotteMasonImported,
   ),
-  iewImported,
+  mergeSeedInputs(
+    iewImported,
+    mergeSeedInputs(
+      mergeSeedInputs(
+        mergeSeedInputs(k12Imported, acellusImported),
+        mergeSeedInputs(ixlImported, timberdoodleImported),
+      ),
+      bridgewayImported,
+    ),
+  ),
 );
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));

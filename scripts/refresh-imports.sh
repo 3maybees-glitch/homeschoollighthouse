@@ -61,6 +61,16 @@ scrape_and_sync scripts/scrape-simply-charlotte-mason.py "Simply Charlotte Mason
   data/simply-charlotte-mason-scraped.json src/data/simply-charlotte-mason-imported.json true
 scrape_and_sync scripts/scrape-iew.py "IEW" \
   data/iew-scraped.json src/data/iew-imported.json true
+scrape_and_sync scripts/scrape-k12.py "K12 (Stride)" \
+  data/k12-scraped.json src/data/k12-imported.json true
+scrape_and_sync scripts/scrape-acellus.py "Power Homeschool / Acellus" \
+  data/acellus-scraped.json src/data/acellus-imported.json true
+scrape_and_sync scripts/scrape-ixl.py "IXL" \
+  data/ixl-scraped.json src/data/ixl-imported.json true
+scrape_and_sync scripts/scrape-timberdoodle.py "Timberdoodle" \
+  data/timberdoodle-scraped.json src/data/timberdoodle-imported.json false
+scrape_and_sync scripts/scrape-bridgeway.py "Bridgeway Academy" \
+  data/bridgeway-scraped.json src/data/bridgeway-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \

@@ -1,0 +1,754 @@
+[
+  {
+    "title": "IXL Family Membership",
+    "website_url": "https://www.ixl.com/membership/family/pricing",
+    "source": "IXL",
+    "grades_or_ages": "Grades Pre-K-12",
+    "prices_mentioned": "$9.95-$19.95/mo",
+    "description": "IXL family membership for unlimited practice across subjects and grade levels."
+  },
+  {
+    "title": "IXL Language Arts | Learn language arts online",
+    "website_url": "https://www.ixl.com/ela/literary-analysis",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts high school course: Literary Analysis."
+  },
+  {
+    "title": "IXL Language Arts | Learn language arts online",
+    "website_url": "https://www.ixl.com/ela/grammar-and-mechanics",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts high school course: Grammar And Mechanics."
+  },
+  {
+    "title": "IXL Math | Learn math online",
+    "website_url": "https://www.ixl.com/math/integrated-math-1",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math high school course: Integrated Math 1."
+  },
+  {
+    "title": "IXL Math | Learn math online",
+    "website_url": "https://www.ixl.com/math/integrated-math-2",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math high school course: Integrated Math 2."
+  },
+  {
+    "title": "IXL Math | Learn math online",
+    "website_url": "https://www.ixl.com/math/integrated-math-3",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math high school course: Integrated Math 3."
+  },
+  {
+    "title": "IXL Math | Learn math online",
+    "website_url": "https://www.ixl.com/math/statistics-and-probability",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math high school course: Statistics And Probability."
+  },
+  {
+    "title": "IXL Science | Learn science online",
+    "website_url": "https://www.ixl.com/science/pre-k",
+    "source": "IXL",
+    "grades_or_ages": "Ages 4-5",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Pre-K. Requires IXL family membership."
+  },
+  {
+    "title": "IXL Science | Learn science online",
+    "website_url": "https://www.ixl.com/science/grade-12",
+    "source": "IXL",
+    "grades_or_ages": "Grade 12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Grade 12. Requires IXL family membership."
+  },
+  {
+    "title": "IXL Science | Learn science online",
+    "website_url": "https://www.ixl.com/science/physical-science",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science high school course: Physical Science."
+  },
+  {
+    "title": "IXL Social Studies | Learn social studies online",
+    "website_url": "https://www.ixl.com/social-studies/pre-k",
+    "source": "IXL",
+    "grades_or_ages": "Ages 4-5",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Pre-K. Requires IXL family membership."
+  },
+  {
+    "title": "IXL Social Studies | Learn social studies online",
+    "website_url": "https://www.ixl.com/social-studies/grade-9",
+    "source": "IXL",
+    "grades_or_ages": "Grade 9",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Grade 9. Requires IXL family membership."
+  },
+  {
+    "title": "IXL Social Studies | Learn social studies online",
+    "website_url": "https://www.ixl.com/social-studies/grade-12",
+    "source": "IXL",
+    "grades_or_ages": "Grade 12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Grade 12. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 10th grade language arts",
+    "website_url": "https://www.ixl.com/ela/grade-10",
+    "source": "IXL",
+    "grades_or_ages": "Grade 10",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Grade 10. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 11th grade language arts",
+    "website_url": "https://www.ixl.com/ela/grade-11",
+    "source": "IXL",
+    "grades_or_ages": "Grade 11",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Grade 11. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 12th grade language arts",
+    "website_url": "https://www.ixl.com/ela/grade-12",
+    "source": "IXL",
+    "grades_or_ages": "Grade 12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Grade 12. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 1st grade language arts",
+    "website_url": "https://www.ixl.com/ela/grade-1",
+    "source": "IXL",
+    "grades_or_ages": "Grade 1",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Grade 1. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 1st grade math",
+    "website_url": "https://www.ixl.com/math/grade-1",
+    "source": "IXL",
+    "grades_or_ages": "Grade 1",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Grade 1. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 1st grade science",
+    "website_url": "https://www.ixl.com/science/grade-1",
+    "source": "IXL",
+    "grades_or_ages": "Grade 1",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Grade 1. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 1st grade social studies",
+    "website_url": "https://www.ixl.com/social-studies/grade-1",
+    "source": "IXL",
+    "grades_or_ages": "Grade 1",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Grade 1. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 2nd grade language arts",
+    "website_url": "https://www.ixl.com/ela/grade-2",
+    "source": "IXL",
+    "grades_or_ages": "Grade 2",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Grade 2. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 2nd grade math",
+    "website_url": "https://www.ixl.com/math/grade-2",
+    "source": "IXL",
+    "grades_or_ages": "Grade 2",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Grade 2. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 2nd grade science",
+    "website_url": "https://www.ixl.com/science/grade-2",
+    "source": "IXL",
+    "grades_or_ages": "Grade 2",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Grade 2. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 2nd grade social studies",
+    "website_url": "https://www.ixl.com/social-studies/grade-2",
+    "source": "IXL",
+    "grades_or_ages": "Grade 2",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Grade 2. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 3rd grade language arts",
+    "website_url": "https://www.ixl.com/ela/grade-3",
+    "source": "IXL",
+    "grades_or_ages": "Grade 3",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Grade 3. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 3rd grade math",
+    "website_url": "https://www.ixl.com/math/grade-3",
+    "source": "IXL",
+    "grades_or_ages": "Grade 3",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Grade 3. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 3rd grade science",
+    "website_url": "https://www.ixl.com/science/grade-3",
+    "source": "IXL",
+    "grades_or_ages": "Grade 3",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Grade 3. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 3rd grade social studies",
+    "website_url": "https://www.ixl.com/social-studies/grade-3",
+    "source": "IXL",
+    "grades_or_ages": "Grade 3",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Grade 3. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 4th grade language arts",
+    "website_url": "https://www.ixl.com/ela/grade-4",
+    "source": "IXL",
+    "grades_or_ages": "Grade 4",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Grade 4. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 4th grade math",
+    "website_url": "https://www.ixl.com/math/grade-4",
+    "source": "IXL",
+    "grades_or_ages": "Grade 4",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Grade 4. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 4th grade science",
+    "website_url": "https://www.ixl.com/science/grade-4",
+    "source": "IXL",
+    "grades_or_ages": "Grade 4",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Grade 4. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 4th grade social studies",
+    "website_url": "https://www.ixl.com/social-studies/grade-4",
+    "source": "IXL",
+    "grades_or_ages": "Grade 4",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Grade 4. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 5th grade language arts",
+    "website_url": "https://www.ixl.com/ela/grade-5",
+    "source": "IXL",
+    "grades_or_ages": "Grade 5",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Grade 5. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 5th grade math",
+    "website_url": "https://www.ixl.com/math/grade-5",
+    "source": "IXL",
+    "grades_or_ages": "Grade 5",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Grade 5. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 5th grade science",
+    "website_url": "https://www.ixl.com/science/grade-5",
+    "source": "IXL",
+    "grades_or_ages": "Grade 5",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Grade 5. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 5th grade social studies",
+    "website_url": "https://www.ixl.com/social-studies/grade-5",
+    "source": "IXL",
+    "grades_or_ages": "Grade 5",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Grade 5. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 6th grade language arts",
+    "website_url": "https://www.ixl.com/ela/grade-6",
+    "source": "IXL",
+    "grades_or_ages": "Grade 6",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Grade 6. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 6th grade math",
+    "website_url": "https://www.ixl.com/math/grade-6",
+    "source": "IXL",
+    "grades_or_ages": "Grade 6",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Grade 6. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 6th grade science",
+    "website_url": "https://www.ixl.com/science/grade-6",
+    "source": "IXL",
+    "grades_or_ages": "Grade 6",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Grade 6. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 6th grade social studies",
+    "website_url": "https://www.ixl.com/social-studies/grade-6",
+    "source": "IXL",
+    "grades_or_ages": "Grade 6",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Grade 6. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 7th grade language arts",
+    "website_url": "https://www.ixl.com/ela/grade-7",
+    "source": "IXL",
+    "grades_or_ages": "Grade 7",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Grade 7. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 7th grade math",
+    "website_url": "https://www.ixl.com/math/grade-7",
+    "source": "IXL",
+    "grades_or_ages": "Grade 7",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Grade 7. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 7th grade science",
+    "website_url": "https://www.ixl.com/science/grade-7",
+    "source": "IXL",
+    "grades_or_ages": "Grade 7",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Grade 7. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 7th grade social studies",
+    "website_url": "https://www.ixl.com/social-studies/grade-7",
+    "source": "IXL",
+    "grades_or_ages": "Grade 7",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Grade 7. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 8th grade language arts",
+    "website_url": "https://www.ixl.com/ela/grade-8",
+    "source": "IXL",
+    "grades_or_ages": "Grade 8",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Grade 8. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 8th grade math",
+    "website_url": "https://www.ixl.com/math/grade-8",
+    "source": "IXL",
+    "grades_or_ages": "Grade 8",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Grade 8. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 8th grade science",
+    "website_url": "https://www.ixl.com/science/grade-8",
+    "source": "IXL",
+    "grades_or_ages": "Grade 8",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Grade 8. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 8th grade social studies",
+    "website_url": "https://www.ixl.com/social-studies/grade-8",
+    "source": "IXL",
+    "grades_or_ages": "Grade 8",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Grade 8. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn 9th grade language arts",
+    "website_url": "https://www.ixl.com/ela/grade-9",
+    "source": "IXL",
+    "grades_or_ages": "Grade 9",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Grade 9. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn Algebra 1",
+    "website_url": "https://www.ixl.com/math/grade-9",
+    "source": "IXL",
+    "grades_or_ages": "Grade 9",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Grade 9. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn Algebra 1",
+    "website_url": "https://www.ixl.com/math/algebra-1",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math high school course: Algebra 1."
+  },
+  {
+    "title": "IXL | Learn Algebra 2",
+    "website_url": "https://www.ixl.com/math/grade-11",
+    "source": "IXL",
+    "grades_or_ages": "Grade 11",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Grade 11. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn Algebra 2",
+    "website_url": "https://www.ixl.com/math/algebra-2",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math high school course: Algebra 2."
+  },
+  {
+    "title": "IXL | Learn Biology",
+    "website_url": "https://www.ixl.com/science/grade-9",
+    "source": "IXL",
+    "grades_or_ages": "Grade 9",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Grade 9. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn Biology",
+    "website_url": "https://www.ixl.com/science/biology",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science high school course: Biology."
+  },
+  {
+    "title": "IXL | Learn Calculus",
+    "website_url": "https://www.ixl.com/math/calculus",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math high school course: Calculus."
+  },
+  {
+    "title": "IXL | Learn Chemistry",
+    "website_url": "https://www.ixl.com/science/grade-10",
+    "source": "IXL",
+    "grades_or_ages": "Grade 10",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Grade 10. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn Chemistry",
+    "website_url": "https://www.ixl.com/science/chemistry",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science high school course: Chemistry."
+  },
+  {
+    "title": "IXL | Learn Civics & government",
+    "website_url": "https://www.ixl.com/social-studies/grade-11",
+    "source": "IXL",
+    "grades_or_ages": "Grade 11",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Grade 11. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn Civics & government",
+    "website_url": "https://www.ixl.com/social-studies/civics",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies high school course: Civics."
+  },
+  {
+    "title": "IXL | Learn earth science",
+    "website_url": "https://www.ixl.com/science/earth-science",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science high school course: Earth Science."
+  },
+  {
+    "title": "IXL | Learn economics",
+    "website_url": "https://www.ixl.com/social-studies/economics",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies high school course: Economics."
+  },
+  {
+    "title": "IXL | Learn geography",
+    "website_url": "https://www.ixl.com/social-studies/geography",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies high school course: Geography."
+  },
+  {
+    "title": "IXL | Learn Geometry",
+    "website_url": "https://www.ixl.com/math/grade-10",
+    "source": "IXL",
+    "grades_or_ages": "Grade 10",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Grade 10. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn Geometry",
+    "website_url": "https://www.ixl.com/math/geometry",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math high school course: Geometry."
+  },
+  {
+    "title": "IXL | Learn kindergarten language arts",
+    "website_url": "https://www.ixl.com/ela/kindergarten",
+    "source": "IXL",
+    "grades_or_ages": "Kindergarten",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Kindergarten. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn kindergarten math",
+    "website_url": "https://www.ixl.com/math/kindergarten",
+    "source": "IXL",
+    "grades_or_ages": "Kindergarten",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Kindergarten. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn kindergarten science",
+    "website_url": "https://www.ixl.com/science/kindergarten",
+    "source": "IXL",
+    "grades_or_ages": "Kindergarten",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Kindergarten. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn kindergarten social studies",
+    "website_url": "https://www.ixl.com/social-studies/kindergarten",
+    "source": "IXL",
+    "grades_or_ages": "Kindergarten",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Kindergarten. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn Physics",
+    "website_url": "https://www.ixl.com/science/grade-11",
+    "source": "IXL",
+    "grades_or_ages": "Grade 11",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science practice and mastery skills for Grade 11. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn Physics",
+    "website_url": "https://www.ixl.com/science/physics",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Science high school course: Physics."
+  },
+  {
+    "title": "IXL | Learn pre-K language arts",
+    "website_url": "https://www.ixl.com/ela/pre-k",
+    "source": "IXL",
+    "grades_or_ages": "Ages 4-5",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts practice and mastery skills for Pre-K. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn pre-K math",
+    "website_url": "https://www.ixl.com/math/pre-k",
+    "source": "IXL",
+    "grades_or_ages": "Ages 4-5",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Pre-K. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn Precalculus",
+    "website_url": "https://www.ixl.com/math/grade-12",
+    "source": "IXL",
+    "grades_or_ages": "Grade 12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math practice and mastery skills for Grade 12. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn Precalculus",
+    "website_url": "https://www.ixl.com/math/precalculus",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Math high school course: Precalculus."
+  },
+  {
+    "title": "IXL | Learn U.S. History",
+    "website_url": "https://www.ixl.com/social-studies/grade-10",
+    "source": "IXL",
+    "grades_or_ages": "Grade 10",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies practice and mastery skills for Grade 10. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Learn U.S. History",
+    "website_url": "https://www.ixl.com/social-studies/us-history",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies high school course: Us History."
+  },
+  {
+    "title": "IXL | Learn vocabulary",
+    "website_url": "https://www.ixl.com/ela/vocabulary",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts high school course: Vocabulary."
+  },
+  {
+    "title": "IXL | Learn world history",
+    "website_url": "https://www.ixl.com/social-studies/world-history",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Social Studies high school course: World History."
+  },
+  {
+    "title": "IXL | Learn writing strategies",
+    "website_url": "https://www.ixl.com/ela/writing-strategies",
+    "source": "IXL",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Language Arts high school course: Writing Strategies."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/pre-k",
+    "source": "IXL",
+    "grades_or_ages": "Ages 4-5",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Pre-K. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/kindergarten",
+    "source": "IXL",
+    "grades_or_ages": "Kindergarten",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Kindergarten. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/grade-1",
+    "source": "IXL",
+    "grades_or_ages": "Grade 1",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Grade 1. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/grade-2",
+    "source": "IXL",
+    "grades_or_ages": "Grade 2",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Grade 2. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/grade-3",
+    "source": "IXL",
+    "grades_or_ages": "Grade 3",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Grade 3. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/grade-4",
+    "source": "IXL",
+    "grades_or_ages": "Grade 4",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Grade 4. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/grade-5",
+    "source": "IXL",
+    "grades_or_ages": "Grade 5",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Grade 5. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/grade-6",
+    "source": "IXL",
+    "grades_or_ages": "Grade 6",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Grade 6. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/grade-7",
+    "source": "IXL",
+    "grades_or_ages": "Grade 7",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Grade 7. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/grade-8",
+    "source": "IXL",
+    "grades_or_ages": "Grade 8",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Grade 8. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/grade-9",
+    "source": "IXL",
+    "grades_or_ages": "Grade 9",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Grade 9. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/grade-10",
+    "source": "IXL",
+    "grades_or_ages": "Grade 10",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Grade 10. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/grade-11",
+    "source": "IXL",
+    "grades_or_ages": "Grade 11",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Grade 11. Requires IXL family membership."
+  },
+  {
+    "title": "IXL | Math, Language Arts, Science, Social Studies, and Spanish",
+    "website_url": "https://www.ixl.com/spanish/grade-12",
+    "source": "IXL",
+    "grades_or_ages": "Grade 12",
+    "prices_mentioned": "$9.95-$19.95/mo (IXL family membership)",
+    "description": "IXL Spanish practice and mastery skills for Grade 12. Requires IXL family membership."
+  }
+]
