@@ -27,9 +27,11 @@ export function SortGroupControls({
   };
 
   return (
-    <div className="flex flex-col gap-4 rounded-3xl border bg-white/90 p-5 shadow-sm lg:flex-row lg:items-end lg:justify-between">
+    <div className="flex flex-col gap-4 rounded-[1.75rem] border border-[var(--color-border)] bg-white/90 p-5 shadow-sm lg:flex-row lg:items-end lg:justify-between">
       <div>
-        <p className="text-sm text-slate-500">{total} beacons in view</p>
+        <p className="text-sm font-medium text-[var(--color-muted-foreground)]">
+          {total} beacons in view
+        </p>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">

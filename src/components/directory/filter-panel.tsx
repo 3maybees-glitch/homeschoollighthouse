@@ -40,11 +40,11 @@ function CheckboxGroup({
     <div className="space-y-3">
       <div className="flex items-center gap-2">
         <Label>{title}</Label>
-        {locked ? <Lock className="h-3.5 w-3.5 text-amber-600" /> : null}
+        {locked ? <Lock className="h-3.5 w-3.5 text-[var(--color-primary)]" /> : null}
       </div>
       <div className="space-y-2">
         {options.map((option) => (
-          <label key={option.value} className="flex items-center gap-2 text-sm text-slate-700">
+          <label key={option.value} className="flex items-center gap-2 text-sm text-[var(--color-muted-foreground)]">
             <Checkbox
               checked={selected.includes(option.value)}
               disabled={locked}
@@ -101,14 +101,16 @@ export function FilterPanel({
   return (
     <div className="space-y-6">
       <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-700">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-accent)]">
           {brand.filters.title}
         </p>
-        <h2 className="mt-2 text-2xl font-bold text-slate-900">{brand.browse.title}</h2>
-        <p className="mt-2 text-sm text-slate-600">{brand.browse.subtitle}</p>
+        <h2 className="font-display mt-2 text-2xl font-semibold text-[var(--color-navy-deep)]">
+          {brand.browse.title}
+        </h2>
+        <p className="mt-2 text-sm text-[var(--color-muted-foreground)]">{brand.browse.subtitle}</p>
       </div>
 
-      <div className="rounded-3xl border bg-white/90 p-5 shadow-sm">
+      <div className="rounded-[1.75rem] border border-[var(--color-border)] bg-white/90 p-5 shadow-sm">
         <Label htmlFor="search">{brand.search.title}</Label>
         <div className="mt-2 flex gap-2">
           <Input
@@ -133,13 +135,13 @@ export function FilterPanel({
       </div>
 
       {activeChips.length ? (
-        <div className="rounded-3xl border bg-amber-50/80 p-4">
-          <p className="text-sm font-medium text-amber-900">{brand.filters.chips}</p>
+        <div className="rounded-[1.75rem] border border-[var(--color-primary)]/20 bg-[var(--color-cream)] p-4">
+          <p className="text-sm font-medium text-[var(--color-navy-deep)]">{brand.filters.chips}</p>
           <div className="mt-3 flex flex-wrap gap-2">
             {activeChips.map((chip) => (
               <span
                 key={chip}
-                className="rounded-full bg-white px-3 py-1 text-xs font-medium text-slate-700"
+                className="rounded-full border border-[var(--color-border)] bg-white px-3 py-1 text-xs font-medium text-[var(--color-muted-foreground)]"
               >
                 {chip}
               </span>
@@ -148,8 +150,8 @@ export function FilterPanel({
         </div>
       ) : null}
 
-      <div className="rounded-3xl border bg-white/90 p-5 shadow-sm">
-        <p className="font-semibold text-slate-900">{brand.filters.basic}</p>
+      <div className="rounded-[1.75rem] border border-[var(--color-border)] bg-white/90 p-5 shadow-sm">
+        <p className="font-semibold text-[var(--color-navy-deep)]">{brand.filters.basic}</p>
         <div className="mt-4 space-y-6">
           <CheckboxGroup
             title="Resource Type"
@@ -180,9 +182,9 @@ export function FilterPanel({
         </div>
       </div>
 
-      <div className="rounded-3xl border bg-white/90 p-5 shadow-sm">
+      <div className="rounded-[1.75rem] border border-[var(--color-border)] bg-white/90 p-5 shadow-sm">
         <div className="flex items-center justify-between">
-          <p className="font-semibold text-slate-900">{brand.filters.advanced}</p>
+          <p className="font-semibold text-[var(--color-navy-deep)]">{brand.filters.advanced}</p>
           <Button variant="ghost" size="sm" onClick={() => setShowAdvanced((value) => !value)}>
             {showAdvanced ? "Hide" : brand.filters.more}
           </Button>
@@ -221,7 +223,7 @@ export function FilterPanel({
               <div className="flex items-center gap-2">
                 <Label>{brand.filters.location}</Label>
                 {!canUseFilter(tier, "state", filters.state) ? (
-                  <Lock className="h-3.5 w-3.5 text-amber-600" />
+                  <Lock className="h-3.5 w-3.5 text-[var(--color-primary)]" />
                 ) : null}
               </div>
               <Select
@@ -249,16 +251,16 @@ export function FilterPanel({
       </div>
 
       {!isPremium ? (
-        <div className="rounded-3xl border border-amber-200 bg-amber-50 p-5">
-          <p className="font-semibold text-amber-950">{brand.upgrade.title}</p>
-          <p className="mt-2 text-sm text-amber-900">{brand.upgrade.subtitle}</p>
+        <div className="rounded-[1.75rem] border border-[var(--color-primary)]/25 bg-[var(--color-cream)] p-5">
+          <p className="font-semibold text-[var(--color-navy-deep)]">{brand.upgrade.title}</p>
+          <p className="mt-2 text-sm text-[var(--color-muted-foreground)]">{brand.upgrade.subtitle}</p>
           <Button asChild className="mt-4">
             <Link href="/pricing">{brand.pricing.title}</Link>
           </Button>
         </div>
       ) : null}
 
-      {isPending ? <p className="text-sm text-slate-500">Updating your bearing…</p> : null}
+      {isPending ? <p className="text-sm text-[var(--color-muted-foreground)]">Updating your bearing…</p> : null}
     </div>
   );
 }

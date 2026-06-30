@@ -19,7 +19,7 @@ const quickChips = [
   },
   {
     label: brand.nav.harbors,
-    href: "/browse?types=support_group,coop",
+    href: "/harbors",
     icon: MapPin,
   },
 ];
