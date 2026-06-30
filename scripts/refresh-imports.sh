@@ -71,6 +71,8 @@ scrape_and_sync scripts/scrape-sonlight.py "Sonlight" \
   data/sonlight-scraped.json src/data/sonlight-imported.json true
 scrape_and_sync scripts/scrape-masterbooks.py "Master Books" \
   data/masterbooks-scraped.json src/data/masterbooks-imported.json true
+scrape_and_sync scripts/scrape-mfwbooks.py "My Father's World" \
+  data/mfwbooks-scraped.json src/data/mfwbooks-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \
