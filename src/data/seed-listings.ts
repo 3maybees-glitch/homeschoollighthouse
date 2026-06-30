@@ -9,6 +9,7 @@ import iewImportedJson from "@/data/iew-imported.json";
 import mysteryOfHistoryImportedJson from "@/data/mystery-of-history-imported.json";
 import mathUSeeImportedJson from "@/data/math-u-see-imported.json";
 import simplyCharlotteMasonImportedJson from "@/data/simply-charlotte-mason-imported.json";
+import masterbooksImportedJson from "@/data/masterbooks-imported.json";
 import sonlightImportedJson from "@/data/sonlight-imported.json";
 import tied2TeachingImportedJson from "@/data/tied2teaching-imported.json";
 import thsmImportedJson from "@/data/thsm-imported.json";
@@ -34,6 +35,10 @@ import {
   simplyCharlotteMasonRowToSeedInput,
   type SimplyCharlotteMasonCsvRow,
 } from "@/lib/import/simply-charlotte-mason-csv";
+import {
+  masterbooksRowToSeedInput,
+  type MasterBooksCsvRow,
+} from "@/lib/import/masterbooks-csv";
 import { sonlightRowToSeedInput, type SonlightCsvRow } from "@/lib/import/sonlight-csv";
 import {
   tied2TeachingRowToSeedInput,
@@ -296,6 +301,9 @@ const goodAndBeautifulImported: SeedInput[] = (
 const sonlightImported: SeedInput[] = (sonlightImportedJson as SonlightCsvRow[]).map(
   sonlightRowToSeedInput,
 );
+const masterbooksImported: SeedInput[] = (masterbooksImportedJson as MasterBooksCsvRow[]).map(
+  masterbooksRowToSeedInput,
+);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -324,7 +332,8 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("BJU Press product:") &&
         !existing.description?.includes("Abeka product:") &&
         !existing.description?.includes("The Good and the Beautiful product:") &&
-        !existing.description?.includes("Sonlight product:")
+        !existing.description?.includes("Sonlight product:") &&
+        !existing.description?.includes("Master Books product:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -364,7 +373,10 @@ const allListings = mergeSeedInputs(
   ),
   mergeSeedInputs(
     mergeSeedInputs(mergeSeedInputs(iewImported, bjupressImported), abekaImported),
-    mergeSeedInputs(goodAndBeautifulImported, sonlightImported),
+    mergeSeedInputs(
+      mergeSeedInputs(goodAndBeautifulImported, sonlightImported),
+      masterbooksImported,
+    ),
   ),
 );
 
