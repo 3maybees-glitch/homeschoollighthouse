@@ -2,6 +2,7 @@ import type { Listing, ListingFormat, ListingType, PriceType } from "@/types/lis
 import apologiaImportedJson from "@/data/apologia-imported.json";
 import a2zImportedJson from "@/data/a2z-imported.json";
 import homeschoolComImportedJson from "@/data/homeschool-com-imported.json";
+import iewImportedJson from "@/data/iew-imported.json";
 import mysteryOfHistoryImportedJson from "@/data/mystery-of-history-imported.json";
 import mathUSeeImportedJson from "@/data/math-u-see-imported.json";
 import simplyCharlotteMasonImportedJson from "@/data/simply-charlotte-mason-imported.json";
@@ -13,6 +14,7 @@ import {
   homeschoolComRowToSeedInput,
   type HomeschoolComCsvRow,
 } from "@/lib/import/homeschool-com-csv";
+import { iewRowToSeedInput, type IewCsvRow } from "@/lib/import/iew-csv";
 import { mathUSeeRowToSeedInput, type MathUSeeCsvRow } from "@/lib/import/math-u-see-csv";
 import {
   mysteryOfHistoryRowToSeedInput,
@@ -272,6 +274,7 @@ const mysteryOfHistoryImported: SeedInput[] = (
 const simplyCharlotteMasonImported: SeedInput[] = (
   simplyCharlotteMasonImportedJson as SimplyCharlotteMasonCsvRow[]
 ).map(simplyCharlotteMasonRowToSeedInput);
+const iewImported: SeedInput[] = (iewImportedJson as IewCsvRow[]).map(iewRowToSeedInput);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -295,7 +298,8 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("Apologia product:") &&
         !existing.description?.includes("Tied 2 Teaching resource:") &&
         !existing.description?.includes("The Mystery of History product:") &&
-        !existing.description?.includes("Simply Charlotte Mason product:")
+        !existing.description?.includes("Simply Charlotte Mason product:") &&
+        !existing.description?.includes("IEW product:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -319,18 +323,21 @@ const allListings = mergeSeedInputs(
       mergeSeedInputs(
         mergeSeedInputs(
           mergeSeedInputs(
-            mergeSeedInputs(mergeSeedInputs(rawListings, thsmImported), homeschoolComImported),
-            a2zImported,
+            mergeSeedInputs(
+              mergeSeedInputs(mergeSeedInputs(rawListings, thsmImported), homeschoolComImported),
+              a2zImported,
+            ),
+            mathUSeeImported,
           ),
-          mathUSeeImported,
+          apologiaImported,
         ),
-        apologiaImported,
+        tied2TeachingImported,
       ),
-      tied2TeachingImported,
+      mysteryOfHistoryImported,
     ),
-    mysteryOfHistoryImported,
+    simplyCharlotteMasonImported,
   ),
-  simplyCharlotteMasonImported,
+  iewImported,
 );
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));

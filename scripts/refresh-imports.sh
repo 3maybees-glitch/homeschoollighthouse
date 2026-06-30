@@ -59,6 +59,8 @@ scrape_and_sync scripts/scrape-mystery-of-history.py "The Mystery of History" \
   data/mystery-of-history-scraped.json src/data/mystery-of-history-imported.json true
 scrape_and_sync scripts/scrape-simply-charlotte-mason.py "Simply Charlotte Mason" \
   data/simply-charlotte-mason-scraped.json src/data/simply-charlotte-mason-imported.json true
+scrape_and_sync scripts/scrape-iew.py "IEW" \
+  data/iew-scraped.json src/data/iew-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \
