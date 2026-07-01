@@ -84,7 +84,7 @@ export const brand = {
   },
   newsletter: {
     title: "Join the Crew",
-    subtitle: "Weekly beacons, new routes, and homeschool guidance in your inbox.",
+    subtitle: "Monthly Beacon Bulletins with Bright Beacons, seasonal homeschool guidance, and new routes.",
   },
 } as const;
 
