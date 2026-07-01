@@ -159,6 +159,8 @@ scrape_and_sync scripts/scrape-outschool-electives.py "Outschool Electives" \
   data/outschool-electives-scraped.json src/data/outschool-electives-imported.json true
 scrape_and_sync scripts/scrape-heav.py "HEAV (Virginia)" \
   data/heav-scraped.json src/data/heav-imported.json true
+scrape_and_sync scripts/scrape-cltexam.py "Classic Learning Test (CLT)" \
+  data/cltexam-scraped.json src/data/cltexam-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \
