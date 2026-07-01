@@ -41,6 +41,7 @@ import journeyHomeschoolAcademyImportedJson from "@/data/journey-homeschool-acad
 import outschoolElectivesImportedJson from "@/data/outschool-electives-imported.json";
 import heavImportedJson from "@/data/heav-imported.json";
 import collegePrepImportedJson from "@/data/college-prep-imported.json";
+import cltexamImportedJson from "@/data/cltexam-imported.json";
 import memoriaPressImportedJson from "@/data/memoria-press-imported.json";
 import oakMeadowImportedJson from "@/data/oak-meadow-imported.json";
 import teachingTextbooksImportedJson from "@/data/teaching-textbooks-imported.json";
@@ -159,6 +160,7 @@ import {
   collegePrepRowToSeedInput,
   type CollegePrepCsvRow,
 } from "@/lib/import/college-prep-csv";
+import { cltexamRowToSeedInput, type CltexamCsvRow } from "@/lib/import/cltexam-csv";
 import { memoriaPressRowToSeedInput, type MemoriaPressCsvRow } from "@/lib/import/memoria-press-csv";
 import { oakMeadowRowToSeedInput, type OakMeadowCsvRow } from "@/lib/import/oak-meadow-csv";
 import {
@@ -580,6 +582,9 @@ const heavImported: SeedInput[] = (heavImportedJson as HeavCsvRow[]).map(heavRow
 const collegePrepImported: SeedInput[] = (collegePrepImportedJson as CollegePrepCsvRow[]).map(
   collegePrepRowToSeedInput,
 );
+const cltexamImported: SeedInput[] = (cltexamImportedJson as CltexamCsvRow[]).map(
+  cltexamRowToSeedInput,
+);
 
 function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
   const byUrl = new Map<string, number>();
@@ -654,7 +659,8 @@ function mergeSeedInputs(base: SeedInput[], imported: SeedInput[]) {
         !existing.description?.includes("Journey Homeschool Academy resource:") &&
         !existing.description?.includes("Outschool resource:") &&
         !existing.description?.includes("HEAV resource:") &&
-        !existing.description?.includes("College Prep resource:")
+        !existing.description?.includes("College Prep resource:") &&
+        !existing.description?.includes("Classic Learning Test resource:")
       ) {
         existing.description = [existing.description, item.description].filter(Boolean).join(" ");
       }
@@ -767,7 +773,10 @@ const batch6Imported = mergeSeedInputs(
   ),
 );
 
-const batch7Imported = mergeSeedInputs(heavImported, collegePrepImported);
+const batch7Imported = mergeSeedInputs(
+  mergeSeedInputs(heavImported, collegePrepImported),
+  cltexamImported,
+);
 
 const allListings = mergeSeedInputs(
   mergeSeedInputs(mergeSeedInputs(priorImported, batch4Imported), batch5Imported),
