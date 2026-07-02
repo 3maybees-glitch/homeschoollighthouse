@@ -11,6 +11,7 @@ const navItems = [
   { href: "/browse?featured=1", label: brand.nav.beacons },
   { href: "/harbors", label: brand.nav.harbors },
   { href: "/harbor-huddle", label: brand.nav.huddle },
+  { href: "/blog", label: brand.nav.blog },
   { href: "/account", label: brand.nav.captainsLog },
   { href: "/pricing", label: brand.nav.premium },
 ];

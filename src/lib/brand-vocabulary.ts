@@ -16,6 +16,7 @@ export const brand = {
     beacons: "Beacons",
     harbors: "Local Harbors",
     huddle: "Harbor Huddle",
+    blog: "Fair Winds Weekly",
     captainsLog: "Captain's Log",
     premium: "Lighthouse Premium",
   },
@@ -62,6 +63,12 @@ export const brand = {
     subtitle: "Our monthly mega-thread for premium families to swap tips, encouragement, and homeschool wisdom.",
     paywallMessage:
       "The Harbor Huddle is a premium-only space. Unlock the Full Beam to join the monthly conversation.",
+  },
+  blog: {
+    series: "Fair Winds Weekly",
+    title: "Fair Winds Weekly",
+    subtitle:
+      "Weekly homeschool dispatches from the Lighthouse Crew — practical navigation, encouragement, and calm headings for your voyage.",
   },
   featured: "Bright Beacons",
   featuredSubtitle: "Find Your Beacon",
