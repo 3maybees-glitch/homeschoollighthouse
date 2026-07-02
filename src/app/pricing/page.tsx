@@ -22,6 +22,7 @@ const premiumFeatures = [
   "Charted Courses saved searches",
   "Anchored Resources favorites",
   "Follow the Light AI discovery",
+  "Harbor Huddle monthly community thread",
 ];
 
 export default function PricingPage() {

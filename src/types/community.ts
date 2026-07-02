@@ -39,6 +39,25 @@ export interface Favorite {
   createdAt: string;
 }
 
+export interface HarborHuddle {
+  id: string;
+  monthKey: string;
+  title: string;
+  prompt: string;
+  authorName: string;
+  createdAt: string;
+  isPinned: boolean;
+}
+
+export interface HuddleReply {
+  id: string;
+  huddleId: string;
+  authorName: string;
+  userId?: string;
+  body: string;
+  createdAt: string;
+}
+
 export interface AiMessage {
   role: "user" | "assistant";
   content: string;

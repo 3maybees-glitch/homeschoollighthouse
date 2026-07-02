@@ -47,9 +47,14 @@ export default async function AccountPage() {
                   <Link href="/pricing">{brand.upgrade.title}</Link>
                 </Button>
               ) : (
-                <Button asChild variant="outline">
-                  <Link href="/ai">{brand.ai.title}</Link>
-                </Button>
+                <>
+                  <Button asChild variant="outline">
+                    <Link href="/ai">{brand.ai.title}</Link>
+                  </Button>
+                  <Button asChild variant="outline">
+                    <Link href="/harbor-huddle">{brand.huddle.title}</Link>
+                  </Button>
+                </>
               )}
             </div>
           </CardContent>
