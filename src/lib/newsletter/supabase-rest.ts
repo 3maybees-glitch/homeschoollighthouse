@@ -1,9 +1,14 @@
 function getSupabaseUrl() {
-  return process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
+  if (!url) return undefined;
+  return url.replace(/\/+$/, "");
 }
 
 function getServiceRoleKey() {
-  return process.env.SUPABASE_SERVICE_ROLE_KEY ?? process.env.SUPABASE_SECRET_KEY;
+  const key =
+    process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() ??
+    process.env.SUPABASE_SECRET_KEY?.trim();
+  return key || undefined;
 }
 
 function isJwtApiKey(apiKey: string) {
@@ -21,6 +26,36 @@ function getAdminHeaders(apiKey: string, extra: Record<string, string> = {}) {
   }
 
   return headers;
+}
+
+function getKeyFormat(apiKey?: string) {
+  if (!apiKey) return "missing";
+  if (apiKey.startsWith("eyJ")) return "legacy-jwt";
+  if (apiKey.startsWith("sb_secret_")) return "secret";
+  if (apiKey.startsWith("sb_publishable_")) return "publishable-in-service-slot";
+  return "unknown";
+}
+
+export function getNewsletterSupabaseConfig() {
+  const url = getSupabaseUrl();
+  const apiKey = getServiceRoleKey();
+
+  let urlHost: string | null = null;
+  if (url) {
+    try {
+      urlHost = new URL(url).host;
+    } catch {
+      urlHost = "invalid-url";
+    }
+  }
+
+  return {
+    configured: Boolean(url && apiKey),
+    urlPresent: Boolean(url),
+    keyPresent: Boolean(apiKey),
+    urlHost,
+    keyFormat: getKeyFormat(apiKey),
+  };
 }
 
 type NewsletterRow = {

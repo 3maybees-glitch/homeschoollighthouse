@@ -1,9 +1,32 @@
 import { NextResponse } from "next/server";
 import { sendWelcomeNewsletterEmail } from "@/lib/email/welcome-newsletter";
 import { addNewsletterSubscriber } from "@/lib/newsletter/subscribers";
+import {
+  fetchNewsletterSubscriber,
+  getNewsletterSupabaseConfig,
+} from "@/lib/newsletter/supabase-rest";
 
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+export async function GET() {
+  const config = getNewsletterSupabaseConfig();
+  let connection: { ok: boolean; status?: number; message?: string } = { ok: false };
+
+  if (config.configured) {
+    try {
+      await fetchNewsletterSubscriber("health-check@example.com");
+      connection = { ok: true, status: 200 };
+    } catch (error) {
+      connection = {
+        ok: false,
+        message: error instanceof Error ? error.message : "Unknown Supabase error",
+      };
+    }
+  }
+
+  return NextResponse.json({ ...config, connection });
 }
 
 export async function POST(request: Request) {
