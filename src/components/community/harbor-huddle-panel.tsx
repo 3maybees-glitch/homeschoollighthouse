@@ -3,13 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Anchor, MessageCircle, Pin } from "lucide-react";
-import { brand } from "@/lib/brand-vocabulary";
 import { formatMonthLabel } from "@/lib/harbor-huddle/month";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import type { HarborHuddle, HuddleReply } from "@/types/community";
-import type { SubscriptionTier } from "@/types/listing";
 
 interface HuddleArchive {
   monthKey: string;
@@ -17,14 +15,12 @@ interface HuddleArchive {
 }
 
 export function HarborHuddlePanel({
-  tier,
   initialHuddle,
   initialReplies,
   replyCount,
   archives,
   selectedMonthKey,
 }: {
-  tier: SubscriptionTier;
   initialHuddle: HarborHuddle;
   initialReplies: HuddleReply[];
   replyCount: number;
@@ -38,9 +34,6 @@ export function HarborHuddlePanel({
   const [body, setBody] = useState("");
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const isPremium = tier === "premium";
-  const hiddenReplyCount = Math.max(0, totalReplies - replies.length);
 
   const submitReply = async () => {
     setError("");
@@ -109,58 +102,43 @@ export function HarborHuddlePanel({
           Opened by {huddle.authorName} · {new Date(huddle.createdAt).toLocaleDateString()}
         </p>
 
-        {isPremium ? (
-          <p className="mt-6 whitespace-pre-line text-base leading-relaxed text-slate-700">
-            {huddle.prompt}
-          </p>
-        ) : (
-          <div className="mt-6 rounded-2xl border border-dashed border-amber-200 bg-white/80 p-5">
-            <p className="text-sm leading-relaxed text-slate-600">
-              The {formatMonthLabel(huddle.monthKey)} Harbor Huddle is live with{" "}
-              <span className="font-semibold text-slate-900">{totalReplies}</span> parent replies.
-              Upgrade to read the full conversation and join the fleet.
-            </p>
-            <Button asChild className="mt-4" size="sm">
-              <Link href="/pricing">{brand.upgrade.title}</Link>
-            </Button>
-          </div>
-        )}
+        <p className="mt-6 whitespace-pre-line text-base leading-relaxed text-slate-700">
+          {huddle.prompt}
+        </p>
       </article>
 
-      {isPremium ? (
-        <section className="rounded-3xl border bg-white/90 p-6 shadow-sm">
-          <h3 className="text-xl font-bold text-slate-900">Drop your reply</h3>
-          <p className="mt-1 text-sm text-slate-600">
-            Share encouragement, curriculum tips, or questions with other premium families.
-          </p>
+      <section className="rounded-3xl border bg-white/90 p-6 shadow-sm">
+        <h3 className="text-xl font-bold text-slate-900">Drop your reply</h3>
+        <p className="mt-1 text-sm text-slate-600">
+          Share encouragement, curriculum tips, or questions with other premium families.
+        </p>
 
-          <div className="mt-6 space-y-4 rounded-2xl bg-slate-50 p-4">
-            <div className="space-y-2">
-              <Label htmlFor="huddle-author">Your name</Label>
-              <Input
-                id="huddle-author"
-                value={authorName}
-                onChange={(event) => setAuthorName(event.target.value)}
-                placeholder="How you'd like to appear"
-              />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="huddle-body">Your reply</Label>
-              <textarea
-                id="huddle-body"
-                className="min-h-32 w-full rounded-2xl border px-4 py-3 text-sm"
-                value={body}
-                onChange={(event) => setBody(event.target.value)}
-                placeholder="What is working in your homeschool harbor this month?"
-              />
-            </div>
-            {error ? <p className="text-sm text-red-600">{error}</p> : null}
-            <Button onClick={submitReply} disabled={isSubmitting || !body.trim()}>
-              {isSubmitting ? "Posting..." : "Post to the Huddle"}
-            </Button>
+        <div className="mt-6 space-y-4 rounded-2xl bg-slate-50 p-4">
+          <div className="space-y-2">
+            <Label htmlFor="huddle-author">Your name</Label>
+            <Input
+              id="huddle-author"
+              value={authorName}
+              onChange={(event) => setAuthorName(event.target.value)}
+              placeholder="How you'd like to appear"
+            />
           </div>
-        </section>
-      ) : null}
+          <div className="space-y-2">
+            <Label htmlFor="huddle-body">Your reply</Label>
+            <textarea
+              id="huddle-body"
+              className="min-h-32 w-full rounded-2xl border px-4 py-3 text-sm"
+              value={body}
+              onChange={(event) => setBody(event.target.value)}
+              placeholder="What is working in your homeschool harbor this month?"
+            />
+          </div>
+          {error ? <p className="text-sm text-red-600">{error}</p> : null}
+          <Button onClick={submitReply} disabled={isSubmitting || !body.trim()}>
+            {isSubmitting ? "Posting..." : "Post to the Huddle"}
+          </Button>
+        </div>
+      </section>
 
       <section className="space-y-4">
         <div className="flex items-center gap-2">
@@ -170,7 +148,7 @@ export function HarborHuddlePanel({
 
         {replies.length === 0 ? (
           <p className="rounded-2xl border bg-slate-50 p-5 text-sm text-slate-500">
-            No replies yet. Premium members can be the first to light the conversation.
+            No replies yet. Be the first to light the conversation.
           </p>
         ) : (
           replies.map((reply) => (
@@ -182,17 +160,6 @@ export function HarborHuddlePanel({
             </article>
           ))
         )}
-
-        {!isPremium && hiddenReplyCount > 0 ? (
-          <div className="rounded-2xl border border-amber-200 bg-amber-50/70 p-5 text-sm text-slate-700">
-            {hiddenReplyCount} more{" "}
-            {hiddenReplyCount === 1 ? "reply is" : "replies are"} waiting in the harbor.{" "}
-            <Link href="/pricing" className="font-medium text-amber-800 hover:underline">
-              Unlock the Full Beam
-            </Link>{" "}
-            to read and join the huddle.
-          </div>
-        ) : null}
       </section>
     </div>
   );

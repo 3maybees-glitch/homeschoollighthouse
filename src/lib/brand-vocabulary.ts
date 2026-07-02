@@ -60,8 +60,8 @@ export const brand = {
   huddle: {
     title: "Harbor Huddle",
     subtitle: "Our monthly mega-thread for premium families to swap tips, encouragement, and homeschool wisdom.",
-    freeTeaser:
-      "Preview this month's conversation below. Upgrade to read every reply and join the fleet.",
+    paywallMessage:
+      "The Harbor Huddle is a premium-only space. Unlock the Full Beam to join the monthly conversation.",
   },
   featured: "Bright Beacons",
   featuredSubtitle: "Find Your Beacon",

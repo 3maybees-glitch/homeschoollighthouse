@@ -5,9 +5,16 @@ import { getMonthKey } from "@/lib/harbor-huddle/month";
 import { memoryStore } from "@/lib/store/memory-store";
 
 export async function GET(request: Request) {
+  const tier = await getUserTier();
+  if (tier !== "premium") {
+    return NextResponse.json(
+      { error: "Premium required to access the Harbor Huddle." },
+      { status: 403 },
+    );
+  }
+
   const { searchParams } = new URL(request.url);
   const monthKey = searchParams.get("month") ?? getMonthKey();
-  const tier = await getUserTier();
 
   const huddle =
     memoryStore.getHuddleByMonthKey(monthKey) ??
@@ -18,13 +25,11 @@ export async function GET(request: Request) {
   }
 
   const replies = memoryStore.listHuddleReplies(huddle.id);
-  const isPremium = tier === "premium";
 
   return NextResponse.json({
     huddle,
-    replies: isPremium ? replies : replies.slice(0, 2),
+    replies,
     replyCount: replies.length,
-    isPremium,
     archives: memoryStore.listHuddles().map((item) => ({
       monthKey: item.monthKey,
       title: item.title,
