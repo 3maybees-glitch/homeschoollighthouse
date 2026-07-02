@@ -7,6 +7,7 @@ import { NewsletterSignup } from "@/components/layout/newsletter-signup";
 const footerLinks = [
   { href: "/browse", label: brand.nav.chart },
   { href: "/harbors", label: brand.nav.harbors },
+  { href: "/harbor-huddle", label: brand.nav.huddle },
   { href: "/browse?featured=1", label: brand.featured },
   { href: "/ai", label: brand.ai.title },
   { href: "/pricing", label: brand.nav.premium },

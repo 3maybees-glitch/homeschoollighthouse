@@ -1,11 +1,26 @@
 import { randomUUID } from "crypto";
-import type { Favorite, Review, SavedSearch, Submission } from "@/types/community";
+import type {
+  Favorite,
+  HarborHuddle,
+  HuddleReply,
+  Review,
+  SavedSearch,
+  Submission,
+} from "@/types/community";
 import type { NewsletterSubscriber } from "@/types/newsletter";
 import type { Listing } from "@/types/listing";
+import { seedHuddleReplies, seedHuddles } from "@/data/seed-huddle";
 import { seedReviews } from "@/data/seed-reviews";
+import {
+  defaultHuddlePrompt,
+  defaultHuddleTitle,
+  getMonthKey,
+} from "@/lib/harbor-huddle/month";
 import { submissionToListing } from "@/lib/listings/submission-to-listing";
 
 const reviews: Review[] = [...seedReviews];
+const huddles: HarborHuddle[] = [...seedHuddles];
+const huddleReplies: HuddleReply[] = [...seedHuddleReplies];
 const submissions: Submission[] = [];
 const publishedListings: Listing[] = [];
 const favorites: Favorite[] = [];
@@ -144,5 +159,47 @@ export const memoryStore = {
 
   listNewsletterSubscribers() {
     return [...newsletterSubscribers];
+  },
+
+  ensureCurrentHuddle() {
+    const monthKey = getMonthKey();
+    let huddle = huddles.find((item) => item.monthKey === monthKey);
+    if (!huddle) {
+      huddle = {
+        id: randomUUID(),
+        monthKey,
+        title: defaultHuddleTitle(monthKey),
+        prompt: defaultHuddlePrompt(monthKey),
+        authorName: "Lighthouse Crew",
+        createdAt: new Date().toISOString(),
+        isPinned: true,
+      };
+      huddles.unshift(huddle);
+    }
+    return huddle;
+  },
+
+  getHuddleByMonthKey(monthKey: string) {
+    return huddles.find((item) => item.monthKey === monthKey) ?? null;
+  },
+
+  listHuddles() {
+    return [...huddles].sort((a, b) => b.monthKey.localeCompare(a.monthKey));
+  },
+
+  listHuddleReplies(huddleId: string) {
+    return huddleReplies
+      .filter((reply) => reply.huddleId === huddleId)
+      .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime());
+  },
+
+  addHuddleReply(input: Omit<HuddleReply, "id" | "createdAt">) {
+    const reply: HuddleReply = {
+      ...input,
+      id: randomUUID(),
+      createdAt: new Date().toISOString(),
+    };
+    huddleReplies.push(reply);
+    return reply;
   },
 };

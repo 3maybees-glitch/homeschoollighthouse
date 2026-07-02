@@ -15,6 +15,7 @@ export const brand = {
     chart: "Chart a Course",
     beacons: "Beacons",
     harbors: "Local Harbors",
+    huddle: "Harbor Huddle",
     captainsLog: "Captain's Log",
     premium: "Lighthouse Premium",
   },
@@ -56,6 +57,12 @@ export const brand = {
     subtitle: "Share a resource to help other families navigate",
   },
   reviews: "Signals from the Fleet",
+  huddle: {
+    title: "Harbor Huddle",
+    subtitle: "Our monthly mega-thread for premium families to swap tips, encouragement, and homeschool wisdom.",
+    freeTeaser:
+      "Preview this month's conversation below. Upgrade to read every reply and join the fleet.",
+  },
   featured: "Bright Beacons",
   featuredSubtitle: "Find Your Beacon",
   upgrade: {
