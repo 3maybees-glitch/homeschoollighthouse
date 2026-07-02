@@ -1,4 +1,4 @@
-import { createAdminClient } from "@/lib/supabase/admin";
+import { fetchNewsletterSubscriber, insertNewsletterSubscriber } from "@/lib/newsletter/supabase-rest";
 import { memoryStore } from "@/lib/store/memory-store";
 import type { NewsletterSubscriber } from "@/types/newsletter";
 
@@ -6,49 +6,34 @@ type AddSubscriberResult =
   | { subscriber: NewsletterSubscriber; isNew: boolean; storage: "supabase" }
   | { subscriber: NewsletterSubscriber; isNew: boolean; storage: "memory" };
 
+function toSubscriber(row: { id: string; email: string; created_at: string }): NewsletterSubscriber {
+  return {
+    id: row.id,
+    email: row.email,
+    createdAt: row.created_at,
+  };
+}
+
 export async function addNewsletterSubscriber(email: string): Promise<AddSubscriberResult> {
   const normalized = email.trim().toLowerCase();
-  const supabase = createAdminClient();
+  const existingResult = await fetchNewsletterSubscriber(normalized);
 
-  if (supabase) {
-    const { data: existing, error: existingError } = await supabase
-      .from("newsletter_subscribers")
-      .select("id, email, created_at")
-      .eq("email", normalized)
-      .maybeSingle();
-
-    if (existingError) {
-      throw new Error(existingError.message);
-    }
-
-    if (existing) {
+  if (existingResult.configured) {
+    if (existingResult.row) {
       return {
-        subscriber: {
-          id: existing.id,
-          email: existing.email,
-          createdAt: existing.created_at,
-        },
+        subscriber: toSubscriber(existingResult.row),
         isNew: false,
         storage: "supabase",
       };
     }
 
-    const { data, error } = await supabase
-      .from("newsletter_subscribers")
-      .insert({ email: normalized })
-      .select("id, email, created_at")
-      .single();
-
-    if (error) {
-      throw new Error(error.message);
+    const insertResult = await insertNewsletterSubscriber(normalized);
+    if (!insertResult.row) {
+      throw new Error("Supabase did not return the new newsletter subscriber.");
     }
 
     return {
-      subscriber: {
-        id: data.id,
-        email: data.email,
-        createdAt: data.created_at,
-      },
+      subscriber: toSubscriber(insertResult.row),
       isNew: true,
       storage: "supabase",
     };
