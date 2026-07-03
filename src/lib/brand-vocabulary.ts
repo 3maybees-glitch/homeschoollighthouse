@@ -17,6 +17,7 @@ export const brand = {
     beacons: "Beacons",
     harbors: "Local Harbors",
     huddle: "Harbor Huddle",
+    bookshelf: "Beacon Bookshelf",
     blog: "Fair Winds Weekly",
     captainsLog: "Captain's Log",
     premium: "Lighthouse Premium",
@@ -64,6 +65,14 @@ export const brand = {
     subtitle: "Our monthly mega-thread for premium families to swap tips, encouragement, and homeschool wisdom.",
     paywallMessage:
       "The Harbor Huddle is a premium-only space. Unlock the Full Beam to join the monthly conversation.",
+  },
+  bookshelf: {
+    title: "The Beacon Bookshelf",
+    tagline: "250 Living Books to Light the Whole Voyage",
+    subtitle:
+      "Our master chart of living classical and inspirational literature — 50 hand-picked books for every age and grade, from first read-alouds in the nursery to the great books of the senior year. Each entry gives the author, year, a one-paragraph summary, the character traits it builds, its difficulty level, and the subjects it teaches.",
+    paywallMessage:
+      "The full Beacon Bookshelf — all 250 charted books with summaries, character traits, difficulty levels, and subjects — is a premium treasure. Unlock the Full Beam to open every shelf.",
   },
   blog: {
     series: "Fair Winds Weekly",
