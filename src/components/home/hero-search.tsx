@@ -23,24 +23,29 @@ export function HeroSearch() {
 
   return (
     <form onSubmit={handleSubmit} className="w-full max-w-2xl">
-      <div className="relative">
-        <Search className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-[var(--color-muted-foreground)]" />
-        <Input
-          value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          placeholder={brand.search.placeholder}
-          className="h-14 rounded-2xl border-[var(--color-border)] bg-white/95 pl-14 pr-36 text-base text-black shadow-lg shadow-[rgba(0,31,63,0.08)] backdrop-blur focus-visible:ring-[var(--color-ring)]"
-          aria-label="Search homeschool resources"
-        />
-        <Button
-          type="submit"
-          size="sm"
-          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-xl px-5"
-        >
+      <div className="flex flex-col gap-2 sm:block sm:gap-0">
+        <div className="relative">
+          <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[var(--color-muted-foreground)] sm:left-5" />
+          <Input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder={brand.search.placeholder}
+            className="h-12 rounded-2xl border-[var(--color-border)] bg-white/95 pl-11 pr-4 text-base text-black shadow-lg shadow-[rgba(0,31,63,0.08)] backdrop-blur focus-visible:ring-[var(--color-ring)] sm:h-14 sm:pl-14 sm:pr-36"
+            aria-label="Search homeschool resources"
+          />
+          <Button
+            type="submit"
+            size="sm"
+            className="hidden rounded-xl px-5 sm:absolute sm:right-2 sm:top-1/2 sm:inline-flex sm:-translate-y-1/2"
+          >
+            {brand.search.title}
+          </Button>
+        </div>
+        <Button type="submit" className="h-11 w-full rounded-xl sm:hidden">
           {brand.search.title}
         </Button>
       </div>
-      <p className="mt-3 text-sm text-[var(--color-muted-foreground)]">{brand.search.hint}</p>
+      <p className="mt-2 hidden text-sm text-slate-400 sm:mt-3 sm:block">{brand.search.hint}</p>
     </form>
   );
 }

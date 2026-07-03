@@ -2,6 +2,7 @@ export const brand = {
   siteName: "Homeschool Lighthouse",
   tagline: "Shining the light on trusted homeschool resources",
   heroTagline: "Follow the Light to Your Family's Perfect Homeschool Path",
+  heroTaglineShort: "Find Your Perfect Homeschool Path",
   search: {
     title: "Chart Your Course",
     placeholder: "Search curricula, conferences, CLT, scholarships…",

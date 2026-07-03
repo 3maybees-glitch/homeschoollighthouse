@@ -1,40 +1,31 @@
 import Link from "next/link";
 import { brand } from "@/lib/brand-vocabulary";
+import { primaryNavItems } from "@/lib/site-nav";
 import { AuthNav } from "@/components/auth/auth-nav";
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { NavMoreMenu } from "@/components/layout/nav-more-menu";
 import { BrandLogoVideo } from "@/components/brand/brand-logo-video";
-import { Button } from "@/components/ui/button";
-
-const navItems = [
-  { href: "/browse", label: brand.nav.chart },
-  { href: "/browse?featured=1", label: brand.nav.beacons },
-  { href: "/harbors", label: brand.nav.harbors },
-  { href: "/harbor-huddle", label: brand.nav.huddle },
-  { href: "/blog", label: brand.nav.blog },
-  { href: "/account", label: brand.nav.captainsLog },
-  { href: "/pricing", label: brand.nav.premium },
-];
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/50 bg-white/85 backdrop-blur-md">
-      <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-2xl bg-[var(--color-cream)] shadow-lg shadow-[rgba(0,31,63,0.12)]">
+      <div className="relative mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2 sm:px-6">
+        <Link href="/" className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+          <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded-xl bg-[var(--color-cream)] shadow-md shadow-[rgba(0,31,63,0.1)] sm:h-10 sm:w-10 sm:rounded-2xl">
             <BrandLogoVideo className="h-full w-full" />
           </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-accent)]">
+          <div className="min-w-0">
+            <p className="hidden text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-accent)] sm:block">
               Homeschool
             </p>
-            <p className="font-display text-lg font-semibold text-[var(--color-navy-deep)]">
+            <p className="truncate font-display text-base font-semibold text-[var(--color-navy-deep)] sm:text-lg">
               {brand.siteName}
             </p>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-5 lg:flex">
-          {navItems.map((item) => (
+        <nav className="hidden items-center gap-6 lg:flex">
+          {primaryNavItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -43,15 +34,13 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
+          <NavMoreMenu />
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1 sm:gap-2">
           <div className="hidden sm:block">
             <AuthNav />
           </div>
-          <Button asChild size="sm" className="hidden sm:inline-flex">
-            <Link href="/browse">{brand.search.title}</Link>
-          </Button>
           <MobileNav />
         </div>
       </div>

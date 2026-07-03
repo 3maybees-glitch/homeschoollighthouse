@@ -52,33 +52,37 @@ export function HomeHero() {
       />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[radial-gradient(ellipse_120%_100%_at_50%_100%,rgba(42,157,143,0.15),transparent_70%)]" />
 
-      <div className="relative mx-auto grid min-h-[100dvh] max-w-7xl gap-12 px-4 pb-20 pt-28 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:pb-28 lg:pt-32">
-        <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--color-beam)] backdrop-blur">
-            <Anchor className="h-3.5 w-3.5" />
+      <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-14 pt-16 sm:px-6 sm:pb-16 lg:min-h-[calc(100dvh-3.5rem)] lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-12 lg:pb-20 lg:pt-20">
+        <div className="space-y-4 sm:space-y-5">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[var(--color-beam)] backdrop-blur sm:px-4 sm:py-1.5 sm:text-xs">
+            <Anchor className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
             {brand.ai.title}
           </div>
 
-          <div className="space-y-5">
-            <h1 className="font-display max-w-3xl text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
-              {brand.heroTagline}
+          <div className="space-y-3 sm:space-y-4">
+            <h1 className="font-display max-w-2xl text-[1.75rem] font-semibold leading-[1.12] tracking-tight sm:max-w-3xl sm:text-4xl sm:leading-[1.08] lg:text-5xl xl:text-6xl">
+              <span className="lg:hidden">{brand.heroTaglineShort}</span>
+              <span className="hidden lg:inline">{brand.heroTagline}</span>
             </h1>
-            <p className="max-w-xl text-lg leading-relaxed text-slate-300">{brand.tagline}</p>
-            <p className="text-sm font-medium text-[var(--color-beam)]">
-              {brand.stats.listings} {brand.stats.listingsLabel} waiting to guide your family
+            <p className="hidden max-w-xl text-base leading-relaxed text-slate-300 sm:block sm:text-lg">
+              {brand.tagline}
             </p>
           </div>
 
           <HeroSearch />
 
-          <div className="flex flex-wrap gap-3">
+          <p className="text-xs font-medium text-[var(--color-beam)] sm:text-sm">
+            {brand.stats.listings} {brand.stats.listingsLabel} waiting to guide your family
+          </p>
+
+          <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0">
             {quickChips.map((chip) => (
               <Link
                 key={chip.href}
                 href={chip.href}
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur transition hover:border-[var(--color-beam)]/40 hover:bg-white/15"
+                className="inline-flex shrink-0 items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-medium text-white backdrop-blur transition hover:border-[var(--color-beam)]/40 hover:bg-white/15 sm:px-4 sm:py-2 sm:text-sm"
               >
-                <chip.icon className="h-4 w-4 text-[var(--color-beam)]" />
+                <chip.icon className="h-3.5 w-3.5 text-[var(--color-beam)] sm:h-4 sm:w-4" />
                 {chip.label}
               </Link>
             ))}
