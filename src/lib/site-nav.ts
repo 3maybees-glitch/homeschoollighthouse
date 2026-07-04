@@ -8,6 +8,7 @@ export type NavItem = {
 /** Primary header links — keep this short for a clean top bar. */
 export const primaryNavItems: NavItem[] = [
   { href: "/browse", label: "Explore" },
+  { href: "/beacon-bookshelf", label: brand.nav.bookshelf },
   { href: "/harbors", label: brand.nav.harbors },
   { href: "/blog", label: "Blog" },
   { href: "/pricing", label: "Premium" },

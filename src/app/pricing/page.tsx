@@ -11,9 +11,11 @@ const freeFeatures = [
   "Near Shore filters: type, format, age",
   "Local Harbors map discovery",
   "View listing details and ratings summary",
+  "Beacon Bookshelf preview: 3 books per shelf",
 ];
 
 const premiumFeatures = [
+  "The Beacon Bookshelf: 250-book master reading list",
   "Open Waters advanced filters",
   "Philosophy, values, religion, and subject filters",
   "Search These Waters location filtering",
