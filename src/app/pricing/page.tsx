@@ -15,7 +15,7 @@ const freeFeatures = [
 ];
 
 const premiumFeatures = [
-  "The Beacon Bookshelf: 250-book master reading list",
+  "The Beacon Bookshelf: 300-book master reading list",
   "Open Waters advanced filters",
   "Philosophy, values, religion, and subject filters",
   "Search These Waters location filtering",

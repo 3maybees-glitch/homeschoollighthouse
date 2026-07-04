@@ -3,6 +3,7 @@ import { littleSailors } from "@/data/bookshelf/little-sailors";
 import { youngDeckhands } from "@/data/bookshelf/young-deckhands";
 import { midshipmen } from "@/data/bookshelf/midshipmen";
 import { firstMates } from "@/data/bookshelf/first-mates";
+import { navigators } from "@/data/bookshelf/navigators";
 import { shipsCaptains } from "@/data/bookshelf/ships-captains";
 
 /** All stages in reading order, youngest to oldest. */
@@ -11,6 +12,7 @@ export const bookshelfStages: BookshelfStage[] = [
   youngDeckhands,
   midshipmen,
   firstMates,
+  navigators,
   shipsCaptains,
 ];
 
