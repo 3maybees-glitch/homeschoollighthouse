@@ -5,10 +5,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ next?: string }>;
+  searchParams: Promise<{ next?: string; error?: string }>;
 }) {
   const params = await searchParams;
   const nextPath = params.next ?? "/account";
+  const authError =
+    params.error === "auth_callback"
+      ? "Email confirmation could not finish signing you in. Try signing in with your password below."
+      : null;
 
   return (
     <div className="mx-auto flex min-h-[70vh] max-w-md items-center px-4 py-14 sm:px-6">
@@ -18,7 +22,7 @@ export default async function LoginPage({
           <CardDescription>Sign in to your {brand.siteName} Captain&apos;s Log.</CardDescription>
         </CardHeader>
         <CardContent>
-          <AuthForm mode="login" nextPath={nextPath} />
+          <AuthForm mode="login" nextPath={nextPath} authError={authError} />
         </CardContent>
       </Card>
     </div>

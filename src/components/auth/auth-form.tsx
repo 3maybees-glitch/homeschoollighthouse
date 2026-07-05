@@ -10,7 +10,15 @@ import { Label } from "@/components/ui/label";
 
 type AuthMode = "login" | "signup";
 
-export function AuthForm({ mode, nextPath = "/account" }: { mode: AuthMode; nextPath?: string }) {
+export function AuthForm({
+  mode,
+  nextPath = "/account",
+  authError,
+}: {
+  mode: AuthMode;
+  nextPath?: string;
+  authError?: string | null;
+}) {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,10 +37,19 @@ export function AuthForm({ mode, nextPath = "/account" }: { mode: AuthMode; next
       return;
     }
 
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? window.location.origin;
+    const redirectTo = `${siteUrl}/auth/callback?next=${encodeURIComponent(nextPath)}`;
+
     const result =
       mode === "login"
         ? await supabase.auth.signInWithPassword({ email, password })
-        : await supabase.auth.signUp({ email, password });
+        : await supabase.auth.signUp({
+            email,
+            password,
+            options: {
+              emailRedirectTo: redirectTo,
+            },
+          });
 
     setLoading(false);
 
@@ -42,7 +59,9 @@ export function AuthForm({ mode, nextPath = "/account" }: { mode: AuthMode; next
     }
 
     if (mode === "signup" && !result.data.session) {
-      setMessage("Check your email to confirm your account, then sign in.");
+      setMessage(
+        "Check your email to confirm your account, then sign in. If the link spins or fails, sign in here after confirming — or ask us to resend the link.",
+      );
       return;
     }
 
@@ -94,6 +113,7 @@ export function AuthForm({ mode, nextPath = "/account" }: { mode: AuthMode; next
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
+        {authError ? <p className="text-sm text-red-600">{authError}</p> : null}
         {message ? <p className="text-sm text-red-600">{message}</p> : null}
         <Button type="submit" className="w-full" disabled={loading}>
           {loading ? "Please wait..." : mode === "login" ? "Sign In" : "Create Account"}
