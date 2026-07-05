@@ -113,7 +113,7 @@ export function HomeHero() {
               </div>
 
               <div className="grid gap-4">
-                <HeroStat label="Curriculum beacons" value="13,000+" />
+                <HeroStat label="Curriculum beacons" value={brand.stats.listings} />
                 <HeroStat label="Support groups & co-ops" value="170+" />
                 <HeroStat label="Philosophies charted" value="10+" />
               </div>
