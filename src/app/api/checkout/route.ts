@@ -28,16 +28,23 @@ export async function POST(request: Request) {
   const supabase = await createClient();
   const user = supabase ? (await supabase.auth.getUser()).data.user : null;
 
+  if (!user) {
+    return NextResponse.json(
+      { error: "Sign in before checkout so premium unlocks on your account." },
+      { status: 401 },
+    );
+  }
+
   const session = await stripe.checkout.sessions.create({
     mode,
     line_items: [{ price: priceId, quantity: 1 }],
     success_url: `${siteUrl}/account?checkout=success`,
     cancel_url: `${siteUrl}/pricing?checkout=cancelled`,
-    client_reference_id: user?.id,
-    customer_email: user?.email ?? undefined,
+    client_reference_id: user.id,
+    customer_email: user.email ?? undefined,
     metadata: {
       plan,
-      user_id: user?.id ?? "",
+      user_id: user.id,
     },
   });
 
