@@ -18,7 +18,7 @@ export function BookshelfPaywall({ lockedCount }: { lockedCount: number }) {
       <ul className="mx-auto mt-5 max-w-md space-y-2 text-left text-sm text-slate-700">
         <li className="flex items-start gap-2">
           <Lock className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" aria-hidden="true" />
-          All 250 books across five age and grade levels
+          All 300 books across six age and grade levels
         </li>
         <li className="flex items-start gap-2">
           <Lock className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" aria-hidden="true" />
