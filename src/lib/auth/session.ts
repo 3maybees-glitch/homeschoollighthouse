@@ -32,11 +32,20 @@ export async function getSessionProfile(): Promise<SessionProfile | null> {
     .maybeSingle();
 
   const tier = (profile?.subscription_tier as SubscriptionTier | undefined) ?? "free";
+  const email = profile?.email ?? user.email ?? undefined;
+
+  const ownerEmails = (process.env.OWNER_PREMIUM_EMAILS ?? "3maybees@gmail.com")
+    .split(",")
+    .map((entry) => entry.trim().toLowerCase())
+    .filter(Boolean);
+
+  const effectiveTier =
+    email && ownerEmails.includes(email.toLowerCase()) ? "premium" : tier;
 
   return {
     id: user.id,
-    email: profile?.email ?? user.email ?? undefined,
-    tier,
+    email,
+    tier: effectiveTier,
   };
 }
 
