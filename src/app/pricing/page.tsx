@@ -15,6 +15,7 @@ const freeFeatures = [
 ];
 
 const premiumFeatures = [
+  "The Credit Logbook: high school transcript & credit calculator",
   "The Beacon Bookshelf: 300-book master reading list",
   "Open Waters advanced filters",
   "Philosophy, values, religion, and subject filters",
