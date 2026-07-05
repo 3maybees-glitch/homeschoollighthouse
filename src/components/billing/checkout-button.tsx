@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import type { StripePlan } from "@/lib/stripe";
 
 export function CheckoutButton({ plan }: { plan: StripePlan }) {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
 
   const startCheckout = async () => {
@@ -15,11 +17,18 @@ export function CheckoutButton({ plan }: { plan: StripePlan }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ plan }),
       });
-      const data = await response.json();
+      const data = (await response.json()) as { url?: string; error?: string };
+
+      if (response.status === 401) {
+        router.push(`/login?next=${encodeURIComponent("/pricing")}`);
+        return;
+      }
+
       if (data.url) {
         window.location.href = data.url;
         return;
       }
+
       alert(data.error ?? "Stripe is not configured yet. Add your Stripe keys to enable checkout.");
     } finally {
       setLoading(false);
