@@ -17,6 +17,7 @@ export const primaryNavItems: NavItem[] = [
 /** Secondary links — available in the More menu and mobile drawer. */
 export const secondaryNavItems: NavItem[] = [
   { href: "/browse?featured=1", label: brand.nav.beacons },
+  { href: "/credit-logbook", label: brand.nav.creditLogbook },
   { href: "/harbor-huddle", label: brand.nav.huddle },
   { href: "/account", label: brand.nav.captainsLog },
 ];

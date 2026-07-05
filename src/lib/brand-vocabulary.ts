@@ -18,6 +18,7 @@ export const brand = {
     harbors: "Local Harbors",
     huddle: "Harbor Huddle",
     bookshelf: "Beacon Bookshelf",
+    creditLogbook: "The Credit Logbook",
     blog: "Fair Winds Weekly",
     captainsLog: "Captain's Log",
     premium: "Lighthouse Premium",
@@ -65,6 +66,14 @@ export const brand = {
     subtitle: "Our monthly mega-thread for premium families to swap tips, encouragement, and homeschool wisdom.",
     paywallMessage:
       "The Harbor Huddle is a premium-only space. Unlock the Full Beam to join the monthly conversation.",
+  },
+  creditLogbook: {
+    title: "The Credit Logbook",
+    tagline: "Chart credit hours across the high school voyage",
+    subtitle:
+      "A formal transcript worksheet for homeschool parents. Select broad curriculum subjects like Pre-Algebra, Chemistry, and Literature, assign letter grades, and watch credit hours and GPA update instantly across all four years.",
+    paywallMessage:
+      "The Credit Logbook is a premium navigation tool. Unlock the Full Beam to plan four years of courses, calculate Carnegie credit hours, track GPA, and print or export your transcript summary.",
   },
   bookshelf: {
     title: "The Beacon Bookshelf",
@@ -142,7 +151,7 @@ export const exploreRoutes = [
   {
     title: "High School Prep",
     description: "Chart a course through transcripts, credits, and college prep.",
-    href: "/browse?q=high+school",
+    href: "/credit-logbook",
   },
   {
     title: "Special Needs Navigation",
