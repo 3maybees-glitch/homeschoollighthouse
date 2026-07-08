@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "refresh-imports": "bash scripts/refresh-imports.sh",
-    "refresh-imports:verify": "npm run refresh-imports && npm run build"
+    "refresh-imports:verify": "npm run refresh-imports && npm run build",
+    "generate-weekly-blog": "node scripts/generate-weekly-blog.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
