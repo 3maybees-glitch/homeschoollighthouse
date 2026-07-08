@@ -15,7 +15,7 @@ export const stripePlans = {
     envKey: "STRIPE_PREMIUM_YEARLY_PRICE_ID",
   },
   lifetime: {
-    label: "Lifetime Beacon",
+    label: "Lifetime Lantern",
     priceLabel: "$14.99 lifetime",
     envKey: "STRIPE_PREMIUM_LIFETIME_PRICE_ID",
   },

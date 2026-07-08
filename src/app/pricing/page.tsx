@@ -51,7 +51,7 @@ export default function PricingPage() {
         <div className="grid gap-6 lg:grid-cols-3">
           <Card className="border-[var(--color-border)] bg-white/90">
             <CardHeader>
-              <CardTitle>Free Pass</CardTitle>
+              <CardTitle>{brand.pricing.freeLabel}</CardTitle>
               <CardDescription>Near Shore browsing for every family</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">

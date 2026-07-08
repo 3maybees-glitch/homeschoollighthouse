@@ -1,26 +1,57 @@
 import Link from "next/link";
 import { brand } from "@/lib/brand-vocabulary";
+import { accountNavItem, freeNavItems, premiumNavItems } from "@/lib/site-nav";
 import { listingTypeOptions } from "@/lib/directory/filter-config";
 import { BrandLogoVideo } from "@/components/brand/brand-logo-video";
 import { NewsletterSignup } from "@/components/layout/newsletter-signup";
 
-const footerLinks = [
-  { href: "/browse", label: brand.nav.chart },
-  { href: "/harbors", label: brand.nav.harbors },
-  { href: "/harbor-huddle", label: brand.nav.huddle },
-  { href: "/browse?featured=1", label: brand.featured },
-  { href: "/ai", label: brand.ai.title },
-  { href: "/pricing", label: brand.nav.premium },
-  { href: "/submit", label: brand.submit.title },
-  { href: "/account", label: brand.account.title },
+const freeFooterLinks = [
+  ...freeNavItems,
+  { href: "/submit", label: brand.submit.title, description: brand.submit.subtitle },
+  accountNavItem,
 ];
+
+const premiumFooterLinks = [
+  ...premiumNavItems,
+  { href: "/ai", label: brand.ai.title, description: brand.ai.subtitle },
+  { href: "/pricing", label: "Pricing & Plans", description: "Compare the free and Premium plans" },
+];
+
+function FooterColumn({
+  title,
+  links,
+}: {
+  title: string;
+  links: { href: string; label: string; description?: string }[];
+}) {
+  return (
+    <div>
+      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-beam)]">
+        {title}
+      </p>
+      <ul className="mt-4 space-y-2">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              title={link.description}
+              className="text-sm text-slate-400 transition hover:text-white"
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function SiteFooter() {
   return (
     <footer className="bg-[var(--color-navy-deep)] text-slate-300">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr]">
-          <div>
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.7fr_0.7fr_0.7fr]">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-4">
               <div className="h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-white/10 p-1">
                 <BrandLogoVideo className="h-full w-full" />
@@ -34,41 +65,15 @@ export function SiteFooter() {
             </p>
           </div>
 
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-beam)]">
-              Navigation
-            </p>
-            <ul className="mt-4 space-y-2">
-              {footerLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-slate-400 transition hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-beam)]">
-              Explore
-            </p>
-            <ul className="mt-4 space-y-2">
-              {listingTypeOptions.slice(0, 6).map((option) => (
-                <li key={option.value}>
-                  <Link
-                    href={`/browse/${option.value}`}
-                    className="text-sm text-slate-400 transition hover:text-white"
-                  >
-                    {option.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FooterColumn title="Free for Everyone" links={freeFooterLinks} />
+          <FooterColumn title="Premium Tools" links={premiumFooterLinks} />
+          <FooterColumn
+            title="Browse by Type"
+            links={listingTypeOptions.slice(0, 6).map((option) => ({
+              href: `/browse/${option.value}`,
+              label: option.label,
+            }))}
+          />
         </div>
 
         <div className="mt-12 grid gap-8 border-t border-white/10 pt-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">

@@ -28,7 +28,7 @@ export function CheckoutButton({ plan }: { plan: StripePlan }) {
 
   return (
     <Button onClick={startCheckout} disabled={loading} className="w-full">
-      {loading ? "Opening checkout…" : plan === "yearly" ? "Choose Annual Pass" : "Choose Lifetime Beacon"}
+      {loading ? "Opening checkout…" : plan === "yearly" ? "Choose Annual Pass" : "Choose Lifetime Lantern"}
     </Button>
   );
 }

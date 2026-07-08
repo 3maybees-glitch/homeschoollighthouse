@@ -101,8 +101,9 @@ export const brand = {
     premiumTeaser: "Upgrade to Full Beam Navigation",
     yearly: "$7.77/year",
     lifetime: "$14.99 lifetime",
+    freeLabel: "Free Search",
     yearlyLabel: "Annual Pass",
-    lifetimeLabel: "Lifetime Beacon",
+    lifetimeLabel: "Lifetime Lantern",
   },
   account: {
     title: "Captain's Log",
