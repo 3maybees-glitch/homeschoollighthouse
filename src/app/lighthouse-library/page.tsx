@@ -18,7 +18,7 @@ export const metadata = {
   description: brand.bookshelf.subtitle,
 };
 
-export default async function BeaconBookshelfPage({
+export default async function LighthouseLibraryPage({
   searchParams,
 }: {
   searchParams: Promise<{ stage?: string }>;
@@ -69,7 +69,7 @@ export default async function BeaconBookshelfPage({
             return (
               <Link
                 key={stage.id}
-                href={`/beacon-bookshelf?stage=${stage.id}`}
+                href={`/lighthouse-library?stage=${stage.id}`}
                 className={`rounded-full border px-4 py-2 text-sm font-medium transition ${
                   isActive
                     ? "border-amber-300 bg-amber-50 text-amber-900"

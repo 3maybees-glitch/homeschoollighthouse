@@ -39,8 +39,8 @@ const pricing: NavItem = {
   description: "Compare the free and Premium plans",
 };
 
-const beaconBookshelf: NavItem = {
-  href: "/beacon-bookshelf",
+const lighthouseLibrary: NavItem = {
+  href: "/lighthouse-library",
   label: brand.nav.bookshelf,
   description: "300 curated living books for every age",
   premium: true,
@@ -73,7 +73,7 @@ export const primaryNavItems: NavItem[] = [explore, localHarbors, blog, pricing]
 export const freeNavItems: NavItem[] = [explore, brightBeacons, localHarbors, blog];
 
 /** Tools included with Lighthouse Premium. */
-export const premiumNavItems: NavItem[] = [beaconBookshelf, creditLogbook, harborHuddle];
+export const premiumNavItems: NavItem[] = [lighthouseLibrary, creditLogbook, harborHuddle];
 
 /** The signed-in account page. */
 export const accountNavItem: NavItem = captainsLog;
