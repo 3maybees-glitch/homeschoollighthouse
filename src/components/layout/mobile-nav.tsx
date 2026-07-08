@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, Sparkles, X } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
-import { primaryNavItems, secondaryNavItems } from "@/lib/site-nav";
+import { accountNavItem, freeNavItems, premiumNavItems, type NavItem } from "@/lib/site-nav";
 import { Button } from "@/components/ui/button";
 
 export function MobileNav() {
@@ -12,6 +12,30 @@ export function MobileNav() {
 
   function closeMenu() {
     setOpen(false);
+  }
+
+  function renderItem(item: NavItem) {
+    return (
+      <Link
+        key={item.href}
+        href={item.href}
+        onClick={closeMenu}
+        className="rounded-xl px-3 py-2 hover:bg-[var(--color-muted)]/50"
+      >
+        <span className="flex items-center gap-2 text-sm font-medium text-[var(--color-navy-deep)]">
+          {item.label}
+          {item.premium ? (
+            <span className="inline-flex items-center gap-1 rounded-full bg-[var(--color-beam)]/30 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[var(--color-navy-deep)]">
+              <Sparkles className="h-2.5 w-2.5" />
+              Premium
+            </span>
+          ) : null}
+        </span>
+        <span className="mt-0.5 block text-xs text-[var(--color-muted-foreground)]">
+          {item.description}
+        </span>
+      </Link>
+    );
   }
 
   return (
@@ -29,36 +53,33 @@ export function MobileNav() {
       </Button>
 
       {open ? (
-        <div className="absolute left-0 right-0 top-full border-b border-[var(--color-border)] bg-white/95 backdrop-blur">
+        <div className="absolute left-0 right-0 top-full max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-[var(--color-border)] bg-white/95 backdrop-blur">
           <nav className="mx-auto max-w-7xl px-4 py-3">
-            <div className="flex flex-col gap-0.5">
-              {primaryNavItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={closeMenu}
-                  className="rounded-xl px-3 py-2.5 text-sm font-medium text-[var(--color-navy-deep)] hover:bg-[var(--color-muted)]/50"
-                >
-                  {item.label}
-                </Link>
-              ))}
+            <p className="px-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-muted-foreground)]">
+              Free for everyone
+            </p>
+            <div className="mt-1 flex flex-col gap-0.5">
+              {freeNavItems.map(renderItem)}
             </div>
 
             <p className="mt-3 px-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-muted-foreground)]">
-              More
+              Premium member tools
             </p>
             <div className="mt-1 flex flex-col gap-0.5">
-              {secondaryNavItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={closeMenu}
-                  className="rounded-xl px-3 py-2 text-sm text-[var(--color-muted-foreground)] hover:bg-[var(--color-muted)]/50 hover:text-[var(--color-navy-deep)]"
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {premiumNavItems.map(renderItem)}
+              <Link
+                href="/pricing"
+                onClick={closeMenu}
+                className="rounded-xl px-3 py-2 text-sm font-medium text-[var(--color-accent)] hover:bg-[var(--color-muted)]/50"
+              >
+                See Premium plans →
+              </Link>
             </div>
+
+            <p className="mt-3 px-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-muted-foreground)]">
+              Your account
+            </p>
+            <div className="mt-1 flex flex-col gap-0.5">{renderItem(accountNavItem)}</div>
 
             <div className="mt-3 border-t border-[var(--color-border)] pt-3">
               <Link
