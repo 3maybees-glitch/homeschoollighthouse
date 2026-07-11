@@ -1,4 +1,5 @@
 import type { ListingFormat, ListingType, PriceType } from "@/types/listing";
+import { isResourceHubUrl } from "@/lib/import/resource-hub";
 
 export type ThsmCsvRow = {
   title: string;
@@ -99,6 +100,8 @@ export function parseAgeRange(grades: string): { ageMin: number | null; ageMax: 
 }
 
 function inferListingType(title: string, url: string): ListingType {
+  if (isResourceHubUrl(url)) return "resource_hub";
+
   const haystack = `${title} ${url}`.toLowerCase();
   if (haystack.includes("transcript")) return "supplement";
   if (haystack.includes("co-op") || haystack.includes("coop")) return "coop";

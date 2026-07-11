@@ -1,5 +1,6 @@
-import type { ListingFormat, ListingType, PriceType } from "@/types/listing";
+import type { ListingFormat, PriceType } from "@/types/listing";
 import { parseAgeRange, parsePrices } from "@/lib/import/thsm-csv";
+import { inferListingTypeWithHubCheck } from "@/lib/import/resource-hub";
 
 export type FreedomHomeschoolingCsvRow = {
   title: string;
@@ -17,7 +18,7 @@ export function freedomHomeschoolingRowToSeedInput(row: FreedomHomeschoolingCsvR
 
   return {
     title: row.title.replace(/™/g, "").trim(),
-    listingType: "supplement" as ListingType,
+    listingType: inferListingTypeWithHubCheck(row.website_url, "supplement"),
     format: "online" as ListingFormat,
     priceType: resolvedPriceType,
     priceMin,

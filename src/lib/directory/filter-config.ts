@@ -12,6 +12,7 @@ export const listingTypeOptions: { value: ListingType; label: string }[] = [
   { value: "scholarship", label: "College Scholarship" },
   { value: "standardized_test", label: "Standardized Test" },
   { value: "supplement", label: "Supplement" },
+  { value: "resource_hub", label: "Resource Hubs" },
   { value: "other", label: "Other" },
 ];
 

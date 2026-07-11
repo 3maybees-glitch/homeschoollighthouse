@@ -1,5 +1,6 @@
 import type { ListingFormat, ListingType, PriceType } from "@/types/listing";
 import { parseAgeRange, parsePrices, normalizeHost } from "@/lib/import/thsm-csv";
+import { isResourceHubUrl } from "@/lib/import/resource-hub";
 
 export type HomeschoolComCsvRow = {
   title: string;
@@ -71,7 +72,9 @@ function parsePriceType(prices: string): PriceType {
 }
 
 export function homeschoolComRowToSeedInput(row: HomeschoolComCsvRow) {
-  const listingType = inferListingType(row.title, row.website_url, row.description);
+  const listingType = isResourceHubUrl(row.website_url)
+    ? "resource_hub"
+    : inferListingType(row.title, row.website_url, row.description);
   const format = inferFormat(row.title, listingType, row.description);
   const priceType = parsePriceType(row.prices_mentioned);
   const { priceMin, priceMax } =

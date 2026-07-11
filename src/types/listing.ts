@@ -6,6 +6,7 @@ export type ListingType =
   | "online_course"
   | "field_trip"
   | "supplement"
+  | "resource_hub"
   | "conference"
   | "scholarship"
   | "standardized_test"

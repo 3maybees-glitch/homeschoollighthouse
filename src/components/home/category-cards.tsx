@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   BookOpen,
   Compass,
+  Globe2,
   GraduationCap,
   HeartHandshake,
   MapPinned,
@@ -24,6 +25,7 @@ const categoryIcons: Record<string, typeof BookOpen> = {
   scholarship: Trophy,
   standardized_test: ScrollText,
   supplement: Puzzle,
+  resource_hub: Globe2,
   other: Compass,
 };
 
