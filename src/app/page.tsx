@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ListingCard } from "@/components/directory/listing-card";
 import { HomeHero } from "@/components/home/home-hero";
 import { CategoryCards } from "@/components/home/category-cards";
+import { SocialHarborsPreview } from "@/components/home/social-harbors-preview";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { PricingBand } from "@/components/home/pricing-band";
 
@@ -42,6 +43,7 @@ export default function HomePage() {
       </section>
 
       <CategoryCards />
+      <SocialHarborsPreview />
       <TestimonialsSection />
       <PricingBand />
     </div>

@@ -7,6 +7,7 @@ import {
   MapPinned,
   MonitorPlay,
   Puzzle,
+  Radio,
   ScrollText,
   Trophy,
   Users,
@@ -40,6 +41,19 @@ export function CategoryCards() {
       </div>
 
       <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <Link
+          href="/social"
+          className="group rounded-2xl border border-[var(--color-primary)]/25 bg-[linear-gradient(135deg,rgba(42,157,143,0.08),rgba(255,217,102,0.12))] p-5 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:border-[var(--color-primary)]/50 hover:shadow-lg hover:shadow-[rgba(0,31,63,0.08)]"
+        >
+          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--color-primary)]/15 text-[var(--color-primary)] transition group-hover:bg-[var(--color-primary)]/25">
+            <Radio className="h-5 w-5" />
+          </div>
+          <h3 className="mt-4 font-semibold text-[var(--color-navy-deep)]">Social Communities</h3>
+          <p className="mt-1 text-sm text-[var(--color-muted-foreground)]">
+            Top homeschool groups & channels on Facebook, YouTube, and more
+          </p>
+        </Link>
+
         {listingTypeOptions.map((option) => {
           const Icon = categoryIcons[option.value] ?? Compass;
           return (
