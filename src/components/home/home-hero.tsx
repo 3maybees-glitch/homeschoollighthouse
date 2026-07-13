@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Anchor, Compass, MapPin, ScrollText, Sparkles, Trophy, Users } from "lucide-react";
+import { Anchor, Compass, MapPin, Radio, ScrollText, Sparkles, Trophy, Users } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
 import { HeroSearch } from "@/components/home/hero-search";
 import { BrandLogoVideo } from "@/components/brand/brand-logo-video";
@@ -22,6 +22,11 @@ const quickChips = [
     label: brand.nav.harbors,
     href: "/harbors",
     icon: MapPin,
+  },
+  {
+    label: "Social Harbors",
+    href: "/social",
+    icon: Radio,
   },
   {
     label: "Conferences",

@@ -27,6 +27,12 @@ const localHarbors: NavItem = {
   description: "Co-ops, groups & events near you",
 };
 
+const socialHarbors: NavItem = {
+  href: "/social",
+  label: "Social Harbors",
+  description: "Homeschool groups & channels on Facebook, YouTube, and more",
+};
+
 const blog: NavItem = {
   href: "/blog",
   label: "Blog",
@@ -70,7 +76,7 @@ const captainsLog: NavItem = {
 export const primaryNavItems: NavItem[] = [explore, localHarbors, blog, pricing];
 
 /** Everything free to browse, in menu order. */
-export const freeNavItems: NavItem[] = [explore, brightBeacons, localHarbors, blog];
+export const freeNavItems: NavItem[] = [explore, brightBeacons, localHarbors, socialHarbors, blog];
 
 /** Tools included with Lighthouse Premium. */
 export const premiumNavItems: NavItem[] = [lighthouseLibrary, creditLogbook, harborHuddle];
