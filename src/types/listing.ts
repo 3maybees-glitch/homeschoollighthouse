@@ -9,6 +9,7 @@ export type ListingType =
   | "conference"
   | "scholarship"
   | "standardized_test"
+  | "social_media"
   | "other";
 
 export type ListingFormat = "online" | "in_person" | "hybrid";

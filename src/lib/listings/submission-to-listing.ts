@@ -20,6 +20,7 @@ function asListingType(value: string): ListingType {
     "conference",
     "scholarship",
     "standardized_test",
+    "social_media",
     "other",
   ];
   return allowed.includes(value as ListingType) ? (value as ListingType) : "other";

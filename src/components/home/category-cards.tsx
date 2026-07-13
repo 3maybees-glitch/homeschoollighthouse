@@ -8,6 +8,7 @@ import {
   MonitorPlay,
   Puzzle,
   ScrollText,
+  Share2,
   Trophy,
   Users,
 } from "lucide-react";
@@ -24,6 +25,7 @@ const categoryIcons: Record<string, typeof BookOpen> = {
   scholarship: Trophy,
   standardized_test: ScrollText,
   supplement: Puzzle,
+  social_media: Share2,
   other: Compass,
 };
 
@@ -53,7 +55,9 @@ export function CategoryCards() {
               </div>
               <h3 className="mt-4 font-semibold text-[var(--color-navy-deep)]">{option.label}</h3>
               <p className="mt-1 text-sm text-[var(--color-muted-foreground)]">
-                Browse trusted {option.label.toLowerCase()} resources
+                {option.value === "social_media"
+                  ? "YouTube, Facebook, Instagram & more"
+                  : `Browse trusted ${option.label.toLowerCase()} resources`}
               </p>
             </Link>
           );

@@ -47,6 +47,7 @@ import teachingTextbooksImportedJson from "@/data/teaching-textbooks-imported.js
 import veritasPressImportedJson from "@/data/veritas-press-imported.json";
 import apologiaImportedJson from "@/data/apologia-imported.json";
 import a2zImportedJson from "@/data/a2z-imported.json";
+import { socialChannelsToSeedInputs } from "@/data/homeschool-social-media";
 import bridgewayImportedJson from "@/data/bridgeway-imported.json";
 import ixlImportedJson from "@/data/ixl-imported.json";
 import k12ImportedJson from "@/data/k12-imported.json";
@@ -769,9 +770,11 @@ const batch6Imported = mergeSeedInputs(
 
 const batch7Imported = mergeSeedInputs(heavImported, collegePrepImported);
 
+const socialMediaImported = socialChannelsToSeedInputs();
+
 const allListings = mergeSeedInputs(
   mergeSeedInputs(mergeSeedInputs(priorImported, batch4Imported), batch5Imported),
-  mergeSeedInputs(batch6Imported, batch7Imported),
+  mergeSeedInputs(mergeSeedInputs(batch6Imported, batch7Imported), socialMediaImported),
 );
 
 export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
