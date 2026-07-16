@@ -99,7 +99,7 @@ export default async function BlogPostPage({
             />
           </a>
           <p className="text-center text-sm text-slate-500">
-            Share this graphic · Visit{" "}
+            Visit{" "}
             <a
               href="https://homeschoollighthouse.com"
               className="font-semibold text-amber-700 hover:underline"
@@ -108,13 +108,17 @@ export default async function BlogPostPage({
             >
               homeschoollighthouse.com
             </a>
-            {" · "}
-            <Link
-              href="/infographics/founding-fathers-homeschooled"
-              className="font-semibold text-amber-700 hover:underline"
-            >
-              Download the poster
-            </Link>
+            {post.slug === "founding-fathers-who-were-homeschooled" ? (
+              <>
+                {" · "}
+                <Link
+                  href="/infographics/founding-fathers-homeschooled"
+                  className="font-semibold text-amber-700 hover:underline"
+                >
+                  Download the poster
+                </Link>
+              </>
+            ) : null}
           </p>
         </div>
       ) : null}
