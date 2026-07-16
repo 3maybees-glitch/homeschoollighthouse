@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ExternalLink, MapPin, Star } from "lucide-react";
@@ -86,6 +87,24 @@ export default async function ListingPage({
 
       <Card>
         <CardHeader className="space-y-4">
+          {listing.coverImageUrl ? (
+            <a
+              href={listing.websiteUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex w-fit rounded-2xl bg-slate-50 p-3 transition hover:bg-slate-100"
+              aria-label={`Visit ${listing.title} website`}
+            >
+              <Image
+                src={listing.coverImageUrl}
+                alt={`${listing.title} logo`}
+                width={112}
+                height={112}
+                className="h-28 w-28 object-contain"
+                priority
+              />
+            </a>
+          ) : null}
           <div className="flex flex-wrap gap-2">
             <Badge>{typeLabel}</Badge>
             <Badge className="bg-slate-100 text-slate-700">{listing.format.replace("_", " ")}</Badge>

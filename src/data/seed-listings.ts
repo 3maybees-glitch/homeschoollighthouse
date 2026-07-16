@@ -205,6 +205,7 @@ export type SeedInput = {
   priceMin?: number | null;
   priceMax?: number | null;
   websiteUrl: string;
+  coverImageUrl?: string | null;
   city?: string | null;
   state?: string | null;
   ageMin?: number | null;
@@ -245,6 +246,7 @@ function buildListing(input: SeedInput, index: number): Listing {
     priceMin: input.priceMin ?? null,
     priceMax: input.priceMax ?? null,
     websiteUrl: input.websiteUrl,
+    coverImageUrl: input.coverImageUrl ?? null,
     city: input.city ?? null,
     state: input.state ?? null,
     country: "US",
@@ -263,6 +265,29 @@ function buildListing(input: SeedInput, index: number): Listing {
 }
 
 const rawListings: SeedInput[] = [
+  {
+    title: "Tied 2 Teaching",
+    listingType: "supplement",
+    format: "online",
+    priceType: "one_time",
+    priceMin: 2,
+    priceMax: 25,
+    websiteUrl: "https://tied2teaching.com",
+    coverImageUrl: "/logos/tied2teaching.png",
+    philosophies: ["eclectic", "secular"],
+    values: ["parent_led", "tech_friendly"],
+    religions: ["secular"],
+    subjects: ["writing", "language_arts", "reading", "science", "history"],
+    ageMin: 8,
+    ageMax: 14,
+    isFeatured: true,
+    ratingAvg: 4.9,
+    ratingCount: 128,
+    shortDescription:
+      "Printable and digital upper-elementary writing, reading, and science resources that make rigorous practice feel fun.",
+    description:
+      "Tied 2 Teaching creates ready-to-use printable and digital resources for upper elementary and middle grades—opinion and narrative writing prompts, close reading passages, science packs, and classroom organizers. Homeschool families use these no-prep materials for writer's workshop, centers, test prep, and enrichment. Visit tied2teaching.com for the full shop of ELA, science, and seasonal activities.",
+  },
   { title: "Saxon Math", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 65, priceMax: 120, websiteUrl: "https://www.hmhco.com/programs/saxon-math", philosophies: ["classical", "eclectic"], subjects: ["math"], ageMin: 5, ageMax: 18, isFeatured: true, religions: ["secular", "christian"] },
   { title: "Math-U-See", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 44, priceMax: 152, websiteUrl: "https://mathusee.com", philosophies: ["eclectic"], subjects: ["math"], values: ["parent_led"], ageMin: 4, ageMax: 18, isFeatured: true },
   { title: "Singapore Math", listingType: "curriculum", format: "online", priceType: "one_time", priceMin: 13, priceMax: 95, websiteUrl: "https://www.singaporemath.com", philosophies: ["classical"], subjects: ["math"], ageMin: 5, ageMax: 14 },
@@ -781,5 +806,8 @@ export function getListingBySlug(slug: string) {
 }
 
 export function getFeaturedListings(limit = 6) {
-  return seedListings.filter((listing) => listing.isFeatured).slice(0, limit);
+  const featured = seedListings.filter((listing) => listing.isFeatured);
+  const pinned = featured.filter((listing) => listing.slug === "tied-2-teaching");
+  const rest = featured.filter((listing) => listing.slug !== "tied-2-teaching");
+  return [...pinned, ...rest].slice(0, limit);
 }

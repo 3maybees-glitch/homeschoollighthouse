@@ -23,12 +23,23 @@ export function getListingBySlug(slug: string): Listing | null {
   return seedListings.find((listing) => listing.slug === slug) ?? null;
 }
 
+const PINNED_FEATURED_SLUGS = ["tied-2-teaching"];
+
+function pinFeaturedOrder(listings: Listing[]) {
+  const pinned = PINNED_FEATURED_SLUGS.flatMap((slug) =>
+    listings.filter((listing) => listing.slug === slug),
+  );
+  const pinnedSlugs = new Set(pinned.map((listing) => listing.slug));
+  const rest = listings.filter((listing) => !pinnedSlugs.has(listing.slug));
+  return [...pinned, ...rest];
+}
+
 export function getFeaturedListings(limit = 6) {
-  const featured = getAllListings().filter((listing) => listing.isFeatured);
+  const featured = pinFeaturedOrder(getAllListings().filter((listing) => listing.isFeatured));
   if (featured.length >= limit) {
     return featured.slice(0, limit);
   }
-  return getSeedFeatured(limit);
+  return pinFeaturedOrder(getSeedFeatured(limit));
 }
 
 export function getAllListingSlugs(): string[] {
