@@ -25,6 +25,13 @@ export async function generateMetadata({
     title: post.title,
     description: post.excerpt,
     keywords: post.tags,
+    openGraph: post.coverImageUrl
+      ? {
+          title: post.title,
+          description: post.excerpt,
+          images: [{ url: post.coverImageUrl, alt: post.coverImageAlt ?? post.title }],
+        }
+      : undefined,
   };
 }
 
@@ -75,6 +82,42 @@ export default async function BlogPostPage({
           </Link>
         ))}
       </div>
+
+      {post.coverImageUrl ? (
+        <div className="mt-8 space-y-3">
+          <a
+            href="https://homeschoollighthouse.com"
+            target="_blank"
+            rel="noreferrer"
+            className="block overflow-hidden rounded-2xl border border-slate-200 shadow-sm"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.coverImageUrl}
+              alt={post.coverImageAlt ?? post.title}
+              className="h-auto w-full"
+            />
+          </a>
+          <p className="text-center text-sm text-slate-500">
+            Share this graphic · Visit{" "}
+            <a
+              href="https://homeschoollighthouse.com"
+              className="font-semibold text-amber-700 hover:underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              homeschoollighthouse.com
+            </a>
+            {" · "}
+            <Link
+              href="/infographics/founding-fathers-homeschooled"
+              className="font-semibold text-amber-700 hover:underline"
+            >
+              Download the poster
+            </Link>
+          </p>
+        </div>
+      ) : null}
 
       <div className="mt-10 border-t border-slate-200 pt-10">
         <BlogPostContent post={post} />

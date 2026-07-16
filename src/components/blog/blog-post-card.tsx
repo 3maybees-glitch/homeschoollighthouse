@@ -17,6 +17,17 @@ export function BlogPostCard({ post }: { post: BlogPost }) {
         </span>
       </div>
 
+      {post.coverImageUrl ? (
+        <Link href={`/blog/${post.slug}`} className="mt-4 block overflow-hidden rounded-2xl border border-slate-100">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={post.coverImageUrl}
+            alt={post.coverImageAlt ?? post.title}
+            className="aspect-[4/3] w-full object-cover object-top"
+          />
+        </Link>
+      ) : null}
+
       <h2 className="mt-4 font-display text-2xl font-bold text-slate-950">
         <Link href={`/blog/${post.slug}`} className="hover:text-amber-800">
           {post.title}

@@ -1,5 +1,31 @@
 [
   {
+    "id": "blog-2026-founding-fathers-infographic",
+    "slug": "founding-fathers-who-were-homeschooled",
+    "title": "Founding Fathers Who Were Homeschooled — A Shareable Infographic",
+    "excerpt": "Washington, Jefferson, Madison, Patrick Henry, John Quincy Adams, and Franklin all learned outside a modern classroom. Download our Homeschool Lighthouse infographic and share the story.",
+    "body": [
+      "Home education is not a new experiment. Several of America's Founding Fathers learned primarily at home with parents and tutors — building the habits of reading, debate, and self-direction that later shaped a republic.",
+      "George Washington was tutored at home and never attended college. Thomas Jefferson's early formation came through home tutoring before William & Mary. James Madison studied on the family plantation with tutor Donald Robertson. Patrick Henry was educated at home by his father. John Quincy Adams was taught largely by Abigail Adams during the family's diplomatic years abroad. Benjamin Franklin had only a brief stretch of formal schooling and then largely taught himself.",
+      "Those stories are not a claim that every founder was \"homeschooled\" in today's sense. Formal schools were scarce, tutors were common, and self-education was often the path. The point for modern families is simpler: meaningful learning has always happened outside institutional walls when adults take responsibility for a child's formation.",
+      "If you are charting your own crew's course — curriculum, co-ops, college prep, or local harbors — start at https://homeschoollighthouse.com. You can also download and share the full poster from our infographic page.",
+      "Fair winds this week, captain. The light that guided a nation still shines for families who choose to teach at home — and we will see you next dispatch with more homeschool navigation."
+    ],
+    "tags": [
+      "history",
+      "homeschool-encouragement",
+      "founding-fathers",
+      "infographic",
+      "american-history"
+    ],
+    "weekKey": "2026-W29",
+    "authorName": "Lighthouse Crew",
+    "publishedAt": "2026-07-16T12:00:00.000Z",
+    "isPublished": true,
+    "coverImageUrl": "/infographics/founding-fathers-homeschooled.png",
+    "coverImageAlt": "Founding Fathers Who Were Homeschooled infographic from Homeschool Lighthouse"
+  },
+  {
     "id": "blog-2026-w29",
     "slug": "fair-winds-weekly-high-school-transcript-charts",
     "title": "Fair Winds Weekly — High School Transcript Charts Without Losing Your Heading",

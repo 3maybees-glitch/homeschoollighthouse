@@ -9,4 +9,6 @@ export interface BlogPost {
   authorName: string;
   publishedAt: string;
   isPublished: boolean;
+  coverImageUrl?: string | null;
+  coverImageAlt?: string | null;
 }
