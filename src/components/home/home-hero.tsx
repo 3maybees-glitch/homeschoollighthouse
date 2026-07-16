@@ -47,7 +47,7 @@ const quickChips = [
 
 export function HomeHero() {
   return (
-    <section className="relative overflow-hidden border-b border-white/40 bg-[var(--color-navy)] text-white">
+    <section className="relative overflow-x-clip border-b border-white/40 bg-[var(--color-navy)] text-white">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_20%,rgba(255,217,102,0.18),transparent_55%)]" />
       <motion.div
         className="hero-beam pointer-events-none absolute inset-0 opacity-70"
@@ -57,15 +57,15 @@ export function HomeHero() {
       />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[radial-gradient(ellipse_120%_100%_at_50%_100%,rgba(42,157,143,0.15),transparent_70%)]" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-14 pt-16 sm:px-6 sm:pb-16 lg:min-h-[calc(100dvh-3.5rem)] lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-12 lg:pb-20 lg:pt-20">
-        <div className="space-y-4 sm:space-y-5">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[var(--color-beam)] backdrop-blur sm:px-4 sm:py-1.5 sm:text-xs">
-            <Anchor className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-            {brand.ai.title}
+      <div className="relative mx-auto grid w-full max-w-7xl gap-8 px-4 pb-14 pt-16 sm:px-6 sm:pb-16 lg:min-h-[calc(100dvh-3.5rem)] lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-center lg:gap-12 lg:pb-20 lg:pt-20">
+        <div className="min-w-0 space-y-4 sm:space-y-5">
+          <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[var(--color-beam)] backdrop-blur sm:px-4 sm:py-1.5 sm:text-xs">
+            <Anchor className="h-3 w-3 shrink-0 sm:h-3.5 sm:w-3.5" />
+            <span className="truncate">{brand.ai.title}</span>
           </div>
 
-          <div className="space-y-3 sm:space-y-4">
-            <h1 className="font-display max-w-2xl text-[1.75rem] font-semibold leading-[1.12] tracking-tight sm:max-w-3xl sm:text-4xl sm:leading-[1.08] lg:text-5xl xl:text-6xl">
+          <div className="min-w-0 space-y-3 sm:space-y-4">
+            <h1 className="font-display max-w-full text-balance text-[1.65rem] font-semibold leading-[1.15] tracking-tight sm:max-w-3xl sm:text-4xl sm:leading-[1.08] lg:text-5xl xl:text-6xl">
               <span className="lg:hidden">{brand.heroTaglineShort}</span>
               <span className="hidden lg:inline">{brand.heroTagline}</span>
             </h1>
@@ -80,17 +80,19 @@ export function HomeHero() {
             {brand.stats.listings} {brand.stats.listingsLabel} waiting to guide your family
           </p>
 
-          <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0 sm:pb-0">
-            {quickChips.map((chip) => (
-              <Link
-                key={chip.href}
-                href={chip.href}
-                className="inline-flex shrink-0 items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-medium text-white backdrop-blur transition hover:border-[var(--color-beam)]/40 hover:bg-white/15 sm:px-4 sm:py-2 sm:text-sm"
-              >
-                <chip.icon className="h-3.5 w-3.5 text-[var(--color-beam)] sm:h-4 sm:w-4" />
-                {chip.label}
-              </Link>
-            ))}
+          <div className="max-w-full overflow-x-auto overscroll-x-contain [-ms-overflow-style:none] [scrollbar-width:none] sm:overflow-visible [&::-webkit-scrollbar]:hidden">
+            <div className="flex w-max min-w-0 gap-2 pb-1 sm:w-full sm:flex-wrap sm:pb-0">
+              {quickChips.map((chip) => (
+                <Link
+                  key={chip.href}
+                  href={chip.href}
+                  className="inline-flex shrink-0 items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-medium text-white backdrop-blur transition hover:border-[var(--color-beam)]/40 hover:bg-white/15 sm:px-4 sm:py-2 sm:text-sm"
+                >
+                  <chip.icon className="h-3.5 w-3.5 text-[var(--color-beam)] sm:h-4 sm:w-4" />
+                  {chip.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
