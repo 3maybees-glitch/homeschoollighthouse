@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Star, MapPin, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { Star, MapPin, ArrowUpRight, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { formatAgeRange, formatPrice } from "@/lib/utils";
@@ -16,6 +17,23 @@ export function ListingCard({ listing }: { listing: Listing }) {
       <CardHeader>
         <div className="flex items-start justify-between gap-3">
           <div className="space-y-2">
+            {listing.coverImageUrl ? (
+              <a
+                href={listing.websiteUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mb-1 inline-flex rounded-xl bg-[var(--color-muted)]/40 p-2 transition hover:bg-[var(--color-muted)]/70"
+                aria-label={`Visit ${listing.title} website`}
+              >
+                <Image
+                  src={listing.coverImageUrl}
+                  alt={`${listing.title} logo`}
+                  width={72}
+                  height={72}
+                  className="h-[72px] w-[72px] object-contain"
+                />
+              </a>
+            ) : null}
             <div className="flex flex-wrap gap-2">
               <Badge className="bg-[var(--color-secondary)]/10 text-[var(--color-secondary)]">
                 {typeLabel}
@@ -64,6 +82,15 @@ export function ListingCard({ listing }: { listing: Listing }) {
             </Badge>
           ))}
         </div>
+        <a
+          href={listing.websiteUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-1.5 font-medium text-[var(--color-secondary)] transition hover:text-[var(--color-primary)]"
+        >
+          Visit website
+          <ExternalLink className="h-3.5 w-3.5" />
+        </a>
       </CardContent>
     </Card>
   );
