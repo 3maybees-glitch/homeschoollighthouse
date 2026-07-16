@@ -29,9 +29,9 @@ export function tied2TeachingRowToSeedInput(row: Tied2TeachingCsvRow) {
     websiteUrl: row.website_url,
     ageMin,
     ageMax,
-    philosophies: ["eclectic", "secular"],
+    philosophies: ["eclectic", "religious"],
     values: ["parent_led", "tech_friendly"],
-    religions: ["secular"],
+    religions: ["christian"],
     subjects: inferSubjects(row.title, row.description),
     description: descriptionParts.join(" "),
     shortDescription:
