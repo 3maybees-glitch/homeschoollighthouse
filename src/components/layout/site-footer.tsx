@@ -8,6 +8,11 @@ import { NewsletterSignup } from "@/components/layout/newsletter-signup";
 const freeFooterLinks = [
   ...freeNavItems,
   { href: "/submit", label: brand.submit.title, description: brand.submit.subtitle },
+  {
+    href: "/advertise",
+    label: brand.advertise.title,
+    description: brand.advertise.subtitle,
+  },
   accountNavItem,
 ];
 

@@ -91,6 +91,20 @@ export const brand = {
   },
   featured: "Bright Beacons",
   featuredSubtitle: "Find Your Beacon",
+  advertise: {
+    title: "Claim a Bright Beacon",
+    subtitle:
+      "Put your homeschool business in one of eight exclusive homepage spots — where families start their voyage.",
+    openSpotLabel: "Open Beacon Spot",
+    openSpotHeadline: "Advertise here",
+    openSpotBody:
+      "Reach families exploring our directory. Claim one of eight exclusive Bright Beacon spots.",
+    cta: "See advertising benefits",
+    monthly: "$97/month",
+    yearly: "$797/year",
+    yearlyNote: "Save two months with an annual Beacon",
+    spotCount: 8,
+  },
   upgrade: {
     title: "Unlock the Full Beam",
     subtitle: "Get advanced filters, saved searches, and full navigation tools",
