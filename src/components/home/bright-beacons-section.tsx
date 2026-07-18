@@ -33,7 +33,7 @@ export function BrightBeaconsSection() {
           <Button asChild variant="outline">
             <Link href="/browse?featured=1">View all beacons</Link>
           </Button>
-          <Button asChild variant="secondary">
+          <Button asChild variant="secondary" className="text-white">
             <Link href="/advertise">{brand.advertise.cta}</Link>
           </Button>
         </div>
