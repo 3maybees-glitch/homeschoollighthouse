@@ -9,7 +9,8 @@
     "lint": "next lint",
     "refresh-imports": "bash scripts/refresh-imports.sh",
     "refresh-imports:verify": "npm run refresh-imports && npm run build",
-    "generate-weekly-blog": "node scripts/generate-weekly-blog.mjs"
+    "generate-weekly-blog": "node scripts/generate-weekly-blog.mjs",
+    "generate-pwa-icons": "python3 scripts/generate-pwa-icons.py"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
@@ -22,6 +23,7 @@
     "@radix-ui/react-slider": "^1.3.5",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tabs": "^1.1.12",
+    "@serwist/next": "^9.5.11",
     "@supabase/ssr": "^0.12.0",
     "@supabase/supabase-js": "^2.110.0",
     "@vercel/analytics": "^2.0.1",
@@ -35,6 +37,7 @@
     "react-dom": "^19.1.0",
     "react-leaflet": "^5.0.0",
     "resend": "^6.16.0",
+    "serwist": "^9.5.11",
     "stripe": "^18.2.1",
     "tailwind-merge": "^3.3.1"
   },
