@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" role="img" aria-label="Homeschool Lighthouse">
+  <defs>
+    <radialGradient id="beamCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="18%" stop-color="#fff6cc"/>
+      <stop offset="45%" stop-color="#ffd966" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#ffd966" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="beamWide" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd966" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#e6b422" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#e6b422" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldFill" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#eecf78"/>
+      <stop offset="1" stop-color="#c99a2e"/>
+    </linearGradient>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" fill="#001428"/>
+
+  <!-- Mark group centered with safe-zone padding for maskable crops -->
+  <g transform="translate(56 48) scale(1.56)">
+
+    <!-- Beam field -->
+    <g filter="url(#softGlow)" opacity="0.75">
+      <ellipse cx="152" cy="58" rx="92" ry="72" fill="url(#beamWide)"/>
+      <path d="M152 58 L228 8 L228 108 Z" fill="#ffd966" opacity="0.22"/>
+      <path d="M152 58 L248 36 L248 80 Z" fill="#ffd966" opacity="0.16"/>
+    </g>
+    <circle cx="152" cy="58" r="34" fill="url(#beamCore)"/>
+    <circle cx="152" cy="58" r="14" fill="#ffffff"/>
+
+    <!-- House -->
+    <g transform="translate(8 154)">
+      <rect x="0" y="28" width="72" height="54" fill="url(#goldFill)"/>
+      <path d="M-6 28 L36 0 L78 28 Z" fill="url(#goldFill)"/>
+      <rect x="6" y="6" width="14" height="20" fill="url(#goldFill)"/>
+      <rect x="26" y="50" width="20" height="32" rx="1.5" fill="#001428"/>
+    </g>
+
+    <!-- Lighthouse -->
+    <g transform="translate(88 72)">
+      <rect x="0" y="136" width="128" height="18" fill="url(#goldFill)"/>
+      <path d="M10 136 L18 78 L110 78 L118 136 Z" fill="url(#goldFill)"/>
+      <rect x="22" y="68" width="84" height="8" fill="#001428" opacity="0.28"/>
+      <path d="M26 78 L34 24 L94 24 L102 78 Z" fill="url(#goldFill)"/>
+      <rect x="34" y="14" width="60" height="8" fill="#001428" opacity="0.28"/>
+      <rect x="16" y="8" width="96" height="10" fill="url(#goldFill)"/>
+      <rect x="34" y="-2" width="60" height="18" fill="url(#goldFill)"/>
+      <rect x="42" y="4" width="44" height="8" rx="1" fill="#001428" opacity="0.35"/>
+    </g>
+  </g>
+</svg>

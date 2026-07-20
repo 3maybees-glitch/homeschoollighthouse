@@ -9,7 +9,8 @@
     "lint": "next lint",
     "refresh-imports": "bash scripts/refresh-imports.sh",
     "refresh-imports:verify": "npm run refresh-imports && npm run build",
-    "generate-weekly-blog": "node scripts/generate-weekly-blog.mjs"
+    "generate-weekly-blog": "node scripts/generate-weekly-blog.mjs",
+    "generate-pwa-icons": "python3 scripts/generate-pwa-icons.py"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
