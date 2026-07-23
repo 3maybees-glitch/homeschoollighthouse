@@ -288,6 +288,29 @@ const rawListings: SeedInput[] = [
     description:
       "Tied 2 Teaching creates ready-to-use printable and digital resources for upper elementary and middle grades—opinion and narrative writing prompts, close reading passages, science packs, and classroom organizers. Homeschool families use these no-prep materials for writer's workshop, centers, test prep, and enrichment. Visit tied2teaching.com for the full shop of ELA, science, and seasonal activities.",
   },
+  {
+    title: "Faith & Freedom World Maps",
+    listingType: "supplement",
+    format: "online",
+    priceType: "one_time",
+    priceMin: 5,
+    priceMax: 25,
+    websiteUrl: "https://www.etsy.com/shop/MaybeeCreates",
+    coverImageUrl: "/logos/maybee-creations.jpg",
+    philosophies: ["religious", "classical", "charlotte_mason"],
+    values: ["parent_led", "screen_free"],
+    religions: ["christian"],
+    subjects: ["history", "geography"],
+    ageMin: 6,
+    ageMax: 18,
+    isFeatured: true,
+    ratingAvg: 4.9,
+    ratingCount: 64,
+    shortDescription:
+      "Printable Faith & Freedom discovery maps — Soul Explorer Bible maps and Liberty Explorer history maps on Etsy.",
+    description:
+      "Faith & Freedom World Maps from Maybee Creates are printable educational discovery maps for Christian and civics-minded homeschool families. The Faith line (Soul Explorer) walks Scripture category by category with Bible world maps and adventure guides. The Freedom line (Liberty Explorer) charts founders, turning points, and American and world history. Faith and Freedom maps only — digital downloads on Etsy at MaybeeCreates.",
+  },
   { title: "Saxon Math", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 65, priceMax: 120, websiteUrl: "https://www.hmhco.com/programs/saxon-math", philosophies: ["classical", "eclectic"], subjects: ["math"], ageMin: 5, ageMax: 18, isFeatured: true, religions: ["secular", "christian"] },
   { title: "Math-U-See", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 44, priceMax: 152, websiteUrl: "https://mathusee.com", philosophies: ["eclectic"], subjects: ["math"], values: ["parent_led"], ageMin: 4, ageMax: 18, isFeatured: true },
   { title: "Singapore Math", listingType: "curriculum", format: "online", priceType: "one_time", priceMin: 13, priceMax: 95, websiteUrl: "https://www.singaporemath.com", philosophies: ["classical"], subjects: ["math"], ageMin: 5, ageMax: 14 },
@@ -805,9 +828,14 @@ export function getListingBySlug(slug: string) {
   return seedListings.find((listing) => listing.slug === slug) ?? null;
 }
 
+const PINNED_FEATURED_SLUGS = ["tied-2-teaching", "faith-freedom-world-maps"];
+
 export function getFeaturedListings(limit = 6) {
   const featured = seedListings.filter((listing) => listing.isFeatured);
-  const pinned = featured.filter((listing) => listing.slug === "tied-2-teaching");
-  const rest = featured.filter((listing) => listing.slug !== "tied-2-teaching");
+  const pinned = PINNED_FEATURED_SLUGS.flatMap((slug) =>
+    featured.filter((listing) => listing.slug === slug),
+  );
+  const pinnedSlugs = new Set(pinned.map((listing) => listing.slug));
+  const rest = featured.filter((listing) => !pinnedSlugs.has(listing.slug));
   return [...pinned, ...rest].slice(0, limit);
 }
