@@ -115,7 +115,7 @@ export function HomeHero() {
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-beam)]">
                     Safe Harbor
                   </p>
-                  <p className="font-display text-2xl font-semibold">Your family&apos;s compass</p>
+                  <p className="font-display text-2xl font-semibold">Your Family&apos;s Guiding Light</p>
                 </div>
               </div>
 
