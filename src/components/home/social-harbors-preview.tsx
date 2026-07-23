@@ -29,12 +29,20 @@ export function SocialHarborsPreview() {
               short descriptions so you know what each one offers.
             </p>
           </div>
-          <Button asChild variant="outline">
-            <Link href="/social">
-              View all {totalChannels} channels
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
+          <div className="flex flex-wrap gap-3">
+            <Button asChild variant="outline">
+              <Link href="/social#lighthouse-signals">
+                <PlatformIcon platform="x" className="h-4 w-4" />
+                Our X posts
+              </Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/social">
+                View all {totalChannels} channels
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">

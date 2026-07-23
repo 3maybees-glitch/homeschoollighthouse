@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { brand } from "@/lib/brand-vocabulary";
+import { brandSocial } from "@/lib/brand-social";
 import { Button } from "@/components/ui/button";
 import {
   getSocialPlatformGroups,
   getTotalSocialChannelCount,
 } from "@/data/homeschool-social-media";
 import { SocialPlatformTabs } from "@/components/social/social-platform-tabs";
+import { LighthouseSignals } from "@/components/social/lighthouse-signals";
 
 export const metadata: Metadata = {
   title: "Homeschool Social Media Communities",
   description:
-    "Top homeschool Facebook groups, YouTube channels, Instagram accounts, TikTok creators, Pinterest boards, Reddit communities, Discord servers, and X accounts — curated for families.",
+    "Top homeschool Facebook groups, YouTube channels, Instagram accounts, TikTok creators, Pinterest boards, Reddit communities, Discord servers, and X accounts — plus live posts from Homeschool Lighthouse on X.",
 };
 
 export default function SocialPage() {
@@ -34,7 +36,12 @@ export default function SocialPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild variant="secondary">
-              <Link href="/browse?types=support_group">{brand.nav.harbors}</Link>
+              <Link href="#lighthouse-signals">See our X posts</Link>
+            </Button>
+            <Button asChild variant="outline" className="border-white/20 bg-white/10 text-white hover:bg-white/15">
+              <a href={brandSocial.x.url} target="_blank" rel="noopener noreferrer">
+                Follow @{brandSocial.x.handle}
+              </a>
             </Button>
             <Button asChild variant="outline" className="border-white/20 bg-white/10 text-white hover:bg-white/15">
               <Link href="/">Back to home</Link>
@@ -45,6 +52,7 @@ export default function SocialPage() {
       </section>
 
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+        <LighthouseSignals />
         <SocialPlatformTabs groups={groups} />
 
         <section className="mt-16 rounded-3xl border border-[var(--color-border)] bg-[var(--color-cream)]/60 p-8 text-center">
