@@ -303,7 +303,7 @@ const rawListings: SeedInput[] = [
     subjects: ["history", "geography"],
     ageMin: 6,
     ageMax: 18,
-    isFeatured: true,
+    isFeatured: false,
     ratingAvg: 4.9,
     ratingCount: 64,
     shortDescription:
@@ -828,7 +828,7 @@ export function getListingBySlug(slug: string) {
   return seedListings.find((listing) => listing.slug === slug) ?? null;
 }
 
-const PINNED_FEATURED_SLUGS = ["tied-2-teaching", "faith-freedom-world-maps"];
+const PINNED_FEATURED_SLUGS = ["tied-2-teaching"];
 
 export function getFeaturedListings(limit = 6) {
   const featured = seedListings.filter((listing) => listing.isFeatured);
