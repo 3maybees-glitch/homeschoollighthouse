@@ -100,8 +100,8 @@ export const brand = {
     openSpotBody:
       "Reach families exploring our directory. Claim one of eight exclusive Bright Beacon spots.",
     cta: "See advertising benefits",
-    monthly: "$97/month",
-    yearly: "$797/year",
+    monthly: "$27/month",
+    yearly: "$270/year",
     yearlyNote: "Save two months with an annual Beacon",
     spotCount: 8,
   },
