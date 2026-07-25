@@ -44,6 +44,6 @@ export const brightBeaconUpsells = [
     title: "Founding Beacon (annual)",
     price: "Included with yearly",
     description:
-      "Lock your spot for 12 months at $797, keep priority renewal, and receive one complimentary Bulletin Spotlight.",
+      "Lock your spot for 12 months at $270, keep priority renewal, and receive one complimentary Bulletin Spotlight.",
   },
 ] as const;
