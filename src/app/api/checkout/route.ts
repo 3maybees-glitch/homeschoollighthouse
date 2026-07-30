@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getStripe, stripePlans, type StripePlan } from "@/lib/stripe";
+import { getStripe, isOneTimePlan, stripePlans, type StripePlan } from "@/lib/stripe";
 import { createClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
@@ -13,6 +13,10 @@ export async function POST(request: Request) {
 
   const body = (await request.json()) as { plan?: StripePlan };
   const plan = body.plan ?? "yearly";
+  if (!(plan in stripePlans)) {
+    return NextResponse.json({ error: "Unknown plan." }, { status: 400 });
+  }
+
   const priceId = process.env[stripePlans[plan].envKey];
 
   if (!priceId) {
@@ -23,7 +27,15 @@ export async function POST(request: Request) {
   }
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-  const mode = plan === "lifetime" ? "payment" : "subscription";
+  const mode = isOneTimePlan(plan) ? "payment" : "subscription";
+  const successUrl =
+    plan === "navigator"
+      ? `${siteUrl}/navigator?checkout=success`
+      : `${siteUrl}/account?checkout=success`;
+  const cancelUrl =
+    plan === "navigator"
+      ? `${siteUrl}/navigator?checkout=cancelled`
+      : `${siteUrl}/pricing?checkout=cancelled`;
 
   const supabase = await createClient();
   const user = supabase ? (await supabase.auth.getUser()).data.user : null;
@@ -31,8 +43,8 @@ export async function POST(request: Request) {
   const session = await stripe.checkout.sessions.create({
     mode,
     line_items: [{ price: priceId, quantity: 1 }],
-    success_url: `${siteUrl}/account?checkout=success`,
-    cancel_url: `${siteUrl}/pricing?checkout=cancelled`,
+    success_url: successUrl,
+    cancel_url: cancelUrl,
     client_reference_id: user?.id,
     customer_email: user?.email ?? undefined,
     metadata: {

@@ -9,6 +9,7 @@ import type {
 } from "@/types/community";
 import type { NewsletterSubscriber } from "@/types/newsletter";
 import type { Listing } from "@/types/listing";
+import type { NavigatorChart, NavigatorEntitlement } from "@/types/navigator";
 import { seedHuddleReplies, seedHuddles } from "@/data/seed-huddle";
 import { seedReviews } from "@/data/seed-reviews";
 import {
@@ -26,6 +27,8 @@ const publishedListings: Listing[] = [];
 const favorites: Favorite[] = [];
 const savedSearches: SavedSearch[] = [];
 const newsletterSubscribers: NewsletterSubscriber[] = [];
+const navigatorEntitlements = new Map<string, NavigatorEntitlement>();
+const navigatorCharts: NavigatorChart[] = [];
 
 export const memoryStore = {
   listReviews(listingId?: string, listingSlug?: string) {
@@ -201,5 +204,36 @@ export const memoryStore = {
     };
     huddleReplies.push(reply);
     return reply;
+  },
+
+  getNavigatorEntitlement(userId: string) {
+    return navigatorEntitlements.get(userId) ?? null;
+  },
+
+  grantNavigatorEntitlement(userId: string, entitlement: NavigatorEntitlement) {
+    navigatorEntitlements.set(userId, entitlement);
+    return entitlement;
+  },
+
+  listNavigatorCharts(userId: string) {
+    return navigatorCharts
+      .filter((chart) => chart.userId === userId)
+      .sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+  },
+
+  getNavigatorChart(userId: string, id?: string) {
+    const charts = this.listNavigatorCharts(userId);
+    if (id) return charts.find((chart) => chart.id === id) ?? null;
+    return charts[0] ?? null;
+  },
+
+  saveNavigatorChart(chart: NavigatorChart) {
+    const index = navigatorCharts.findIndex((item) => item.id === chart.id);
+    if (index === -1) {
+      navigatorCharts.unshift(chart);
+    } else {
+      navigatorCharts[index] = chart;
+    }
+    return chart;
   },
 };

@@ -56,7 +56,28 @@ export default async function AccountPage() {
                   </Button>
                 </>
               )}
+              <Button asChild variant="outline">
+                <Link href="/navigator">{brand.navigator.title}</Link>
+              </Button>
             </div>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>{brand.navigator.title}</CardTitle>
+            <CardDescription>
+              Standalone academic matching chart — saved under your password-protected profile.
+              Separate from Full Beam membership.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-sm text-[var(--color-muted-foreground)]">
+              {brand.navigator.privacy}
+            </p>
+            <Button asChild>
+              <Link href="/navigator">Open The Navigator · {brand.navigator.price}</Link>
+            </Button>
           </CardContent>
         </Card>
 

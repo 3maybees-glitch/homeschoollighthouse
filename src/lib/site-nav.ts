@@ -59,6 +59,12 @@ const creditLogbook: NavItem = {
   premium: true,
 };
 
+const navigator: NavItem = {
+  href: "/navigator",
+  label: brand.nav.navigator,
+  description: "Academic profile matching — 3 choices per subject until graduation",
+};
+
 const harborHuddle: NavItem = {
   href: "/harbor-huddle",
   label: brand.nav.huddle,
@@ -76,13 +82,16 @@ const captainsLog: NavItem = {
 export const primaryNavItems: NavItem[] = [explore, localHarbors, blog, pricing];
 
 /** Everything free to browse, in menu order. */
-export const freeNavItems: NavItem[] = [explore, brightBeacons, localHarbors, socialHarbors, blog];
+export const freeNavItems: NavItem[] = [explore, brightBeacons, navigator, localHarbors, socialHarbors, blog];
 
 /** Tools included with Lighthouse Premium. */
 export const premiumNavItems: NavItem[] = [lighthouseLibrary, creditLogbook, harborHuddle];
+
+/** Standalone paid products (not Full Beam). */
+export const standaloneNavItems: NavItem[] = [navigator];
 
 /** The signed-in account page. */
 export const accountNavItem: NavItem = captainsLog;
 
 /** Extra free links that aren't in the primary top bar (for the More menu). */
-export const moreFreeNavItems: NavItem[] = [brightBeacons];
+export const moreFreeNavItems: NavItem[] = [brightBeacons, navigator];

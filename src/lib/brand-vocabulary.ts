@@ -19,6 +19,7 @@ export const brand = {
     huddle: "Harbor Huddle",
     bookshelf: "Lighthouse Library",
     creditLogbook: "The Credit Logbook",
+    navigator: "The Navigator",
     blog: "Fair Winds Weekly",
     captainsLog: "Captain's Log",
     premium: "Lighthouse Premium",
@@ -75,6 +76,16 @@ export const brand = {
     paywallMessage:
       "The Credit Logbook is a premium navigation tool. Unlock the Full Beam to plan four years of courses, calculate Carnegie credit hours, track GPA, and print or export your transcript summary.",
   },
+  navigator: {
+    title: "The Navigator",
+    tagline: "Chart the rest of high school with three trusted choices per subject",
+    subtitle:
+      "A premium, standalone academic interview profile — almost like a dating profile for curriculum. Share learning styles, strengths, faith preferences, budget, and graduation horizon. Receive a decorated transcript-style chart with three matched curricula, books, courses, or products per subject, credit levels, and Homeschool Lighthouse weblinks you can print as PDF and save to your account.",
+    privacy:
+      "Personal information is password-protected in your account, not reviewed by us for marketing, and never sold to companies.",
+    price: "$77",
+    priceNote: "one-time standalone purchase — separate from Annual Pass / Lifetime Lantern",
+  },
   bookshelf: {
     title: "The Lighthouse Library",
     tagline: "300 Living Books to Light the Whole Voyage",
@@ -115,9 +126,11 @@ export const brand = {
     premiumTeaser: "Upgrade to Full Beam Navigation",
     yearly: "$7.77/year",
     lifetime: "$14.99 lifetime",
+    navigator: "$77 one-time",
     freeLabel: "Free Search",
     yearlyLabel: "Annual Pass",
     lifetimeLabel: "Lifetime Lantern",
+    navigatorLabel: "The Navigator",
   },
   account: {
     title: "Captain's Log",
@@ -162,6 +175,11 @@ export const exploreRoutes = [
     title: "New to Homeschooling",
     description: "Start your voyage with curated first-year resources.",
     href: "/browse?q=new+homeschool",
+  },
+  {
+    title: "The Navigator",
+    description: "Match curricula to your teen until graduation — $77 standalone chart.",
+    href: "/navigator",
   },
   {
     title: "High School Prep",
