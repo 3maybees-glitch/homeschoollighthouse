@@ -62,7 +62,7 @@ const creditLogbook: NavItem = {
 const navigator: NavItem = {
   href: "/navigator",
   label: brand.nav.navigator,
-  description: "Academic profile matching — 3 choices per subject until graduation",
+  description: "Academic profile matching for 1st–12th grade — 3 choices per subject",
 };
 
 const harborHuddle: NavItem = {

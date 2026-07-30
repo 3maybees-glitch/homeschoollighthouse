@@ -29,11 +29,11 @@ const premiumFeatures = [
 ];
 
 const navigatorFeatures = [
-  "Deep academic interview profile (strengths, faith, budget, learning style…)",
+  "Deep academic interview for 1st grade through 12th Senior",
   "Three matched curricula / courses / products per subject",
-  "Credit-level guidance aligned with college-bound transcripts",
+  "Elementary scope & sequence + high school credit guidance",
   "Homeschool Lighthouse weblinks on every recommendation",
-  "Printable / PDF transcript-style chart",
+  "Printable / PDF academic chart",
   "Saved to your password-protected account — update & regenerate anytime",
   "Standalone — not included with Annual Pass or Lifetime Lantern",
 ];
@@ -51,7 +51,7 @@ export default function PricingPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
             Start free with essential navigation. Upgrade when you want the full beam: advanced
-            filters, grouping, saved routes, and premium discovery tools. Or chart high school with{" "}
+            filters, grouping, saved routes, and premium discovery tools. Or chart 1st–12th grade with{" "}
             <Link href="/navigator" className="text-[var(--color-beam)] underline">
               The Navigator
             </Link>{" "}

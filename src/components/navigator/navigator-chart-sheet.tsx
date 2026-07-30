@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { Anchor, Heart, TowerControl } from "lucide-react";
+import { getGradeBand, isHighSchoolBand } from "@/lib/navigator/grades";
 import { libertyCreditGuidance } from "@/lib/navigator/survey";
 import type { NavigatorChart } from "@/types/navigator";
 
 export function NavigatorChartSheet({ chart }: { chart: NavigatorChart }) {
   const { answers, subjectPlans, encouragement } = chart;
   const name = answers.firstName.trim() || "Student";
+  const band = getGradeBand(answers.gradeLevel);
+  const showCollegeCredits = isHighSchoolBand(answers.gradeLevel) || band === "flexible";
 
   return (
     <div className="navigator-print space-y-8">
@@ -16,7 +19,7 @@ export function NavigatorChartSheet({ chart }: { chart: NavigatorChart }) {
         <h1 className="font-display mt-1 text-2xl font-semibold">Academic Course Chart</h1>
         <p className="text-sm text-slate-600">
           {name} · Grade {answers.gradeLevel || "—"} · Age {answers.age || "—"} ·{" "}
-          {answers.semestersUntilGraduation || "—"} until graduation
+          {answers.semestersUntilGraduation || "—"} remaining toward graduation
         </p>
         <p className="mt-1 text-xs text-slate-500">
           Generated {new Date(chart.updatedAt).toLocaleDateString()} · homeschoollighthouse.com/navigator
@@ -41,6 +44,12 @@ export function NavigatorChartSheet({ chart }: { chart: NavigatorChart }) {
               <strong>{answers.gradeLevel || "—"}</strong>
             </p>
             <p className="mt-1">
+              <span className="text-slate-300">Band</span>{" "}
+              <strong className="capitalize">
+                {band === "flexible" ? "Multi-age / flexible" : band}
+              </strong>
+            </p>
+            <p className="mt-1">
               <span className="text-slate-300">Horizon</span>{" "}
               <strong>{answers.semestersUntilGraduation || "—"}</strong>
             </p>
@@ -59,7 +68,8 @@ export function NavigatorChartSheet({ chart }: { chart: NavigatorChart }) {
             <p className="font-semibold">Take heart, family</p>
             <p className="mt-1 text-rose-900/80">
               These are three lights per subject — not a single rigid path. Compare, pray, try a
-              sample lesson, and update your profile anytime. Fair winds until graduation.
+              sample lesson, and update your profile anytime as your sailor grows from elementary
+              through Senior year. Fair winds until graduation.
             </p>
           </div>
         </div>
@@ -69,23 +79,52 @@ export function NavigatorChartSheet({ chart }: { chart: NavigatorChart }) {
         <div className="flex items-center gap-2">
           <Anchor className="h-5 w-5 text-[var(--color-seafoam)]" aria-hidden="true" />
           <h3 className="font-display text-xl font-semibold text-[var(--color-navy-deep)]">
-            College-admission credit bearings
+            {showCollegeCredits
+              ? "College-admission credit bearings"
+              : band === "elementary"
+                ? "Elementary scope & sequence bearings"
+                : "Middle-school bridge bearings"}
           </h3>
         </div>
-        <p className="mt-2 text-sm text-[var(--color-muted-foreground)]">
-          Many universities that welcome homeschoolers — including{" "}
-          <a
-            href={libertyCreditGuidance.sourceUrl}
-            className="font-medium text-[var(--color-seafoam)] underline"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Liberty University&apos;s homeschool admission guidance
-          </a>{" "}
-          — expect a clear transcript with courses, credit units, and GPA. Typical college-bound
-          patterns include ~4 English, 3–4 math, 3 lab sciences, 3 social studies/history, and often
-          2 units of the same foreign language, plus electives toward graduation.
-        </p>
+        {showCollegeCredits ? (
+          <p className="mt-2 text-sm text-[var(--color-muted-foreground)]">
+            Many universities that welcome homeschoolers — including{" "}
+            <a
+              href={libertyCreditGuidance.sourceUrl}
+              className="font-medium text-[var(--color-seafoam)] underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Liberty University&apos;s homeschool admission guidance
+            </a>{" "}
+            — expect a clear transcript with courses, credit units, and GPA. Typical college-bound
+            patterns include ~4 English, 3–4 math, 3 lab sciences, 3 social studies/history, and often
+            2 units of the same foreign language, plus electives toward graduation.
+          </p>
+        ) : band === "elementary" ? (
+          <p className="mt-2 text-sm text-[var(--color-muted-foreground)]">
+            For 1st–5th grade, think in full-year subject blocks and joyful mastery — reading fluency,
+            number sense, wonder-filled science, and story-rich history — rather than high school
+            credits. Steady elementary years make the later transcript voyage much calmer. When you
+            reach 9th–12th, The Navigator will shift toward credit-bearing college-admission patterns.
+          </p>
+        ) : (
+          <p className="mt-2 text-sm text-[var(--color-muted-foreground)]">
+            Middle school (6th–8th) bridges elementary foundations into high school readiness. Build
+            writing stamina, pre-algebra confidence, lab habits, and language exposure now so 9th–12th
+            credit years feel navigable. College-bound transcript patterns (often highlighted by schools
+            like{" "}
+            <a
+              href={libertyCreditGuidance.sourceUrl}
+              className="font-medium text-[var(--color-seafoam)] underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Liberty University
+            </a>
+            ) typically begin counting in high school.
+          </p>
+        )}
       </section>
 
       <div className="space-y-6">
@@ -121,7 +160,9 @@ export function NavigatorChartSheet({ chart }: { chart: NavigatorChart }) {
                     <th className="px-6 py-3 font-semibold">Choice</th>
                     <th className="px-4 py-3 font-semibold">Resource</th>
                     <th className="px-4 py-3 font-semibold">Type / format</th>
-                    <th className="px-4 py-3 font-semibold">Credit level</th>
+                    <th className="px-4 py-3 font-semibold">
+                      {showCollegeCredits ? "Credit level" : "Year / scope"}
+                    </th>
                     <th className="px-4 py-3 font-semibold">Lighthouse link</th>
                   </tr>
                 </thead>
@@ -173,8 +214,9 @@ export function NavigatorChartSheet({ chart }: { chart: NavigatorChart }) {
           {answers.writingLevel || "—"} · grading: {answers.gradingStyle || "—"}
         </p>
         <p className="mt-2">
-          Update answers anytime in The Navigator to generate a new set of choices. Export this page
-          with Print → Save as PDF for your records or portfolio.
+          Update answers anytime in The Navigator to generate a new set of choices as your learner
+          moves from 1st grade through 12th. Export this page with Print → Save as PDF for your
+          records or portfolio.
         </p>
       </footer>
     </div>

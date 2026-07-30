@@ -11,6 +11,7 @@ import type {
   NavigatorTechPreference,
   NavigatorWritingLevel,
 } from "@/types/navigator";
+import { getGradeBand, type NavigatorGradeBand } from "@/lib/navigator/grades";
 
 export const NAVIGATOR_PRICE_LABEL = "$77";
 export const NAVIGATOR_PRICE_CENTS = 7700;
@@ -39,18 +40,25 @@ export const emptyNavigatorAnswers = (): NavigatorProfileAnswers => ({
 });
 
 export const gradeLevelOptions: { value: NavigatorGradeLevel; label: string }[] = [
-  { value: "8th", label: "8th (pre–high school)" },
-  { value: "9th", label: "9th — Freshman" },
-  { value: "10th", label: "10th — Sophomore" },
-  { value: "11th", label: "11th — Junior" },
-  { value: "12th", label: "12th — Senior" },
-  { value: "ungraded", label: "Ungraded / flexible track" },
+  { value: "1st", label: "1st grade — Elementary" },
+  { value: "2nd", label: "2nd grade — Elementary" },
+  { value: "3rd", label: "3rd grade — Elementary" },
+  { value: "4th", label: "4th grade — Elementary" },
+  { value: "5th", label: "5th grade — Elementary" },
+  { value: "6th", label: "6th grade — Middle" },
+  { value: "7th", label: "7th grade — Middle" },
+  { value: "8th", label: "8th grade — Middle" },
+  { value: "9th", label: "9th — Freshman (High School)" },
+  { value: "10th", label: "10th — Sophomore (High School)" },
+  { value: "11th", label: "11th — Junior (High School)" },
+  { value: "12th", label: "12th — Senior (High School)" },
+  { value: "ungraded", label: "Ungraded / multi-age / flexible track" },
 ];
 
 export const coreSubjectOptions: { value: NavigatorSubjectKey; label: string }[] = [
-  { value: "english", label: "English / Language Arts" },
+  { value: "english", label: "English / Language Arts / Reading" },
   { value: "math", label: "Mathematics" },
-  { value: "science", label: "Science (lab preferred)" },
+  { value: "science", label: "Science" },
   { value: "history", label: "History / Social Studies" },
   { value: "foreign_language", label: "Foreign Language" },
 ];
@@ -58,7 +66,7 @@ export const coreSubjectOptions: { value: NavigatorSubjectKey; label: string }[]
 export const interestSubjectOptions: { value: NavigatorSubjectKey; label: string }[] = [
   { value: "art", label: "Art & Design" },
   { value: "music", label: "Music" },
-  { value: "electives", label: "General Electives" },
+  { value: "electives", label: "Enrichment / Electives" },
   { value: "college_prep", label: "College Prep / Testing" },
   { value: "career_trade", label: "Career & Trade Pathways" },
   { value: "physical_education", label: "Physical Education / Health" },
@@ -92,13 +100,19 @@ export const priceRangeOptions: { value: NavigatorPriceRange; label: string }[] 
 ];
 
 export const strengthImprovementOptions = [
-  "English & writing",
+  "Phonics & early reading",
   "Reading comprehension",
+  "Handwriting / penmanship",
+  "English & writing",
+  "Spelling & vocabulary",
+  "Early / elementary math",
   "Algebra & math",
   "Geometry",
+  "Nature study / life science",
   "Biology / life science",
   "Chemistry / physical science",
   "History & civics",
+  "Geography",
   "Foreign language",
   "Fine arts",
   "Organization & study skills",
@@ -107,6 +121,7 @@ export const strengthImprovementOptions = [
 ];
 
 export const careerTradeOptions = [
+  "Still exploring — foundational years",
   "College / university track",
   "Nursing / health sciences",
   "Engineering / STEM",
@@ -140,10 +155,10 @@ export const gradingStyleOptions: { value: NavigatorGradingStyle; label: string 
 ];
 
 export const writingLevelOptions: { value: NavigatorWritingLevel; label: string }[] = [
-  { value: "building", label: "Still building foundational writing" },
-  { value: "solid", label: "Solid high-school writing" },
-  { value: "advanced", label: "Advanced / honors-ready" },
-  { value: "college_ready", label: "College-ready essays & research" },
+  { value: "building", label: "Still building foundational writing / early literacy" },
+  { value: "solid", label: "Solid grade-level writing" },
+  { value: "advanced", label: "Advanced / honors-ready for their age" },
+  { value: "college_ready", label: "College-ready essays & research (typically high school)" },
 ];
 
 export const techPreferenceOptions: { value: NavigatorTechPreference; label: string }[] = [
@@ -191,20 +206,22 @@ export const surveySteps: SurveyStep[] = [
   {
     id: "student",
     title: "Meet the sailor",
-    subtitle: "Tell us who this academic chart is for — like a thoughtful profile for their voyage.",
+    subtitle:
+      "Tell us who this academic chart is for — 1st grade through 12th grade Senior (or ungraded).",
     fields: ["firstName", "age", "gradeLevel", "semestersUntilGraduation"],
   },
   {
     id: "core",
-    title: "Core courses to chart",
+    title: "Core subjects to chart",
     subtitle:
-      "Select the core subjects you want three matched choices for. College-bound charts often include English, math, lab science, history, and language.",
+      "Select the core subjects you want three matched choices for. Elementary through high school all chart reading/language arts, math, science, and history — add language when ready.",
     fields: ["coreSubjects"],
   },
   {
     id: "interests",
-    title: "Interests, electives & activities",
-    subtitle: "Electives and pathways make the transcript shine — pick what lights them up.",
+    title: "Interests, enrichment & activities",
+    subtitle:
+      "Art, music, PE, Bible, tech, life skills, electives — and college/career paths when your sailor is ready.",
     fields: ["interestSubjects"],
   },
   {
@@ -227,8 +244,9 @@ export const surveySteps: SurveyStep[] = [
   },
   {
     id: "path",
-    title: "Career, trade & personality",
-    subtitle: "Future harbors and personality traits shape electives and pacing.",
+    title: "Interests, future paths & personality",
+    subtitle:
+      "For younger sailors, “still exploring” is perfect. Personality traits help us pace and enrich.",
     fields: ["careerTradePotentials", "personalityTraits"],
   },
   {
@@ -245,9 +263,9 @@ export const surveySteps: SurveyStep[] = [
   },
   {
     id: "goals",
-    title: "Graduation horizon",
+    title: "Horizon & hopes",
     subtitle:
-      "College goals, dual enrollment dreams, or trade paths — including universities that welcome homeschool transcripts.",
+      "Share hopes for this year and beyond — joy in learning, high school credits, dual enrollment, trade paths, or college dreams.",
     fields: ["collegeGoals", "additionalNotes"],
   },
 ];
@@ -299,7 +317,112 @@ export const libertyCreditGuidance = {
   sourceUrl: "https://www.liberty.edu/residential/undergraduate/homeschool/",
 } as const;
 
+const ELEMENTARY_SCOPE: Record<NavigatorSubjectKey, string> = {
+  english: "Full-year language arts / reading block",
+  math: "Full-year math level for this grade",
+  science: "Year of science / nature study",
+  history: "Year of history / social studies",
+  foreign_language: "Introductory / enrichment language",
+  art: "Weekly art enrichment",
+  music: "Weekly music enrichment",
+  electives: "Enrichment block",
+  college_prep: "Early skills & habits (optional)",
+  career_trade: "Interest exploration (optional)",
+  physical_education: "PE / movement / health",
+  bible_worldview: "Bible / character / worldview",
+  computer_technology: "Gentle tech / typing intro",
+  life_skills: "Life skills / home helpers",
+};
+
+const MIDDLE_SCOPE: Record<NavigatorSubjectKey, string> = {
+  english: "Full-year ELA · builds toward high school credits",
+  math: "Full-year math · pre-algebra path when ready",
+  science: "Full-year science · labs when possible",
+  history: "Full-year history / civics",
+  foreign_language: "Year of language · foundations for HS credit",
+  art: "0.5–1.0 enrichment / elective",
+  music: "0.5–1.0 enrichment / elective",
+  electives: "Enrichment / elective block",
+  college_prep: "Study skills & early prep",
+  career_trade: "Interest / CTE exploration",
+  physical_education: "PE / health",
+  bible_worldview: "Bible / worldview",
+  computer_technology: "Tech / coding intro",
+  life_skills: "Life skills elective",
+};
+
+const HIGH_CREDIT: Record<NavigatorSubjectKey, string> = {
+  english: "1.0 credit / year · aim for 4 total",
+  math: "1.0 credit / year · aim for 3–4 total",
+  science: "1.0 lab credit / year · aim for 3 total",
+  history: "1.0 credit / year · aim for 3 total",
+  foreign_language: "1.0 credit / year · aim for 2 of same language",
+  art: "0.5–1.0 elective credit",
+  music: "0.5–1.0 elective credit",
+  electives: "0.5–1.0 elective credit",
+  college_prep: "0.5–1.0 elective / prep credit",
+  career_trade: "0.5–1.0 CTE / elective credit",
+  physical_education: "0.5–1.0 PE / health credit",
+  bible_worldview: "0.5–1.0 elective / worldview credit",
+  computer_technology: "0.5–1.0 tech elective credit",
+  life_skills: "0.5–1.0 life-skills elective",
+};
+
+export function subjectScopeHint(
+  subjectKey: NavigatorSubjectKey,
+  grade: NavigatorGradeLevel | "",
+): string {
+  const band = getGradeBand(grade);
+  if (band === "elementary") return ELEMENTARY_SCOPE[subjectKey];
+  if (band === "middle") return MIDDLE_SCOPE[subjectKey];
+  if (band === "high") return HIGH_CREDIT[subjectKey];
+  return MIDDLE_SCOPE[subjectKey];
+}
+
+export function bandGuidanceNote(
+  subjectKey: NavigatorSubjectKey,
+  grade: NavigatorGradeLevel | "",
+): string | undefined {
+  const band = getGradeBand(grade);
+  if (band === "high" || band === "flexible") {
+    const notes: Partial<Record<NavigatorSubjectKey, string>> = {
+      english: libertyCreditGuidance.english,
+      math: libertyCreditGuidance.math,
+      science: libertyCreditGuidance.science,
+      history: libertyCreditGuidance.history,
+      foreign_language: libertyCreditGuidance.foreign_language,
+      electives: libertyCreditGuidance.electives,
+    };
+    return notes[subjectKey];
+  }
+  if (band === "elementary") {
+    const notes: Partial<Record<NavigatorSubjectKey, string>> = {
+      english: "Elementary focus: phonics → fluency → comprehension, with gentle writing growth.",
+      math: "Elementary focus: number sense, operations, and confidence before acceleration.",
+      science: "Elementary focus: wonder, observation, and hands-on nature / simple experiments.",
+      history: "Elementary focus: stories, timelines, geography, and civic awareness.",
+      foreign_language: "Optional enrichment — songs, games, and exposure beat pressure.",
+    };
+    return notes[subjectKey];
+  }
+  const notes: Partial<Record<NavigatorSubjectKey, string>> = {
+    english: "Middle years bridge elementary literacy into high school–ready writing.",
+    math: "Middle years often prepare pre-algebra / Algebra I readiness.",
+    science: "Middle years deepen labs and scientific thinking before HS lab credits.",
+    history: "Middle years expand world & U.S. history before transcript credits begin.",
+    foreign_language: "A strong middle-school start makes high school language credits easier.",
+  };
+  return notes[subjectKey];
+}
+
 export function subjectLabel(key: NavigatorSubjectKey): string {
   const all = [...coreSubjectOptions, ...interestSubjectOptions];
   return all.find((option) => option.value === key)?.label ?? key;
+}
+
+export function horizonLabel(band: NavigatorGradeBand): string {
+  if (band === "elementary") return "Years remaining on the K–12 voyage";
+  if (band === "middle") return "Years / semesters until high school graduation";
+  if (band === "high") return "Years / semesters until graduation";
+  return "Years / grades remaining until 12th-grade graduation";
 }

@@ -280,7 +280,7 @@ function NavigatorPaywall({ isSignedIn }: { isSignedIn: boolean }) {
         <p className="mt-3 max-w-2xl text-slate-300">
           A one-time charting fee — separate from Annual Pass or Lifetime Lantern. Purchase once,
           create your password-protected profile, and regenerate recommendations whenever answers
-          change until graduation.
+          change — from 1st grade all the way through Senior year.
         </p>
         <p className="mt-6 font-display text-4xl font-semibold text-[var(--color-beam)]">
           {NAVIGATOR_PRICE_LABEL}
@@ -295,11 +295,11 @@ function NavigatorPaywall({ isSignedIn }: { isSignedIn: boolean }) {
           </li>
           <li className="flex gap-2">
             <Lock className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-seafoam)]" />
-            Three choices per subject with credit levels & homeschoollighthouse.com weblinks
+            Three choices per subject with year/credit guidance & homeschoollighthouse.com weblinks
           </li>
           <li className="flex gap-2">
             <Lock className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-seafoam)]" />
-            Printable / PDF transcript-style chart you can update and regenerate
+            Printable / PDF academic chart for elementary through high school
           </li>
           <li className="flex gap-2">
             <Lock className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-seafoam)]" />
