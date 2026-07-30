@@ -6,7 +6,7 @@ Shining the light and guiding families to trusted homeschool resources through o
 
 - Next.js 15 + TypeScript + Tailwind CSS
 - Supabase (Postgres + Auth)
-- Stripe ($7.77/year or $14.99 lifetime premium)
+- Stripe ($7.77/year or $14.99 lifetime premium; The Navigator $77 one-time)
 - Vercel deployment
 
 ## Getting Started

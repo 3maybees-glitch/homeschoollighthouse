@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { grantNavigatorAccess } from "@/lib/navigator/access";
 
 async function grantPremiumAccess(input: {
   userId?: string | null;
@@ -56,13 +57,27 @@ export async function POST(request: Request) {
 
     if (event.type === "checkout.session.completed") {
       const session = event.data.object;
-      await grantPremiumAccess({
-        userId: session.client_reference_id,
-        customerId: typeof session.customer === "string" ? session.customer : null,
-        customerEmail: session.customer_details?.email ?? session.customer_email,
-        subscriptionId:
-          typeof session.subscription === "string" ? session.subscription : null,
-      });
+      const plan = session.metadata?.plan;
+      const userId = session.client_reference_id ?? session.metadata?.user_id ?? null;
+      const customerEmail = session.customer_details?.email ?? session.customer_email;
+      const paymentId =
+        typeof session.payment_intent === "string" ? session.payment_intent : session.id;
+
+      if (plan === "navigator") {
+        await grantNavigatorAccess({
+          userId,
+          email: customerEmail,
+          paymentId,
+        });
+      } else {
+        await grantPremiumAccess({
+          userId,
+          customerId: typeof session.customer === "string" ? session.customer : null,
+          customerEmail,
+          subscriptionId:
+            typeof session.subscription === "string" ? session.subscription : null,
+        });
+      }
     }
 
     if (event.type === "invoice.payment_succeeded") {

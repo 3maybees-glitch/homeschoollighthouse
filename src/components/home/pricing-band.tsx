@@ -21,7 +21,7 @@ export function PricingBand() {
               navigation, saved charted courses, AI pathfinding, and ad-free sailing.
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {exploreRoutes.map((route) => (
                 <Link
                   key={route.href}

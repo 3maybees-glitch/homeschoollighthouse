@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Check, Sparkles } from "lucide-react";
+import { Check, Compass, Sparkles } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
 import { CheckoutButton } from "@/components/billing/checkout-button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -28,6 +28,16 @@ const premiumFeatures = [
   "Harbor Huddle monthly community thread",
 ];
 
+const navigatorFeatures = [
+  "Deep academic interview profile (strengths, faith, budget, learning style…)",
+  "Three matched curricula / courses / products per subject",
+  "Credit-level guidance aligned with college-bound transcripts",
+  "Homeschool Lighthouse weblinks on every recommendation",
+  "Printable / PDF transcript-style chart",
+  "Saved to your password-protected account — update & regenerate anytime",
+  "Standalone — not included with Annual Pass or Lifetime Lantern",
+];
+
 export default function PricingPage() {
   return (
     <div>
@@ -41,7 +51,11 @@ export default function PricingPage() {
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">
             Start free with essential navigation. Upgrade when you want the full beam: advanced
-            filters, grouping, saved routes, and premium discovery tools.
+            filters, grouping, saved routes, and premium discovery tools. Or chart high school with{" "}
+            <Link href="/navigator" className="text-[var(--color-beam)] underline">
+              The Navigator
+            </Link>{" "}
+            — a separate one-time product.
           </p>
         </div>
         <div className="wave-divider h-10 w-full" aria-hidden="true" />
@@ -112,6 +126,39 @@ export default function PricingPage() {
             </CardContent>
           </Card>
         </div>
+
+        <Card className="mt-8 overflow-hidden border-[var(--color-seafoam)]/40 bg-gradient-to-br from-white via-teal-50/40 to-[var(--color-cream)] shadow-lg">
+          <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <CardHeader className="lg:pr-0">
+              <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--color-seafoam)]">
+                <Compass className="h-3.5 w-3.5" />
+                Featured standalone product
+              </p>
+              <CardTitle className="font-display text-3xl">{brand.pricing.navigatorLabel}</CardTitle>
+              <CardDescription className="text-base">
+                {brand.navigator.tagline}. {brand.navigator.priceNote}.
+              </CardDescription>
+              <ul className="mt-4 space-y-3 text-sm text-[var(--color-muted-foreground)]">
+                {navigatorFeatures.map((feature) => (
+                  <li key={feature} className="flex gap-2">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-[var(--color-seafoam)]" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </CardHeader>
+            <CardContent className="space-y-4 lg:pl-0">
+              <p className="text-4xl font-bold text-[var(--color-navy-deep)]">
+                {brand.pricing.navigator}
+              </p>
+              <p className="text-sm text-[var(--color-muted-foreground)]">{brand.navigator.privacy}</p>
+              <CheckoutButton plan="navigator" />
+              <Button asChild variant="outline" className="w-full">
+                <Link href="/navigator">Learn more & open The Navigator</Link>
+              </Button>
+            </CardContent>
+          </div>
+        </Card>
       </div>
     </div>
   );

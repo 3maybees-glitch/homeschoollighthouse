@@ -4,6 +4,12 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { StripePlan } from "@/lib/stripe";
 
+const buttonLabels: Record<StripePlan, string> = {
+  yearly: "Choose Annual Pass",
+  lifetime: "Choose Lifetime Lantern",
+  navigator: "Purchase The Navigator — $77",
+};
+
 export function CheckoutButton({ plan }: { plan: StripePlan }) {
   const [loading, setLoading] = useState(false);
 
@@ -28,7 +34,7 @@ export function CheckoutButton({ plan }: { plan: StripePlan }) {
 
   return (
     <Button onClick={startCheckout} disabled={loading} className="w-full">
-      {loading ? "Opening checkout…" : plan === "yearly" ? "Choose Annual Pass" : "Choose Lifetime Lantern"}
+      {loading ? "Opening checkout…" : buttonLabels[plan]}
     </Button>
   );
 }

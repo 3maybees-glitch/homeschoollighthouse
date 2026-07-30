@@ -87,6 +87,15 @@ a {
   .credit-logbook-print table {
     font-size: 11px;
   }
+
+  .navigator-print section {
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  .navigator-print table {
+    font-size: 11px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

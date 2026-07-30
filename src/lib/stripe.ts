@@ -19,6 +19,15 @@ export const stripePlans = {
     priceLabel: "$14.99 lifetime",
     envKey: "STRIPE_PREMIUM_LIFETIME_PRICE_ID",
   },
+  navigator: {
+    label: "The Navigator",
+    priceLabel: "$77 one-time",
+    envKey: "STRIPE_NAVIGATOR_PRICE_ID",
+  },
 } as const;
 
 export type StripePlan = keyof typeof stripePlans;
+
+export function isOneTimePlan(plan: StripePlan) {
+  return plan === "lifetime" || plan === "navigator";
+}
