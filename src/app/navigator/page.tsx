@@ -69,10 +69,10 @@ export default async function NavigatorPage() {
           <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-sm text-slate-300">
             <span className="inline-flex items-center gap-2">
               <Ship className="h-4 w-4 text-[var(--color-beam)]" aria-hidden="true" />
-              Deep academic interview profile
+              1st grade through 12th Senior
             </span>
             <span>3 matched choices per subject</span>
-            <span>Printable transcript-style chart</span>
+            <span>Printable academic chart</span>
             <span>{NAVIGATOR_PRICE_LABEL} one-time · not a subscription</span>
           </div>
           <p className="mt-5 max-w-2xl text-sm text-slate-400">

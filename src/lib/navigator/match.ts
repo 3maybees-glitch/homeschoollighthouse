@@ -1,7 +1,9 @@
 import { getAllListings } from "@/lib/listings/catalog";
+import { agesOverlap, getGradeBand, resolveLearnerAge } from "@/lib/navigator/grades";
 import {
-  libertyCreditGuidance,
+  bandGuidanceNote,
   subjectLabel,
+  subjectScopeHint,
 } from "@/lib/navigator/survey";
 import type { Listing } from "@/types/listing";
 import type {
@@ -26,23 +28,6 @@ const SUBJECT_TO_LISTING_TAGS: Record<NavigatorSubjectKey, string[]> = {
   bible_worldview: ["history", "language_arts", "electives"],
   computer_technology: ["electives", "college_prep"],
   life_skills: ["electives"],
-};
-
-const SUBJECT_CREDIT: Record<NavigatorSubjectKey, string> = {
-  english: "1.0 credit / year · aim for 4 total",
-  math: "1.0 credit / year · aim for 3–4 total",
-  science: "1.0 lab credit / year · aim for 3 total",
-  history: "1.0 credit / year · aim for 3 total",
-  foreign_language: "1.0 credit / year · aim for 2 of same language",
-  art: "0.5–1.0 elective credit",
-  music: "0.5–1.0 elective credit",
-  electives: "0.5–1.0 elective credit",
-  college_prep: "0.5–1.0 elective / prep credit",
-  career_trade: "0.5–1.0 CTE / elective credit",
-  physical_education: "0.5–1.0 PE / health credit",
-  bible_worldview: "0.5–1.0 elective / worldview credit",
-  computer_technology: "0.5–1.0 tech elective credit",
-  life_skills: "0.5–1.0 life-skills elective",
 };
 
 function priceScore(listing: Listing, answers: NavigatorProfileAnswers): number {
@@ -182,9 +167,28 @@ function scoreForSubject(
     faithScore(listing, answers) +
     styleScore(listing, answers) +
     typeBoost(listing) +
-    listing.ratingAvg * 1.5;
+    listing.ratingAvg * 1.5 +
+    agesOverlap(
+      resolveLearnerAge(answers),
+      answers.gradeLevel,
+      listing.ageMin,
+      listing.ageMax,
+    );
 
   if (listing.isFeatured) score += 2;
+
+  const band = getGradeBand(answers.gradeLevel);
+  const hay = `${listing.title} ${listing.description}`.toLowerCase();
+  if (band === "elementary") {
+    if (hay.includes("elementary") || hay.includes("phonics") || hay.includes("primary")) score += 5;
+    if (hay.includes("ap exam") || hay.includes("sat ") || hay.includes("act ")) score -= 6;
+  }
+  if (band === "middle") {
+    if (hay.includes("middle") || hay.includes("junior high")) score += 4;
+  }
+  if (band === "high") {
+    if (hay.includes("high school") || hay.includes("honors") || hay.includes("credit")) score += 4;
+  }
 
   const strengthHit = answers.subjectStrengths.some((s) =>
     listing.title.toLowerCase().includes(s.toLowerCase().split(" ")[0] ?? ""),
@@ -213,7 +217,7 @@ function buildReason(
   if (listing.values.includes("parent_led")) parts.push("parent-led grading ready");
   if (listing.listingType === "online_course") parts.push("instructor-supported option");
   if (answers.priceRange === "free_budget" && listing.priceType === "free") parts.push("budget-friendly");
-  if (subjectKey === "college_prep") parts.push("supports transcript & admissions readiness");
+  if (subjectKey === "college_prep") parts.push("supports readiness for the next stage");
   return parts.slice(0, 3).join(" · ") || "strong overall fit for this subject chart";
 }
 
@@ -231,22 +235,10 @@ function toChoice(
     href: `${siteUrl}/listing/${listing.slug}`,
     listingType: listing.listingType,
     format: listing.format,
-    creditHint: SUBJECT_CREDIT[subjectKey],
+    creditHint: subjectScopeHint(subjectKey, answers.gradeLevel),
     reason: buildReason(listing, subjectKey, answers),
     websiteUrl: listing.websiteUrl,
   };
-}
-
-function libertyNoteFor(subjectKey: NavigatorSubjectKey): string | undefined {
-  const notes: Partial<Record<NavigatorSubjectKey, string>> = {
-    english: libertyCreditGuidance.english,
-    math: libertyCreditGuidance.math,
-    science: libertyCreditGuidance.science,
-    history: libertyCreditGuidance.history,
-    foreign_language: libertyCreditGuidance.foreign_language,
-    electives: libertyCreditGuidance.electives,
-  };
-  return notes[subjectKey];
 }
 
 export function buildSubjectPlans(answers: NavigatorProfileAnswers): NavigatorSubjectPlan[] {
@@ -305,17 +297,27 @@ function planForSubject(
   return {
     subjectKey,
     subjectLabel: subjectLabel(subjectKey),
-    recommendedCredits: SUBJECT_CREDIT[subjectKey],
-    libertyNote: libertyNoteFor(subjectKey),
+    recommendedCredits: subjectScopeHint(subjectKey, answers.gradeLevel),
+    libertyNote: bandGuidanceNote(subjectKey, answers.gradeLevel),
     choices,
   };
 }
 
 export function buildEncouragement(answers: NavigatorProfileAnswers): string {
   const name = answers.firstName.trim() || "your sailor";
-  const semesters = answers.semestersUntilGraduation.trim();
-  const horizon = semesters
-    ? `With about ${semesters} semester${semesters === "1" ? "" : "s"} on the horizon`
-    : "With graduation on the horizon";
-  return `${horizon}, ${name}'s chart is ready to light the way. Three trusted choices per subject give you room to compare, pray over, and choose — then update anytime the winds shift. You are not alone on this voyage.`;
+  const horizon = answers.semestersUntilGraduation.trim();
+  const band = getGradeBand(answers.gradeLevel);
+  const gradeLabel = answers.gradeLevel ? ` (grade ${answers.gradeLevel})` : "";
+  const bandPhrase =
+    band === "elementary"
+      ? "elementary years"
+      : band === "middle"
+        ? "middle-school years"
+        : band === "high"
+          ? "high school voyage"
+          : "learning voyage";
+  const horizonPhrase = horizon
+    ? `With about ${horizon} still ahead on the ${bandPhrase}`
+    : `Charting the ${bandPhrase}${gradeLabel}`;
+  return `${horizonPhrase}, ${name}'s recommendations are ready to light the way — from today's lessons toward 12th-grade graduation. Three trusted choices per subject give you room to compare, pray over, and choose — then update anytime the winds shift. You are not alone on this voyage.`;
 }

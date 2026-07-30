@@ -156,13 +156,13 @@ export function NavigatorSurvey({
             </label>
             <label className="block text-sm">
               <span className="mb-1.5 block font-medium text-[var(--color-navy)]">
-                Years / semesters until graduation
+                Years / grades remaining until 12th-grade graduation
               </span>
               <input
                 className="w-full rounded-xl border border-[var(--color-border)] bg-white px-3 py-2.5"
                 value={answers.semestersUntilGraduation}
                 onChange={(e) => setField("semestersUntilGraduation", e.target.value)}
-                placeholder="e.g. 6 semesters"
+                placeholder="e.g. 8 years, or 4 semesters"
               />
             </label>
           </div>
@@ -422,7 +422,7 @@ export function NavigatorSurvey({
                 className="min-h-28 w-full rounded-xl border border-[var(--color-border)] bg-white px-3 py-2.5"
                 value={answers.collegeGoals}
                 onChange={(e) => setField("collegeGoals", e.target.value)}
-                placeholder="e.g. Aiming for a Christian university like Liberty; dual enrollment; nursing pathway…"
+                placeholder="e.g. Growing a joyful reader this year; aiming for high school credits later; Christian university like Liberty; dual enrollment; nursing pathway…"
               />
             </label>
             <label className="block text-sm">
