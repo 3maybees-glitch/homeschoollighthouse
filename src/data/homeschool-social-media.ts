@@ -596,6 +596,14 @@ export const socialPlatformGroups: SocialPlatformGroup[] = [
     tagline: "News, policy updates, and quick takes from homeschool organizations and influencers.",
     channels: [
       {
+        id: "x-homeschool-lighthouse",
+        name: "Homeschool Lighthouse",
+        handle: "@HomeschoolLight",
+        url: "https://x.com/HomeschoolLight",
+        description:
+          "Official Homeschool Lighthouse account — resource finds, Fair Winds notes, directory highlights, and signals for families charting their course.",
+      },
+      {
         id: "x-hslda",
         name: "HSLDA",
         handle: "@HSLDA",

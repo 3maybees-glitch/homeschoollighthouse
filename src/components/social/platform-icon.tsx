@@ -14,11 +14,14 @@ const platformColors: Record<SocialPlatform, string> = {
 export function PlatformIcon({
   platform,
   className = "h-5 w-5",
+  color: colorOverride,
 }: {
   platform: SocialPlatform;
   className?: string;
+  /** Override brand fill — use `currentColor` on dark surfaces */
+  color?: string;
 }) {
-  const color = platformColors[platform];
+  const color = colorOverride ?? platformColors[platform];
 
   switch (platform) {
     case "facebook":
