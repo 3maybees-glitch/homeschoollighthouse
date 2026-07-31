@@ -30,10 +30,11 @@ const premiumFeatures = [
 
 const navigatorFeatures = [
   "Deep academic interview for 1st grade through 12th Senior",
-  "Three matched curricula / courses / products per subject",
+  "Charts ALL remaining years until graduation — not just one year",
+  "Three matched curricula / courses / products per subject per year",
   "Elementary scope & sequence + high school credit guidance",
-  "Homeschool Lighthouse weblinks on every recommendation",
-  "Printable / PDF academic chart",
+  "Company names + Homeschool Lighthouse weblinks on every recommendation",
+  "Printable / PDF multi-year academic chart",
   "Saved to your password-protected account — update & regenerate anytime",
   "Standalone — not included with Annual Pass or Lifetime Lantern",
 ];
@@ -155,6 +156,9 @@ export default function PricingPage() {
               <CheckoutButton plan="navigator" />
               <Button asChild variant="outline" className="w-full">
                 <Link href="/navigator">Learn more & open The Navigator</Link>
+              </Button>
+              <Button asChild variant="ghost" className="w-full">
+                <Link href="/navigator/sample">View sample multi-year report</Link>
               </Button>
             </CardContent>
           </div>

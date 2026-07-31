@@ -1,4 +1,5 @@
 import { Compass, Ship, Waves } from "lucide-react";
+import Link from "next/link";
 import { brand } from "@/lib/brand-vocabulary";
 import { getSessionProfile } from "@/lib/auth/session";
 import { getNavigatorEntitlement } from "@/lib/navigator/access";
@@ -8,6 +9,7 @@ import { createClient } from "@/lib/supabase/server";
 import { NavigatorApp } from "@/components/navigator/navigator-app";
 import { NAVIGATOR_PRICE_LABEL } from "@/lib/navigator/survey";
 import type { NavigatorChart, NavigatorProfileAnswers } from "@/types/navigator";
+import { Button } from "@/components/ui/button";
 
 export const metadata = {
   title: brand.navigator.title,
@@ -70,11 +72,20 @@ export default async function NavigatorPage() {
           <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-sm text-slate-300">
             <span className="inline-flex items-center gap-2">
               <Ship className="h-4 w-4 text-[var(--color-beam)]" aria-hidden="true" />
-              1st grade through 12th Senior
+              All remaining years until graduation
             </span>
-            <span>3 matched choices per subject</span>
-            <span>Printable academic chart</span>
+            <span>1st grade through 12th Senior</span>
+            <span>3 matched choices per subject per year</span>
             <span>{NAVIGATOR_PRICE_LABEL} one-time · not a subscription</span>
+          </div>
+          <div className="mt-6">
+            <Button
+              asChild
+              variant="outline"
+              className="border-white/30 bg-white/5 text-white hover:bg-white/10"
+            >
+              <Link href="/navigator/sample">View sample multi-year report</Link>
+            </Button>
           </div>
           <p className="mt-5 max-w-2xl text-sm text-slate-400">
             <Waves className="mr-2 inline h-4 w-4 text-[var(--color-seafoam)]" aria-hidden="true" />
