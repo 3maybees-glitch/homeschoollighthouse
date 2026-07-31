@@ -164,6 +164,10 @@ export function NavigatorSurvey({
                 onChange={(e) => setField("semestersUntilGraduation", e.target.value)}
                 placeholder="e.g. 8 years, or 4 semesters"
               />
+              <span className="mt-1.5 block text-xs text-[var(--color-muted-foreground)]">
+                We chart every remaining school year from the current grade through this horizon —
+                three choices per subject for each year.
+              </span>
             </label>
           </div>
         ) : null}

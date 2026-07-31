@@ -99,6 +99,7 @@ export interface NavigatorProfileAnswers {
 export interface NavigatorChoice {
   rank: 1 | 2 | 3;
   title: string;
+  company: string;
   slug: string;
   href: string;
   listingType: string;
@@ -116,6 +117,15 @@ export interface NavigatorSubjectPlan {
   choices: NavigatorChoice[];
 }
 
+/** One school year along the voyage to 12th-grade graduation. */
+export interface NavigatorYearPlan {
+  yearIndex: number;
+  gradeLevel: NavigatorGradeLevel;
+  gradeLabel: string;
+  ageHint: string;
+  subjectPlans: NavigatorSubjectPlan[];
+}
+
 export interface NavigatorChart {
   id: string;
   userId: string;
@@ -123,7 +133,10 @@ export interface NavigatorChart {
   updatedAt: string;
   answers: NavigatorProfileAnswers;
   completionPercent: number;
+  /** First / current year plans (kept for older saved charts). */
   subjectPlans: NavigatorSubjectPlan[];
+  /** Full multi-year chart through the horizon field. */
+  yearPlans: NavigatorYearPlan[];
   encouragement: string;
 }
 

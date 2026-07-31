@@ -2,11 +2,17 @@ import { NextResponse } from "next/server";
 import { randomUUID } from "crypto";
 import { getSessionProfile } from "@/lib/auth/session";
 import { getNavigatorEntitlement } from "@/lib/navigator/access";
-import { buildEncouragement, buildSubjectPlans } from "@/lib/navigator/match";
+import { hydrateNavigatorChart, serializeChartPlans } from "@/lib/navigator/chart-storage";
+import { buildEncouragement, buildYearPlans } from "@/lib/navigator/match";
 import { computeCompletionPercent } from "@/lib/navigator/survey";
 import { memoryStore } from "@/lib/store/memory-store";
 import { createClient } from "@/lib/supabase/server";
-import type { NavigatorChart, NavigatorProfileAnswers, NavigatorSubjectPlan } from "@/types/navigator";
+import type {
+  NavigatorChart,
+  NavigatorProfileAnswers,
+  NavigatorSubjectPlan,
+  NavigatorYearPlan,
+} from "@/types/navigator";
 
 export async function GET() {
   const profile = await getSessionProfile();
@@ -30,16 +36,16 @@ export async function GET() {
       .maybeSingle();
 
     if (data) {
-      const chart: NavigatorChart = {
+      const chart = hydrateNavigatorChart({
         id: data.id,
         userId: data.user_id,
         createdAt: data.created_at,
         updatedAt: data.updated_at,
         answers: data.answers as NavigatorProfileAnswers,
         completionPercent: data.completion_percent,
-        subjectPlans: data.subject_plans as NavigatorSubjectPlan[],
+        subjectPlansRaw: data.subject_plans,
         encouragement: data.encouragement ?? "",
-      };
+      });
       return NextResponse.json({ chart, entitlement });
     }
   }
@@ -63,6 +69,7 @@ export async function POST(request: Request) {
     id?: string;
     answers: NavigatorProfileAnswers;
     subjectPlans?: NavigatorSubjectPlan[];
+    yearPlans?: NavigatorYearPlan[];
     completionPercent?: number;
     encouragement?: string;
     regenerate?: boolean;
@@ -74,10 +81,9 @@ export async function POST(request: Request) {
 
   const now = new Date().toISOString();
   const completionPercent = body.completionPercent ?? computeCompletionPercent(body.answers);
-  const subjectPlans =
-    body.regenerate || !body.subjectPlans?.length
-      ? buildSubjectPlans(body.answers)
-      : body.subjectPlans;
+  const yearPlans =
+    body.regenerate || !body.yearPlans?.length ? buildYearPlans(body.answers) : body.yearPlans;
+  const subjectPlans = body.subjectPlans?.length ? body.subjectPlans : yearPlans[0]?.subjectPlans ?? [];
   const encouragement = body.encouragement ?? buildEncouragement(body.answers);
   const id = body.id && body.id !== "local" ? body.id : randomUUID();
 
@@ -89,6 +95,7 @@ export async function POST(request: Request) {
     answers: body.answers,
     completionPercent,
     subjectPlans,
+    yearPlans,
     encouragement,
   };
 
@@ -98,7 +105,7 @@ export async function POST(request: Request) {
       id: chart.id,
       user_id: profile.id,
       answers: chart.answers,
-      subject_plans: chart.subjectPlans,
+      subject_plans: serializeChartPlans(chart),
       completion_percent: chart.completionPercent,
       encouragement: chart.encouragement,
       updated_at: now,
