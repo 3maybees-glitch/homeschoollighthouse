@@ -127,7 +127,7 @@ export function SocialHarborsPreview() {
                 </Button>
               </div>
             </div>
-            <div className="border-t border-white/10 bg-[var(--color-cream)] p-4 sm:p-5 lg:border-l lg:border-t-0">
+            <div className="border-t border-white/10 bg-[var(--color-cream)] p-4 text-[var(--color-navy-deep)] sm:p-5 lg:border-l lg:border-t-0">
               <div className="overflow-hidden rounded-xl border border-[var(--color-border)] bg-white">
                 <XTimelineEmbed height={420} className="min-h-[280px]" />
               </div>
