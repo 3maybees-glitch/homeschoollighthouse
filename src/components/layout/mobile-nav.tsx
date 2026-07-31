@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, Sparkles, X } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
-import { accountNavItem, freeNavItems, premiumNavItems, type NavItem } from "@/lib/site-nav";
+import { accountNavItem, advertiseNavItem, freeNavItems, premiumNavItems, type NavItem } from "@/lib/site-nav";
 import { Button } from "@/components/ui/button";
 
 export function MobileNav() {
@@ -63,7 +63,7 @@ export function MobileNav() {
             </div>
 
             <p className="mt-3 px-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-muted-foreground)]">
-              Premium member tools
+              Premium tools
             </p>
             <div className="mt-1 flex flex-col gap-0.5">
               {premiumNavItems.map(renderItem)}
@@ -75,6 +75,11 @@ export function MobileNav() {
                 See Premium plans →
               </Link>
             </div>
+
+            <p className="mt-3 px-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-muted-foreground)]">
+              For businesses
+            </p>
+            <div className="mt-1 flex flex-col gap-0.5">{renderItem(advertiseNavItem)}</div>
 
             <p className="mt-3 px-3 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--color-muted-foreground)]">
               Your account

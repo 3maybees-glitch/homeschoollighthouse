@@ -78,14 +78,29 @@ const captainsLog: NavItem = {
   description: "Your account — saved resources & membership",
 };
 
+/** Advertising for homeschool businesses (homepage Bright Beacon spots). */
+export const advertiseNavItem: NavItem = {
+  href: "/advertise",
+  label: brand.advertise.title,
+  description: brand.advertise.subtitle,
+};
+
 /** Primary header links (desktop top bar) — keep this short for a clean top bar. */
 export const primaryNavItems: NavItem[] = [explore, localHarbors, blog, pricing];
 
 /** Everything free to browse, in menu order. */
-export const freeNavItems: NavItem[] = [explore, brightBeacons, navigator, localHarbors, socialHarbors, blog];
+export const freeNavItems: NavItem[] = [explore, brightBeacons, localHarbors, socialHarbors, blog];
 
-/** Tools included with Lighthouse Premium. */
-export const premiumNavItems: NavItem[] = [lighthouseLibrary, creditLogbook, harborHuddle];
+/**
+ * Paid / premium product tools shown under Premium Tools.
+ * Includes Full Beam membership tools and standalone paid products like The Navigator.
+ */
+export const premiumNavItems: NavItem[] = [
+  navigator,
+  lighthouseLibrary,
+  creditLogbook,
+  harborHuddle,
+];
 
 /** Standalone paid products (not Full Beam). */
 export const standaloneNavItems: NavItem[] = [navigator];
@@ -94,4 +109,4 @@ export const standaloneNavItems: NavItem[] = [navigator];
 export const accountNavItem: NavItem = captainsLog;
 
 /** Extra free links that aren't in the primary top bar (for the More menu). */
-export const moreFreeNavItems: NavItem[] = [brightBeacons, navigator];
+export const moreFreeNavItems: NavItem[] = [brightBeacons];

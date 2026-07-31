@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { brand } from "@/lib/brand-vocabulary";
-import { accountNavItem, freeNavItems, premiumNavItems } from "@/lib/site-nav";
+import {
+  accountNavItem,
+  advertiseNavItem,
+  freeNavItems,
+  premiumNavItems,
+} from "@/lib/site-nav";
 import { listingTypeOptions } from "@/lib/directory/filter-config";
 import { BrandLogoVideo } from "@/components/brand/brand-logo-video";
 import { NewsletterSignup } from "@/components/layout/newsletter-signup";
@@ -8,11 +13,6 @@ import { NewsletterSignup } from "@/components/layout/newsletter-signup";
 const freeFooterLinks = [
   ...freeNavItems,
   { href: "/submit", label: brand.submit.title, description: brand.submit.subtitle },
-  {
-    href: "/advertise",
-    label: brand.advertise.title,
-    description: brand.advertise.subtitle,
-  },
   accountNavItem,
 ];
 
@@ -21,6 +21,8 @@ const premiumFooterLinks = [
   { href: "/ai", label: brand.ai.title, description: brand.ai.subtitle },
   { href: "/pricing", label: "Pricing & Plans", description: "Compare the free and Premium plans" },
 ];
+
+const businessFooterLinks = [advertiseNavItem];
 
 function FooterColumn({
   title,
@@ -55,7 +57,7 @@ export function SiteFooter() {
   return (
     <footer className="bg-[var(--color-navy-deep)] text-slate-300">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.7fr_0.7fr_0.7fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.1fr_0.7fr_0.7fr_0.7fr_0.7fr]">
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-4">
               <div className="h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-white/10 p-1">
@@ -72,6 +74,7 @@ export function SiteFooter() {
 
           <FooterColumn title="Free for Everyone" links={freeFooterLinks} />
           <FooterColumn title="Premium Tools" links={premiumFooterLinks} />
+          <FooterColumn title="For Businesses" links={businessFooterLinks} />
           <FooterColumn
             title="Browse by Type"
             links={listingTypeOptions.slice(0, 6).map((option) => ({
