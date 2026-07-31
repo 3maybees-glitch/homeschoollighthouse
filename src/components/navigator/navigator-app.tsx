@@ -34,7 +34,10 @@ async function requestRecommendations(answers: NavigatorProfileAnswers) {
   if (!response.ok) {
     throw new Error(data.error ?? "Could not generate recommendations.");
   }
-  return data as Pick<NavigatorChart, "subjectPlans" | "encouragement" | "completionPercent">;
+  return data as Pick<
+    NavigatorChart,
+    "subjectPlans" | "yearPlans" | "encouragement" | "completionPercent"
+  >;
 }
 
 export function NavigatorApp({
@@ -70,6 +73,7 @@ export function NavigatorApp({
       answers: nextAnswers,
       completionPercent: result.completionPercent,
       subjectPlans: result.subjectPlans,
+      yearPlans: result.yearPlans ?? [],
       encouragement: result.encouragement,
     };
     setChart(next);
@@ -102,6 +106,7 @@ export function NavigatorApp({
           id: next.id,
           answers: next.answers,
           subjectPlans: next.subjectPlans,
+          yearPlans: next.yearPlans,
           completionPercent: next.completionPercent,
           encouragement: next.encouragement,
         }),

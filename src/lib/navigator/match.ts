@@ -1,5 +1,13 @@
 import { getAllListings } from "@/lib/listings/catalog";
-import { agesOverlap, getGradeBand, resolveLearnerAge } from "@/lib/navigator/grades";
+import {
+  agesOverlap,
+  companyFromListing,
+  getGradeBand,
+  gradeAgeRanges,
+  gradeDisplayLabel,
+  resolveLearnerAge,
+  resolveVoyageGrades,
+} from "@/lib/navigator/grades";
 import {
   bandGuidanceNote,
   subjectLabel,
@@ -8,9 +16,11 @@ import {
 import type { Listing } from "@/types/listing";
 import type {
   NavigatorChoice,
+  NavigatorGradeLevel,
   NavigatorProfileAnswers,
   NavigatorSubjectKey,
   NavigatorSubjectPlan,
+  NavigatorYearPlan,
 } from "@/types/navigator";
 
 const SUBJECT_TO_LISTING_TAGS: Record<NavigatorSubjectKey, string[]> = {
@@ -154,6 +164,7 @@ function scoreForSubject(
   listing: Listing,
   subjectKey: NavigatorSubjectKey,
   answers: NavigatorProfileAnswers,
+  learnerAge: number | null,
 ): number {
   const overlap = subjectOverlap(listing, subjectKey);
   if (overlap <= 0 && listing.listingType !== "curriculum" && listing.listingType !== "online_course") {
@@ -168,12 +179,7 @@ function scoreForSubject(
     styleScore(listing, answers) +
     typeBoost(listing) +
     listing.ratingAvg * 1.5 +
-    agesOverlap(
-      resolveLearnerAge(answers),
-      answers.gradeLevel,
-      listing.ageMin,
-      listing.ageMax,
-    );
+    agesOverlap(learnerAge, answers.gradeLevel, listing.ageMin, listing.ageMax);
 
   if (listing.isFeatured) score += 2;
 
@@ -231,6 +237,7 @@ function toChoice(
   return {
     rank,
     title: listing.title,
+    company: companyFromListing(listing.websiteUrl, listing.title),
     slug: listing.slug,
     href: `${siteUrl}/listing/${listing.slug}`,
     listingType: listing.listingType,
@@ -241,45 +248,56 @@ function toChoice(
   };
 }
 
-export function buildSubjectPlans(answers: NavigatorProfileAnswers): NavigatorSubjectPlan[] {
-  const listings = getAllListings().filter(
-    (listing) =>
-      ["curriculum", "online_course", "supplement", "standardized_test", "coop", "tutor"].includes(
-        listing.listingType,
-      ),
-  );
+function answersForGrade(
+  base: NavigatorProfileAnswers,
+  grade: NavigatorGradeLevel,
+  yearOffset: number,
+): NavigatorProfileAnswers {
+  const baseAge = resolveLearnerAge(base);
+  const age =
+    baseAge != null
+      ? String(baseAge + yearOffset)
+      : base.age;
 
-  const subjects = Array.from(
-    new Set([...answers.coreSubjects, ...answers.interestSubjects]),
-  ) as NavigatorSubjectKey[];
-
-  if (!subjects.length) {
-    return (["english", "math", "science", "history"] as NavigatorSubjectKey[]).map((key) =>
-      planForSubject(key, answers, listings),
-    );
-  }
-
-  return subjects.map((key) => planForSubject(key, answers, listings));
+  return {
+    ...base,
+    gradeLevel: grade,
+    age,
+  };
 }
 
 function planForSubject(
   subjectKey: NavigatorSubjectKey,
   answers: NavigatorProfileAnswers,
   listings: Listing[],
+  usedSlugs: Set<string>,
 ): NavigatorSubjectPlan {
+  const learnerAge = resolveLearnerAge(answers);
   const ranked = listings
-    .map((listing) => ({ listing, score: scoreForSubject(listing, subjectKey, answers) }))
+    .map((listing) => ({
+      listing,
+      score: scoreForSubject(listing, subjectKey, answers, learnerAge),
+    }))
     .filter((item) => item.score > 4)
     .sort((a, b) => b.score - a.score);
 
   const picks: Listing[] = [];
   for (const item of ranked) {
     if (picks.some((p) => p.slug === item.listing.slug)) continue;
+    // Prefer fresh picks across years, but allow reuse if catalog is thin.
+    if (usedSlugs.has(item.listing.slug) && picks.length < 2) continue;
     picks.push(item.listing);
     if (picks.length >= 3) break;
   }
 
-  // Fallback: featured curricula if matching is thin
+  if (picks.length < 3) {
+    for (const item of ranked) {
+      if (picks.some((p) => p.slug === item.listing.slug)) continue;
+      picks.push(item.listing);
+      if (picks.length >= 3) break;
+    }
+  }
+
   if (picks.length < 3) {
     for (const listing of listings) {
       if (picks.some((p) => p.slug === listing.slug)) continue;
@@ -288,6 +306,10 @@ function planForSubject(
       }
       if (picks.length >= 3) break;
     }
+  }
+
+  for (const listing of picks.slice(0, 3)) {
+    usedSlugs.add(listing.slug);
   }
 
   const choices = picks.slice(0, 3).map((listing, index) =>
@@ -303,21 +325,67 @@ function planForSubject(
   };
 }
 
+function subjectsForAnswers(answers: NavigatorProfileAnswers): NavigatorSubjectKey[] {
+  const subjects = Array.from(
+    new Set([...answers.coreSubjects, ...answers.interestSubjects]),
+  ) as NavigatorSubjectKey[];
+  return subjects.length ? subjects : ["english", "math", "science", "history"];
+}
+
+/** Legacy single-year helper (first voyage year). */
+export function buildSubjectPlans(answers: NavigatorProfileAnswers): NavigatorSubjectPlan[] {
+  const yearPlans = buildYearPlans(answers);
+  return yearPlans[0]?.subjectPlans ?? [];
+}
+
+export function buildYearPlans(answers: NavigatorProfileAnswers): NavigatorYearPlan[] {
+  const listings = getAllListings().filter((listing) =>
+    ["curriculum", "online_course", "supplement", "standardized_test", "coop", "tutor"].includes(
+      listing.listingType,
+    ),
+  );
+
+  const voyageGrades = resolveVoyageGrades(answers);
+  const subjects = subjectsForAnswers(answers);
+  const usedSlugs = new Set<string>();
+  const baseAge = resolveLearnerAge(answers);
+
+  return voyageGrades.map((grade, index) => {
+    const yearAnswers = answersForGrade(answers, grade, index);
+    const subjectPlans = subjects.map((key) =>
+      planForSubject(key, yearAnswers, listings, usedSlugs),
+    );
+    const ageHint =
+      baseAge != null
+        ? `About age ${baseAge + index}`
+        : grade === "ungraded"
+          ? "Age flexible"
+          : `Typical ages ${gradeAgeHint(grade)}`;
+
+    return {
+      yearIndex: index + 1,
+      gradeLevel: grade,
+      gradeLabel: grade === "ungraded" ? `Voyage year ${index + 1}` : gradeDisplayLabel(grade),
+      ageHint,
+      subjectPlans,
+    };
+  });
+}
+
+function gradeAgeHint(grade: NavigatorGradeLevel): string {
+  const [min, max] = gradeAgeRanges[grade];
+  return `${min}–${max}`;
+}
+
 export function buildEncouragement(answers: NavigatorProfileAnswers): string {
   const name = answers.firstName.trim() || "your sailor";
-  const horizon = answers.semestersUntilGraduation.trim();
-  const band = getGradeBand(answers.gradeLevel);
-  const gradeLabel = answers.gradeLevel ? ` (grade ${answers.gradeLevel})` : "";
-  const bandPhrase =
-    band === "elementary"
-      ? "elementary years"
-      : band === "middle"
-        ? "middle-school years"
-        : band === "high"
-          ? "high school voyage"
-          : "learning voyage";
-  const horizonPhrase = horizon
-    ? `With about ${horizon} still ahead on the ${bandPhrase}`
-    : `Charting the ${bandPhrase}${gradeLabel}`;
-  return `${horizonPhrase}, ${name}'s recommendations are ready to light the way — from today's lessons toward 12th-grade graduation. Three trusted choices per subject give you room to compare, pray over, and choose — then update anytime the winds shift. You are not alone on this voyage.`;
+  const years = resolveVoyageGrades(answers);
+  const yearCount = years.length;
+  const last = years[years.length - 1];
+  const endLabel =
+    last && last !== "ungraded" ? gradeDisplayLabel(last) : "12th-grade graduation";
+
+  return `${name}'s multi-year chart covers ${yearCount} school year${yearCount === 1 ? "" : "s"} — from ${
+    answers.gradeLevel ? gradeDisplayLabel(answers.gradeLevel as NavigatorGradeLevel) : "this year"
+  } through ${endLabel}. Each year lists three trusted choices per subject so you can compare, pray over, and choose — then update anytime the winds shift. You are not alone on this voyage.`;
 }

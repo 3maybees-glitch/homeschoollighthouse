@@ -2,7 +2,7 @@ import type { NavigatorGradeLevel, NavigatorProfileAnswers } from "@/types/navig
 
 export type NavigatorGradeBand = "elementary" | "middle" | "high" | "flexible";
 
-const GRADE_ORDER: NavigatorGradeLevel[] = [
+export const GRADE_ORDER: NavigatorGradeLevel[] = [
   "1st",
   "2nd",
   "3rd",
@@ -15,7 +15,6 @@ const GRADE_ORDER: NavigatorGradeLevel[] = [
   "10th",
   "11th",
   "12th",
-  "ungraded",
 ];
 
 /** Typical age ranges used to match directory listings. */
@@ -48,6 +47,63 @@ export function isHighSchoolBand(grade: NavigatorGradeLevel | ""): boolean {
   return getGradeBand(grade) === "high";
 }
 
+export function gradeDisplayLabel(grade: NavigatorGradeLevel): string {
+  if (grade === "ungraded") return "Ungraded / flexible year";
+  if (grade === "9th") return "9th — Freshman";
+  if (grade === "10th") return "10th — Sophomore";
+  if (grade === "11th") return "11th — Junior";
+  if (grade === "12th") return "12th — Senior";
+  return `${grade} grade`;
+}
+
+/**
+ * Parse free-text horizon like "8 years", "4 semesters", "6", "10 school years".
+ * Returns whole school years to chart (minimum 1).
+ */
+export function parseRemainingYears(horizon: string): number | null {
+  const text = horizon.trim().toLowerCase();
+  if (!text) return null;
+
+  const semesterMatch = text.match(/(\d+(?:\.\d+)?)\s*(semesters?|terms?)/);
+  if (semesterMatch) {
+    const semesters = Number(semesterMatch[1]);
+    if (Number.isFinite(semesters) && semesters > 0) {
+      return Math.max(1, Math.ceil(semesters / 2));
+    }
+  }
+
+  const yearMatch = text.match(/(\d+(?:\.\d+)?)\s*(years?|yrs?|grades?|school\s*years?)?/);
+  if (yearMatch) {
+    const years = Number(yearMatch[1]);
+    if (Number.isFinite(years) && years > 0) {
+      return Math.max(1, Math.ceil(years));
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Grades to chart from current grade through graduation, limited by the horizon field.
+ * Includes the current grade as Year 1.
+ */
+export function resolveVoyageGrades(answers: NavigatorProfileAnswers): NavigatorGradeLevel[] {
+  const parsedYears = parseRemainingYears(answers.semestersUntilGraduation);
+  const current = answers.gradeLevel;
+
+  if (!current || current === "ungraded") {
+    const count = Math.min(parsedYears ?? 1, 12);
+    return Array.from({ length: count }, () => "ungraded" as NavigatorGradeLevel);
+  }
+
+  const startIndex = GRADE_ORDER.indexOf(current);
+  if (startIndex === -1) return [current];
+
+  const gradesToGraduation = GRADE_ORDER.slice(startIndex);
+  const yearCount = Math.min(parsedYears ?? gradesToGraduation.length, gradesToGraduation.length);
+  return gradesToGraduation.slice(0, Math.max(1, yearCount));
+}
+
 export function resolveLearnerAge(answers: NavigatorProfileAnswers): number | null {
   const parsed = Number.parseInt(answers.age, 10);
   if (Number.isFinite(parsed) && parsed > 0) return parsed;
@@ -74,4 +130,42 @@ export function agesOverlap(
   const overlaps = gMin <= max && gMax >= min;
   if (!overlaps) return -10;
   return 10;
+}
+
+export function companyFromListing(websiteUrl: string, title: string): string {
+  try {
+    const host = new URL(websiteUrl).hostname.replace(/^www\./i, "");
+    const brand = host.split(".")[0] ?? host;
+    const pretty = brand
+      .split(/[-_]/)
+      .filter(Boolean)
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(" ");
+
+    const known: Record<string, string> = {
+      abeka: "Abeka",
+      bjupress: "BJU Press",
+      sonlight: "Sonlight",
+      time4learning: "Time4Learning",
+      mathusee: "Math-U-See",
+      apologia: "Apologia",
+      masterbooks: "Master Books",
+      iew: "Institute for Excellence in Writing",
+      cltexam: "CLT Exam",
+      rainbowresource: "Rainbow Resource",
+      goodandbeautiful: "The Good and the Beautiful",
+      tied2teaching: "Tied 2 Teaching",
+      classicalconversations: "Classical Conversations",
+      allinonehomeschool: "All-in-One Homeschool",
+      khanacademy: "Khan Academy",
+    };
+
+    const key = brand.toLowerCase();
+    if (known[key]) return known[key];
+    if (pretty) return pretty;
+  } catch {
+    // fall through
+  }
+
+  return title.split(/[:\-–|]/)[0]?.trim() || title;
 }

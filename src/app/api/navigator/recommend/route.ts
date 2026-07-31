@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getNavigatorEntitlement } from "@/lib/navigator/access";
-import { buildEncouragement, buildSubjectPlans } from "@/lib/navigator/match";
+import { buildEncouragement, buildYearPlans } from "@/lib/navigator/match";
 import { computeCompletionPercent } from "@/lib/navigator/survey";
 import { getSessionProfile } from "@/lib/auth/session";
 import type { NavigatorProfileAnswers } from "@/types/navigator";
@@ -17,11 +17,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Missing answers." }, { status: 400 });
   }
 
-  const subjectPlans = buildSubjectPlans(body.answers);
+  const yearPlans = buildYearPlans(body.answers);
+  const subjectPlans = yearPlans[0]?.subjectPlans ?? [];
   const encouragement = buildEncouragement(body.answers);
   const completionPercent = computeCompletionPercent(body.answers);
 
   return NextResponse.json({
+    yearPlans,
     subjectPlans,
     encouragement,
     completionPercent,

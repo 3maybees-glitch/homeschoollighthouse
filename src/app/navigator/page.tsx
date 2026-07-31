@@ -2,11 +2,12 @@ import { Compass, Ship, Waves } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
 import { getSessionProfile } from "@/lib/auth/session";
 import { getNavigatorEntitlement } from "@/lib/navigator/access";
+import { hydrateNavigatorChart } from "@/lib/navigator/chart-storage";
 import { memoryStore } from "@/lib/store/memory-store";
 import { createClient } from "@/lib/supabase/server";
 import { NavigatorApp } from "@/components/navigator/navigator-app";
 import { NAVIGATOR_PRICE_LABEL } from "@/lib/navigator/survey";
-import type { NavigatorChart, NavigatorProfileAnswers, NavigatorSubjectPlan } from "@/types/navigator";
+import type { NavigatorChart, NavigatorProfileAnswers } from "@/types/navigator";
 
 export const metadata = {
   title: brand.navigator.title,
@@ -27,16 +28,16 @@ async function loadInitialChart(userId?: string): Promise<NavigatorChart | null>
       .maybeSingle();
 
     if (data) {
-      return {
+      return hydrateNavigatorChart({
         id: data.id,
         userId: data.user_id,
         createdAt: data.created_at,
         updatedAt: data.updated_at,
         answers: data.answers as NavigatorProfileAnswers,
         completionPercent: data.completion_percent,
-        subjectPlans: data.subject_plans as NavigatorSubjectPlan[],
+        subjectPlansRaw: data.subject_plans,
         encouragement: data.encouragement ?? "",
-      };
+      });
     }
   }
 
