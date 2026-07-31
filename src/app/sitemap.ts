@@ -6,7 +6,7 @@ import { getAllListingSlugs } from "@/lib/listings/catalog";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://homeschoollighthouse.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/browse", "/social", "/lighthouse-library", "/credit-logbook", "/navigator", "/harbors", "/harbor-huddle", "/blog", "/pricing", "/advertise", "/submit", "/ai", "/account"].map((path) => ({
+  const staticRoutes = ["", "/browse", "/social", "/lighthouse-library", "/credit-logbook", "/navigator", "/navigator/sample", "/harbors", "/harbor-huddle", "/blog", "/pricing", "/advertise", "/submit", "/ai", "/account"].map((path) => ({
     url: `${siteUrl}${path}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,

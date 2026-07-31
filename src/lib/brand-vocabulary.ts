@@ -78,9 +78,9 @@ export const brand = {
   },
   navigator: {
     title: "The Navigator",
-    tagline: "Chart 1st grade through 12th Senior with three trusted choices per subject",
+    tagline: "Not one year — every year until graduation, 1st through 12th Senior",
     subtitle:
-      "A premium, standalone academic interview profile — almost like a dating profile for curriculum — for elementary, middle, and high school. Share learning styles, strengths, faith preferences, budget, and graduation horizon. Receive a decorated chart with three matched curricula, books, courses, or products per subject, year/credit guidance, and Homeschool Lighthouse weblinks you can print as PDF and save to your account.",
+      "A premium, standalone academic interview profile — almost like a dating profile for curriculum — for elementary, middle, and high school. Share learning styles, strengths, faith preferences, budget, and how many years remain until graduation. Receive a decorated multi-year chart covering all remaining school years through Senior, with three matched curricula, books, courses, or products per subject each year, company names, year/credit guidance, and Homeschool Lighthouse weblinks you can print as PDF and save to your account.",
     privacy:
       "Personal information is password-protected in your account, not reviewed by us for marketing, and never sold to companies.",
     price: "$77",
@@ -178,7 +178,7 @@ export const exploreRoutes = [
   },
   {
     title: "The Navigator",
-    description: "Match curricula from 1st grade through 12th Senior — $77 standalone chart.",
+    description: "Multi-year curriculum chart from your grade through 12th Senior — $77.",
     href: "/navigator",
   },
   {
