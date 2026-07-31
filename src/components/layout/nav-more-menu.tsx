@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ChevronDown, Sparkles } from "lucide-react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { accountNavItem, moreFreeNavItems, premiumNavItems, type NavItem } from "@/lib/site-nav";
+import { accountNavItem, advertiseNavItem, moreFreeNavItems, premiumNavItems, type NavItem } from "@/lib/site-nav";
 
 function MenuLink({ item }: { item: NavItem }) {
   return (
@@ -57,10 +57,15 @@ export function NavMoreMenu() {
 
           <DropdownMenu.Separator className="mx-2 my-1.5 h-px bg-[var(--color-border)]" />
 
-          <SectionLabel>Premium member tools</SectionLabel>
+          <SectionLabel>Premium tools</SectionLabel>
           {premiumNavItems.map((item) => (
             <MenuLink key={item.href} item={item} />
           ))}
+
+          <DropdownMenu.Separator className="mx-2 my-1.5 h-px bg-[var(--color-border)]" />
+
+          <SectionLabel>For businesses</SectionLabel>
+          <MenuLink item={advertiseNavItem} />
 
           <DropdownMenu.Separator className="mx-2 my-1.5 h-px bg-[var(--color-border)]" />
 
