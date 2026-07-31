@@ -61,7 +61,7 @@ export function LighthouseSignals() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 bg-[var(--color-cream)] px-4 py-5 sm:px-6 sm:py-6 lg:border-l lg:border-t-0">
+        <div className="border-t border-white/10 bg-[var(--color-cream)] px-4 py-5 text-[var(--color-navy-deep)] sm:px-6 sm:py-6 lg:border-l lg:border-t-0">
           <div className="overflow-hidden rounded-2xl border border-[var(--color-border)] bg-white">
             <XTimelineEmbed height={520} className="min-h-[320px]" />
           </div>
