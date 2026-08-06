@@ -12,7 +12,7 @@ Closed stale stacked scrape PRs in Aug 2026 — do not revive those mega-branche
 | The Good and the Beautiful | https://www.goodandbeautiful.com | Scrape script exists; wire `*-imported.json` into seed |
 | My Father's World | https://www.mfwbooks.com | Scrape script exists; wire import into seed |
 | Time4Learning | https://www.time4learning.com | Brand stub only — product/plan catalog needed |
-| Alpha Omega Publications (AOP) | https://aop.com | LIFEPAC / Monarch / Switched-On Schoolhouse catalogs |
+| Memoria Press | https://www.memoriapress.com | Public WooCommerce product API route removed (404); expand/rebuild scraper via product sitemap when ready |
 
 ## Medium priority (niche / missing entirely)
 

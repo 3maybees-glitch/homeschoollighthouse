@@ -26,6 +26,9 @@ copy_import() {
   echo "Synced $(basename "$dest")"
 }
 
+FAILURES=0
+FAILURE_LABELS=()
+
 scrape_and_sync() {
   local script="$1"
   local label="$2"
@@ -39,8 +42,10 @@ scrape_and_sync() {
   fi
 
   if [[ "$required" == "true" ]]; then
-    echo "ERROR: required scrape failed for ${label}" >&2
-    exit 1
+    echo "ERROR: required scrape failed for ${label} — keeping existing $(basename "$dest")" >&2
+    FAILURES=$((FAILURES + 1))
+    FAILURE_LABELS+=("$label")
+    return 0
   fi
 
   echo "WARN: ${label} scrape failed; keeping existing $(basename "$dest")" >&2
@@ -109,10 +114,10 @@ scrape_and_sync scripts/scrape-timberdoodle.py "Timberdoodle" \
   data/timberdoodle-scraped.json src/data/timberdoodle-imported.json false
 scrape_and_sync scripts/scrape-bridgeway.py "Bridgeway Academy" \
   data/bridgeway-scraped.json src/data/bridgeway-imported.json true
+scrape_and_sync scripts/scrape-memoria-press.py "Memoria Press" \
+  data/memoria-press-scraped.json src/data/memoria-press-imported.json false
 scrape_and_sync scripts/scrape-classical-conversations.py "Classical Conversations" \
   data/classical-conversations-scraped.json src/data/classical-conversations-imported.json false
-scrape_and_sync scripts/scrape-memoria-press.py "Memoria Press" \
-  data/memoria-press-scraped.json src/data/memoria-press-imported.json true
 scrape_and_sync scripts/scrape-veritas-press.py "Veritas Press" \
   data/veritas-press-scraped.json src/data/veritas-press-imported.json true
 scrape_and_sync scripts/scrape-oak-meadow.py "Oak Meadow" \
@@ -223,6 +228,14 @@ PY
 )"
 DELTA=$((AFTER_TOTAL - BEFORE_TOTAL))
 echo "Row delta: ${DELTA} (before ${BEFORE_TOTAL} → after ${AFTER_TOTAL})"
+if [[ "$FAILURES" -gt 0 ]]; then
+  echo ""
+  echo "Completed with ${FAILURES} required scrape failure(s); prior imports kept:"
+  for label in "${FAILURE_LABELS[@]}"; do
+    echo "  - ${label}"
+  done
+fi
 echo ""
 echo "Refresh complete. Run 'npm run refresh-imports:verify' to rebuild and check listing counts."
 echo "Git will show file diffs for any vendor whose catalog changed."
+# Exit 0 so CI can still open a PR with partial updates; failures are listed above.
