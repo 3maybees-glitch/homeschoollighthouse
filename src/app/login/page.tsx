@@ -11,7 +11,7 @@ export default async function LoginPage({
   const nextPath = params.next ?? "/account";
   const authError =
     params.error === "auth_callback"
-      ? "Email confirmation could not finish signing you in. Try signing in with your password below."
+      ? "Sign-in could not be completed (email link or Google). Please try again — or use email and password below."
       : null;
 
   return (

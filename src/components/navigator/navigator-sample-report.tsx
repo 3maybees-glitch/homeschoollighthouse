@@ -15,18 +15,19 @@ export function NavigatorSampleReport() {
 
   return (
     <div className="navigator-print">
-      {/* Sales hero — print-hidden CTA band */}
+      {/* Sample hero — print-hidden CTA band */}
       <section className="no-print border-b border-[var(--color-border)] bg-[var(--color-navy)] text-white">
         <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-14">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_80%_at_85%_15%,rgba(42,157,143,0.28),transparent_55%),radial-gradient(ellipse_50%_50%_at_5%_90%,rgba(230,180,34,0.16),transparent_50%)]" />
           <div className="relative">
             <p className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-beam)]">
               <Sparkles className="h-4 w-4" aria-hidden="true" />
-              Sales & marketing sample · The Navigator
+              Personalized Curriculum Sample · The Navigator
             </p>
             <h1 className="font-display mt-3 max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl">
-              {meta.tagline}
+              Personalized Curriculum Sample
             </h1>
+            <p className="mt-2 max-w-3xl text-lg text-slate-200">{meta.tagline}</p>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-300">{meta.subtitle}</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild>
@@ -53,9 +54,12 @@ export function NavigatorSampleReport() {
         {/* Print header */}
         <div className="print-only mb-4 hidden border-b border-slate-300 pb-4">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-            Homeschool Lighthouse · The Navigator · Sample Report
+            Homeschool Lighthouse · The Navigator · Personalized Curriculum Sample
           </p>
-          <h1 className="font-display mt-1 text-2xl font-semibold">{meta.tagline}</h1>
+          <h1 className="font-display mt-1 text-2xl font-semibold">
+            Personalized Curriculum Sample
+          </h1>
+          <p className="text-sm text-slate-600">{meta.tagline}</p>
           <p className="text-sm text-slate-600">
             Sample student: {meta.studentName} · Starting {meta.startingGrade} · {meta.horizon}
           </p>
@@ -146,9 +150,8 @@ export function NavigatorSampleReport() {
             </h3>
           </div>
           <p className="mt-2 text-sm text-[var(--color-muted-foreground)]">
-            Marketing takeaway: families see the whole path at once. Elementary/middle years use
-            scope-and-sequence language; high school years shift to credit guidance for college-bound
-            transcripts.
+            Families see the whole path at once. Elementary/middle years use scope-and-sequence
+            language; high school years shift to credit guidance for college-bound transcripts.
           </p>
           <ol className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {sampleVoyageSummary.map((year, index) => (
@@ -298,8 +301,9 @@ export function NavigatorSampleReport() {
         </section>
 
         <p className="text-center text-xs text-[var(--color-muted-foreground)]">
-          Sample report for sales & marketing only. Resource names are illustrative. Real Navigator
-          charts match against the live Homeschool Lighthouse directory for each family&apos;s answers.
+          This Personalized Curriculum Sample is for demonstration only. Resource names are
+          illustrative. Real Navigator charts match against the live Homeschool Lighthouse directory
+          for each family&apos;s answers.
         </p>
       </div>
     </div>

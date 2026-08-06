@@ -3,7 +3,7 @@ import { NavigatorSampleReport } from "@/components/navigator/navigator-sample-r
 import { sampleReportMeta } from "@/lib/navigator/sample-report";
 
 export const metadata = {
-  title: `Sample Report · ${brand.navigator.title}`,
+  title: `Personalized Curriculum Sample · ${brand.navigator.title}`,
   description: sampleReportMeta.subtitle,
 };
 
