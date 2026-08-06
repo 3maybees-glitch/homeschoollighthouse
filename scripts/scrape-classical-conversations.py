@@ -8,6 +8,8 @@ import json
 import re
 import ssl
 import sys
+import time
+import urllib.error
 import urllib.request
 from html import unescape
 from pathlib import Path
@@ -44,10 +46,42 @@ SSL_CONTEXT.check_hostname = False
 SSL_CONTEXT.verify_mode = ssl.CERT_NONE
 
 
-def fetch(url: str) -> bytes:
+def fetch(url: str, retries: int = 5) -> bytes:
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=90, context=SSL_CONTEXT) as response:
-        return response.read()
+    delay = 2.0
+    last_error: Exception | None = None
+    for attempt in range(1, retries + 1):
+        try:
+            with urllib.request.urlopen(request, timeout=90, context=SSL_CONTEXT) as response:
+                return response.read()
+        except urllib.error.HTTPError as error:
+            last_error = error
+            # Back off on rate limits / transient server errors.
+            if error.code in {429, 500, 502, 503, 504} and attempt < retries:
+                print(
+                    f"HTTP {error.code} for {url} (attempt {attempt}/{retries}); "
+                    f"retrying in {delay:.0f}s...",
+                    file=sys.stderr,
+                )
+                time.sleep(delay)
+                delay = min(delay * 2, 60)
+                continue
+            raise
+        except TimeoutError as error:
+            last_error = error
+            if attempt < retries:
+                print(
+                    f"Timeout for {url} (attempt {attempt}/{retries}); "
+                    f"retrying in {delay:.0f}s...",
+                    file=sys.stderr,
+                )
+                time.sleep(delay)
+                delay = min(delay * 2, 60)
+                continue
+            raise
+    if last_error:
+        raise last_error
+    raise RuntimeError(f"Failed to fetch {url}")
 
 
 def strip_html(text: str) -> str:
@@ -115,6 +149,8 @@ def fetch_shopify_products() -> list[dict]:
         if len(batch) < PER_PAGE:
             break
         page += 1
+        # Be polite between Shopify pages to reduce 429s during refresh runs.
+        time.sleep(1.5)
     return products
 
 

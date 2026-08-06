@@ -48,6 +48,44 @@ scrape_and_sync() {
 
 mkdir -p data src/data
 
+count_imports() {
+  "$PYTHON" - <<'PY'
+import json
+from pathlib import Path
+root = Path("src/data")
+rows = []
+for path in sorted(root.glob("*-imported.json")):
+    try:
+        data = json.loads(path.read_text())
+        n = len(data) if isinstance(data, list) else 0
+    except Exception:
+        n = -1
+    rows.append((path.name, n))
+width = max(len(name) for name, _ in rows) if rows else 10
+for name, n in rows:
+    print(f"  {name:<{width}}  {n}")
+print(f"TOTAL_FILES={len(rows)}")
+print(f"TOTAL_ROWS={sum(n for _, n in rows if n > 0)}")
+PY
+}
+
+echo "Import counts before refresh:"
+count_imports
+BEFORE_TOTAL="$("$PYTHON" - <<'PY'
+import json
+from pathlib import Path
+total = 0
+for path in Path("src/data").glob("*-imported.json"):
+    try:
+        data = json.loads(path.read_text())
+        if isinstance(data, list):
+            total += len(data)
+    except Exception:
+        pass
+print(total)
+PY
+)"
+
 # Fast WooCommerce / Shopify API scrapers (required)
 scrape_and_sync scripts/scrape-apologia.py "Apologia" \
   data/apologia-scraped.json src/data/apologia-imported.json true
@@ -72,7 +110,7 @@ scrape_and_sync scripts/scrape-timberdoodle.py "Timberdoodle" \
 scrape_and_sync scripts/scrape-bridgeway.py "Bridgeway Academy" \
   data/bridgeway-scraped.json src/data/bridgeway-imported.json true
 scrape_and_sync scripts/scrape-classical-conversations.py "Classical Conversations" \
-  data/classical-conversations-scraped.json src/data/classical-conversations-imported.json true
+  data/classical-conversations-scraped.json src/data/classical-conversations-imported.json false
 scrape_and_sync scripts/scrape-memoria-press.py "Memoria Press" \
   data/memoria-press-scraped.json src/data/memoria-press-imported.json true
 scrape_and_sync scripts/scrape-veritas-press.py "Veritas Press" \
@@ -167,4 +205,24 @@ scrape_and_sync scripts/scrape-a2zhomeschooling.py "A2Z Homeschooling" \
   data/a2zhomeschooling-scraped.json src/data/a2z-imported.json false
 
 echo ""
+echo "Import counts after refresh:"
+count_imports
+AFTER_TOTAL="$("$PYTHON" - <<'PY'
+import json
+from pathlib import Path
+total = 0
+for path in Path("src/data").glob("*-imported.json"):
+    try:
+        data = json.loads(path.read_text())
+        if isinstance(data, list):
+            total += len(data)
+    except Exception:
+        pass
+print(total)
+PY
+)"
+DELTA=$((AFTER_TOTAL - BEFORE_TOTAL))
+echo "Row delta: ${DELTA} (before ${BEFORE_TOTAL} → after ${AFTER_TOTAL})"
+echo ""
 echo "Refresh complete. Run 'npm run refresh-imports:verify' to rebuild and check listing counts."
+echo "Git will show file diffs for any vendor whose catalog changed."
