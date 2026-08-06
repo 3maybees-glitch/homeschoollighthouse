@@ -1,5 +1,6 @@
 import { HomeHero } from "@/components/home/home-hero";
 import { BrightBeaconsSection } from "@/components/home/bright-beacons-section";
+import { NavigatorPromo } from "@/components/home/navigator-promo";
 import { FaithFreedomMapsPromo } from "@/components/home/faith-freedom-maps-promo";
 import { CategoryCards } from "@/components/home/category-cards";
 import { SocialHarborsPreview } from "@/components/home/social-harbors-preview";
@@ -11,6 +12,7 @@ export default function HomePage() {
     <div>
       <HomeHero />
       <BrightBeaconsSection />
+      <NavigatorPromo />
       <FaithFreedomMapsPromo />
       <CategoryCards />
       <SocialHarborsPreview />
