@@ -7,7 +7,7 @@ import type { StripePlan } from "@/lib/stripe";
 const buttonLabels: Record<StripePlan, string> = {
   yearly: "Choose Annual Pass",
   lifetime: "Choose Lifetime Lantern",
-  navigator: "Purchase The Navigator — $77",
+  navigator: "Purchase The Navigator — $47",
 };
 
 export function CheckoutButton({ plan }: { plan: StripePlan }) {

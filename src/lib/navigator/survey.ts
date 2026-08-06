@@ -13,8 +13,8 @@ import type {
 } from "@/types/navigator";
 import { getGradeBand, type NavigatorGradeBand } from "@/lib/navigator/grades";
 
-export const NAVIGATOR_PRICE_LABEL = "$77";
-export const NAVIGATOR_PRICE_CENTS = 7700;
+export const NAVIGATOR_PRICE_LABEL = "$47";
+export const NAVIGATOR_PRICE_CENTS = 4700;
 
 export const emptyNavigatorAnswers = (): NavigatorProfileAnswers => ({
   firstName: "",
