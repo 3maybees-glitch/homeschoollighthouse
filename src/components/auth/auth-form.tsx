@@ -70,21 +70,37 @@ export function AuthForm({
   };
 
   const handleGoogleAuth = async () => {
+    setMessage("");
+    setLoading(true);
+
     const supabase = createClient();
     if (!supabase) {
       setMessage("Supabase is not configured.");
+      setLoading(false);
       return;
     }
 
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? window.location.origin;
+    // Always use the current browser origin for OAuth. A baked-in
+    // NEXT_PUBLIC_SITE_URL (e.g. localhost from build, or wrong host) causes
+    // Google / Supabase redirect_uri_mismatch and a broken Google button.
+    const origin = window.location.origin;
+    const callbackUrl = `${origin}/auth/callback?next=${encodeURIComponent(nextPath)}`;
+
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${siteUrl}/auth/callback?next=${encodeURIComponent(nextPath)}`,
+        redirectTo: callbackUrl,
       },
     });
 
-    if (error) setMessage(error.message);
+    if (error) {
+      setMessage(
+        error.message ||
+          "Google sign-in could not start. Try email and password, or contact support if this continues.",
+      );
+      setLoading(false);
+    }
+    // On success, Supabase redirects away — leave loading true.
   };
 
   return (
@@ -129,8 +145,14 @@ export function AuthForm({
         </div>
       </div>
 
-      <Button type="button" variant="outline" className="w-full" onClick={handleGoogleAuth}>
-        Google
+      <Button
+        type="button"
+        variant="outline"
+        className="w-full"
+        onClick={handleGoogleAuth}
+        disabled={loading}
+      >
+        {loading ? "Redirecting to Google..." : "Continue with Google"}
       </Button>
 
       <p className="text-center text-sm text-slate-600">

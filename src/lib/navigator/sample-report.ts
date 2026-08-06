@@ -1,6 +1,6 @@
 import type { NavigatorYearPlan } from "@/types/navigator";
 
-/** Fictional sample for sales/marketing demos — not a real family's data. */
+/** Personalized Curriculum Sample for demos and previews — not a real family's data. */
 export const sampleReportMeta = {
   studentName: "Emma",
   age: "11",
@@ -13,7 +13,7 @@ export const sampleReportMeta = {
   priceNote: "one-time — not a subscription",
   tagline: "Not one year. Every year until graduation.",
   subtitle:
-    "A sample Homeschool Lighthouse Navigator chart showing how one academic interview profile becomes a full multi-year voyage — three trusted curriculum choices per subject, for every remaining school year through Senior year.",
+    "A Personalized Curriculum Sample from Homeschool Lighthouse Navigator — showing how one academic interview profile becomes a full multi-year voyage with three trusted curriculum choices per subject, for every remaining school year through Senior year.",
   privacyNote:
     "In a real purchase, personal answers stay password-protected in the family's account and are never sold or marketed to companies.",
   ctaHref: "/navigator",
@@ -46,7 +46,7 @@ function choice(
   };
 }
 
-/** Condensed sample: full 7-year voyage with 2 subjects shown deeply for sales clarity. */
+/** Condensed Personalized Curriculum Sample: full 7-year voyage with 2 subjects shown deeply. */
 export const sampleYearPlans: NavigatorYearPlan[] = [
   {
     yearIndex: 1,
