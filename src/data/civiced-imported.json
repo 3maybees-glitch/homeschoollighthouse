@@ -1,18 +1,18 @@
 [
   {
-    "title": "Home",
+    "title": "We the People: The Citizen and the Constitution",
+    "website_url": "https://www.civiced.org/programs/we-the-people-the-citizen-and-the-constitution",
+    "source": "Center for Civic Education",
+    "grades_or_ages": "Grades 4-12",
+    "prices_mentioned": "Contact for pricing",
+    "description": "Center for Civic Education civics curriculum for homeschool and classroom use."
+  },
+  {
+    "title": "Center for Civic Education",
     "website_url": "https://www.civiced.org/",
     "source": "Center for Civic Education",
     "grades_or_ages": "Grades 4-12",
-    "prices_mentioned": "$.",
-    "description": "Home"
-  },
-  {
-    "title": "Project Citizen",
-    "website_url": "https://www.civiced.org/programs/project-citizen",
-    "source": "Center for Civic Education",
-    "grades_or_ages": "Grades 4-12",
-    "prices_mentioned": "$.",
-    "description": "Project Citizen"
+    "prices_mentioned": "$1",
+    "description": ""
   }
 ]

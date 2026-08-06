@@ -8,20 +8,20 @@
     "description": "10th Grade English includes engaging and interactive instruction about reading, writing, speaking and listening, and language, with a focus on exploring a wide variety of genres and their elements. Students learn how to carefully read, interpret, and analyze literature and nonfiction works of cultural or historical sig"
   },
   {
-    "title": "10th Grade English - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/english-10-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "10Th Grade",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "10th Grade English - Credit Recovery is a flexible online course designed for students who need to retake the course, catch up to classmates, or earn the credits necessary to graduate on time. The course includes engaging and interactive instruction about reading, writing, speaking and listening, and language, with a f"
-  },
-  {
     "title": "10th Grade English - Honors",
     "website_url": "https://learningstore.k12.com/products/english-10-honors",
     "source": "K12 (Stride)",
     "grades_or_ages": "10Th Grade",
     "prices_mentioned": "$100.00-$600.00",
     "description": "10th Grade English - Honors is a challenging program that includes engaging and interactive instruction about reading, writing, speaking and listening, and language, with a focus on exploring a wide variety of genres and their elements. Students learn how to carefully read, interpret, and analyze literature and nonfict"
+  },
+  {
+    "title": "10th Grade English - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/english-10-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "10Th Grade",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "10th Grade English - Skills Recovery is a flexible online course designed for students who need to retake the course, catch up to classmates, or earn the credits necessary to graduate on time. The course includes engaging and interactive instruction about reading, writing, speaking and listening, and language, with a f"
   },
   {
     "title": "10th Grade Intensive Reading",
@@ -392,6 +392,14 @@
     "description": "6th Grade Earth Science builds on students\u2019 natural curiosity about the world around them. By exploring geological history, fascinating landforms, the oceans and atmosphere, and recent discoveries about the universe, the course helps students connect science to their everyday lives . Students investigate topics such as"
   },
   {
+    "title": "6th Grade Earth Science - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/earth-science-skills-recovery",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "6Th Grade",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "6th Grade Earth Science \u2013 Skills Recovery builds on students\u2019 natural curiosity about the world around them. By exploring geological history, remarkable landforms, the oceans and atmosphere, and discoveries about the universe, the course helps students connect science to their everyday world. Students study topics such"
+  },
+  {
     "title": "6th Grade Health",
     "website_url": "https://learningstore.k12.com/products/health-6",
     "source": "K12 (Stride)",
@@ -568,6 +576,14 @@
     "description": "8th Grade Physical Science introduces students to key concepts in chemistry and physics, helping them understand the physical world. The course covers matter, atoms, molecules, chemical reactions, motion, force, momentum, work and simple machines, energy, waves, electricity, light, and other fundamental principles of c"
   },
   {
+    "title": "8th Grade Physical Science - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/physical-science-skills-recovery",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "8Th Grade",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "8th Grade Physical Science \u2013 Skills Recovery introduces students to key concepts in chemistry and physics, helping them understand the physical world. The course provides an overview of matter, atoms, molecules, chemical reactions, motion, force, momentum, work and simple machines, energy, waves, electricity, light, an"
+  },
+  {
     "title": "8th Grade U.S. History Before 1900",
     "website_url": "https://learningstore.k12.com/products/us-history-before-1900",
     "source": "K12 (Stride)",
@@ -592,20 +608,20 @@
     "description": "9th Grade English includes engaging and interactive instruction about reading, writing, speaking and listening, and language, with a focus on exploring a wide variety of genres and their elements. Students learn how to carefully read, interpret, and analyze literature and nonfiction works of cultural or historical sign"
   },
   {
-    "title": "9th Grade English - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/english-9-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "9Th Grade",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "9th Grade English - Credit Recovery is a flexible online course designed for students who need to retake the course, catch up to classmates, or earn the credits necessary to graduate on time. The course includes engaging and interactive instruction about reading, writing, speaking and listening, and language, with a fo"
-  },
-  {
     "title": "9th Grade English - Honors",
     "website_url": "https://learningstore.k12.com/products/english-9-honors",
     "source": "K12 (Stride)",
     "grades_or_ages": "9Th Grade",
     "prices_mentioned": "$100.00-$600.00",
     "description": "9th Grade English - Honors is a challenging course that includes engaging and interactive instruction about reading, writing, speaking, and listening, and language, with a focus on exploring a wide variety of genres and their elements. Students learn how to carefully read, interpret, and analyze literature and nonficti"
+  },
+  {
+    "title": "9th Grade English - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/english-9-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "9Th Grade",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "9th Grade English - Skills Recovery is a flexible online course designed for students who need to retake the course, catch up to classmates, or earn the credits necessary to graduate on time. The course includes engaging and interactive instruction about reading, writing, speaking and listening, and language, with a fo"
   },
   {
     "title": "9th Grade Intensive Reading",
@@ -640,20 +656,20 @@
     "description": "Algebra 1 builds on the math skills students developed in middle school and helps them take the next step toward more advanced high-school math. Because it follows updated middle school math standards, this course may look slightly different from older versions of Algebra, offering a clearer, more connected approach to"
   },
   {
-    "title": "Algebra 1 - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/algebra-1-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "Algebra 1 \u2013 Credit Recovery helps students strengthen their foundational math skills and confidently move into algebraic thinking. The course focuses on rebuilding understanding in key areas so students can successfully meet Algebra 1 learning goals. Students review and deepen their knowledge of linear expressions and "
-  },
-  {
     "title": "Algebra 1 - Honors",
     "website_url": "https://learningstore.k12.com/products/algebra-1-honors",
     "source": "K12 (Stride)",
     "grades_or_ages": "Grades 6-8",
     "prices_mentioned": "$100.00-$600.00",
     "description": "Algebra 1 \u2013 Honors builds on the math skills students learned in middle school and helps them progress into more advanced algebraic thinking. Because it follows updated middle school math standards, the course may cover concepts in a slightly different way than older versions of Algebra, offering a clearer and more con"
+  },
+  {
+    "title": "Algebra 1 - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/algebra-1-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "Algebra 1 \u2013 Skills Recovery helps students strengthen their foundational math skills and confidently move into algebraic thinking. The course focuses on rebuilding understanding in key areas so students can successfully meet Algebra 1 learning goals. Students review and deepen their knowledge of linear expressions and "
   },
   {
     "title": "Algebra 2",
@@ -664,20 +680,20 @@
     "description": "Algebra 2 helps students build on the skills they gained in Algebra 1 and introduces a wider range of mathematical concepts. Along with continued work in linear, quadratic, and exponential functions, students explore new function types, including polynomial, rational, radical, and trigonometric functions. Throughout th"
   },
   {
-    "title": "Algebra 2 - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/algebra-2-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "Grades 9-12",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "Algebra 2 \u2013 Credit Recovery helps students strengthen and rebuild the skills they learned in Algebra 1 and Geometry while preparing them for more advanced algebraic concepts. The course focuses on core ideas students need to confidently move forward in high school math. The course focuses on rebuilding understanding in"
-  },
-  {
     "title": "Algebra 2 - Honors",
     "website_url": "https://learningstore.k12.com/products/algebra-2-honors",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$600.00",
     "description": "Algebra 2 \u2013 Honors builds on the skills students developed in Algebra 1 and introduces a broader and more challenging set of mathematical concepts. Along with continued work in linear, quadratic, and exponential functions, students expand their understanding to include polynomial, rational, radical, and trigonometric f"
+  },
+  {
+    "title": "Algebra 2 - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/algebra-2-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "Algebra 2 \u2013 Skills Recovery helps students strengthen and rebuild the skills they learned in Algebra 1 and Geometry while preparing them for more advanced algebraic concepts. The course focuses on core ideas students need to confidently move forward in high school math. The course focuses on rebuilding understanding in"
   },
   {
     "title": "American History Since 1865",
@@ -696,14 +712,6 @@
     "description": "American Literature introduces students to reading and analyzing works from colonial- to contemporary-era American authors, including poetry, short stories, novels, drama, and nonfiction. Students explore text analysis, critical writing, creative projects, and online discussions. They develop vocabulary skills and stre"
   },
   {
-    "title": "American Literature - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/american-literature-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "American Literature \u2013 Credit Recovery engages students in reading and analyzing literature from colonial- to contemporary-era American authors, including poetry, short stories, novels, drama, and nonfiction. The course provides opportunities for critical writing . Students develop vocabulary skills and strengthen their"
-  },
-  {
     "title": "American Literature - Honors",
     "website_url": "https://learningstore.k12.com/products/american-literature-honors",
     "source": "K12 (Stride)",
@@ -712,12 +720,60 @@
     "description": "American Literature - Honors is a challenging course where students read and analyze works of literature from colonial- to contemporary-era American authors, including poetry, short stories, novels, drama, and nonfiction. The literary works provide opportunities for text analysis, critical writing, creative projects, a"
   },
   {
+    "title": "American Literature - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/american-literature-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "American Literature \u2013 Skills Recovery engages students in reading and analyzing literature from colonial- to contemporary-era American authors, including poetry, short stories, novels, drama, and nonfiction. The course provides opportunities for critical writing . Students develop vocabulary skills and strengthen their"
+  },
+  {
     "title": "Animal Discovery Quest - Printable Activity Worksheet",
     "website_url": "https://learningstore.k12.com/products/animal-discovery-quest-printable-activity-worksheet",
     "source": "K12 (Stride)",
     "grades_or_ages": "K; Grades K-5",
     "prices_mentioned": "Free",
     "description": "Spark Curiosity and Early Writing Through Animal Exploration Encourage curiosity and early writing skills with a playful, animal-themed activity. Kids can explore their favorite animals while building observation, drawing, and early research skills. This engaging printable invites young learners to look closely, think "
+  },
+  {
+    "title": "Animation and Character Design - Character Concept Design with AI",
+    "website_url": "https://learningstore.k12.com/products/animation-and-character-design-character-concept-design-with-ai",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 4, Lesson 9 Character Concept Design with AI introduces students to AI image generation as a creative and professional tool in animation and visual storytelling. Using platforms like Adobe Firefly, Leonardo AI, and DALL\u00b7E, students write and refine prompts to generate original character concepts\u2014dis"
+  },
+  {
+    "title": "Animation and Character Design - Ethical Poster Design in AI",
+    "website_url": "https://learningstore.k12.com/products/animation-and-character-design-ethical-poster-design-in-ai",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 4, Lesson 12 Ethical Poster Design in AI challenges students to examine the real-world stakes of AI-generated visual content\u2014and then communicate what they've learned through their own design work. This lesson combines critical analysis with creative production, asking students to be both thinkers a"
+  },
+  {
+    "title": "Animation and Character Design - Portfolio Showcase",
+    "website_url": "https://learningstore.k12.com/products/animation-and-character-design-portfolio-showcase",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 4, Lesson 13 Portfolio Showcase gives students the opportunity to step back, curate, and present the creative work they've built throughout the Animation and Character Design unit . This is more than a show-and-tell\u2014it's a structured process of reflection, selection, and professional presentation th"
+  },
+  {
+    "title": "Animation and Character Design - Realistic vs. Stylized Characters",
+    "website_url": "https://learningstore.k12.com/products/animation-and-character-design-realistic-vs-stylized-characters",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 4, Lesson 10 Realistic vs. Stylized Characters invites students to explore one of the most fundamental decisions in character design\u2014and to use AI to experiment with both ends of the spectrum. Students generate characters across a wide range of visual styles and analyze how those choices shape audie"
+  },
+  {
+    "title": "Animation and Character Design - Storyboarding with LTX Studio",
+    "website_url": "https://learningstore.k12.com/products/animation-and-character-design-storyboarding-with-ltx-studio",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 4, Lesson 11 Storyboarding with LTX Studio guides students through one of the most essential skills in film, animation, and visual media\u2014translating an idea into a planned visual sequence. Using LTX Studio or a comparable AI-assisted tool, students plan and build a short storyboard that demonstrates"
   },
   {
     "title": "Apprentice 1 - Kindergarten Music Course",
@@ -744,12 +800,12 @@
     "description": "Art Appreciation is a one-semester course that introduces students to the various forms of visual art, such as painting, sculpture, film, and more. Students learn how to look at a work of art, identify and compare its key characteristics, and understand the role art plays throughout history. Through hands-on activities"
   },
   {
-    "title": "Art Appreciation - Credit Recovery",
+    "title": "Art Appreciation - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/art-appreciation-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$350.00",
-    "description": "Art Appreciation - Credit Recovery is a one-semester course that introduces students to the various forms of visual art, such as painting, sculpture, film, and more. Students learn how to look at a work of art, identify and compare its key characteristics, and understand the role art plays throughout history . Through "
+    "description": "Art Appreciation - Skills Recovery is a one-semester course that introduces students to the various forms of visual art, such as painting, sculpture, film, and more. Students learn how to look at a work of art, identify and compare its key characteristics, and understand the role art plays throughout history . Through "
   },
   {
     "title": "At-Home Science Experiments - Printable Activity Worksheet",
@@ -760,20 +816,36 @@
     "description": "Discover the Wonder of Science at Home Spark your child's curiosity with hands-on science they can explore at home! These easy experiments use everyday materials to demonstrate fundamental scientific concepts, giving students a chance to experiment, observe, and discover - all while having fun. Designed to make learnin"
   },
   {
+    "title": "Audio and Music Generation - Creating a Podcast Intro or Sonic Logo",
+    "website_url": "https://learningstore.k12.com/products/audio-and-music-generation-creating-a-podcast-intro-or-sonic-logo",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 3, Lesson 8 Creating a Podcast Intro or Sonic Logo challenges students to think like audio branding professionals. Using AI-powered tools like Suno and Soundraw, students compose a short musical identity\u2014either a podcast intro or a sonic logo\u2014designed to capture a specific tone, brand, and audience "
+  },
+  {
+    "title": "Audio and Music Generation - Creating AI-Generated Music for Multimedia",
+    "website_url": "https://learningstore.k12.com/products/audio-and-music-generation-creating-ai-generated-music-for-multimedia",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 3, Lesson 7 Creating AI-Generated Music for Multimedia puts students in the role of composer\u2014using AI as their instrument. Through hands-on experimentation with AI music platforms, students generate original audio tracks and explore how musical choices like tempo, mood, genre, and instrumentation af"
+  },
+  {
+    "title": "Audio and Music Generation - Creating Voice Narration",
+    "website_url": "https://learningstore.k12.com/products/audio-and-music-generation-creating-voice-narration",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 3, Lesson 6 Creating Voice Narration introduces students to the fast-growing world of AI-generated audio through hands-on creation. Using tools like ElevenLabs, students produce their own AI voice narrations and discover firsthand how tone, pacing, pitch, and voice selection shape a listener's exper"
+  },
+  {
     "title": "Biology",
     "website_url": "https://learningstore.k12.com/products/biology",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$770.00",
     "description": "Biology introduces students to the science of life, including the chemistry of living things: cells, genetics, evolution, the structure and function of organisms, and ecology. The course encourages curiosity and hands-on learning while helping students develop a strong foundation in biology concepts. The program includ"
-  },
-  {
-    "title": "Biology - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/biology-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "Biology \u2013 Credit Recovery helps students review and strengthen their understanding of key biology concepts. Topics include the scientific method, characteristics of living things, energy, organic compounds, and water. Students revisit the structure and function of living organisms , including the cell, genetics, DNA, R"
   },
   {
     "title": "Biology - Honors",
@@ -784,6 +856,14 @@
     "description": "Biology \u2013 Honors offers a challenging, honors-level curriculum that dives deeper into the science of life. Students explore the chemistry of living things, cells, genetics, evolution, the structure and function of organisms, and ecology. This program includes advanced online lessons with extensive animations , a compan"
   },
   {
+    "title": "Biology - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/biology-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "Biology \u2013 Skills Recovery helps students review and strengthen their understanding of key biology concepts. Topics include the scientific method, characteristics of living things, energy, organic compounds, and water. Students revisit the structure and function of living organisms , including the cell, genetics, DNA, R"
+  },
+  {
     "title": "British and World Literature",
     "website_url": "https://learningstore.k12.com/products/british-and-world-literature",
     "source": "K12 (Stride)",
@@ -792,20 +872,20 @@
     "description": "British and World Literature starts with students reading selections in a loosely organized chronological framework. They analyze the themes, styles, and structures of British and World Literature texts, and make thematic connections among diverse authors, periods, and settings. Students complete guided and independent"
   },
   {
-    "title": "British and World Literature - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/british-and-world-literature-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "British and World Literature \u2013 Credit Recovery starts with students reading selections in a loosely organized chronological framework. They analyze the themes, styles, and structures of British and World Literature texts, and make thematic connections among diverse authors, periods, and settings. Students complete guid"
-  },
-  {
     "title": "British and World Literature - Honors",
     "website_url": "https://learningstore.k12.com/products/british-and-world-literature-honors",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$600.00",
     "description": "British and World Literature \u2013 Honors starts with students reading selections in a loosely organized chronological framework. They analyze the themes, styles, and structures of British and World Literature texts, and make thematic connections among diverse authors, periods, and settings. Students work independently on "
+  },
+  {
+    "title": "British and World Literature - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/british-and-world-literature-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "British and World Literature \u2013 Skills Recovery starts with students reading selections in a loosely organized chronological framework. They analyze the themes, styles, and structures of British and World Literature texts, and make thematic connections among diverse authors, periods, and settings. Students complete guid"
   },
   {
     "title": "Business Tutoring Package",
@@ -832,12 +912,12 @@
     "description": "Career Planning guides students through an engaging, interactive process to help them explore future career and life options. This one-semester elective encourages students to think about who they are and where they want to go. Students start by examining their own interests, strengths, achievements, and personality tr"
   },
   {
-    "title": "Career Planning - Credit Recovery",
+    "title": "Career Planning - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/career-planning-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$350.00",
-    "description": "Career Planning \u2013 Credit Recovery is a flexible online course that guides students through an informative, interactive process to explore future career and life options. This one-semester elective helps students reflect on who they are and the paths they may want to pursue. Students begin by examining their interests, "
+    "description": "Career Planning \u2013 Skills Recovery is a flexible online course that guides students through an informative, interactive process to explore future career and life options. This one-semester elective helps students reflect on who they are and the paths they may want to pursue. Students begin by examining their interests, "
   },
   {
     "title": "Chemistry",
@@ -848,14 +928,6 @@
     "description": "Chemistry gives students a strong foundation for future science studies. The course offers clear, in-depth instruction in key topics such as atomic structure, chemical bonding and reactions, solutions, stoichiometry, thermochemistry, organic chemistry, and nuclear chemistry. Students learn through a combination of onli"
   },
   {
-    "title": "Chemistry - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/chemistry-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "Chemistry \u2013 Credit Recovery is a comprehensive online course that helps students rebuild a strong foundation in chemistry and prepare for future science studies. The course provides an in-depth exploration of all key areas , including atomic structure, chemical bonding and reactions, solutions, stoichiometry, thermoche"
-  },
-  {
     "title": "Chemistry - Honors",
     "website_url": "https://learningstore.k12.com/products/chemistry-honors",
     "source": "K12 (Stride)",
@@ -864,12 +936,68 @@
     "description": "Chemistry \u2013 Honors is an advanced course designed to give students a strong foundation for higher-level science studies. The course explores all major chemistry topics : atomic structure, chemical bonding and reactions, solutions, stoichiometry, thermochemistry, organic chemistry, and nuclear chemistry. Students work w"
   },
   {
+    "title": "Chemistry - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/chemistry-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "Chemistry \u2013 Skills Recovery is a comprehensive online course that helps students rebuild a strong foundation in chemistry and prepare for future science studies. The course provides an in-depth exploration of all key areas , including atomic structure, chemical bonding and reactions, solutions, stoichiometry, thermoche"
+  },
+  {
     "title": "Civics",
     "website_url": "https://learningstore.k12.com/products/civics",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$350.00",
     "description": "Civics is the study of citizenship and government. This one-semester course gives students a clear introduction to civic life, politics, and government, along with a brief overview of the history and development of government in the United States. Students learn how power and responsibility are shared and limited by go"
+  },
+  {
+    "title": "Coding and Gaming Design - AI Coding Assistants",
+    "website_url": "https://learningstore.k12.com/products/animation-and-character-design-portfolio-showcase-copy",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 5, Lesson 14 AI Coding Assistants introduces students to the tools already transforming how professional software developers write code\u2014and builds the critical skills needed to use them well. Using platforms like AskCodi and GitHub Copilot, students generate, analyze, and improve code with AI assist"
+  },
+  {
+    "title": "Coding and Gaming Design - Building a Mini-Game Prototype",
+    "website_url": "https://learningstore.k12.com/products/coding-and-gaming-design-building-a-mini-game-prototype",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 5, Lesson 16 Building a Mini-Game Prototype takes students through the complete cycle of game development\u2014from concept to playable product\u2014using AI coding tools to make the process accessible at any experience level. Students design, build, test, debug, and iterate their way to a working mini-game t"
+  },
+  {
+    "title": "Coding and Gaming Design - Coding for Impact",
+    "website_url": "https://learningstore.k12.com/products/coding-and-gaming-design-coding-for-impact",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 5, Lesson 19 Coding for Impact challenges students to use their technical skills in service of something that genuinely matters. Rather than building for entertainment alone, students design a game or app concept that addresses a real problem in their school , community, or the wider world\u2014using AI "
+  },
+  {
+    "title": "Coding and Gaming Design - Debugging with AI",
+    "website_url": "https://learningstore.k12.com/products/coding-and-gaming-design-debugging-with-ai",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 5, Lesson 15 Debugging with AI teaches students one of the most important and underrated skills in software development\u2014finding and fixing what's broken\u2014with AI as a collaborator rather than a solution provider . Working through intentionally flawed scripts, students develop the systematic thinking "
+  },
+  {
+    "title": "Coding and Gaming Design - Exploring TensorFlow and Hugging Face",
+    "website_url": "https://learningstore.k12.com/products/coding-and-gaming-design-exploring-tensorflow-and-hugging-face",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 5, Lesson 18 Exploring TensorFlow and Hugging Face gives students a window into the pre-trained AI systems powering today's most advanced applications\u2014without requiring them to build those systems from scratch. Students interact directly with real AI models to investigate how they process inputs, ge"
+  },
+  {
+    "title": "Coding and Gaming Design - Intro to Machine Learning",
+    "website_url": "https://learningstore.k12.com/products/coding-and-gaming-design-intro-to-machine-learning",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 5, Lesson 17 Intro to Machine Learning (ML) demystifies one of the most important and least understood technologies of our time\u2014through hands-on experience that requires zero prior coding knowledge. Using Google's Teachable Machine, students train a real image classification model from scratch and d"
   },
   {
     "title": "College Test Prep Tutoring Package",
@@ -896,12 +1024,12 @@
     "description": "Consumer Math helps students build practical arithmetic skills they can use in everyday life and future careers. The first semester focuses on occupational topics , including jobs, wages, deductions, taxes, insurance, recreation and spending, and transportation. In the second semester, students explore personal finance"
   },
   {
-    "title": "Consumer Math - Credit Recovery",
+    "title": "Consumer Math - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/consumer-math-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$600.00",
-    "description": "Consumer Math \u2013 Credit Recovery helps students review and strengthen arithmetic skills they can apply in everyday life and future careers. The first semester focuses on occupational topics , including jobs, wages, deductions, taxes, insurance, recreation and spending, and transportation. In the second semester, student"
+    "description": "Consumer Math \u2013 Skills Recovery helps students review and strengthen arithmetic skills they can apply in everyday life and future careers. The first semester focuses on occupational topics , including jobs, wages, deductions, taxes, insurance, recreation and spending, and transportation. In the second semester, student"
   },
   {
     "title": "Contemporary World Issues",
@@ -960,14 +1088,6 @@
     "description": "Earth Science provides students with a comprehensive introduction to earth science, covering geology, oceanography, astronomy, weather, and climate. Students learn through in-depth online lessons , a reference book, collaborative activities, and hands-on labs they can conduct at home. The course prepares students for f"
   },
   {
-    "title": "Earth Science - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/earth-science-credit-recovery",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "Earth Science \u2013 Credit Recovery provides students with a complete earth science curriculum, covering geology, oceanography, astronomy, weather, and climate. The course includes in-depth online lessons, collaborative activities, virtual labs, and hands-on experiments that students can conduct at home. It prepares studen"
-  },
-  {
     "title": "Earth Science - Honors",
     "website_url": "https://learningstore.k12.com/products/earth-science-honors",
     "source": "K12 (Stride)",
@@ -977,11 +1097,11 @@
   },
   {
     "title": "Earth Science - Skills Recovery",
-    "website_url": "https://learningstore.k12.com/products/earth-science-skills-recovery",
+    "website_url": "https://learningstore.k12.com/products/earth-science-credit-recovery",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$600.00",
-    "description": "Earth Science \u2013 Skills Recovery builds on students\u2019 natural curiosity about the world around them. By exploring geological history, remarkable landforms, the oceans and atmosphere, and discoveries about the universe, the course helps students connect science to their everyday world. Students study topics such as geolog"
+    "description": "Earth Science \u2013 Skills Recovery provides students with a complete earth science curriculum, covering geology, oceanography, astronomy, weather, and climate. The course includes in-depth online lessons, collaborative activities, virtual labs, and hands-on experiments that students can conduct at home. It prepares studen"
   },
   {
     "title": "Economics",
@@ -1120,6 +1240,30 @@
     "description": "English Language Arts - Skills Recovery II is a flexible online course designed for 11th and 12th grade students who would benefit from the remediation of general skills or strengthening skills in specific areas. This course includes engaging and interactive instruction about reading, writing, speaking and listening, a"
   },
   {
+    "title": "English Language Arts Grade 10: Reading Like a Writer - Exploring Author's Craft",
+    "website_url": "https://learningstore.k12.com/products/grade-4-solving-time-problems-interactive-digital-math-lesson-copy",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grade 10",
+    "prices_mentioned": "$20.00",
+    "description": "Story Techniques & Literary Analysis | Interactive English Unit Lessons Help students strengthen their reading comprehension and literary analysis skills through this interactive lesson focused on understanding how authors craft meaningful fiction. Students will explore how plot, characterization, structure, and langua"
+  },
+  {
+    "title": "English Language Arts Grade 3: Literacy Detectives - Solving Reading and Writing Mysteries",
+    "website_url": "https://learningstore.k12.com/products/english-language-arts-grade-3-solving-reading-and-writing-mysteries",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grade 3",
+    "prices_mentioned": "$20.00",
+    "description": "Reading & Writing Mystery Adventure | Interactive English Unit Lessons Grab your magnifying glass and join the investigation in this interactive lesson designed to strengthen essential reading and writing skills . Students will learn reading and writing skills by decoding longer words, using context clues, identifying "
+  },
+  {
+    "title": "English Language Arts Grade 7: How-to-Writers - Reading and Writing Procedural Essays",
+    "website_url": "https://learningstore.k12.com/products/english-language-arts-grade-7-how-to-writers-reading-and-writing-procedural-essays",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grade 7",
+    "prices_mentioned": "$20.00",
+    "description": "Reading and Writing Procedural Essays | Interactive English Unit Lessons Help students strengthen their informational writing skills through this interactive unit of lessons focused on analyzing and creating procedural essays . Students will explore how authors explain ideas, organize information, and guide readers thr"
+  },
+  {
     "title": "English Language Arts Tutoring Package",
     "website_url": "https://learningstore.k12.com/products/english-language-arts-tutoring-package",
     "source": "K12 (Stride)",
@@ -1134,6 +1278,22 @@
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$350.00",
     "description": "Environmental Science explores important topics such as applying the scientific process to environmental analysis, ecology, energy flow, ecological structures, earth systems, and atmospheric, land, and water science. Students also examine the management of natural resources and evaluate how both private and governmenta"
+  },
+  {
+    "title": "Ethics, Safety, and Policy - Bias and Integrity in AI",
+    "website_url": "https://learningstore.k12.com/products/ethics-safety-and-policy-bias-and-integrity-in-ai",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 1, Lesson 2 Bias and Integrity in AI deepens students' understanding of how AI systems can reflect, amplify, and perpetuate bias\u2014and what that means in the real world. This lesson goes beyond the surface-level conversation to help students understand where bias in AI actually comes from and why it's"
+  },
+  {
+    "title": "Ethics, Safety, and Policy - Responsible AI Use",
+    "website_url": "https://learningstore.k12.com/products/ethics-safety-and-policy-responsible-ai-use",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades 6-8; Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 1, Lesson 1 Responsible AI Use gives students a clear-eyed, practical introduction to using AI tools ethically in school and everyday life . Rather than handing students a list of rules, this lesson puts them in the middle of real decisions\u2014analyzing scenarios, debating gray areas, and building thei"
   },
   {
     "title": "Family and Consumer Science",
@@ -1160,12 +1320,12 @@
     "description": "Fine Art combines art history, appreciation, and analysis, while engaging students in hands-on creative projects. Lessons introduce major periods and movements in art history while focusing on masterworks and the intellectual, technical, and creative processes behind those works. Studio lessons provide opportunities fo"
   },
   {
-    "title": "Fine Art - Credit Recovery",
+    "title": "Fine Art - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/fine-art-credit-recovery",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$600.00",
-    "description": "Fine Art - Credit Recovery combines art history, appreciation, and analysis while engaging students in hands-on, creative projects . Lessons introduce major periods and movements in art history while focusing on masterworks and the intellectual, technical, and creative processes behind those works. Studio lessons provi"
+    "description": "Fine Art - Skills Recovery combines art history, appreciation, and analysis while engaging students in hands-on, creative projects . Lessons introduce major periods and movements in art history while focusing on masterworks and the intellectual, technical, and creative processes behind those works. Studio lessons provi"
   },
   {
     "title": "Forensic Science",
@@ -1192,12 +1352,12 @@
     "description": "Geography explores a wide range of geographical perspectives across all major regions of the world. Students examine similarities and differences among regions by studying locations and physical features, including absolute and relative location, climate, and significant landmarks. Each region is analyzed from cultural"
   },
   {
-    "title": "Geography - Credit Recovery",
+    "title": "Geography - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/geography-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$600.00",
-    "description": "Geography - Credit Recovery explores a wide range of geographical perspectives across all major regions of the world. Students examine similarities and differences among regions by studying locations and physical features, including absolute and relative location, climate, and significant landmarks. Each region is anal"
+    "description": "Geography - Skills Recovery explores a wide range of geographical perspectives across all major regions of the world. Students examine similarities and differences among regions by studying locations and physical features, including absolute and relative location, climate, and significant landmarks. Each region is anal"
   },
   {
     "title": "Geometry",
@@ -1208,20 +1368,20 @@
     "description": "Geometry builds on the geometry covered in middle school to explore more complex geometric situations and deepen students\u2019 ability to explain geometric relationships, moving toward formal mathematical arguments. Specific topics include similarity and congruence, analytic geometry, circles, the Pythagorean theorem, righ"
   },
   {
-    "title": "Geometry - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/geometry-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "Geometry - Credit Recovery combines mathematical reasoning and proof with an extension of students\u2019 algebra skills in geometric contexts. The course primarily focuses on two-dimensional shapes in the Euclidean plane. Beginning with segments and angles, students develop understanding through problems and proofs involvin"
-  },
-  {
     "title": "Geometry - Honors",
     "website_url": "https://learningstore.k12.com/products/geometry-honors",
     "source": "K12 (Stride)",
     "grades_or_ages": "Grades 6-8",
     "prices_mentioned": "$100.00-$600.00",
     "description": "Geometry - Honors builds on middle school geometry to explore more complex concepts and deepen students\u2019 ability to explain geometric relationships, progressing toward formal mathematical reasoning. Topics include similarity and congruence, analytic geometry, circles, the Pythagorean theorem, right triangle trigonometr"
+  },
+  {
+    "title": "Geometry - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/geometry-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "Geometry - Skills Recovery combines mathematical reasoning and proof with an extension of students\u2019 algebra skills in geometric contexts. The course primarily focuses on two-dimensional shapes in the Euclidean plane. Beginning with segments and angles, students develop understanding through problems and proofs involvin"
   },
   {
     "title": "Goal Getter Guide - Printable Activity Worksheet",
@@ -1232,6 +1392,46 @@
     "description": "Set Goals. Stay Focused. Achieve More. Help your middle schooler dream big and stay motivated! This worksheet guides students through setting learning or personal goals, creating a plan to reach them, and tracking progress. It's a simple way to teach focus, persistence, and self-confidence. This printable encourages st"
   },
   {
+    "title": "Grade 3: Comprehension and Fluency - Interactive Digital Reading Comprehension Lesson",
+    "website_url": "https://learningstore.k12.com/products/grade-3-comprehension-and-fluency-interactive-digital-reading-comprehension-lesson-copy",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grade 3",
+    "prices_mentioned": "$5.00",
+    "description": "Plan the Main Idea | Interactive Reading Comprehension Lesson Help students strengthen essential reading skills with this interactive lesson focused on identifying the main idea and supporting details. Through guided practice and a targeted reading passage, students learn how to determine what a text is mostly about an"
+  },
+  {
+    "title": "Grade 4: Exploring Symmetry in Nature and Art - Interactive Digital Math Lesson",
+    "website_url": "https://learningstore.k12.com/products/grade-3-comprehension-and-fluency-interactive-digital-reading-comprehension-lesson-copy-1",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grade 4",
+    "prices_mentioned": "$5.00",
+    "description": "Exploring Symmetry in Nature and Art | Interactive Math & Visual Learning Lesson Introduce students to the beauty and balance of symmetry through this engaging, interactive lesson that connects math to the world around them. Students will explore how symmetry appears in nature and art while learning to recognize, analy"
+  },
+  {
+    "title": "Grade 4: Solving Time Problems - Interactive Digital Math Lesson",
+    "website_url": "https://learningstore.k12.com/products/grade-4-exploring-symmetry-in-nature-and-art-interactive-digital-reading-comprehension-lesson-copy-copy",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grade 4",
+    "prices_mentioned": "$5.00",
+    "description": "Time Word Problems & Elapsed Time | Interactive Math Lesson Help students build confidence with time through this interactive lesson focused on solving real-world time problems. Students will learn how to work with hours, minutes, and seconds while developing the skills needed to calculate elapsed time and solve everyd"
+  },
+  {
+    "title": "Grade 5: Cause, Effect, and Evidence - Interactive Digital Reading Comprehension Lesson",
+    "website_url": "https://learningstore.k12.com/products/grade-5-cause-effect-and-evidence-interactive-digital-math-lesson",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grade 5",
+    "prices_mentioned": "$5.00",
+    "description": "Cause, Effect, and Evidence | Interactive Reading Comprehension Lesson Bring reading to life with this engaging, story-based lesson that helps students understand cause and effect while building comprehension and vocabulary skills. Through the inspiring story of Marcus\u2014a young boy whose small acts of kindness spark mea"
+  },
+  {
+    "title": "Grade 6: Area of a Rectangle - Interactive Digital Math Lesson",
+    "website_url": "https://learningstore.k12.com/products/grade-6-area-of-a-rectangle-interactive-digitial-math-lesson",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grade 6",
+    "prices_mentioned": "$5.00",
+    "description": "Area of a Rectangle | Interactive Digital Math Lesson Help students build a strong foundation in measurement with this interactive lesson on the area of a rectangle . Designed for self-paced learning, this digital experience walks students through key concepts with clear explanations and built-in practice. In this less"
+  },
+  {
     "title": "Grammar and Composition",
     "website_url": "https://learningstore.k12.com/products/grrammar-and-composition",
     "source": "K12 (Stride)",
@@ -1240,12 +1440,12 @@
     "description": "Grammar and Composition introduces students to the themes of personal identity and coming of age while engaging in writing assignments that provide foundational writing practice . Students read a variety of short literary pieces, with instruction focused on developing ideas, organization, sentence fluency, and proper g"
   },
   {
-    "title": "Health - Credit Recovery",
+    "title": "Health - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/health-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$350.00",
-    "description": "Health - Credit Recovery helps students develop the knowledge and skills they need to make healthy decisions that keep them active, safe, and informed. The course introduces the key components of a healthy lifestyle and strategies for making positive choices . Students explore mental, emotional, social, consumer, and p"
+    "description": "Health - Skills Recovery helps students develop the knowledge and skills they need to make healthy decisions that keep them active, safe, and informed. The course introduces the key components of a healthy lifestyle and strategies for making positive choices . Students explore mental, emotional, social, consumer, and p"
   },
   {
     "title": "High School Chinese I",
@@ -1288,12 +1488,12 @@
     "description": "Integrated Math I is a first-year high school math course focused on linear and simple exponential models. Students contrast linear and exponential behavior and use both types of equations as models. They learn about and work extensively with functions\u2014analyzing properties and behavior, creating and transforming functi"
   },
   {
-    "title": "Integrated Math I - Credit Recovery",
+    "title": "Integrated Math I - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/integrated-math-1-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "Grades 9-12",
     "prices_mentioned": "$100.00-$600.00",
-    "description": "Integrated Math I - Credit Recovery is a first-year high school math course focused on linear and simple exponential models, designed to help students review and strengthen their understanding of key concepts. The course contrasts linear and exponential behavior and uses both types of equations as models. Students lear"
+    "description": "Integrated Math I - Skills Recovery is a first-year high school math course focused on linear and simple exponential models, designed to help students review and strengthen their understanding of key concepts. The course contrasts linear and exponential behavior and uses both types of equations as models. Students lear"
   },
   {
     "title": "Integrated Math II",
@@ -1304,12 +1504,12 @@
     "description": "Integrated Math II is a second-year high school math course that builds on prior knowledge to introduce students to polynomials, quadratics, and advanced algebraic and geometric concepts. Students learn to factor polynomials, solve quadratic equations, and analyze quadratic functions. They expand their understanding of"
   },
   {
-    "title": "Integrated Math II - Credit Recovery",
+    "title": "Integrated Math II - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/integrated-math-2-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "Grades 9-12",
     "prices_mentioned": "$100.00-$600.00",
-    "description": "Integrated Math II - Credit Recovery is a second-year high school math course that builds on prior knowledge while helping students review and master key concepts in algebra, geometry, and probability. Students learn to factor polynomials, solve quadratic equations, and analyze quadratic functions. They expand their un"
+    "description": "Integrated Math II - Skills Recovery is a second-year high school math course that builds on prior knowledge while helping students review and master key concepts in algebra, geometry, and probability. Students learn to factor polynomials, solve quadratic equations, and analyze quadratic functions. They expand their un"
   },
   {
     "title": "Integrated Math III",
@@ -1320,12 +1520,44 @@
     "description": "Integrated Math III is a third-year high school math course where students expand on previous high school math topics including systems of equations and inequalities, polynomials, trigonometry, statistics, and functions. The course introduces complex numbers, leading to new applications in factoring polynomials, solvin"
   },
   {
-    "title": "Integrated Math III - Credit Recovery",
+    "title": "Integrated Math III - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/integrated-math-3-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "Grades 9-12",
     "prices_mentioned": "$100.00-$600.00",
-    "description": "Integrated Math III - Credit Recovery is a third-year high school integrated math course where students expand on previous high school math topics including systems of equations and inequalities, polynomials, trigonometry, statistics, and functions. The course introduces complex numbers, leading to new applications in "
+    "description": "Integrated Math III - Skills Recovery is a third-year high school integrated math course where students expand on previous high school math topics including systems of equations and inequalities, polynomials, trigonometry, statistics, and functions. The course introduces complex numbers, leading to new applications in "
+  },
+  {
+    "title": "Interactive Media and Creativity - AI Sketches and Games",
+    "website_url": "https://learningstore.k12.com/products/interactive-media-and-creativity-ai-sketches-and-games",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 6, Lesson 20 AI Sketches and Games introduces students to the playful, accessible side of machine learning\u2014through tools that make pattern recognition visible and tangible in real time. Using AutoDraw and Quick, Draw!, students sketch rapidly and watch as AI interprets their drawings, building genui"
+  },
+  {
+    "title": "Interactive Media and Creativity - AI-Aided Poster or Presentation Design",
+    "website_url": "https://learningstore.k12.com/products/interactive-media-and-creativity-ai-aided-poster-or-presentation-design",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 6, Lesson 21 AI-Aided Poster or Presentation Design teaches students to use AI as a creative collaborator in visual communication\u2014and to make intentional choices about when to follow the AI's suggestions and when to override them. Using tools like Canva Magic Studio, Gamma AI, or Figma AI, students "
+  },
+  {
+    "title": "Interactive Media and Creativity - Organizing Ideas with Notion AI",
+    "website_url": "https://learningstore.k12.com/products/interactive-media-and-creativity-organizing-ideas-with-notion-ai",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 6, Lesson 22 Organizing Ideas with Notion AI introduces students to AI-assisted thinking and productivity tools that are already widely used in professional and academic environments. Through hands-on practice with Notion AI , students explore how artificial intelligence can help structure notes, ge"
+  },
+  {
+    "title": "Interactive Media and Creativity - Research Reports with Perplexity AI",
+    "website_url": "https://learningstore.k12.com/products/interactive-media-and-creativity-research-reports-with-perplexity-ai",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 6, Lesson 23 Research Reports with Perplexity AI teaches students to use AI-powered research tools with the critical eye of a skilled investigator\u2014combining the speed of AI search with the rigor of traditional research methods. This is not a lesson in letting AI do the research; it's a lesson in usi"
   },
   {
     "title": "Intermediate American Art II",
@@ -1512,6 +1744,30 @@
     "description": "Math Foundations II helps students build and strengthen foundational math skills typically taught in sixth through eighth grade, providing the computational skills and conceptual understanding needed to succeed in high school math courses. The course features carefully paced, guided instruction paired with engaging and"
   },
   {
+    "title": "Math Grade 3: Equivalent Fractions and Comparisons",
+    "website_url": "https://learningstore.k12.com/products/math-grade-3-equivalent-fractions-comparisons",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grade 3",
+    "prices_mentioned": "$20.00",
+    "description": "Equivalent Fractions and Compari s ons | Interactive Math Unit Lessons Students will learn how fractions can represent the same value in different ways while developing the skills needed to identify equivalent fractions , work with mixed and improper fractions , and compare fractions using visual models and number line"
+  },
+  {
+    "title": "Math Grade 4: Problem Solving Involving Measurements",
+    "website_url": "https://learningstore.k12.com/products/math-grade-4-problem-solving-involving-measurements",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grade 4",
+    "prices_mentioned": "$20.00",
+    "description": "Measurement Word Problems | Interactive Math Unit Lessons Help students build confidence with measurement through this interactive unit of lessons focused on solving real-world math problems. Students will explore five important measurement concepts while developing the skills needed to solve practical, everyday scenar"
+  },
+  {
+    "title": "Math Grade 6: Geometric Concepts",
+    "website_url": "https://learningstore.k12.com/products/math-grade-6-geometric-concepts",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grade 6",
+    "prices_mentioned": "$20.00",
+    "description": "Geometric Concepts | Interactive Math Unit Lessons Help students build confidence with geometry through this interactive unit of 5 lessons focused on area , nets, and surface area . Students will learn how to calculate the area of rectangles and triangles , explore how 3D shapes can be unfolded into nets, and apply the"
+  },
+  {
     "title": "Mathematics Tutoring Package",
     "website_url": "https://learningstore.k12.com/products/mathematics-tutoring-package",
     "source": "K12 (Stride)",
@@ -1576,20 +1832,20 @@
     "description": "Modern U.S. History is a full-year course that gives students a clear and organized overview of American history, from the Industrial Revolution in the late 1800s to recent events. Most readings come from K12\u2019s The American Odyssey: A History of the United States . Online lessons guide students through the material by "
   },
   {
-    "title": "Modern U.S. History - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/modern-us-history-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "Modern U.S. History \u2013 Credit Recovery gives students a clear overview of American history, from the Industrial Revolution of the late 1800s to recent events. Online lessons help students organize their studies, explore topics in depth, review for assessments, and practice historical thinking and analysis. Activities in"
-  },
-  {
     "title": "Modern U.S. History - Honors",
     "website_url": "https://learningstore.k12.com/products/modern-us-history-honors",
     "source": "K12 (Stride)",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$100.00-$600.00",
     "description": "Modern U.S. History \u2013 Honors is a challenging, full-year course that provides students with a comprehensive view of American history, from the Industrial Revolution of the late 1800s to recent events. Readings are drawn from K12\u2019s The American Odyssey: A History of the United States . Online lessons help students organ"
+  },
+  {
+    "title": "Modern U.S. History - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/modern-us-history-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "Modern U.S. History \u2013 Skills Recovery gives students a clear overview of American history, from the Industrial Revolution of the late 1800s to recent events. Online lessons help students organize their studies, explore topics in depth, review for assessments, and practice historical thinking and analysis. Activities in"
   },
   {
     "title": "Modern World Studies",
@@ -1600,20 +1856,20 @@
     "description": "Modern World Studies examines world history from about 1870 to the present. Students begin by studying events leading up to 1914, including the Second Industrial Revolution and the rise of imperialism. The course then moves into the modern era, covering World War I, World War II, the Great Depression, and global tensio"
   },
   {
-    "title": "Modern World Studies - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/modern-world-studies-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "Modern World Studies \u2013 Credit Recovery follows world history from about 1870 to the present. The course begins with events leading up to 1914, including the Second Industrial Revolution and the rise of imperialism. Students then study the modern era, including World War I, World War II, the Great Depression, and global"
-  },
-  {
     "title": "Modern World Studies - Honors",
     "website_url": "https://learningstore.k12.com/products/modern-world-studies-honors",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$600.00",
     "description": "Modern World Studies \u2013 Honors is an advanced course in which students study world history from about 1870 to the present. The course begins with an examination of events leading up to 1914 , including the Second Industrial Revolution and the growth of imperialism. Students then move into the modern era, studying World "
+  },
+  {
+    "title": "Modern World Studies - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/modern-world-studies-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "Modern World Studies \u2013 Skills Recovery follows world history from about 1870 to the present. The course begins with events leading up to 1914, including the Second Industrial Revolution and the rise of imperialism. Students then study the modern era, including World War I, World War II, the Great Depression, and global"
   },
   {
     "title": "Money Master Plan - Printable Activity Worksheet",
@@ -1656,12 +1912,12 @@
     "description": "Nutrition and Wellness is a half-credit course that introduces students to the principles of good nutrition essential for physical and mental wellness. Students explore topics such as digestion, basic nutrients, weight management, sports and fitness, and nutrition across the lifespan. Lessons apply these concepts to to"
   },
   {
-    "title": "Personal Finance - Credit Recovery",
+    "title": "Personal Finance - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/personal-finance-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$350.00",
-    "description": "Personal Finance \u2013 Credit Recovery is an introductory course where students learn basic principles of economics and essential skills for managing their own finances. Students practice creating budgets , developing long-term financial plans to reach their goals, and making responsible decisions about income and expenses"
+    "description": "Personal Finance \u2013 Skills Recovery is an introductory course where students learn basic principles of economics and essential skills for managing their own finances. Students practice creating budgets , developing long-term financial plans to reach their goals, and making responsible decisions about income and expenses"
   },
   {
     "title": "Personal Fitness I",
@@ -1696,12 +1952,12 @@
     "description": "Physical Education is a pass/fail course that combines online instruction with active student participation in weekly cardiovascular, aerobic, muscle-strengthening, and other fitness activities. Students meet course requirements by keeping weekly logs of their physical activity . The course emphasizes the importance of"
   },
   {
-    "title": "Physical Education - Credit Recovery",
+    "title": "Physical Education - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/physical-education-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$350.00",
-    "description": "Physical Education \u2013 Credit Recovery helps students understand the fundamental components and principles of fitness. The course covers safety guidelines, proper techniques, and exercise principles, including FITT: Frequency (how often you exercise), Intensity (how hard you work), Time (how long you exercise), and Type "
+    "description": "Physical Education \u2013 Skills Recovery helps students understand the fundamental components and principles of fitness. The course covers safety guidelines, proper techniques, and exercise principles, including FITT: Frequency (how often you exercise), Intensity (how hard you work), Time (how long you exercise), and Type "
   },
   {
     "title": "Physical Fitness",
@@ -1712,12 +1968,12 @@
     "description": "Physical Fitness combines wellness instruction with active participation in weekly cardiovascular, aerobic, and muscle-strengthening activities. Students develop the knowledge and skills needed to make positive fitness decisions and stay active, safe, and informed throughout high school and beyond. Lessons and activiti"
   },
   {
-    "title": "Physical Fitness - Credit Recovery",
+    "title": "Physical Fitness - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/physical-fitness-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$350.00",
-    "description": "Physical Fitness \u2013 Credit Recovery combines online instruction with student participation in weekly cardiovascular, aerobic, muscle-strengthening, and other fitness activities. Students meet course requirements by keeping a log of their physical activity and submitting videos demonstrating fitness and sports skills. Th"
+    "description": "Physical Fitness \u2013 Skills Recovery combines online instruction with student participation in weekly cardiovascular, aerobic, muscle-strengthening, and other fitness activities. Students meet course requirements by keeping a log of their physical activity and submitting videos demonstrating fitness and sports skills. Th"
   },
   {
     "title": "Physical Science",
@@ -1728,20 +1984,12 @@
     "description": "Physical Science encourages students to explore how matter and energy interact by studying force and motion, the structure of atoms, the properties of matter, chemical reactions, and energy-matter interactions. They develop skills in measurement, problem-solving, using laboratory equipment, following safety guidelines,"
   },
   {
-    "title": "Physical Science - Credit Recovery",
+    "title": "Physical Science - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/physical-science-credit-recovery",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$690.00",
-    "description": "Physical Science \u2013 Credit Recovery explores how matter and energy interact through studies of force and motion, atomic structure, the properties of matter, chemical reactions, and energy-matter interactions. Students develop skills in measurement, problem-solving, using laboratory equipment, following safety guidelines"
-  },
-  {
-    "title": "Physical Science - Skills Recovery",
-    "website_url": "https://learningstore.k12.com/products/physical-science-skills-recovery",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "Physical Science \u2013 Skills Recovery introduces students to key concepts in chemistry and physics, helping them understand the physical world. The course provides an overview of matter, atoms, molecules, chemical reactions, motion, force, momentum, work and simple machines, energy, waves, electricity, light, and other fu"
+    "description": "Physical Science \u2013 Skills Recovery explores how matter and energy interact through studies of force and motion, atomic structure, the properties of matter, chemical reactions, and energy-matter interactions. Students develop skills in measurement, problem-solving, using laboratory equipment, following safety guidelines"
   },
   {
     "title": "Physics",
@@ -1752,20 +2000,20 @@
     "description": "Physics offers a thorough exploration of key topics, including physical systems, measurement, kinematics, dynamics, momentum, energy, thermodynamics, waves, electricity, and magnetism. The course also introduces modern physics topics such as quantum theory and the atomic nucleus. Students gain a strong foundation for m"
   },
   {
-    "title": "Physics - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/physics-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "",
-    "prices_mentioned": "$100.00-$790.00",
-    "description": "Physics \u2013 Credit Recovery provides a thorough exploration of key topics, including physical systems, measurement, kinematics, dynamics, momentum, energy, thermodynamics, waves, electricity, and magnetism. The course also introduces modern physics topics such as quantum theory and the atomic nucleus. Students gain a str"
-  },
-  {
     "title": "Physics - Honors",
     "website_url": "https://learningstore.k12.com/products/physics-honors",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$790.00",
     "description": "Physics \u2013 Honors is an advanced course covering physical systems, measurement, kinematics, dynamics, momentum, energy, thermodynamics, waves, electricity, and magnetism. It also introduces modern physics topics such as quantum theory and the atomic nucleus. Honors students complete additional assignments, including deb"
+  },
+  {
+    "title": "Physics - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/physics-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "",
+    "prices_mentioned": "$100.00-$790.00",
+    "description": "Physics \u2013 Skills Recovery provides a thorough exploration of key topics, including physical systems, measurement, kinematics, dynamics, momentum, energy, thermodynamics, waves, electricity, and magnetism. The course also introduces modern physics topics such as quantum theory and the atomic nucleus. Students gain a str"
   },
   {
     "title": "Pitsco Smart Science\u00ae Virtual Labs: Grade 6",
@@ -1904,12 +2152,12 @@
     "description": "Pre-Algebra students take a comprehensive look at computational and problem-solving skills while learning the foundational language of algebra. Students extend their knowledge of ratios to develop an understanding of proportions and solve real-world problems, including scale drawings, percent increase and decrease, sim"
   },
   {
-    "title": "Pre-Algebra - Credit Recovery",
+    "title": "Pre-Algebra - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/pre-algebra-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "Grades 6-8",
     "prices_mentioned": "$100.00-$600.00",
-    "description": "Pre-Algebra \u2013 Credit Recovery formalizes and extends the mathematics students learned in middle school, while preparing them for a formal Algebra course. In this course, students deepen their understanding of linear equations and inequalities and learn how they compare to one another. Students are also introduced to sy"
+    "description": "Pre-Algebra \u2013 Skills Recovery formalizes and extends the mathematics students learned in middle school, while preparing them for a formal Algebra course. In this course, students deepen their understanding of linear equations and inequalities and learn how they compare to one another. Students are also introduced to sy"
   },
   {
     "title": "Pre-Apprentice 2 - 1st/2nd Grade Music Course",
@@ -1968,6 +2216,30 @@
     "description": "Public Speaking introduces students to public speaking as an important skill for academic, professional, and everyday communication. Students examine different public speaking situations and develop skills as thoughtful and critical listeners of spoken information and persuasion. The course covers several types of spee"
   },
   {
+    "title": "Research, Writing, and Knowledge Tools - AI for Brainstorming and Outlining",
+    "website_url": "https://learningstore.k12.com/products/research-writing-and-knowledge-tools-ai-for-brainstorming-and-outlining",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 2, Lesson 4 AI for Brainstorming and Outlining teaches students to use AI as a thinking partner in the writing process\u2014without letting it replace their own voice or judgment. This lesson reframes AI from a shortcut into a genuine creative collaborator, one that can expand thinking rather than narrow"
+  },
+  {
+    "title": "Research, Writing, and Knowledge Tools - Fact-Checking with AI and Human Sources",
+    "website_url": "https://learningstore.k12.com/products/research-writing-and-knowledge-tools-ai-for-brainstorming-and-outlining-copy",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 2, Lesson 5 Fact-Checking with AI and Human Sources trains students to be rigorous, skeptical, and effective consumers of AI-generated information. In a world where AI tools can produce confident, fluent, and completely wrong answers, this lesson is essential. Students begin by experiencing AI hallu"
+  },
+  {
+    "title": "Research, Writing, and Knowledge Tools - Prompt Engineering: Talking to AI Effectively",
+    "website_url": "https://learningstore.k12.com/products/research-writing-and-knowledge-tools-prompt-engineering-talking-to-ai-effectively",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 2, Lesson 3 Prompt Engineering: Talking to AI Effectively introduces students to one of the most practical and transferable AI skills available today\u2014 knowing how to communicate with AI so it actually produces useful results . This is the lesson that changes how students interact with every AI tool "
+  },
+  {
     "title": "Science Tutoring Package",
     "website_url": "https://learningstore.k12.com/products/science-tutoring-package",
     "source": "K12 (Stride)",
@@ -2008,12 +2280,12 @@
     "description": "Spanish I emphasizes the four key areas of language learning: listening, speaking, reading, and writing. The course blends effective language-learning methods with an engaging online format. Each unit introduces a vocabulary theme and grammar concept, along with reading and listening comprehension exercises, speaking a"
   },
   {
-    "title": "Spanish I - Credit Recovery",
+    "title": "Spanish I - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/spanish-1-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$600.00",
-    "description": "Spanish I - Credit Recovery is a flexible online course for students who need to retake Spanish I, strengthen their skills, or earn credits to stay on track for graduation. The course emphasizes three key areas of language learning: listening, reading, and writing. Students build vocabulary and grammar at a level I Spa"
+    "description": "Spanish I - Skills Recovery is a flexible online course for students who need to retake Spanish I, strengthen their skills, or earn credits to stay on track for graduation. The course emphasizes three key areas of language learning: listening, reading, and writing. Students build vocabulary and grammar at a level I Spa"
   },
   {
     "title": "Spanish II",
@@ -2024,12 +2296,12 @@
     "description": "Spanish II continues students\u2019 study of Spanish, expanding their knowledge of vocabulary and grammar. Students improve comprehension of listening and reading passages and begin expressing themselves more confidently in speaking and writing. Each unit introduces a new vocabulary theme and grammar concept, along with rea"
   },
   {
-    "title": "Spanish II - Credit Recovery",
+    "title": "Spanish II - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/spanish-2-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$600.00",
-    "description": "Spanish II - Credit Recovery is a flexible online course for students who need to retake Spanish II, strengthen their skills, or earn credits to stay on track for graduation. Students study key vocabulary topics and grammar concepts. Each unit includes a new vocabulary theme and grammar concept, reading and listening c"
+    "description": "Spanish II - Skills Recovery is a flexible online course for students who need to retake Spanish II, strengthen their skills, or earn credits to stay on track for graduation. Students study key vocabulary topics and grammar concepts. Each unit includes a new vocabulary theme and grammar concept, reading and listening c"
   },
   {
     "title": "Spanish III",
@@ -2118,6 +2390,14 @@
     "grades_or_ages": "Ages 13\u201330; K",
     "prices_mentioned": "Free",
     "description": "Get Started \u2014 It\u2019s Free! Help your teen explore what\u2019s next with Tallo , the trusted career-navigation platform for students ages 13\u201330. With more than 2 million users , Tallo helps young people turn curiosity into confident action\u2014discovering careers, scholarships, and opportunities that match their interests. In just"
+  },
+  {
+    "title": "Test subscription",
+    "website_url": "https://learningstore.k12.com/products/test-subscription",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "",
+    "prices_mentioned": "$25.00",
+    "description": ""
   },
   {
     "title": "The Infinite Arcade: Byte's Kitchen",
@@ -2608,12 +2888,12 @@
     "description": "U.S. and Global Economics covers economic principles where students explore the choices they face as producers, consumers, investors, and taxpayers. Students apply what they learn to real-world simulation problems. Topics of study include: Markets from historical and contemporary perspectives Supply and demand Budgetin"
   },
   {
-    "title": "U.S. and Global Economics - Credit Recovery",
+    "title": "U.S. and Global Economics - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/us-and-global-economics-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "Grades 6-8",
     "prices_mentioned": "$100.00-$350.00",
-    "description": "U.S. and Global Economics - Credit Recovery covers economic principles where students explore choices they face as producers, consumers, investors, and taxpayers. Students apply what they learn to real-world simulation problems. Topics of study include: Markets from historical and contemporary perspectives Supply and d"
+    "description": "U.S. and Global Economics - Skills Recovery covers economic principles where students explore choices they face as producers, consumers, investors, and taxpayers. Students apply what they learn to real-world simulation problems. Topics of study include: Markets from historical and contemporary perspectives Supply and d"
   },
   {
     "title": "U.S. Government and Politics",
@@ -2624,12 +2904,12 @@
     "description": "U.S. Government and Politics helps students study the history, organization, and functions of the U.S. government. Beginning with the Declaration of Independence and continuing through the present day, students explore the relationship between individual Americans and their governing bodies. They take a closer look at "
   },
   {
-    "title": "U.S. Government and Politics - Credit Recovery",
+    "title": "U.S. Government and Politics - Skills Recovery",
     "website_url": "https://learningstore.k12.com/products/us-government-and-politics-cr",
     "source": "K12 (Stride)",
     "grades_or_ages": "",
     "prices_mentioned": "$100.00-$350.00",
-    "description": "U.S. Government and Politics \u2013 Credit Recovery focuses on the history, organization, and functions of the United States government. Beginning with the Declaration of Independence and continuing through the present day, students explore the relationship between individual Americans and their governing bodies. They take "
+    "description": "U.S. Government and Politics \u2013 Skills Recovery focuses on the history, organization, and functions of the United States government. Beginning with the Declaration of Independence and continuing through the present day, students explore the relationship between individual Americans and their governing bodies. They take "
   },
   {
     "title": "U.S. History",
@@ -2640,20 +2920,36 @@
     "description": "U.S. History is a full-year course that provides students with a comprehensive view of American history, from the earliest migrations of nomadic peoples to North America through recent events. Readings are drawn from K12\u2019s The American Odyssey: A History of the United States . Online lessons help students organize thei"
   },
   {
-    "title": "U.S. History - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/us-history-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "U.S. History \u2013 Credit Recovery gives students a comprehensive overview of American history, from the earliest migrations of nomadic peoples to North America through recent events. Online lessons help students organize their learning, explore topics in greater depth, review for assessments, and practice important skills"
-  },
-  {
     "title": "U.S. History - Honors",
     "website_url": "https://learningstore.k12.com/products/us-history-honors",
     "source": "K12 (Stride)",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$100.00-$600.00",
     "description": "U.S. History \u2013 Honors is a challenging, full-year course that offers students a comprehensive view of American history, from the earliest migrations of nomadic peoples to North America through recent events. Readings are drawn from K12\u2019s The American Odyssey: A History of the United States . Online lessons help student"
+  },
+  {
+    "title": "U.S. History - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/us-history-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "U.S. History \u2013 Skills Recovery gives students a comprehensive overview of American history, from the earliest migrations of nomadic peoples to North America through recent events. Online lessons help students organize their learning, explore topics in greater depth, review for assessments, and practice important skills"
+  },
+  {
+    "title": "Video Production and Virtual Presenters - AI Avatar Presentation",
+    "website_url": "https://learningstore.k12.com/products/video-production-and-virtual-presenters-ai-avatar-presentation",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 7, Lesson 25 AI Avatar Presentation introduces students to one of the most striking frontiers of AI-generated media\u2014the AI avatar\u2014and challenges them to use the technology purposefully, creatively, and responsibly. Using tools like HeyGen or HourOne, students design and produce a 30\u201360 second avatar"
+  },
+  {
+    "title": "Video Production and Virtual Presenters - AI Explainer Video",
+    "website_url": "https://learningstore.k12.com/products/video-production-and-virtual-presenters-ai-explainer-video",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$15.00",
+    "description": "K12 AI Labs: Module 7, Lesson 24 AI Explainer Video challenges students to take something complex\u2014an AI concept, technology, or ethical question\u2014and communicate it clearly, engagingly, and accurately to a general audience through a short video. Using AI production tools like RunwayML or Synthesia , students plan, scrip"
   },
   {
     "title": "Virtual Field Trips",
@@ -2672,20 +2968,20 @@
     "description": "World History is a comprehensive course that explores human history from prehistoric times through the modern era. Students focus in depth on the developments and events that have shaped civilizations across time. The course is organized chronologically and, within broad eras, regionally. Lessons examine key developmen"
   },
   {
-    "title": "World History - Credit Recovery",
-    "website_url": "https://learningstore.k12.com/products/world-history-cr",
-    "source": "K12 (Stride)",
-    "grades_or_ages": "Grades K-12",
-    "prices_mentioned": "$100.00-$600.00",
-    "description": "World History \u2013 Credit Recovery explores human history from prehistoric times through the modern era, with a focus on the key developments and events that have shaped civilizations across time. The course is organized chronologically and, within broad eras, regionally. Lessons examine major developments in religion, ph"
-  },
-  {
     "title": "World History - Honors",
     "website_url": "https://learningstore.k12.com/products/world-history-honors",
     "source": "K12 (Stride)",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$100.00-$600.00",
     "description": "World History \u2013 Honors is a challenging course that examines world history from prehistoric times through the modern era. Students focus in depth on the developments and events that have shaped civilizations across time. The course is organized chronologically and, within broad eras, regionally. Lessons explore major d"
+  },
+  {
+    "title": "World History - Skills Recovery",
+    "website_url": "https://learningstore.k12.com/products/world-history-cr",
+    "source": "K12 (Stride)",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$100.00-$600.00",
+    "description": "World History \u2013 Skills Recovery explores human history from prehistoric times through the modern era, with a focus on the key developments and events that have shaped civilizations across time. The course is organized chronologically and, within broad eras, regionally. Lessons examine major developments in religion, ph"
   },
   {
     "title": "World Languages Tutoring Package",

@@ -157,7 +157,7 @@ scrape_and_sync scripts/scrape-schoolhouse-teachers.py "Schoolhouse Teachers" \
 scrape_and_sync scripts/scrape-freedom-homeschooling.py "Freedom Homeschooling" \
   data/freedom-homeschooling-scraped.json src/data/freedom-homeschooling-imported.json true
 scrape_and_sync scripts/scrape-miacademy.py "Miacademy" \
-  data/miacademy-scraped.json src/data/miacademy-imported.json true
+  data/miacademy-scraped.json src/data/miacademy-imported.json false
 scrape_and_sync scripts/scrape-bju-press.py "BJU Press Homeschool" \
   data/bju-press-scraped.json src/data/bju-press-imported.json true
 scrape_and_sync scripts/scrape-rosetta-stone.py "Rosetta Stone" \
@@ -201,7 +201,7 @@ scrape_and_sync scripts/scrape-journey-homeschool-academy.py "Journey Homeschool
 scrape_and_sync scripts/scrape-outschool-electives.py "Outschool Electives" \
   data/outschool-electives-scraped.json src/data/outschool-electives-imported.json true
 scrape_and_sync scripts/scrape-heav.py "HEAV (Virginia)" \
-  data/heav-scraped.json src/data/heav-imported.json true
+  data/heav-scraped.json src/data/heav-imported.json false
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \

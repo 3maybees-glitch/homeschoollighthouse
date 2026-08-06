@@ -2180,7 +2180,7 @@
     "website_url": "https://timberdoodle.com/products/first-grade-additional-student-kit",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$180.70-$406.09",
+    "prices_mentioned": "$180.70-$377.69",
     "description": "Two 1st graders at home? This additional student kit gives each child their own workbooks and materials. Pair with the main kit \u2014 both kids are set."
   },
   {
@@ -2228,7 +2228,7 @@
     "website_url": "https://timberdoodle.com/products/kindergarten-additional-student-kit",
     "source": "Timberdoodle",
     "grades_or_ages": "Kindergarten",
-    "prices_mentioned": "$193.44-$470.04",
+    "prices_mentioned": "$193.44-$406.13",
     "description": "Siblings in kindergarten? This additional student kit gives your second child their own workbooks and hands-on materials \u2014 no rebuy needed."
   },
   {
@@ -2236,7 +2236,7 @@
     "website_url": "https://timberdoodle.com/products/kindergarten-curriculum-kit",
     "source": "Timberdoodle",
     "grades_or_ages": "Kindergarten",
-    "prices_mentioned": "$487.00-$1067.00",
+    "prices_mentioned": "$487.00-$1003.09",
     "description": "Kindergarten homeschool curriculum that keeps 5-year-olds building and creating, not stuck in workbooks. STEM, art, and reading you can swap."
   },
   {
@@ -2492,7 +2492,7 @@
     "website_url": "https://timberdoodle.com/products/seventh-grade-curriculum-kit-customizer",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$400.00-$10000.00",
+    "prices_mentioned": "$373.94-$10000.00",
     "description": ""
   },
   {
@@ -2508,7 +2508,7 @@
     "website_url": "https://timberdoodle.com/products/sixth-grade-curriculum-kit",
     "source": "Timberdoodle",
     "grades_or_ages": "6Th Grade",
-    "prices_mentioned": "$517.00-$1699.00",
+    "prices_mentioned": "$517.00-$1680.00",
     "description": "Planning to homeschool 6th grade? This curated kit blends hands-on STEM, logic, and art with core academics. Swap anything to match your learner."
   },
   {
@@ -2640,14 +2640,6 @@
     "description": "Crash-land into real STEM learning with 30 Days Lost in Space. Teens build, code, and troubleshoot using Arduino tech\u2014earning \u00bd tech credit through imme..."
   },
   {
-    "title": "3D Lighthouse Puzzle",
-    "website_url": "https://timberdoodle.com/products/cartotonic-lighthouse",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$39.99",
-    "description": "Bring creative learning to your homeschool with the 3D Lighthouse Puzzle! This eco-friendly cardboard puzzle challenges teens to build a sturdy and styl..."
-  },
-  {
     "title": "3D Sculpture Puzzle",
     "website_url": "https://timberdoodle.com/products/3d-sculpture-puzzle",
     "source": "Timberdoodle",
@@ -2702,6 +2694,14 @@
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$16.99",
     "description": "Designed for homeschool high schoolers, this guided journal turns storytelling into an expressive, low-pressure experience. With 99 fun prompts, quirky ..."
+  },
+  {
+    "title": "A Family Secret",
+    "website_url": "https://timberdoodle.com/products/a-family-secret",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$0.00-$14.99",
+    "description": "An age-appropriate graphic novel that introduces Holocaust history through a Dutch child's eyes\u2014perfect for homeschoolers to explore empathy, ethics, an..."
   },
   {
     "title": "A Family Secret",
@@ -2856,12 +2856,12 @@
     "description": "Support your baby\u2019s brain development with Active Baby, Healthy Brain. This award-winning handbook offers 135 quick, playful activities that build essen..."
   },
   {
-    "title": "Air Toobz",
-    "website_url": "https://timberdoodle.com/products/air-toobz",
+    "title": "Alabaster Arctic Carving Kit",
+    "website_url": "https://timberdoodle.com/products/alabaster-arctic-carving-kit",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$159.95",
-    "description": "Air Toobz turns your living room into a hands-on physics lab\u2014kids build air tunnels, launch foam balls, and learn airflow, motion, and cause-and-effect ..."
+    "prices_mentioned": "$0.00-$95.97",
+    "description": "Designed for hands-on learning, Studiostone Alabaster Polar Bear carving kit introduces your child to the art of stone carving. It begins with beautiful..."
   },
   {
     "title": "Alabaster Polar Bear",
@@ -2870,6 +2870,22 @@
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$31.99",
     "description": "Designed for hands-on learning, Studiostone Alabaster Polar Bear carving kit introduces your child to the art of stone carving. It begins with beautiful..."
+  },
+  {
+    "title": "All About Learning Review Box (with Divider Cards)",
+    "website_url": "https://timberdoodle.com/products/all-about-learning-review-box-with-divider-cards",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$0.00-$17.95",
+    "description": "Designed for either All About Reading or All About Spelling, this upgraded storage box keeps review cards organized, accessible, and ready for daily les..."
+  },
+  {
+    "title": "All About Learning Review Box (with Divider Cards)",
+    "website_url": "https://timberdoodle.com/products/all-about-learning-review-box-with-divider-cards",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$0.00-$17.95",
+    "description": "Designed for either All About Reading or All About Spelling, this upgraded storage box keeps review cards organized, accessible, and ready for daily les..."
   },
   {
     "title": "All About Reading Level 1",
@@ -2910,14 +2926,6 @@
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$119.95",
     "description": "Kickstart your child\u2019s reading journey with All About Reading Pre-reading! This fun, engaging program focuses on building the essential skills needed fo..."
-  },
-  {
-    "title": "All About Reading Review Box (with Divider Cards)",
-    "website_url": "https://timberdoodle.com/products/all-about-reading-review-box-divider-cards",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$17.95",
-    "description": "Keep lessons on track and clutter in check - organize All About Reading materials with the Review Box and Divider Cards for smooth, fun homeschooling days."
   },
   {
     "title": "All About Spelling Level 1",
@@ -2976,14 +2984,6 @@
     "description": "Your student finishes All About Spelling Level 7 ready for high school writing. This mastery-level capstone covers every spelling skill they will need."
   },
   {
-    "title": "All About Spelling Review Box (with Divider Cards)",
-    "website_url": "https://timberdoodle.com/products/spelling-review-box-with-divider-cards",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$17.95",
-    "description": "All About Spelling (AAS) is the multisensory, mastery-based program that you\u2019ve been hearing so much about. Suitable for all ages and learning styles, A..."
-  },
-  {
     "title": "Alphabet Bingo",
     "website_url": "https://timberdoodle.com/products/alphabet-bingo",
     "source": "Timberdoodle",
@@ -3000,11 +3000,11 @@
     "description": "Four gripping true tales from WWII come alive in action-packed graphic novels. From Code Talkers to the Ghost Army, history hooks even reluctant readers."
   },
   {
-    "title": "America the Beautiful Curriculum, 2nd Edition",
+    "title": "America the Beautiful",
     "website_url": "https://timberdoodle.com/products/america-the-beautiful-curriculum-package",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$125.00",
+    "prices_mentioned": "$0.00-$139.00",
     "description": "Take your child on an exciting adventure through American history with America the Beautiful, 2nd Edition. This faith-centered curriculum combines histo..."
   },
   {
@@ -3088,14 +3088,6 @@
     "description": "Aquarellum Artworks Postcards let kids explore their creativity with ease, using an invisible wax outline to guide their painting. This hands-on kit hel..."
   },
   {
-    "title": "Aquarellum Dolphins",
-    "website_url": "https://timberdoodle.com/products/aquarellum-dolphins",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$24.00",
-    "description": "With Aquarellum Dolphins, watch dolphins swim to life as clever resist outlines guide vibrant inks into perfect blends, creating art that's all fun, no ..."
-  },
-  {
     "title": "ARIS Complete Package for Families",
     "website_url": "https://timberdoodle.com/products/aris-complete-package-for-families",
     "source": "Timberdoodle",
@@ -3121,11 +3113,19 @@
   },
   {
     "title": "Around the World Reading Challenge eBook",
-    "website_url": "https://timberdoodle.com/products/around-the-world-reading-challenge-bundle",
+    "website_url": "https://timberdoodle.com/products/around-the-world-reading-challenge",
     "source": "Timberdoodle",
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$9.95",
-    "description": "Read Around the World Ebook is a Timberdoodle-exclusive ebook that lists book suggestions for countries around the world. Timberdoodle's Around the Worl..."
+    "description": "A Timberdoodle-exclusive eBook with 3,000+ book suggestions across 150+ countries. Join the Summer 2026 Reading Challenge: read books set in 20 countrie..."
+  },
+  {
+    "title": "Around the World Reading Challenge eBook",
+    "website_url": "https://timberdoodle.com/products/around-the-world-reading-challenge",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$0.00-$9.95",
+    "description": "A Timberdoodle-exclusive eBook with 3,000+ book suggestions across 150+ countries. Join the Summer 2026 Reading Challenge: read books set in 20 countrie..."
   },
   {
     "title": "Asteroid Escape",
@@ -3456,14 +3456,6 @@
     "description": "Chemistry 101 makes homeschool science clear and engaging with 11+ hours of faith-based video lessons, hands-on learning, and a full-credit high school ..."
   },
   {
-    "title": "Clay \\u0026 Play - Around the World",
-    "website_url": "https://timberdoodle.com/products/clay-play",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$26.50",
-    "description": "Sculpt, shape, and explore with Clay \\u0026 Play\u2014Around the World! This all-in-one kit makes it easy for kids to create 10 fun clay figures, including 9 chee..."
-  },
-  {
     "title": "Clay by Number\u2014Cat",
     "website_url": "https://timberdoodle.com/products/clay-by-number-cat",
     "source": "Timberdoodle",
@@ -3590,14 +3582,6 @@
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$54.95",
     "description": "B\u00e9b\u00e9 Marin is the perfect toddler doll for pretend play, empathy, and fine-motor skill building. Vanilla-scented, water-ready, and made for homeschool-f..."
-  },
-  {
-    "title": "Cosmos Foil",
-    "website_url": "https://timberdoodle.com/products/cosmos-foil",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$12.99",
-    "description": "Djeco's Cosmos Foil is a super-fun craft project for your first-grader. Using an innovative two-step process, Cosmos Foil is versatile, sparkly, and mes..."
   },
   {
     "title": "Counting Sheep without Falling Asleep",
@@ -4120,244 +4104,244 @@
     "description": "Junior Rainbow Pebbles sneak math into toddler play with eco-friendly pieces for stacking, sorting, and patterning. Builds fine-motor skills and math co..."
   },
   {
-    "title": "Easy Grammar Grade 3 Teacher's Guide",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-3-teachers-guide",
+    "title": "Easy Grammar Grade 3",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-3",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 3",
     "prices_mentioned": "$0.00-$37.95",
-    "description": "Easy Grammar Grade 3 Teachers Guide contains all the grammar you need to homeschool your 3rd grader. Easy to teach grammar program."
+    "description": "Easy Grammar Grade 3 contains all the grammar you need to homeschool your 3rd grader. Easy to teach grammar program."
   },
   {
-    "title": "Easy Grammar Grade 3 Test",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-3-test",
+    "title": "Easy Grammar Grade 3",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-3",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 3",
-    "prices_mentioned": "$6.95",
-    "description": "Easy Grammar Grade 3 Test contains 13 non-reproducible tests. Conveniently, the pages are already perforated, which will make them easier to bend or rem..."
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Easy Grammar Grade 3 contains all the grammar you need to homeschool your 3rd grader. Easy to teach grammar program."
   },
   {
-    "title": "Easy Grammar Grade 3 Workbook",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-3-workbook",
+    "title": "Easy Grammar Grade 3",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-3",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 3",
-    "prices_mentioned": "$0.00-$17.95",
-    "description": "Easy Grammar Grade 3 Workbook makes using Easy Grammar Grade 3 Teachers Guide even easier."
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Easy Grammar Grade 3 contains all the grammar you need to homeschool your 3rd grader. Easy to teach grammar program."
   },
   {
-    "title": "Easy Grammar Grade 4 Teacher's Guide",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-4-teachers-guide",
+    "title": "Easy Grammar Grade 4",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-4",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 4; 4Th Grade",
     "prices_mentioned": "$0.00-$37.95",
     "description": "Teach 4th grade grammar with confidence. This teacher's guide has daily lessons with answers on facing pages so you always know what's next."
   },
   {
-    "title": "Easy Grammar Grade 4 Test",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-4-test",
-    "source": "Timberdoodle",
-    "grades_or_ages": "Grade 4",
-    "prices_mentioned": "$6.95",
-    "description": "Easy Grammar Grade 4 Test contains 15 non-reproducible tests. Conveniently, the pages are already perforated, which will make them easier to bend or rem..."
-  },
-  {
-    "title": "Easy Grammar Grade 4 Workbook",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-4-workbook",
+    "title": "Easy Grammar Grade 4",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-4",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 4; 4Th Grade",
-    "prices_mentioned": "$0.00-$17.95",
-    "description": "This 4th grade grammar workbook teaches kids to spot subjects and verbs by learning prepositions first. Daily lessons under 15 minutes."
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Teach 4th grade grammar with confidence. This teacher's guide has daily lessons with answers on facing pages so you always know what's next."
   },
   {
-    "title": "Easy Grammar Grade 5 Teacher's Guide",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-5-teachers-guide",
+    "title": "Easy Grammar Grade 4",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-4",
+    "source": "Timberdoodle",
+    "grades_or_ages": "Grade 4; 4Th Grade",
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Teach 4th grade grammar with confidence. This teacher's guide has daily lessons with answers on facing pages so you always know what's next."
+  },
+  {
+    "title": "Easy Grammar Grade 5",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-5",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 5",
     "prices_mentioned": "$0.00-$41.95",
-    "description": "The Easy Grammar Grade 5 teacher's guide puts daily lessons and answer keys side by side so you can teach grammar without extra prep time."
+    "description": "The Easy Grammar Grade 5 puts daily lessons and answer keys side by side so you can teach grammar without extra prep time."
   },
   {
-    "title": "Easy Grammar Grade 5 Test",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-5-test",
+    "title": "Easy Grammar Grade 5",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-5",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 5",
-    "prices_mentioned": "$6.95",
-    "description": "Easy Grammar Grade 5 Test contains 15 non-reproducible tests. Conveniently, the pages are already perforated, which will make them easier to bend or rem..."
+    "prices_mentioned": "$0.00-$41.95",
+    "description": "The Easy Grammar Grade 5 puts daily lessons and answer keys side by side so you can teach grammar without extra prep time."
   },
   {
-    "title": "Easy Grammar Grade 5 Workbook",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-5-workbook",
+    "title": "Easy Grammar Grade 5",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-5",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 5",
-    "prices_mentioned": "$0.00-$17.95",
-    "description": "Easy Grammar Grade 5 Workbook helps students to understand grammar, a tool for speaking and writing properly."
+    "prices_mentioned": "$0.00-$41.95",
+    "description": "The Easy Grammar Grade 5 puts daily lessons and answer keys side by side so you can teach grammar without extra prep time."
   },
   {
-    "title": "Easy Grammar Grade 6 Teacher's Guide",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-6-teachers-guide",
+    "title": "Easy Grammar Grade 6",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-6",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 6",
     "prices_mentioned": "$0.00-$41.95",
     "description": "By deleting and marking certain words or phrases, Easy Grammar Grade 6 employs a virtually \"hands-on\" approach. The vocabulary has been kept simple and,..."
   },
   {
-    "title": "Easy Grammar Grade 6 Test",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-6-test",
+    "title": "Easy Grammar Grade 6",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-6",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 6",
-    "prices_mentioned": "$6.95",
-    "description": "Easy Grammar Grade 6 Test contains 13 non-reproducible tests. Conveniently, the pages are already perforated, which will make them easier to bend or rem..."
+    "prices_mentioned": "$0.00-$41.95",
+    "description": "By deleting and marking certain words or phrases, Easy Grammar Grade 6 employs a virtually \"hands-on\" approach. The vocabulary has been kept simple and,..."
   },
   {
-    "title": "Easy Grammar Grade 6 Workbook",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-6-workbook",
+    "title": "Easy Grammar Grade 6",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-grade-6",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 6",
-    "prices_mentioned": "$0.00-$17.95",
-    "description": "Easy Grammar Grade 6 Workbook helps students to understand grammar. Homeschool grammar concepts, capitalization, punctuation, sentence types, phrases/cl..."
+    "prices_mentioned": "$0.00-$41.95",
+    "description": "By deleting and marking certain words or phrases, Easy Grammar Grade 6 employs a virtually \"hands-on\" approach. The vocabulary has been kept simple and,..."
   },
   {
-    "title": "Easy Grammar Plus Teacher's Guide",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-plus-teachers-guide",
+    "title": "Easy Grammar Plus",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-plus",
     "source": "Timberdoodle",
     "grades_or_ages": "7Th Grade",
     "prices_mentioned": "$0.00-$41.95",
-    "description": "A grammar teacher's guide for 7th grade and up with 180 lessons, built-in answer keys, and reproducible pages. Great for independent learners."
+    "description": "Easy Grammar Plus for 7th grade and older, includes 180 lessons, built-in answer keys, and reproducible pages. Great for independent learners."
   },
   {
-    "title": "Easy Grammar Plus Test",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-plus-test",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$6.95",
-    "description": "Easy Grammar Plus Test contains 15 non-reproducible tests. Conveniently, the pages are already perforated, which will make them easier to bend or remove."
-  },
-  {
-    "title": "Easy Grammar Plus Workbook",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-plus-workbook",
+    "title": "Easy Grammar Plus",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-plus",
     "source": "Timberdoodle",
     "grades_or_ages": "7Th Grade",
-    "prices_mentioned": "$0.00-$17.95",
-    "description": "This grammar workbook for 7th grade and up uses short, focused daily lessons that start with prepositions to make the rest of grammar click."
+    "prices_mentioned": "$0.00-$41.95",
+    "description": "Easy Grammar Plus for 7th grade and older, includes 180 lessons, built-in answer keys, and reproducible pages. Great for independent learners."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 10 Student Workbook",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-10-student-workbook",
+    "title": "Easy Grammar Plus",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-plus",
     "source": "Timberdoodle",
-    "grades_or_ages": "Grade 10",
-    "prices_mentioned": "$0.00-$16.95",
-    "description": "Your 10th grader gets daily 10-15 minute grammar lessons in mechanics, punctuation, and sentence combining. Pairs with a separate teacher's guide."
+    "grades_or_ages": "7Th Grade",
+    "prices_mentioned": "$0.00-$41.95",
+    "description": "Easy Grammar Plus for 7th grade and older, includes 180 lessons, built-in answer keys, and reproducible pages. Great for independent learners."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 10 Teacher's Guide",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-10-teachers-guide",
+    "title": "Easy Grammar Ultimate Grade 10",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-10",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 10",
     "prices_mentioned": "$0.00-$37.95",
-    "description": "Easy Grammar Ultimate Grade 10 Teacher's Guide doubles as a student book for independent study. The teachers book is reproducible for multiple students ..."
+    "description": "Easy Grammar Ultimate Grade 10 is great for independent study. The teachers book is reproducible for multiple students and makes teaching grammar easy."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 10 Test Booklet",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-10-test-booklet",
+    "title": "Easy Grammar Ultimate Grade 10",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-10",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 10",
-    "prices_mentioned": "$0.00-$9.95",
-    "description": "Easy Grammar Ultimate Grade 10 Test Booklet contains 18 reproducible assessments. Each covers the ten lessons preceding it."
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Easy Grammar Ultimate Grade 10 is great for independent study. The teachers book is reproducible for multiple students and makes teaching grammar easy."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 11 Student Workbook",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-11-student",
+    "title": "Easy Grammar Ultimate Grade 10",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-10",
     "source": "Timberdoodle",
-    "grades_or_ages": "Grade 11",
-    "prices_mentioned": "$0.00-$16.95",
-    "description": "Help your 11th grader sharpen grammar and writing skills with daily 10-15 minute lessons in mechanics, punctuation, and sentence combining."
+    "grades_or_ages": "Grade 10",
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Easy Grammar Ultimate Grade 10 is great for independent study. The teachers book is reproducible for multiple students and makes teaching grammar easy."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 11 Teacher's Guide",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-11-teachers-guide",
+    "title": "Easy Grammar Ultimate Grade 11",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-11",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 11",
     "prices_mentioned": "$0.00-$37.95",
-    "description": "Help your teen master grammar with Easy Grammar Ultimate Grade 11 Teacher's Guide. With 180 daily lessons focused on prepositions, punctuation, and sent..."
+    "description": "Help your teen master grammar with Easy Grammar Ultimate Grade 11. With 180 daily lessons focused on prepositions, punctuation, and sentence structure, ..."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 11 Test Booklet",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-11-test-booklet",
+    "title": "Easy Grammar Ultimate Grade 11",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-11",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 11",
-    "prices_mentioned": "$0.00-$9.95",
-    "description": "Easy Grammar Ultimate Grade 11 Test Booklet contains 18 reproducible assessments. Each covers the ten lessons preceding it."
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Help your teen master grammar with Easy Grammar Ultimate Grade 11. With 180 daily lessons focused on prepositions, punctuation, and sentence structure, ..."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 12 Student Workbook",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-12-student",
+    "title": "Easy Grammar Ultimate Grade 11",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-11",
     "source": "Timberdoodle",
-    "grades_or_ages": "Grade 12",
-    "prices_mentioned": "$0.00-$16.95",
-    "description": "Cap off high school grammar with short, practical lessons that prep your teen for college, careers, and beyond. Grade 12 makes mastering mechanics quick..."
+    "grades_or_ages": "Grade 11",
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Help your teen master grammar with Easy Grammar Ultimate Grade 11. With 180 daily lessons focused on prepositions, punctuation, and sentence structure, ..."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 12 Teacher's Guide",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-12-teachers-guide",
+    "title": "Easy Grammar Ultimate Grade 12",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-12",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 12",
     "prices_mentioned": "$0.00-$37.95",
     "description": "Prep your senior for college apps and job interviews with Easy Grammar Ultimate Grade 12. With 180 lessons covering grammar, punctuation, and expository..."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 12 Test Booklet",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-12-test-booklet",
+    "title": "Easy Grammar Ultimate Grade 12",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-12",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 12",
-    "prices_mentioned": "$9.95",
-    "description": "Easy Grammar Ultimate Grade 12 Test Booklet contains 18 reproducible assessments. Each covers the ten lessons preceding it."
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Prep your senior for college apps and job interviews with Easy Grammar Ultimate Grade 12. With 180 lessons covering grammar, punctuation, and expository..."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 8 Student Workbook",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-8-student",
+    "title": "Easy Grammar Ultimate Grade 12",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-12",
     "source": "Timberdoodle",
-    "grades_or_ages": "Grade 8",
-    "prices_mentioned": "$0.00-$16.95",
-    "description": "Short daily grammar lessons for 8th graders covering punctuation, sentence combining, and more. The prepositions-first approach makes it all click."
+    "grades_or_ages": "Grade 12",
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Prep your senior for college apps and job interviews with Easy Grammar Ultimate Grade 12. With 180 lessons covering grammar, punctuation, and expository..."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 8 Teacher's Guide",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-8-teachers-guide",
+    "title": "Easy Grammar Ultimate Grade 8",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-8",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 8",
     "prices_mentioned": "$0.00-$37.95",
-    "description": "Easy Grammar Ultimate Grade 8 Teacher's Guide doubles as a student book for independent study. The teachers book is reproducible for multiple students a..."
+    "description": "Easy Grammar Ultimate Grade 8 is great for independent study. The teachers book is reproducible for multiple students and makes teaching grammar easy."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 8 Test Booklet",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-8-test-booklet",
+    "title": "Easy Grammar Ultimate Grade 8",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-8",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 8",
-    "prices_mentioned": "$9.95",
-    "description": "Easy Grammar Ultimate Grade 8 Test Booklet contains 18 reproducible assessments. Each covers the ten lessons preceding it."
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Easy Grammar Ultimate Grade 8 is great for independent study. The teachers book is reproducible for multiple students and makes teaching grammar easy."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 9 Student Workbook",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-9-student",
+    "title": "Easy Grammar Ultimate Grade 8",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-8",
     "source": "Timberdoodle",
-    "grades_or_ages": "Grade 9",
-    "prices_mentioned": "$0.00-$16.95",
-    "description": "Easy Grammar Ultimate Grade 9 Student Workbook, as part of The Easy Grammar Ultimate series is explicitly designed to introduce and teach essential gram..."
+    "grades_or_ages": "Grade 8",
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Easy Grammar Ultimate Grade 8 is great for independent study. The teachers book is reproducible for multiple students and makes teaching grammar easy."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 9 Teacher's Guide",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-9-teachers-guide",
+    "title": "Easy Grammar Ultimate Grade 9",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-9",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 9",
     "prices_mentioned": "$0.00-$37.95",
     "description": "Easy Grammar Ultimate is designed specifically to introduce and teach essential grammar concepts to older students, regardless of their previous grammar..."
   },
   {
-    "title": "Easy Grammar Ultimate Grade 9 Test Booklet",
-    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-9-test-booklet",
+    "title": "Easy Grammar Ultimate Grade 9",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-9",
     "source": "Timberdoodle",
     "grades_or_ages": "Grade 9",
-    "prices_mentioned": "$9.95",
-    "description": "Easy Grammar Ultimate Grade 9 Test Booklet contains 18 reproducible assessments. Each covers the ten lessons preceding it."
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Easy Grammar Ultimate is designed specifically to introduce and teach essential grammar concepts to older students, regardless of their previous grammar..."
+  },
+  {
+    "title": "Easy Grammar Ultimate Grade 9",
+    "website_url": "https://timberdoodle.com/products/easy-grammar-ultimate-grade-9",
+    "source": "Timberdoodle",
+    "grades_or_ages": "Grade 9",
+    "prices_mentioned": "$0.00-$37.95",
+    "description": "Easy Grammar Ultimate is designed specifically to introduce and teach essential grammar concepts to older students, regardless of their previous grammar..."
   },
   {
     "title": "Editor In Chief",
@@ -4408,7 +4392,7 @@
     "description": "Everything a Child Should Know about God is the ideal supplement to your child?s Bible story book and answers the questions little ones have. This is th..."
   },
   {
-    "title": "Exploring America - 5th Edition",
+    "title": "Exploring America",
     "website_url": "https://timberdoodle.com/products/exploring-america-curriculum-package",
     "source": "Timberdoodle",
     "grades_or_ages": "",
@@ -4438,6 +4422,14 @@
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$94.00",
     "description": "Exploring Creation with Astronomy. 1-year science curriculum for elementary students, an ideal first course for kindergarteners."
+  },
+  {
+    "title": "Exploring Creation with Biology",
+    "website_url": "https://timberdoodle.com/products/exploring-creation-with-biology",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$0.00-$172.00",
+    "description": "Exploring Creation with Biology is designed to be the student's first high school science course and is a college-prep biology course that provides a de..."
   },
   {
     "title": "Exploring Creation with Biology",
@@ -4552,11 +4544,11 @@
     "description": "Exploring Creation with Zoology 3, Land Animals of the 6th Day. This one-year science curriculum is an exciting study of animal classification and chara..."
   },
   {
-    "title": "Exploring Economics Curriculum Package",
+    "title": "Exploring Economics",
     "website_url": "https://timberdoodle.com/products/exploring-economics-curriculum-package",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$70.00",
+    "prices_mentioned": "$0.00-$85.00",
     "description": "Exploring Economics is a Bible-based, one-semester course designed for high schoolers to understand the economy with clarity. Covering real-world money ..."
   },
   {
@@ -4572,11 +4564,11 @@
     "website_url": "https://timberdoodle.com/products/exploring-government",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$70.00",
+    "prices_mentioned": "$0.00-$85.00",
     "description": "Exploring Government, 4th Edition is a Bible-based, one-semester course that offers teens a clear, practical look at U.S. government. With 75 daily less..."
   },
   {
-    "title": "Exploring Government Student Review Pack",
+    "title": "Exploring Government Student Review Pack, 4th Edition",
     "website_url": "https://timberdoodle.com/products/exploring-government-student-review-pack",
     "source": "Timberdoodle",
     "grades_or_ages": "",
@@ -4588,7 +4580,7 @@
     "website_url": "https://timberdoodle.com/products/exploring-world-history-curriculum-package",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$125.00",
+    "prices_mentioned": "$0.00-$145.00",
     "description": "Exploring World History offers a comprehensive, Bible-based curriculum that provides 3 high school credits: 1 in literature, 1 in history, and 1 in Bibl..."
   },
   {
@@ -4606,6 +4598,14 @@
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$9.95",
     "description": "Extreme Dot to Dot: U.S. History puzzles range from 500 to over 1,400 dots. Some puzzles even cover a two-page spread! Counting, mapping and concentrati..."
+  },
+  {
+    "title": "Extreme Dot to Dots - Extreme Animals",
+    "website_url": "https://timberdoodle.com/products/extreme-dot-to-dot-extreme-animals",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$0.00-$9.95",
+    "description": "Extreme Dot to Dot: Extreme Animals Softcover book has 32 puzzles, including Wolverine, Leafy Sea Dragon, Flying Squirrel, and more."
   },
   {
     "title": "Faber-Castell Grip Colored EcoPencils - 24 pc",
@@ -4776,7 +4776,7 @@
     "description": "Empower your teen to explore renewable energy with Fischertechnik Green Energy Kit! This hands-on kit lets students build and test 14 real-world models ..."
   },
   {
-    "title": "Fischertechnik Junior Max",
+    "title": "Fischertechnik Junior Max with Engineer",
     "website_url": "https://timberdoodle.com/products/fischertechnik-junior-max",
     "source": "Timberdoodle",
     "grades_or_ages": "",
@@ -4836,7 +4836,7 @@
     "website_url": "https://timberdoodle.com/products/friendly-biology",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$99.95",
+    "prices_mentioned": "$0.00-$99.99",
     "description": "Transform your teen\u2019s view of biology with Friendly Biology! This course blends clear explanations, engaging hands-on labs (many using common kitchen it..."
   },
   {
@@ -4844,7 +4844,7 @@
     "website_url": "https://timberdoodle.com/products/friendly-biology-nonreligious-worldview",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$99.95",
+    "prices_mentioned": "$0.00-$99.99",
     "description": "Turn science into a fun, relatable subject with Friendly Biology! Designed for teens, this secular biology course covers everything from genetics to hum..."
   },
   {
@@ -4868,7 +4868,7 @@
     "website_url": "https://timberdoodle.com/products/friendly-chemistry",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$79.95",
+    "prices_mentioned": "$0.00-$99.99",
     "description": "Turn chemistry into a manageable, even enjoyable, subject with Friendly Chemistry! This independent learning course covers everything from atomic theory..."
   },
   {
@@ -4892,7 +4892,7 @@
     "website_url": "https://timberdoodle.com/products/friendly-physical-science",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$99.95",
+    "prices_mentioned": "$0.00-$99.99",
     "description": "Make physical science fun and accessible with Friendly Physical Science Set! Designed for teens, this course covers everything from Newton's laws to ele..."
   },
   {
@@ -4908,7 +4908,7 @@
     "website_url": "https://timberdoodle.com/products/from-adam-to-us",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$125.00",
+    "prices_mentioned": "$0.00-$139.00",
     "description": "From Adam to Us is a one-year world history and literature course designed for students in grades five through eight. The daily lessons are written in a..."
   },
   {
@@ -5140,7 +5140,7 @@
     "website_url": "https://timberdoodle.com/products/graphic-u-s-history",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$149.95",
+    "prices_mentioned": "$0.00-$159.95",
     "description": "These Graphic U.S. History books are stuffed with intriguing historical facts about American History. The best history course for reluctant readers and ..."
   },
   {
@@ -5248,6 +5248,14 @@
     "description": "Take the guesswork out of early handwriting! This guide includes lesson plans, tips, and resources to make Pre-K and Kindergarten handwriting purposeful..."
   },
   {
+    "title": "Hansel \\u0026 Gretel's Candy Adventure Deluxe",
+    "website_url": "https://timberdoodle.com/products/hansel-gretel-deluxe",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$0.00-$29.99",
+    "description": "With 60 increasingly challenging puzzles, Hansel \\u0026 Gretel's Candy Adventure develops planning, sequencing, and problem-solving through hands-on play."
+  },
+  {
     "title": "Happy Cheetah Cub Starting Workbook: Level 1",
     "website_url": "https://timberdoodle.com/products/happy-cheetah-cub-starting-workbook-level-1",
     "source": "Timberdoodle",
@@ -5302,14 +5310,6 @@
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$149.99",
     "description": "Have I Got a Story For You! is a unique art history course that brings the Renaissance to life through fun, engaging lessons. Ideal for 1st through 8th ..."
-  },
-  {
-    "title": "Hello Hello Kalmario!",
-    "website_url": "https://timberdoodle.com/products/hello-hello-kalmario",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$14.99",
-    "description": "Hello Hello Kalmario! packs matching, memory, strategy, and fine-motor skills into a fast ten-minute game. Flip tiles, grow the octopus, and out-think o..."
   },
   {
     "title": "Here and There",
@@ -5544,6 +5544,14 @@
     "description": "Fuel hands-on STEM learning all year with iBrick! This LEGO-compatible kit and 12-month subscription deliver weekly engineering challenges that teach re..."
   },
   {
+    "title": "iBrick - No Subscription",
+    "website_url": "https://timberdoodle.com/products/ibrick-no-subscription",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$0.00-$360.00",
+    "description": "Fuel hands-on STEM learning all year with iBrick! This LEGO-compatible kit and 12 months of access to 52 lessons deliver weekly engineering challenges t..."
+  },
+  {
     "title": "Imagidice",
     "website_url": "https://timberdoodle.com/products/imagidice",
     "source": "Timberdoodle",
@@ -5606,14 +5614,6 @@
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$14.99",
     "description": "Spin it, toss it, search for animals by continent. This inflatable globe turns world geography into a hands-on discovery game for curious kids."
-  },
-  {
-    "title": "Inspector Mouse: The Great Escape",
-    "website_url": "https://timberdoodle.com/products/inspector-mouse-the-great-escape",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$24.99",
-    "description": "A sneaky escape, an underground getaway, and a room full of kid detectives. Inspector Mouse sharpens memory, attention, and deduction through fast round..."
   },
   {
     "title": "Intro to Aviation Course",
@@ -5800,14 +5800,6 @@
     "description": "Sparkles drift through liquid, slowing busy minds and steadying attention. A mess-free, hands-on sensory tool your toddler can carry everywhere."
   },
   {
-    "title": "Jumbo Puzzle Map of the World",
-    "website_url": "https://timberdoodle.com/products/jumbo-puzzle-map-of-the-world",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$16.99",
-    "description": "With 25 oversized pieces, the Jumbo Puzzle Map of the World turns geography into hands-on fun for preschoolers\u2014building motor skills, confidence, and cu..."
-  },
-  {
     "title": "Jump 1",
     "website_url": "https://timberdoodle.com/products/jump-1",
     "source": "Timberdoodle",
@@ -5974,14 +5966,6 @@
     "grades_or_ages": "K",
     "prices_mentioned": "$0.00-$9.95",
     "description": "With 52 pages and 4 full pages of stickers, this workbook turns science into a smile-filled adventure."
-  },
-  {
-    "title": "Kumon Science Pre-K",
-    "website_url": "https://timberdoodle.com/products/kumon-science-pre-k",
-    "source": "Timberdoodle",
-    "grades_or_ages": "Pre-K",
-    "prices_mentioned": "$0.00-$9.95",
-    "description": "Make science fun and easy with Kumon Science Pre-K! This workbook is packed with over 40 activities and colorful stickers to introduce young learners to..."
   },
   {
     "title": "Kumon Thinking Skills K",
@@ -6294,6 +6278,14 @@
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$29.99",
     "description": "This award-winning puzzle game brings Little Red\u2019s adventure to life with 48 logic challenges. Kids build problem-solving and spatial skills as they hel..."
+  },
+  {
+    "title": "LogiBugs",
+    "website_url": "https://timberdoodle.com/products/logibugs",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$0.00-$14.99",
+    "description": "LogiBugs Even ladybugs have rules\u2014and they expect you to follow them. LogiBugs turns a simple grid into a brain-bending logic challenge where placement ..."
   },
   {
     "title": "Long Story Short: Ten-Minute Devotions",
@@ -6718,6 +6710,22 @@
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$15.00",
     "description": "Cosmic Glows Thinking Putty is putty with cosmic powers. Cosmic Glows Thinking Putty looks great in the day, but even more amazing in the dark. The endl..."
+  },
+  {
+    "title": "Mind Benders Level 3",
+    "website_url": "https://timberdoodle.com/products/mind-benders-book-3",
+    "source": "Timberdoodle",
+    "grades_or_ages": "Grades 3-6",
+    "prices_mentioned": "$0.00-$10.99",
+    "description": "Mind Benders Level 3 is filled with deductive thinking puzzles for grades 3-6 that develop vital logic, reading comprehension, and mental organization s..."
+  },
+  {
+    "title": "Mind Benders Series",
+    "website_url": "https://timberdoodle.com/products/mind-benders",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$0.00-$93.92",
+    "description": "Mind Benders Level 1"
   },
   {
     "title": "Mind Benders Series",
@@ -7328,44 +7336,12 @@
     "description": "Introduce your kindergartner to logic and reasoning with OLSAT Test Prep Level A! This gentle, fun-filled book helps build thinking skills through verba..."
   },
   {
-    "title": "On the Mountain Tops Shadow Box",
-    "website_url": "https://timberdoodle.com/products/on-the-mountain-tops-shadow-box",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$34.00",
-    "description": "Paint, stack, and display a 3D mountain scene\u2014complete with bears, trees, and rugged peaks\u2014for a stunning alpine keepsake."
-  },
-  {
-    "title": "Once a Pawn a Time",
-    "website_url": "https://timberdoodle.com/products/once-a-pawn-a-time",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$29.95",
-    "description": "Introduce your child to the world of chess with Once a Pawn a Time. This playful, easy-to-follow guide makes learning chess fun while boosting critical ..."
-  },
-  {
     "title": "Our Star-Spangled Story",
     "website_url": "https://timberdoodle.com/products/our-star-spangled-story",
     "source": "Timberdoodle",
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$95.00",
     "description": "Our Star-Spangled Story What if American history felt less like memorizing dates and more like discovering the stories of the people who lived them? Our..."
-  },
-  {
-    "title": "Paint by Sticker Kids: America",
-    "website_url": "https://timberdoodle.com/products/paint-by-sticker-kids-america",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$10.99",
-    "description": "Paint by Sticker Kids: America Your child builds 10 Americana scenes, one sticker at a time, with Paint by Sticker Kids: America. Each page has numbered..."
-  },
-  {
-    "title": "Paint-by-Number Museum - Set 2025",
-    "website_url": "https://timberdoodle.com/products/paint-by-number-museum-set-2025",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$38.00",
-    "description": "Unleash your child's inner artist with the Paint-by-Number Museum Series. This hands-on kit lets kids recreate iconic masterpieces like The Eiffel Tower..."
   },
   {
     "title": "Paint-by-Number Museum Duo",
@@ -7414,6 +7390,14 @@
     "grades_or_ages": "",
     "prices_mentioned": "$99.99",
     "description": "From kittens to civil wars, this box has it all\u2014twelve timeless stories that hook preschoolers through teens, spark big conversations, and keep kids beg..."
+  },
+  {
+    "title": "Peanuts Beagle Scouts Miniature",
+    "website_url": "https://timberdoodle.com/products/peanuts-beagle-scouts-miniature",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$0.00-$39.99",
+    "description": "This DIY book nook kit builds a glowing camp scene with 80+ pieces, lights, and classic Peanuts\u00ae charm."
   },
   {
     "title": "Pencil Pouch - Assorted",
@@ -7624,14 +7608,6 @@
     "description": "The Primary Science Kit includes ten real, kid-sized lab tools and experiment cards to spark hands-on STEM learning in preschoolers\u2014no mess, all fun!"
   },
   {
-    "title": "Prime Suspect - Campground - 4 Sets",
-    "website_url": "https://timberdoodle.com/products/prime-suspect-campground-4-sets",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$47.95",
-    "description": "Four copies of the same deduction game\u2014so the whole family can race to crack the case. 45 puzzles each, from beginner to expert."
-  },
-  {
     "title": "Prime Suspect: At the Campground",
     "website_url": "https://timberdoodle.com/products/prime-suspect-at-the-campground",
     "source": "Timberdoodle",
@@ -7694,6 +7670,14 @@
     "grades_or_ages": "",
     "prices_mentioned": "$49.00",
     "description": "A year of curated, handbook-aligned reading challenges for the whole family\u2014one purchase covers every reader. Try Read Around the World free first."
+  },
+  {
+    "title": "Reading Challenge \u2014 1-Year Family Access",
+    "website_url": "https://timberdoodle.com/products/reading-challenge-1-year-family-access",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$49.00",
+    "description": "One year of full access to the Timberdoodle Reading Challenge for your whole family\u2014every grade-level challenge, for every reader in your home. Unlocks ..."
   },
   {
     "title": "Reading Games with Ziggy the Zebra",
@@ -7774,6 +7758,14 @@
     "grades_or_ages": "",
     "prices_mentioned": "$5.00",
     "description": "Manufacturer's InformationManufacturer: Hachette Boardgames USA Inc Made By: Randolph GamesCreated By: Antoine LefebvreAge Recommendation: 8+ Grade Reco..."
+  },
+  {
+    "title": "Scheduler \u2014 1-Year Family Access",
+    "website_url": "https://timberdoodle.com/products/scheduler-1-year-family-access",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$69.95",
+    "description": "Lay out your homeschool year day by day for every child, then reschedule when life happens. One year of Timberdoodle Scheduler access for your whole fam..."
   },
   {
     "title": "Science in the Age of Reason",
@@ -7902,14 +7894,6 @@
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$24.99",
     "description": "Press clay onto canvas to build a textured seashell scene that air-dries into lasting wall art. A calming, screen-free creative project."
-  },
-  {
-    "title": "Seaside",
-    "website_url": "https://timberdoodle.com/products/seaside",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$29.99",
-    "description": "Seaside A strategy game that can handle sand, wind, and real travel? The Seaside Game packs everything into a screen-printed canvas bag\u201470 wooden tokens..."
   },
   {
     "title": "Seaside Watercolor Bundle",
@@ -8184,14 +8168,6 @@
     "description": "Help your child build confidence, kindness, and conversation skills with this engaging social skills workbook. Perfect for homeschoolers and everyday life!"
   },
   {
-    "title": "Social Skills Activities for Ages 8-9",
-    "website_url": "https://timberdoodle.com/products/social-skills-activities-for-ages-8-9",
-    "source": "Timberdoodle",
-    "grades_or_ages": "Ages 8-9",
-    "prices_mentioned": "$0.00-$11.99",
-    "description": "Help your child build confidence, kindness, and real-life social smarts with 75 engaging activities. Includes online safety tips, conversation starters,..."
-  },
-  {
     "title": "Solenoid Engine Deluxe Kit",
     "website_url": "https://timberdoodle.com/products/solenoid-engine-deluxe-kit",
     "source": "Timberdoodle",
@@ -8429,7 +8405,7 @@
     "source": "Timberdoodle",
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$7.95",
-    "description": "This Timberdoodle-exclusive eBook includes hundreds of suggested book titles, including picture books, graphic novels, chapter books, mysteries, and adv..."
+    "description": "Summer Adventures Reading Challenge eBook Summer reading is a wonderful goal\u2014until someone asks, \"What should I read?\" The Summer Adventures Reading Cha..."
   },
   {
     "title": "Summer Nights Shadow Box",
@@ -8704,7 +8680,7 @@
     "description": "The Hiding Place: A Graphic Novel The Hiding Place: A Graphic Novel introduces a new generation of readers to the remarkable true story of Corrie ten Bo..."
   },
   {
-    "title": "The History of Alaska: America's Last Frontier?",
+    "title": "The History of Alaska: America's Last Frontier? 10-month Subscription",
     "website_url": "https://timberdoodle.com/products/the-history-of-alaska-americas-last-frontier",
     "source": "Timberdoodle",
     "grades_or_ages": "",
@@ -8760,7 +8736,7 @@
     "description": "Pandas, banks, wild animals, merry-go-rounds, ice cream, trains, and more"
   },
   {
-    "title": "The Nomadic Professor: Media Literacy",
+    "title": "The Nomadic Professor: Media Literacy 10-month Subscription",
     "website_url": "https://timberdoodle.com/products/nomadic-professor-media-literacy",
     "source": "Timberdoodle",
     "grades_or_ages": "",
@@ -8768,7 +8744,7 @@
     "description": "Equip your teen with tools to analyze media, spot bias, and build critical thinking. This \u00bd-credit course is perfect for juniors and seniors seeking rea..."
   },
   {
-    "title": "The Nomadic Professor: Pirates",
+    "title": "The Nomadic Professor: Pirates - 10-month Subscription",
     "website_url": "https://timberdoodle.com/products/nomadic-professor-pirates",
     "source": "Timberdoodle",
     "grades_or_ages": "",
@@ -8776,7 +8752,7 @@
     "description": "Set sail through real-world piracy with this exciting digital history course. Perfect for high schoolers earning \u00bd credit in social studies\u2014history has ..."
   },
   {
-    "title": "The Nomadic Professor: US History 1 \\u0026 2",
+    "title": "The Nomadic Professor: US History 1 \\u0026 2 - 10-month Subscription",
     "website_url": "https://timberdoodle.com/products/nomadic-professor-us-history-1-2",
     "source": "Timberdoodle",
     "grades_or_ages": "",
@@ -8784,15 +8760,15 @@
     "description": "This multimedia homeschool history course blends video lectures, podcasts, and source analysis to sharpen critical thinking. Includes credit for U.S. Hi..."
   },
   {
-    "title": "The Nomadic Professor: US History 3 \\u0026 4",
+    "title": "The Nomadic Professor: US History 3 \\u0026 4 - 10-month Subscription",
     "website_url": "https://timberdoodle.com/products/nomadic-professor-us-history-3-4",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$249.00",
+    "prices_mentioned": "$0.00-$700.00",
     "description": "A rigorous homeschool history course covering 1880s to modern day. Includes video lectures, primary sources, and AP/CLEP prep. Earn credits in U.S. Hist..."
   },
   {
-    "title": "The Nomadic Professor: US History 3 \\u0026 4 with Media Literacy",
+    "title": "The Nomadic Professor: US History 3\\u00264 with Media Literacy - 10-month Subscription",
     "website_url": "https://timberdoodle.com/products/the-nomadic-professor-us-history-3-4-with-media-literacy",
     "source": "Timberdoodle",
     "grades_or_ages": "",
@@ -8800,11 +8776,11 @@
     "description": "A rigorous homeschool history course covering 1880s to modern day. Includes video lectures, primary sources, and AP/CLEP prep. Earn credits in U.S. Hist..."
   },
   {
-    "title": "The Nomadic Professor: World History 1 \\u0026 2",
+    "title": "The Nomadic Professor: World History 1 \\u0026 2 - 10-month Subscription",
     "website_url": "https://timberdoodle.com/products/nomadic-professor-world-history",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$249.00",
+    "prices_mentioned": "$0.00-$700.00",
     "description": "Explore world history through immersive video, rich readings, and global locations. Earn high school credits in World History and Humanities. AP/CLEP pr..."
   },
   {
@@ -8814,14 +8790,6 @@
     "grades_or_ages": "",
     "prices_mentioned": "$28.50",
     "description": "If you have been looking for a book with a theologically sound foundation, one that is also connected to the larger redemptive story of Scripture, you w..."
-  },
-  {
-    "title": "The Power in Your Hands - Teacher's Guide, 2nd Edition - Updated and Revised",
-    "website_url": "https://timberdoodle.com/products/teachers-guide-the-power-in-your-hands",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$20.00",
-    "description": "This Teacher's Guide - The Power in Your Hands gives you all the answers for their daily work. It also equips you to be as involved as you care to be ..."
   },
   {
     "title": "The Power in Your Hands, 2nd Edition - Updated and Revised",
@@ -8872,23 +8840,7 @@
     "description": "Tim Keller tackles big questions\u2014suffering, truth, doubt\u2014in this essential read for teens. Equip your student to think deeply, defend faith, and engage ..."
   },
   {
-    "title": "The Search",
-    "website_url": "https://timberdoodle.com/products/the-search",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$19.99",
-    "description": "Teach Holocaust history with compassion. The Search graphic novel helps homeschoolers build empathy and understanding through honest, age-appropriate st..."
-  },
-  {
-    "title": "The Search and A Family Secret Graphic Novels",
-    "website_url": "https://timberdoodle.com/products/the-search-and-the-family-secret-graphic-novels",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$33.99",
-    "description": "Introduce your homeschooler to Holocaust history with two powerful, age-appropriate graphic novels: The Search and A Family Secret. Build empathy and cr..."
-  },
-  {
-    "title": "The Story of the World 1 Expanded Edition Bundle",
+    "title": "The Story of the World 1 Expanded Edition",
     "website_url": "https://timberdoodle.com/products/the-story-of-the-world-volume-1-bundle",
     "source": "Timberdoodle",
     "grades_or_ages": "",
@@ -9440,12 +9392,12 @@
     "description": "Teach your child how computers think\u2014without screens! Turing Tumble uses marbles and mechanical logic to build real computing skills through hands-on, s..."
   },
   {
-    "title": "Typing Instructor for Kids Gold - CD-ROM - Mac",
-    "website_url": "https://timberdoodle.com/products/typing-instructor-for-kids-gold-mac",
+    "title": "Typing Instructor for Kids Gold",
+    "website_url": "https://timberdoodle.com/products/typing-instructor-gold-kids",
     "source": "Timberdoodle",
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$39.99",
-    "description": "As your child explores Typer Island he will learn to type along the way. The engaging lessons and exercises in MAC Typing Instructor for KIDS Gold teach..."
+    "description": "As your child explores Typer Island he will learn to type along the way. The engaging lessons and exercises in Typing Instructor for KIDS Gold teach chi..."
   },
   {
     "title": "Typing Instructor for Kids Gold - CD-ROM - Windows",
@@ -9472,12 +9424,12 @@
     "description": "Discover Typing Instructor Gold for Kids, the perfect homeschooling typing program that turns learning into a fun adventure. With colorful games and cus..."
   },
   {
-    "title": "Typing Instructor Gold - CD-ROM - Mac",
-    "website_url": "https://timberdoodle.com/products/typing-instructor-gold-mac",
+    "title": "Typing Instructor Gold",
+    "website_url": "https://timberdoodle.com/products/typing-instructor-gold",
     "source": "Timberdoodle",
     "grades_or_ages": "",
     "prices_mentioned": "$0.00-$39.99",
-    "description": "Typing Instructor Gold for Mac comes with both a physical disc and digital download. Self-paced lessons the whole family can use for real typing skills."
+    "description": "Typing Instructor Gold comes in both a physical disc and digital download for both Mac and Windows. Self-paced lessons the whole family can use for real..."
   },
   {
     "title": "Typing Instructor Gold - CD-ROM - Windows",
@@ -9504,11 +9456,11 @@
     "description": "Typing Instructor Gold is a no-nonsense, customizable program that builds real typing skills fast\u2014without the cringe. Includes dictation, smart tracking..."
   },
   {
-    "title": "Uncle Sam and You Curriculum",
+    "title": "Uncle Sam and You",
     "website_url": "https://timberdoodle.com/products/uncle-sam-and-you-curriculum-package",
     "source": "Timberdoodle",
     "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$110.00",
+    "prices_mentioned": "$0.00-$123.00",
     "description": "Explore American government in a whole new way with Uncle Sam and You. This engaging curriculum for 5th-8th graders combines history, civics, and hands-..."
   },
   {
@@ -9638,14 +9590,6 @@
     "grades_or_ages": "Grades 5-6",
     "prices_mentioned": "$0.00-$22.99",
     "description": "From blogs to business letters, this writing workbook helps kids master real-world communication with fun, practical prompts. Build confidence, creativi..."
-  },
-  {
-    "title": "What Your Kindergartner Needs to Know",
-    "website_url": "https://timberdoodle.com/products/what-your-kindergartener-needs-to-know",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$23.95",
-    "description": "What Your Kindergartner Needs to Know, Read-alouds to get ready for learning, is a beautifully illustrated anthology offering what fellow parents, educa..."
   },
   {
     "title": "What Your Preschooler Needs to Know",
@@ -9784,20 +9728,20 @@
     "description": "Elevate your teen's vocab with Word Roots Level 4! This 288-page workbook covers 45 prefixes, 220 roots, and 117 suffixes, sharpening reading, writing, ..."
   },
   {
+    "title": "Wordsmith",
+    "website_url": "https://timberdoodle.com/products/wordsmith",
+    "source": "Timberdoodle",
+    "grades_or_ages": "",
+    "prices_mentioned": "$0.00-$30.50",
+    "description": "Wordsmith is a clear, no-fluff writing curriculum that helps middle schoolers build real skills\u2014strong sentences, engaging stories, and confident revision."
+  },
+  {
     "title": "Wordsmith Apprentice",
     "website_url": "https://timberdoodle.com/products/wordsmith-apprentice",
     "source": "Timberdoodle",
     "grades_or_ages": "Ages 9\u201312; Ages 9-12",
     "prices_mentioned": "$0.00-$21.00",
     "description": "Wordsmith Apprentice turns grammar into a writing adventure! Designed for ages 9\u201312, it builds skills through newspaper-style assignments\u2014news reports, ..."
-  },
-  {
-    "title": "Wordsmith Bundle",
-    "website_url": "https://timberdoodle.com/products/wordsmith-bundle",
-    "source": "Timberdoodle",
-    "grades_or_ages": "",
-    "prices_mentioned": "$0.00-$30.50",
-    "description": "Wordsmith is a clear, no-fluff writing curriculum that helps middle schoolers build real skills\u2014strong sentences, engaging stories, and confident revisi..."
   },
   {
     "title": "Wordsmith Craftsman",
@@ -9830,14 +9774,6 @@
     "grades_or_ages": "7Th Grade",
     "prices_mentioned": "$0.00-$36.99",
     "description": "World History Detective is written for the 6th or 7th grade student who is looking for a no-frills, independent learning approach to learning ancient an..."
-  },
-  {
-    "title": "World of Dinosaurs",
-    "website_url": "https://timberdoodle.com/products/world-of-dinosaurs",
-    "source": "Timberdoodle",
-    "grades_or_ages": "Ages 6\u201310; Ages 6-10",
-    "prices_mentioned": "$0.00-$49.99",
-    "description": "Unleash your child\u2019s creativity with World of Dinosaurs! This dino-themed craft kit includes 9 fun projects\u2014perfect for ages 6\u201310 and mess-free fun."
   },
   {
     "title": "World of Dots: Savanna",
