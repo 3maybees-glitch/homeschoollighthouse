@@ -21,7 +21,7 @@ export const stripePlans = {
   },
   navigator: {
     label: "The Navigator",
-    priceLabel: "$77 one-time",
+    priceLabel: "$47 one-time",
     envKey: "STRIPE_NAVIGATOR_PRICE_ID",
   },
 } as const;

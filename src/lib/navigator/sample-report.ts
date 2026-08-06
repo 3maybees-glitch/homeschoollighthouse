@@ -9,7 +9,7 @@ export const sampleReportMeta = {
   yearsCharted: 7,
   subjectsPerYear: 5,
   choicesPerSubject: 3,
-  price: "$77",
+  price: "$47",
   priceNote: "one-time — not a subscription",
   tagline: "Not one year. Every year until graduation.",
   subtitle:

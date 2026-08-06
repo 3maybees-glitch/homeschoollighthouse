@@ -83,7 +83,7 @@ export const brand = {
       "A premium, standalone academic interview profile — almost like a dating profile for curriculum — for elementary, middle, and high school. Share learning styles, strengths, faith preferences, budget, and how many years remain until graduation. Receive a decorated multi-year chart covering all remaining school years through Senior, with three matched curricula, books, courses, or products per subject each year, company names, year/credit guidance, and Homeschool Lighthouse weblinks you can print as PDF and save to your account.",
     privacy:
       "Personal information is password-protected in your account, not reviewed by us for marketing, and never sold to companies.",
-    price: "$77",
+    price: "$47",
     priceNote: "one-time standalone purchase — separate from Annual Pass / Lifetime Lantern",
   },
   bookshelf: {
@@ -126,7 +126,7 @@ export const brand = {
     premiumTeaser: "Upgrade to Full Beam Navigation",
     yearly: "$7.77/year",
     lifetime: "$14.99 lifetime",
-    navigator: "$77 one-time",
+    navigator: "$47 one-time",
     freeLabel: "Free Search",
     yearlyLabel: "Annual Pass",
     lifetimeLabel: "Lifetime Lantern",
@@ -178,7 +178,7 @@ export const exploreRoutes = [
   },
   {
     title: "The Navigator",
-    description: "Multi-year curriculum chart from your grade through 12th Senior — $77.",
+    description: "Multi-year curriculum chart from your grade through 12th Senior — $47.",
     href: "/navigator",
   },
   {
