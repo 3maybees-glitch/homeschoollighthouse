@@ -45,3 +45,4 @@ scripts/__pycache__/
 /public/sw.js.map
 /public/swe-worker-*.js
 /public/swe-worker-*.js.map
+.firecrawl/

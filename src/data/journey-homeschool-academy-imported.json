@@ -1,42 +1,122 @@
 [
   {
-    "title": "Experience Astronomy",
-    "website_url": "https://journeyhomeschoolacademy.com/experience-astronomy/",
+    "title": "Journey Homeschool Academy",
+    "website_url": "https://journeyhomeschoolacademy.com/tos/",
     "source": "Journey Homeschool Academy",
-    "grades_or_ages": "Grades 6-12",
-    "prices_mentioned": "$199-$249",
-    "description": "Online science elective from Journey Homeschool Academy: Experience Astronomy."
+    "grades_or_ages": "Grades 1-12",
+    "prices_mentioned": "$97-$329",
+    "description": "Christian video-based homeschool science academy with expert-led online lessons and hands-on labs for elementary through high school. Family pricing covers the immediate household."
   },
   {
-    "title": "Experience Astronomy Plus",
+    "title": "Experience Astronomy Elementary",
+    "website_url": "https://journeyhomeschoolacademy.com/experience-astronomy-elementary/",
+    "source": "Journey Homeschool Academy",
+    "grades_or_ages": "Grades 1-5",
+    "prices_mentioned": "$149",
+    "description": "Basic astronomy curriculum with video lessons for elementary students ages 6-11. Complete family program with hands-on activities designed to spark excitement about science."
+  },
+  {
+    "title": "Experience Biology Elementary",
+    "website_url": "https://journeyhomeschoolacademy.com/experience-biology-elementary/",
+    "source": "Journey Homeschool Academy",
+    "grades_or_ages": "Grades 1-5",
+    "prices_mentioned": "$149",
+    "description": "Hands-on elementary biology course for grades 1-5 with engaging videos and activities that keep young students excited about life science."
+  },
+  {
+    "title": "Earth Science Explored Elementary",
+    "website_url": "https://journeyhomeschoolacademy.com/earth-science-explored-elementary-students-age-6-11/",
+    "source": "Journey Homeschool Academy",
+    "grades_or_ages": "Grades 1-5",
+    "prices_mentioned": "$149",
+    "description": "Elementary earth science curriculum for ages 6-11 with video lessons and nature-friendly activities for the whole family."
+  },
+  {
+    "title": "Physical Science Explored Elementary",
+    "website_url": "https://journeyhomeschoolacademy.com/physical-science-explored-elementary/",
+    "source": "Journey Homeschool Academy",
+    "grades_or_ages": "Grades 1-5",
+    "prices_mentioned": "$149",
+    "description": "Elementary physical science explored course with video instruction and hands-on experiments for younger learners."
+  },
+  {
+    "title": "Experience Astronomy (Middle & High School)",
     "website_url": "https://journeyhomeschoolacademy.com/experience-astronomy/",
     "source": "Journey Homeschool Academy",
+    "grades_or_ages": "Grades 7-12",
+    "prices_mentioned": "$179-$279",
+    "description": "Homeschool astronomy curriculum for middle and high school with engaging video lessons and hands-on instruction. Level B (students 12+) and Level C high school tracks available."
+  },
+  {
+    "title": "Earth Science Explored",
+    "website_url": "https://journeyhomeschoolacademy.com/earth-science-explored/",
+    "source": "Journey Homeschool Academy",
+    "grades_or_ages": "Grades 6-8",
+    "prices_mentioned": "$179",
+    "description": "Middle school earth science and geology curriculum featuring engaging videos, labs, and hands-on activities for Level B students."
+  },
+  {
+    "title": "Physical Science Explored",
+    "website_url": "https://journeyhomeschoolacademy.com/physical-science-explored/",
+    "source": "Journey Homeschool Academy",
     "grades_or_ages": "Grades 6-12",
-    "prices_mentioned": "$249-$299",
-    "description": "Online science elective from Journey Homeschool Academy: Experience Astronomy Plus."
+    "prices_mentioned": "$179-$279",
+    "description": "Physical science video course for middle school (Level B) and high school (Level C) with labs and activities that prepare students for advanced science."
+  },
+  {
+    "title": "World of Birds (Backyard Birds)",
+    "website_url": "https://journeyhomeschoolacademy.com/world-of-birds/",
+    "source": "Journey Homeschool Academy",
+    "grades_or_ages": "Grades 6-8",
+    "prices_mentioned": "$97",
+    "description": "Joyful 16-week middle school elective on backyard birds with hands-on science activities and minimal parent teaching load."
+  },
+  {
+    "title": "Marine Biology",
+    "website_url": "https://journeyhomeschoolacademy.com/marine-biology/",
+    "source": "Journey Homeschool Academy",
+    "grades_or_ages": "Grades 6-8",
+    "prices_mentioned": "$97",
+    "description": "Faith-based marine biology curriculum for middle school (grades 6-8) with real academic skills and low teaching stress for parents."
   },
   {
     "title": "Experience Biology",
-    "website_url": "https://journeyhomeschoolacademy.com",
+    "website_url": "https://journeyhomeschoolacademy.com/experience-biology/",
     "source": "Journey Homeschool Academy",
     "grades_or_ages": "Grades 9-12",
-    "prices_mentioned": "$199-$249",
-    "description": "Online science elective from Journey Homeschool Academy: Experience Biology."
+    "prices_mentioned": "$279",
+    "description": "High school biology with online video lessons, homeschool labs, quizzes, and activities that engage students in life science from a Christian worldview."
   },
   {
     "title": "Experience Chemistry",
-    "website_url": "https://journeyhomeschoolacademy.com",
+    "website_url": "https://journeyhomeschoolacademy.com/experience-chemistry/",
     "source": "Journey Homeschool Academy",
     "grades_or_ages": "Grades 9-12",
-    "prices_mentioned": "$199-$249",
-    "description": "Online science elective from Journey Homeschool Academy: Experience Chemistry."
+    "prices_mentioned": "$279-$329",
+    "description": "High school chemistry curriculum with engaging labs, video lessons, quizzes, and hands-on activities that highlight God's order in every reaction."
   },
   {
-    "title": "Journey Homeschool Academy",
-    "website_url": "https://journeyhomeschoolacademy.com",
+    "title": "Discover Physics",
+    "website_url": "https://journeyhomeschoolacademy.com/discover-physics/",
     "source": "Journey Homeschool Academy",
-    "grades_or_ages": "Grades 6-12",
-    "prices_mentioned": "Contact for pricing",
-    "description": "Online science elective from Journey Homeschool Academy: Journey Homeschool Academy."
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$279",
+    "description": "Interactive high school physics video course covering fundamental principles and concepts without requiring parental subject expertise."
+  },
+  {
+    "title": "Discover Anatomy & Physiology",
+    "website_url": "https://journeyhomeschoolacademy.com/discover-anatomy-physiology/",
+    "source": "Journey Homeschool Academy",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$279",
+    "description": "High school anatomy and physiology online video course with hands-on labs and activities exploring God's design of the human body."
+  },
+  {
+    "title": "Equipped Bible Course",
+    "website_url": "https://journeyhomeschoolacademy.com/equipped-bible-course-study/",
+    "source": "Journey Homeschool Academy",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "$179",
+    "description": "Online homeschool Bible study curriculum for teens and high school students, designed to equip them to understand and read Scripture."
   }
 ]
