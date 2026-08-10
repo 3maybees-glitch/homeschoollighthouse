@@ -88,7 +88,12 @@ export function HeroSearchDemo({ demo }: HeroSearchDemoProps) {
 
         <div className="flex min-w-0 items-start gap-3.5 sm:gap-5">
           <div className="relative mt-0.5 h-[4.25rem] w-[4.25rem] shrink-0 overflow-hidden rounded-2xl border border-[var(--color-beam)]/35 bg-[var(--color-navy-deep)] shadow-[0_12px_40px_rgba(255,217,102,0.22)] sm:h-24 sm:w-24 sm:rounded-[1.35rem]">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(255,217,102,0.35),transparent_65%)]" />
+            <motion.div
+              className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_28%,rgba(255,217,102,0.55),transparent_68%)]"
+              animate={{ opacity: [0.35, 0.85, 0.35] }}
+              transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut" }}
+              aria-hidden="true"
+            />
             <BrandLogoVideo className="relative h-full w-full scale-[1.14] object-cover" plays={3} />
           </div>
 
