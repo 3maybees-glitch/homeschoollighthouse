@@ -5,13 +5,14 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useMemo, useState, useTransition } from "react";
 import { motion } from "motion/react";
-import { ArrowRight, Compass, Search } from "lucide-react";
+import { Anchor, ArrowRight, Compass, Search } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
 import {
   filterHeroDemoPool,
   type HeroDemoData,
   type HeroDemoListing,
 } from "@/lib/home/hero-demo";
+import { BrandLogoVideo } from "@/components/brand/brand-logo-video";
 import { HeroDemoCard } from "@/components/home/hero-demo-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -79,19 +80,29 @@ export function HeroSearchDemo({ demo }: HeroSearchDemoProps) {
     <div className="relative mx-auto grid w-full max-w-7xl gap-8 px-4 pb-14 pt-14 sm:px-6 sm:pb-16 lg:min-h-[calc(100dvh-3.5rem)] lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-10 lg:pb-20 lg:pt-16">
       <div className="min-w-0 space-y-5 sm:space-y-6">
         <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-[var(--color-beam)] backdrop-blur sm:px-4 sm:py-1.5 sm:text-xs">
-          {demo.listingsCount} {demo.listingsLabel}
+          <Anchor className="h-3 w-3 shrink-0 sm:h-3.5 sm:w-3.5" aria-hidden="true" />
+          <span className="truncate">
+            Safe Harbor · {demo.listingsCount} {demo.listingsLabel}
+          </span>
         </p>
 
-        <div className="min-w-0 space-y-3 sm:space-y-4">
-          <h1 className="font-display max-w-full text-balance text-[1.7rem] font-semibold leading-[1.12] tracking-tight sm:max-w-3xl sm:text-4xl sm:leading-[1.08] lg:text-5xl xl:text-[3.35rem]">
-            <span className="block text-[var(--color-beam)]">{brand.siteName}</span>
-            <span className="mt-2 block lg:hidden">{brand.heroTaglineShort}</span>
-            <span className="mt-2 hidden lg:block">{brand.heroTagline}</span>
-          </h1>
-          <p className="max-w-xl text-sm leading-relaxed text-slate-300 sm:text-lg">
-            Search trusted curricula, tests, scholarships, and local harbors — see real matches
-            before you leave the homepage.
-          </p>
+        <div className="flex min-w-0 items-start gap-3.5 sm:gap-5">
+          <div className="relative mt-0.5 h-[4.25rem] w-[4.25rem] shrink-0 overflow-hidden rounded-2xl border border-[var(--color-beam)]/35 bg-[var(--color-navy-deep)] shadow-[0_12px_40px_rgba(255,217,102,0.22)] sm:h-24 sm:w-24 sm:rounded-[1.35rem]">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(255,217,102,0.35),transparent_65%)]" />
+            <BrandLogoVideo className="relative h-full w-full scale-[1.14] object-cover" plays={3} />
+          </div>
+
+          <div className="min-w-0 space-y-3 sm:space-y-4">
+            <h1 className="font-display max-w-full text-balance text-[1.7rem] font-semibold leading-[1.12] tracking-tight sm:max-w-3xl sm:text-4xl sm:leading-[1.08] lg:text-5xl xl:text-[3.35rem]">
+              <span className="block text-[var(--color-beam)]">{brand.siteName}</span>
+              <span className="mt-2 block lg:hidden">{brand.heroTaglineShort}</span>
+              <span className="mt-2 hidden lg:block">{brand.heroTagline}</span>
+            </h1>
+            <p className="max-w-xl text-sm leading-relaxed text-slate-300 sm:text-lg">
+              Chart a course through trusted curricula, tests, scholarships, and local harbors —
+              see real matches before you leave the homepage.
+            </p>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit} className="w-full min-w-0 max-w-2xl">
@@ -197,8 +208,18 @@ export function HeroSearchDemo({ demo }: HeroSearchDemoProps) {
         className="relative hidden min-w-0 lg:block"
       >
         <div className="relative overflow-hidden rounded-[1.75rem] border border-white/15 bg-white/10 p-5 shadow-2xl shadow-black/25 backdrop-blur sm:p-6">
-          <div className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[var(--color-beam)]/20 blur-3xl" />
+          <div className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-[var(--color-beam)]/25 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-12 -left-10 h-40 w-40 rounded-full bg-[var(--color-seafoam)]/20 blur-3xl" />
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-16 opacity-40"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 64' preserveAspectRatio='none'%3E%3Cpath fill='none' stroke='rgba(255,217,102,0.35)' stroke-width='1' d='M0 36c40-12 80-12 120 0s80 12 120 0 80-12 120 0 80 12 120 0 80-12 120 0'/%3E%3C/svg%3E\")",
+              backgroundSize: "100% 100%",
+              backgroundRepeat: "no-repeat",
+            }}
+            aria-hidden="true"
+          />
 
           <div className="relative">
             <ResultsHeader
@@ -220,7 +241,7 @@ export function HeroSearchDemo({ demo }: HeroSearchDemoProps) {
               ))}
             </div>
             <p className="mt-4 text-center text-xs text-slate-400">
-              Tap a card for details, or open the full directory to refine with filters.
+              Follow the light into a listing, or open the full harbor directory to set your bearing.
             </p>
           </div>
         </div>
@@ -242,17 +263,31 @@ function ResultsHeader({
 }) {
   return (
     <div className="flex flex-wrap items-end justify-between gap-2">
-      <div>
-        <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-beam)] sm:text-xs">
-          Live directory preview
-        </p>
-        <p className="mt-1 text-sm text-slate-300">{resultCountLabel}</p>
+      <div className="flex min-w-0 items-start gap-3">
+        <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-[var(--color-beam)]/30 bg-[var(--color-navy-deep)]/70 shadow-md shadow-black/20">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/icons/lighthouse-icon.svg"
+            alt=""
+            width={28}
+            height={28}
+            className="h-7 w-7 object-cover"
+            aria-hidden="true"
+          />
+        </span>
+        <div className="min-w-0">
+          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-beam)] sm:text-xs">
+            Live directory preview
+          </p>
+          <p className="mt-1 text-sm text-slate-300">{resultCountLabel}</p>
+        </div>
       </div>
       <Link
         href={browseHref}
+        title={`Browse ${listingsCount} ${listingsLabel}`}
         className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--color-beam)] transition hover:text-white"
       >
-        Browse {listingsCount} {listingsLabel}
+        Chart the full harbor
         <ArrowRight className="h-4 w-4" aria-hidden="true" />
       </Link>
     </div>

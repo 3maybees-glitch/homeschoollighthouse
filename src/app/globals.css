@@ -51,17 +51,57 @@ a {
   background: linear-gradient(
     105deg,
     transparent 0%,
-    transparent 38%,
-    rgba(255, 217, 102, 0.08) 44%,
-    rgba(255, 217, 102, 0.22) 50%,
-    rgba(255, 217, 102, 0.08) 56%,
-    transparent 62%,
+    transparent 34%,
+    rgba(255, 217, 102, 0.1) 42%,
+    rgba(255, 217, 102, 0.32) 50%,
+    rgba(255, 217, 102, 0.1) 58%,
+    transparent 66%,
     transparent 100%
   );
+  will-change: transform;
+  animation: hero-beam-sweep 11s ease-in-out infinite alternate;
+}
+
+.hero-beam-fan {
+  background: conic-gradient(
+    from 210deg at 18% 12%,
+    transparent 0deg,
+    rgba(255, 217, 102, 0.05) 12deg,
+    rgba(255, 217, 102, 0.18) 28deg,
+    rgba(255, 217, 102, 0.06) 44deg,
+    transparent 62deg
+  );
+  will-change: transform;
+  animation: hero-beam-fan-sweep 16s ease-in-out infinite alternate;
+}
+
+.hero-wave-texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath fill='none' stroke='rgba(255,217,102,0.12)' stroke-width='1.2' d='M0 70c120-24 240-24 360 0s240 24 360 0 240-24 360 0 240 24 360 0'/%3E%3Cpath fill='none' stroke='rgba(42,157,143,0.14)' stroke-width='1' d='M0 90c120-18 240-18 360 0s240 18 360 0 240-18 360 0 240 18 360 0'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% 100%;
+}
+
+@keyframes hero-beam-sweep {
+  from {
+    transform: translate3d(-14%, 0, 0);
+  }
+  to {
+    transform: translate3d(14%, 0, 0);
+  }
+}
+
+@keyframes hero-beam-fan-sweep {
+  from {
+    transform: rotate(-10deg);
+  }
+  to {
+    transform: rotate(14deg);
+  }
 }
 
 .wave-divider {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='%23001f3f' d='M0 32c120-16 240-16 360 0s240 16 360 0 240-16 360 0 240 16 360 0v16H0z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 48' preserveAspectRatio='none'%3E%3Cpath fill='%23faf8f3' d='M0 24c120 16 240 16 360 0s240-16 360 0 240 16 360 0 240-16 360 0v24H0z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -105,5 +145,11 @@ a {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .hero-beam,
+  .hero-beam-fan {
+    animation: none !important;
+    transform: none !important;
   }
 }
