@@ -39,7 +39,7 @@ export function NavigatorPromo() {
           <div>
             <p className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-beam)]">
               <Compass className="h-4 w-4" aria-hidden="true" />
-              New · Personalized Curriculum Planner
+              Prefer a guided plan?
             </p>
             <h2
               id="navigator-promo-heading"
@@ -48,10 +48,9 @@ export function NavigatorPromo() {
               Meet {brand.navigator.title}
             </h2>
             <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
-              Chart every school year — not just this August. Answer one deep
-              academic interview and receive a multi-year Personalized Curriculum
-              Chart: three matched choices per subject, for every remaining year
-              through 12th Senior.
+              Not ready to browse {brand.stats.listings} listings on your own? Answer one deep
+              academic interview and receive a multi-year Personalized Curriculum Chart: three
+              matched choices per subject, for every remaining year through 12th Senior.
             </p>
 
             <ul className="mt-7 space-y-3">
