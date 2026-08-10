@@ -5,18 +5,23 @@ import { FaithFreedomMapsPromo } from "@/components/home/faith-freedom-maps-prom
 import { CategoryCards } from "@/components/home/category-cards";
 import { SocialHarborsPreview } from "@/components/home/social-harbors-preview";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
+import { AdvertiseSpotsBand } from "@/components/home/advertise-spots-band";
 import { PricingBand } from "@/components/home/pricing-band";
+import { getHeroDemoData } from "@/lib/home/hero-demo";
 
 export default function HomePage() {
+  const demo = getHeroDemoData();
+
   return (
     <div>
-      <HomeHero />
+      <HomeHero demo={demo} />
       <BrightBeaconsSection />
       <NavigatorPromo />
       <FaithFreedomMapsPromo />
       <CategoryCards />
       <SocialHarborsPreview />
       <TestimonialsSection />
+      <AdvertiseSpotsBand />
       <PricingBand />
     </div>
   );
