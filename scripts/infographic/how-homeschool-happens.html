@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>How Homeschool Happens — Homeschool Lighthouse</title>
+  <style>
+    @font-face {
+      font-family: "Source Serif 4";
+      src: url("./fonts/SourceSerif4.ttf") format("truetype");
+      font-weight: 400 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "Plus Jakarta Sans";
+      src: url("./fonts/PlusJakartaSans.ttf") format("truetype");
+      font-weight: 400 700;
+      font-style: normal;
+    }
+
+    :root {
+      --navy: #001f3f;
+      --navy-deep: #001428;
+      --cream: #faf8f3;
+      --cream-card: #fffdf8;
+      --gold: #e6b422;
+      --beam: #ffd966;
+      --gold-ink: #b88914;
+      --seafoam: #2a9d8f;
+      --ink: #001428;
+      --muted: #3d5a73;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 1024px;
+      height: 1536px;
+      overflow: hidden;
+      background: var(--navy-deep);
+    }
+
+    .artboard {
+      position: relative;
+      width: 1024px;
+      height: 1536px;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
+    }
+
+    .artboard::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+
+    .header {
+      position: relative;
+      height: 292px;
+      padding: 36px 52px 28px;
+      background:
+        radial-gradient(ellipse 70% 90% at 92% 0%, rgba(255, 217, 102, 0.22), transparent 55%),
+        radial-gradient(ellipse 50% 70% at 8% 100%, rgba(42, 157, 143, 0.22), transparent 50%),
+        linear-gradient(180deg, #001428 0%, #001f3f 100%);
+      color: #fff;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-name {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 15px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--beam);
+      font-weight: 600;
+    }
+
+    .headline {
+      margin-top: 28px;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 64px;
+      line-height: 0.98;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .subhead {
+      margin-top: 14px;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 24px;
+      font-style: italic;
+      font-weight: 400;
+      color: var(--beam);
+    }
+
+    .rule {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .rule span {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .body {
+      position: relative;
+      padding: 34px 48px 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      position: relative;
+      min-height: 248px;
+      padding: 26px 24px 22px;
+      background: var(--cream-card);
+      border: 1.5px solid rgba(230, 180, 34, 0.72);
+      border-radius: 18px;
+      box-shadow: 0 10px 24px rgba(0, 20, 40, 0.04);
+    }
+
+    .icon-wrap {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.25px solid rgba(230, 180, 34, 0.85);
+      border-radius: 50%;
+      background: rgba(255, 217, 102, 0.12);
+      color: var(--gold-ink);
+    }
+
+    .card h3 {
+      margin-top: 16px;
+      font-size: 15px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-ink);
+      font-weight: 700;
+    }
+
+    .card .star {
+      margin: 8px 0 10px;
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 0.4em;
+    }
+
+    .card p {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 20px;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+
+    .also {
+      margin-top: 22px;
+      text-align: center;
+    }
+
+    .also-label {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .chips {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .chip {
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(42, 157, 143, 0.35);
+      background: rgba(42, 157, 143, 0.08);
+      color: #1a5c56;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .mix {
+      margin-top: 16px;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-style: italic;
+      font-size: 20px;
+      color: var(--ink);
+    }
+
+    .footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 318px;
+      padding: 28px 52px 30px;
+      background:
+        radial-gradient(ellipse 60% 80% at 10% 100%, rgba(42, 157, 143, 0.2), transparent 55%),
+        radial-gradient(ellipse 50% 70% at 90% 0%, rgba(255, 217, 102, 0.16), transparent 50%),
+        linear-gradient(180deg, #001f3f 0%, #001428 100%);
+      color: #fff;
+      text-align: center;
+    }
+
+    .footer .rule { margin-top: 0; margin-bottom: 22px; }
+
+    .soft-kicker {
+      font-size: 12px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--beam);
+      font-weight: 700;
+    }
+
+    .soft-title {
+      margin-top: 10px;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 34px;
+      line-height: 1.15;
+      font-weight: 700;
+    }
+
+    .soft-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--beam);
+    }
+
+    .price-pill {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .url {
+      margin-top: 16px;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 22px;
+      color: var(--beam);
+    }
+
+    .handle {
+      margin-top: 10px;
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(250, 248, 243, 0.72);
+    }
+
+    .watermark {
+      position: absolute;
+      right: -40px;
+      bottom: 40px;
+      width: 280px;
+      height: 280px;
+      opacity: 0.07;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="artboard" id="artboard">
+    <header class="header">
+      <div class="brand-row">
+        <svg width="42" height="42" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <circle cx="32" cy="18" r="8" fill="#ffd966" opacity="0.95"/>
+          <path d="M32 18 L52 6 L52 30 Z" fill="#ffd966" opacity="0.28"/>
+          <path d="M32 18 L58 16 L58 24 Z" fill="#ffd966" opacity="0.18"/>
+          <path d="M26 58 h12 l-1.5-10 h-9 z" fill="#e6b422"/>
+          <path d="M27.5 48 h9 l-1.6-16 h-5.8 z" fill="#eecf78"/>
+          <rect x="29" y="26" width="6" height="6" fill="#e6b422"/>
+          <path d="M8 58 h18 v-8 H14 l-2-10 h8 v-6 H8 z" fill="#c99a2e"/>
+        </svg>
+        <div class="brand-name">Homeschool Lighthouse</div>
+      </div>
+      <h1 class="headline">How Homeschool<br/>Happens</h1>
+      <p class="subhead">One harbor. Many courses.</p>
+      <div class="rule">
+        <span></span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#e6b422" aria-hidden="true">
+          <path d="M12 1.5 L13.2 10.8 L22.5 12 L13.2 13.2 L12 22.5 L10.8 13.2 L1.5 12 L10.8 10.8 Z"/>
+        </svg>
+        <span></span>
+      </div>
+    </header>
+
+    <main class="body">
+      <svg class="watermark" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#001f3f" stroke-width="1.2"/>
+        <circle cx="50" cy="50" r="30" fill="none" stroke="#001f3f" stroke-width="0.8"/>
+        <path d="M50 4 L50 96 M4 50 L96 50 M18 18 L82 82 M82 18 L18 82" stroke="#001f3f" stroke-width="0.7"/>
+      </svg>
+
+      <div class="grid">
+        <article class="card">
+          <div class="icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#b88914" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+              <path d="M16 7.5 C12 5.5 8 6 6 7.2 v16.2 c2.2-1.3 6.2-1.6 10 0.4"/>
+              <path d="M16 7.5 C20 5.5 24 6 26 7.2 v16.2 c-2.2-1.3-6.2-1.6-10 0.4"/>
+              <path d="M16 8 v16"/>
+              <path d="M9 12.5 h5 M9 16 h5 M21 12.5 h-5 M21 16 h-5"/>
+            </svg>
+          </div>
+          <h3>Parent Instructor</h3>
+          <div class="star">✦</div>
+          <p>You hold the helm. Lessons at the table — your pacing, your values, your child.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#b88914" stroke-width="1.6" stroke-linejoin="round">
+              <rect x="4" y="7" width="24" height="15" rx="2"/>
+              <path d="M12 27 h8 M16 22 v5"/>
+              <path d="M10 12 h6 M10 16 h4"/>
+            </svg>
+          </div>
+          <h3>Online</h3>
+          <div class="star">✦</div>
+          <p>Live or self-paced classes. A remote teacher; the kitchen becomes campus.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#b88914" stroke-width="1.6" stroke-linejoin="round">
+              <path d="M5 16 L12 10 L19 16"/>
+              <path d="M7 15 v9 h10 v-9"/>
+              <rect x="18" y="13" width="10" height="8" rx="1"/>
+              <path d="M11 24 v-5 h3 v5"/>
+            </svg>
+          </div>
+          <h3>Hybrid</h3>
+          <div class="star">✦</div>
+          <p>Home days plus campus or screen days. Structure without surrendering the tiller.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#b88914" stroke-width="1.6" stroke-linejoin="round">
+              <circle cx="8" cy="11" r="3"/>
+              <circle cx="16" cy="9" r="3"/>
+              <circle cx="24" cy="11" r="3"/>
+              <path d="M4 24 c0-5 3-7 8-7 s8 2 8 7"/>
+              <path d="M16 24 c0-4 2-6 8-6 4 0 6 1.5 6 6"/>
+            </svg>
+          </div>
+          <h3>Co-op</h3>
+          <div class="star">✦</div>
+          <p>Families share the teaching. Weekly classes, shared gifts, built-in friends.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#b88914" stroke-width="1.6" stroke-linejoin="round">
+              <circle cx="11" cy="10" r="3"/>
+              <circle cx="22" cy="12" r="2.6"/>
+              <path d="M5 24 c1-6 4-8 8-8 s7 2 8 8"/>
+              <path d="M18 24 c1-5 3-7 7-7 3 0 5 2 6 7"/>
+              <path d="M20 8 l3-4 3 4"/>
+            </svg>
+          </div>
+          <h3>Tutor-Supported</h3>
+          <div class="star">✦</div>
+          <p>Keep parent-led cores. Bring in help for algebra, Latin, labs, or languages.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon-wrap">
+            <svg width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#b88914" stroke-width="1.6" stroke-linejoin="round">
+              <path d="M4 18 L16 8 L28 18"/>
+              <path d="M7 17 v10 h18 v-10"/>
+              <path d="M13 27 v-7 h6 v7"/>
+              <rect x="10" y="19" width="3" height="3"/>
+              <rect x="19" y="19" width="3" height="3"/>
+            </svg>
+          </div>
+          <h3>Cottage / Microschool</h3>
+          <div class="star">✦</div>
+          <p>A small paid classroom with a handful of families — still homeschool at heart.</p>
+        </article>
+      </div>
+
+      <div class="also">
+        <div class="also-label">Also in these waters</div>
+        <div class="chips">
+          <span class="chip">Dual enrollment</span>
+          <span class="chip">Umbrella school</span>
+          <span class="chip">Unschooling</span>
+          <span class="chip">Mix any of these</span>
+        </div>
+        <p class="mix">Most families sail more than one course.</p>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="rule">
+        <span></span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#e6b422" aria-hidden="true">
+          <path d="M12 1.5 L13.2 10.8 L22.5 12 L13.2 13.2 L12 22.5 L10.8 13.2 L1.5 12 L10.8 10.8 Z"/>
+        </svg>
+        <span></span>
+      </div>
+      <p class="soft-kicker">A quiet next step · The Navigator</p>
+      <p class="soft-title">Whichever waters you sail,<br/><em>we’ll match the chart to how you teach.</em></p>
+      <div class="price-pill">$47 one-time · not a subscription</div>
+      <p class="url">homeschoollighthouse.com/navigator</p>
+      <p class="handle">Homeschool Lighthouse · @HomeschoolLight</p>
+    </footer>
+  </div>
+</body>
+</html>

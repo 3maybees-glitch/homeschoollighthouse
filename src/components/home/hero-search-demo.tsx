@@ -303,6 +303,11 @@ function ProductVisualStrip() {
   return (
     <div className="flex items-center gap-2" aria-label="Product previews">
       <VisualThumb
+        src="/social/how-homeschool-happens-x-infographic.png"
+        alt="How homeschool happens preview"
+        href="/#how-homeschool-happens"
+      />
+      <VisualThumb
         src="/social/navigator-personalized-curriculum-x-infographic.png"
         alt="The Navigator curriculum chart preview"
         href="/navigator"

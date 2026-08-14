@@ -1,5 +1,6 @@
 import { HomeHero } from "@/components/home/home-hero";
 import { BrightBeaconsSection } from "@/components/home/bright-beacons-section";
+import { HowHomeschoolHappens } from "@/components/home/how-homeschool-happens";
 import { NavigatorPromo } from "@/components/home/navigator-promo";
 import { FaithFreedomMapsPromo } from "@/components/home/faith-freedom-maps-promo";
 import { CategoryCards } from "@/components/home/category-cards";
@@ -16,6 +17,7 @@ export default function HomePage() {
     <div>
       <HomeHero demo={demo} />
       <BrightBeaconsSection />
+      <HowHomeschoolHappens />
       <NavigatorPromo />
       <FaithFreedomMapsPromo />
       <CategoryCards />
