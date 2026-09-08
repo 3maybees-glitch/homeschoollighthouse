@@ -10,7 +10,12 @@ export const metadata: Metadata = {
     description: heritageAcademy.shortDescription,
     type: "website",
     url: "/heritage-academy",
-    images: [{ url: heritageAcademy.heroImageUrl, alt: "High school students in a civic study session" }],
+    images: [
+      {
+        url: heritageAcademy.flyers.deadlineBell.src,
+        alt: heritageAcademy.flyers.deadlineBell.alt,
+      },
+    ],
   },
   keywords: [
     "Heritage Academy",
