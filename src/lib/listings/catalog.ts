@@ -23,7 +23,7 @@ export function getListingBySlug(slug: string): Listing | null {
   return seedListings.find((listing) => listing.slug === slug) ?? null;
 }
 
-const PINNED_FEATURED_SLUGS = ["tied-2-teaching"];
+const PINNED_FEATURED_SLUGS = ["the-heritage-academy", "tied-2-teaching"];
 
 function pinFeaturedOrder(listings: Listing[]) {
   const pinned = PINNED_FEATURED_SLUGS.flatMap((slug) =>

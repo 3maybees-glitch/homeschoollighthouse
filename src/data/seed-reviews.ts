@@ -111,6 +111,17 @@ export const seedReviews: Review[] = [
     createdAt: "2025-11-05T10:00:00.000Z",
     helpfulCount: 28,
   },
+  {
+    id: "rev-heritage-academy-1",
+    listingId: "seed-heritage-academy",
+    listingSlug: "the-heritage-academy",
+    authorName: "A Lighthouse parent",
+    rating: 5,
+    title: "Our son loved this program",
+    body: "Our son completed the Heritage Academy High School Track and loved it. The lectures were serious, the discussions were with peers who share conservative values, and it fit a busy homeschool week. We are glad to help spread the word for Fall 2026.",
+    createdAt: "2026-09-08T21:00:00.000Z",
+    helpfulCount: 0,
+  },
 ];
 
 export function getReviewsForListing(listingId: string, listingSlug: string) {

@@ -16,6 +16,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatAgeRange, formatPrice } from "@/lib/utils";
+import { isHeritageAcademyListing } from "@/lib/heritage-academy";
+import { HeritageListingBanner } from "@/components/heritage-academy/heritage-listing-banner";
 
 export async function generateMetadata({
   params,
@@ -133,6 +135,7 @@ export default async function ListingPage({
           </div>
         </CardHeader>
         <CardContent className="space-y-8">
+          {isHeritageAcademyListing(listing.slug) ? <HeritageListingBanner /> : null}
           <p className="text-base leading-7 text-slate-700">{listing.description}</p>
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -143,11 +146,13 @@ export default async function ListingPage({
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
-            <Button asChild size="lg">
-              <a href={listing.websiteUrl} target="_blank" rel="noreferrer">
-                Visit Resource <ExternalLink className="h-4 w-4" />
-              </a>
-            </Button>
+            {isHeritageAcademyListing(listing.slug) ? null : (
+              <Button asChild size="lg">
+                <a href={listing.websiteUrl} target="_blank" rel="noreferrer">
+                  Visit Resource <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
+            )}
             <FavoriteButton listingId={listing.id} listingSlug={listing.slug} tier={tier} />
           </div>
         </CardContent>
