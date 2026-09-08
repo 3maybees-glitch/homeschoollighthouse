@@ -20,7 +20,8 @@ export function HeritageAcademyPromo() {
             The Heritage Academy High School Track
           </h2>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-[var(--color-muted-foreground)]">
-            {heritageAcademy.subtext} A Lighthouse family already sent a son through it.
+            {heritageAcademy.subtext} A Lighthouse family praises the Heritage Academy as
+            &ldquo;highly recommended and very influential in their future career direction.&rdquo;
           </p>
 
           <dl className="mt-6 grid max-w-lg grid-cols-2 gap-4 text-sm">
