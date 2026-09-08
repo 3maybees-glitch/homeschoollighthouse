@@ -1,3 +1,4 @@
+import { heritageAcademy } from "@/lib/heritage-academy";
 import type { Listing, ListingFormat, ListingType, PriceType } from "@/types/listing";
 import acellusImportedJson from "@/data/acellus-imported.json";
 import allAboutLearningImportedJson from "@/data/all-about-learning-imported.json";
@@ -822,13 +823,45 @@ const allListings = mergeSeedInputs(
   mergeSeedInputs(batch6Imported, batch7Imported),
 );
 
-export const seedListings: Listing[] = allListings.map((listing, index) => buildListing(listing, index));
+const coreListings = allListings.map((listing, index) => buildListing(listing, index));
+
+const heritageAcademyListing: Listing = {
+  ...buildListing(
+    {
+      title: heritageAcademy.programName,
+      listingType: "online_course",
+      format: "online",
+      priceType: "free",
+      priceMin: 0,
+      priceMax: 0,
+      websiteUrl: heritageAcademy.applyUrl,
+      coverImageUrl: heritageAcademy.logoUrl,
+      ageMin: 14,
+      ageMax: 18,
+      isFeatured: true,
+      ratingAvg: 5,
+      ratingCount: 1,
+      philosophies: ["classical"],
+      values: ["tech_friendly"],
+      religions: [],
+      subjects: ["history", "college_prep"],
+      shortDescription: heritageAcademy.shortDescription,
+      description: heritageAcademy.description,
+    },
+    coreListings.length,
+  ),
+  id: heritageAcademy.listingId,
+  slug: heritageAcademy.slug,
+  isVirtual: true,
+};
+
+export const seedListings: Listing[] = [...coreListings, heritageAcademyListing];
 
 export function getListingBySlug(slug: string) {
   return seedListings.find((listing) => listing.slug === slug) ?? null;
 }
 
-const PINNED_FEATURED_SLUGS = ["tied-2-teaching"];
+const PINNED_FEATURED_SLUGS = ["the-heritage-academy", "tied-2-teaching"];
 
 export function getFeaturedListings(limit = 6) {
   const featured = seedListings.filter((listing) => listing.isFeatured);
