@@ -1,12 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Anchor } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 
-export const metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "You're offline",
   description: "Reconnect to keep exploring Homeschool Lighthouse.",
-  robots: { index: false, follow: false },
-};
+  path: "/~offline",
+  noIndex: true,
+});
 
 export default function OfflinePage() {
   return (

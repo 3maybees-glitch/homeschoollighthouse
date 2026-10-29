@@ -1,6 +1,16 @@
+import type { Metadata } from "next";
 import { brand } from "@/lib/brand-vocabulary";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { getUserTier } from "@/lib/auth/session";
 import { AiChat } from "@/components/community/ai-chat";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Follow the Light Homeschool Search",
+  description:
+    "Tell us about your learner and get practical homeschool curriculum matches from the Homeschool Lighthouse directory.",
+  path: "/ai",
+  keywords: ["homeschool curriculum finder", "homeschool recommendations"],
+});
 
 export default async function AiPage() {
   const tier = await getUserTier();

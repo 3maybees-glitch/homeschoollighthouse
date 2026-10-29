@@ -11,9 +11,10 @@ import {
 import { HeritageFlyerPoster } from "@/components/heritage-academy/heritage-flyer-poster";
 import { Button } from "@/components/ui/button";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://homeschoollighthouse.com";
+import { getSiteUrl } from "@/lib/site-url";
 
 export function HeritageAdPage() {
+  const siteUrl = getSiteUrl();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Course",

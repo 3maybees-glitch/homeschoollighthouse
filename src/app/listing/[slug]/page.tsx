@@ -10,6 +10,7 @@ import { getUserTier } from "@/lib/auth/session";
 import { getListingBySlug } from "@/lib/listings/catalog";
 import { listingTypeOptions } from "@/lib/directory/filter-config";
 import { buildListingJsonLd } from "@/lib/seo/listing-jsonld";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { FavoriteButton } from "@/components/community/favorite-button";
 import { ReviewsSection } from "@/components/community/reviews-section";
 import { Badge } from "@/components/ui/badge";
@@ -31,24 +32,21 @@ export async function generateMetadata({
   const typeLabel =
     listingTypeOptions.find((option) => option.value === listing.listingType)?.label ??
     listing.listingType;
+  const summary = listing.shortDescription || listing.description;
 
-  return {
-    title: listing.title,
-    description: listing.shortDescription,
-    openGraph: {
-      title: listing.title,
-      description: listing.shortDescription,
-      type: "website",
-      url: `/listing/${listing.slug}`,
-    },
+  return pageMetadata({
+    title: `${listing.title} — ${typeLabel}`,
+    description: summary,
+    path: `/listing/${listing.slug}`,
     keywords: [
       listing.title,
       typeLabel,
+      "homeschool",
       ...listing.philosophies,
       ...listing.subjects,
-      listing.state ?? "homeschool",
+      listing.state ?? "homeschool resource",
     ].filter(Boolean),
-  };
+  });
 }
 
 export default async function ListingPage({

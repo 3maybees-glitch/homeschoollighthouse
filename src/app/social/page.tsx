@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { brand } from "@/lib/brand-vocabulary";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { brandSocial } from "@/lib/brand-social";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,11 +11,13 @@ import {
 import { SocialPlatformTabs } from "@/components/social/social-platform-tabs";
 import { LighthouseSignals } from "@/components/social/lighthouse-signals";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Homeschool Social Media Communities",
   description:
-    "Top homeschool Facebook groups, YouTube channels, Instagram accounts, TikTok creators, Pinterest boards, Reddit communities, Discord servers, and X accounts — plus live posts from Homeschool Lighthouse on X.",
-};
+    "Top homeschool Facebook groups, YouTube channels, Instagram accounts, TikTok creators, Pinterest boards, Reddit communities, Discord servers, and X accounts.",
+  path: "/social",
+  keywords: ["homeschool Facebook groups", "homeschool YouTube", "homeschool Instagram"],
+});
 
 export default function SocialPage() {
   const groups = getSocialPlatformGroups();

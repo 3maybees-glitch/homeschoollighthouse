@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { Anchor, BookOpen } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
 import { getUserTier } from "@/lib/auth/session";
@@ -13,10 +15,12 @@ import { BookCard } from "@/components/bookshelf/book-card";
 import { BookshelfPaywall } from "@/components/bookshelf/bookshelf-paywall";
 import { Badge } from "@/components/ui/badge";
 
-export const metadata = {
-  title: brand.bookshelf.title,
+export const metadata: Metadata = pageMetadata({
+  title: `${brand.bookshelf.title} Reading List`,
   description: brand.bookshelf.subtitle,
-};
+  path: "/lighthouse-library",
+  keywords: ["homeschool reading list", "living books", "classical homeschool books"],
+});
 
 export default async function LighthouseLibraryPage({
   searchParams,

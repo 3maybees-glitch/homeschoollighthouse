@@ -20,7 +20,7 @@ export const sampleReportMeta = {
   ctaLabel: "Get The Navigator for your family",
 } as const;
 
-const site = "https://homeschoollighthouse.com";
+const site = "https://www.homeschoollighthouse.com";
 
 function choice(
   rank: 1 | 2 | 3,

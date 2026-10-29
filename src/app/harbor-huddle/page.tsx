@@ -1,15 +1,19 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { brand } from "@/lib/brand-vocabulary";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { getUserTier } from "@/lib/auth/session";
 import { getMonthKey } from "@/lib/harbor-huddle/month";
 import { memoryStore } from "@/lib/store/memory-store";
 import { HarborHuddlePanel } from "@/components/community/harbor-huddle-panel";
 import { HarborHuddlePaywall } from "@/components/community/harbor-huddle-paywall";
 
-export const metadata = {
+export const metadata: Metadata = pageMetadata({
   title: brand.huddle.title,
   description: brand.huddle.subtitle,
-};
+  path: "/harbor-huddle",
+  keywords: ["homeschool community", "homeschool forum"],
+});
 
 export default async function HarborHuddlePage({
   searchParams,

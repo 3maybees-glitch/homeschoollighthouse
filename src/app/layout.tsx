@@ -4,6 +4,7 @@ import { Geist_Mono, Plus_Jakarta_Sans, Source_Serif_4 } from "next/font/google"
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { PwaInstallPrompt } from "@/components/pwa/install-prompt";
+import { getSiteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -23,15 +24,38 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
   title: {
     default: "Homeschool Lighthouse",
     template: "%s | Homeschool Lighthouse",
   },
   description:
-    "Follow the light to your family's perfect homeschool path. Search 16,000+ curricula, classes, co-ops, and trusted resources.",
-  metadataBase: new URL("https://homeschoollighthouse.com"),
+    "Follow the light to your family's perfect homeschool path. Search 16,000+ curricula, classes, co-ops, and trusted resources for Christian and values-minded families.",
+  metadataBase: new URL(siteUrl),
   applicationName: "Homeschool Lighthouse",
+  openGraph: {
+    type: "website",
+    siteName: "Homeschool Lighthouse",
+    url: "/",
+    title: "Homeschool Lighthouse",
+    description:
+      "Follow the light to your family's perfect homeschool path. Search 16,000+ curricula, classes, co-ops, and trusted resources for Christian and values-minded families.",
+    images: [
+      {
+        url: "/brand/homeschool-lighthouse-logo-poster.png",
+        alt: "Homeschool Lighthouse",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Homeschool Lighthouse",
+    description:
+      "Follow the light to your family's perfect homeschool path. Search 16,000+ curricula, classes, co-ops, and trusted resources for Christian and values-minded families.",
+    images: ["/brand/homeschool-lighthouse-logo-poster.png"],
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",

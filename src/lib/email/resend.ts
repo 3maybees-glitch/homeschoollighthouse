@@ -19,6 +19,4 @@ export function getFromEmail() {
   );
 }
 
-export function getSiteUrl() {
-  return process.env.NEXT_PUBLIC_SITE_URL ?? "https://homeschoollighthouse.com";
-}
+export { getSiteUrl } from "@/lib/site-url";

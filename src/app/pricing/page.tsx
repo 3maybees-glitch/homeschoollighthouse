@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { Check, Compass, Sparkles } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
 import { CheckoutButton } from "@/components/billing/checkout-button";
@@ -27,6 +29,14 @@ const premiumFeatures = [
   "Follow the Light AI discovery",
   "Harbor Huddle monthly community thread",
 ];
+
+export const metadata: Metadata = pageMetadata({
+  title: "Homeschool Plans and Pricing",
+  description:
+    "Compare free directory browsing, the $7.77 Annual Pass, the $14.99 Lifetime Lantern, and The Navigator curriculum chart for $47.",
+  path: "/pricing",
+  keywords: ["homeschool membership", "homeschool curriculum planner", "The Navigator", "homeschool pricing"],
+});
 
 const navigatorFeatures = [
   "Deep academic interview for 1st grade through 12th Senior",

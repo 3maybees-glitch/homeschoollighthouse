@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import { AdminQueue } from "@/components/admin/admin-queue";
+import { pageMetadata } from "@/lib/seo/page-metadata";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Moderation Queue",
+  description: "Review homeschool resource submissions before they join the directory.",
+  path: "/admin",
+  noIndex: true,
+});
 
 export default function AdminPage() {
   return (

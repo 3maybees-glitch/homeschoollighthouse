@@ -4,6 +4,7 @@ import {
   philosophyOptions,
 } from "@/lib/directory/filter-config";
 import { sanitizeFiltersForTier } from "@/lib/directory/premium-gates";
+import { paginate } from "@/lib/directory/paginate";
 import { getAllListings } from "@/lib/listings/catalog";
 import type {
   FilterState,
@@ -205,13 +206,21 @@ export function filterListings(
   });
 
   const sorted = sortListings(filtered, activeFilters.sort, activeFilters.q);
+  // Render one page of matches. Grouping applies to that page so a grouped
+  // view cannot serialize the full 16k-listing catalog into the HTML response.
+  const page = paginate(sorted, activeFilters.page ?? 1);
   const grouped =
-    activeFilters.groupBy === "none" ? undefined : groupListings(sorted, activeFilters.groupBy);
+    activeFilters.groupBy === "none" ? undefined : groupListings(page.items, activeFilters.groupBy);
 
   return {
-    listings: sorted,
+    listings: page.items,
     grouped,
-    total: sorted.length,
+    total: page.total,
+    page: page.page,
+    pageSize: page.pageSize,
+    pageCount: page.pageCount,
+    rangeStart: page.rangeStart,
+    rangeEnd: page.rangeEnd,
     facets: buildFacets(allListings),
   };
 }
@@ -244,6 +253,9 @@ export function parseFilterState(searchParams: Record<string, string | string[] 
     sort: (get("sort") as FilterState["sort"]) ?? "relevance",
     groupBy: (get("groupBy") as FilterState["groupBy"]) ?? "none",
   };
+
+  const page = Number(get("page"));
+  if (Number.isInteger(page) && page > 1) filters.page = page;
 
   if (age?.includes("-")) {
     const [min, max] = age.split("-").map(Number);

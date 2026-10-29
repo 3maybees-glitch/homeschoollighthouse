@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import { AuthForm } from "@/components/auth/auth-form";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { brand } from "@/lib/brand-vocabulary";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Create a Homeschool Lighthouse Account",
+  description:
+    "Create a free Homeschool Lighthouse account to save resources, submit a listing, and keep your family's homeschool path in one place.",
+  path: "/signup",
+});
 
 export default async function SignupPage({
   searchParams,

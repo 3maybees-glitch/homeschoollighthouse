@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { brand } from "@/lib/brand-vocabulary";
 import { getSessionProfile } from "@/lib/auth/session";
 import { CaptainLogPanels } from "@/components/account/captains-log-panels";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Your Homeschool Account",
+  description:
+    "Open your Captain's Log for membership, saved homeschool resources, and The Navigator.",
+  path: "/account",
+});
 
 export default async function AccountPage() {
   const profile = await getSessionProfile();

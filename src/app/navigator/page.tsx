@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { Compass, Ship, Waves } from "lucide-react";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import Link from "next/link";
 import { brand } from "@/lib/brand-vocabulary";
 import { getSessionProfile } from "@/lib/auth/session";
@@ -11,10 +13,18 @@ import { NAVIGATOR_PRICE_LABEL } from "@/lib/navigator/survey";
 import type { NavigatorChart, NavigatorProfileAnswers } from "@/types/navigator";
 import { Button } from "@/components/ui/button";
 
-export const metadata = {
-  title: brand.navigator.title,
-  description: brand.navigator.subtitle,
-};
+export const metadata: Metadata = pageMetadata({
+  title: "The Navigator Homeschool Curriculum Chart",
+  description:
+    "Chart every remaining school year through 12th grade with three matched homeschool curricula per subject. A one-time $47 purchase, separate from membership.",
+  path: "/navigator",
+  keywords: [
+    "homeschool curriculum planner",
+    "The Navigator",
+    "multi-year homeschool plan",
+    "Christian homeschool curriculum",
+  ],
+});
 
 async function loadInitialChart(userId?: string): Promise<NavigatorChart | null> {
   if (!userId) return null;

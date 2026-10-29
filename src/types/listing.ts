@@ -72,6 +72,8 @@ export interface FilterState {
   featuredOnly?: boolean;
   sort: SortOption;
   groupBy: GroupByOption;
+  /** 1-based results page. Omitted from filter query strings so changing a filter returns to page 1. */
+  page?: number;
 }
 
 export interface GroupedListings {
@@ -84,5 +86,10 @@ export interface ListingsResult {
   listings: Listing[];
   grouped?: GroupedListings[];
   total: number;
+  page: number;
+  pageSize: number;
+  pageCount: number;
+  rangeStart: number;
+  rangeEnd: number;
   facets: Record<string, Record<string, number>>;
 }

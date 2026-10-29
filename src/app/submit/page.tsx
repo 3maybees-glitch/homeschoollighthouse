@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import { brand } from "@/lib/brand-vocabulary";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { SubmitForm } from "@/components/community/submit-form";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Submit a Homeschool Resource",
+  description:
+    "Share a curriculum, class, co-op, or other homeschool resource. Submissions are reviewed before they join the directory.",
+  path: "/submit",
+});
 
 export default function SubmitPage() {
   return (

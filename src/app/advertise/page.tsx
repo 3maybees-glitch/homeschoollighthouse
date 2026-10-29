@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { Check, Megaphone, Radio, Sparkles, Waves } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import {
   BRIGHT_BEACON_TOTAL_SPOTS,
   brightBeaconBenefits,
@@ -11,10 +12,12 @@ import { AdvertiseInquiryForm } from "@/components/advertise/advertise-inquiry-f
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-export const metadata: Metadata = {
-  title: `${brand.advertise.title} | ${brand.siteName}`,
+export const metadata: Metadata = pageMetadata({
+  title: brand.advertise.title,
   description: brand.advertise.subtitle,
-};
+  path: "/advertise",
+  keywords: ["homeschool advertising", "homeschool business", "Bright Beacon"],
+});
 
 export default function AdvertisePage() {
   return (

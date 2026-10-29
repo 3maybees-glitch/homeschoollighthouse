@@ -1,4 +1,5 @@
 import { getAllListings } from "@/lib/listings/catalog";
+import { getSiteUrl } from "@/lib/site-url";
 import {
   agesOverlap,
   companyFromListing,
@@ -509,7 +510,7 @@ function toChoice(
   subjectKey: NavigatorSubjectKey,
   answers: NavigatorProfileAnswers,
 ): NavigatorChoice {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://homeschoollighthouse.com";
+  const siteUrl = getSiteUrl();
   return {
     rank,
     title: listing.title,

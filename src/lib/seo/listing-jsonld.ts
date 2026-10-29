@@ -1,7 +1,6 @@
 import type { Listing } from "@/types/listing";
 import { listingTypeOptions } from "@/lib/directory/filter-config";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://homeschoollighthouse.com";
+import { getSiteUrl } from "@/lib/site-url";
 
 export function buildListingJsonLd(listing: Listing) {
   const typeLabel =
@@ -13,7 +12,7 @@ export function buildListingJsonLd(listing: Listing) {
     "@type": listing.format === "in_person" ? "LocalBusiness" : "Course",
     name: listing.title,
     description: listing.shortDescription,
-    url: `${siteUrl}/listing/${listing.slug}`,
+    url: `${getSiteUrl()}/listing/${listing.slug}`,
     sameAs: listing.websiteUrl,
     aggregateRating:
       listing.ratingCount > 0
