@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { CalendarDays, Ship } from "lucide-react";
 import { brand } from "@/lib/brand-vocabulary";
 import { formatWeekLabel, getAllBlogSlugs, getBlogPostBySlug } from "@/lib/blog/catalog";
@@ -18,14 +19,21 @@ export async function generateMetadata({
   const post = getBlogPostBySlug(slug);
 
   if (!post) {
-    return { title: "Dispatch not found" };
+    return pageMetadata({
+      title: "Dispatch not found",
+      description: "This Fair Winds Weekly dispatch is not available.",
+      path: "/blog",
+      noIndex: true,
+    });
   }
 
-  return {
+  return pageMetadata({
     title: post.title,
     description: post.excerpt,
+    path: `/blog/${post.slug}`,
     keywords: post.tags,
-  };
+    type: "article",
+  });
 }
 
 export default async function BlogPostPage({

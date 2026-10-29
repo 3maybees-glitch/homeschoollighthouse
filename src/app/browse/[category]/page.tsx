@@ -13,6 +13,8 @@ import {
   filtersToSearchParams,
   parseFilterState,
 } from "@/lib/directory/query-listings";
+import { BrowsePagination } from "@/components/directory/browse-pagination";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { getUserTier } from "@/lib/auth/session";
 import type { ListingType } from "@/types/listing";
 
@@ -24,17 +26,37 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ category: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }): Promise<Metadata> {
   const { category } = await params;
   const option = listingTypeOptions.find((item) => item.value === category);
   if (!option) return {};
 
-  return {
-    title: `${option.label} Homeschool Resources`,
-    description: `Browse ${option.label.toLowerCase()} listings in the ${brand.siteName} directory with filters, sorting, and curated homeschool resources.`,
-  };
+  const filters = parseFilterState(await searchParams);
+  const query = filters.q?.trim();
+  const canonicalParams = filtersToSearchParams({
+    ...filters,
+    types: undefined,
+  });
+  if (filters.page && filters.page > 1) canonicalParams.set("page", String(filters.page));
+  const canonicalQuery = canonicalParams.toString();
+
+  return pageMetadata({
+    title: query
+      ? `${option.label} homeschool resources for “${query.slice(0, 40)}”`
+      : `${option.label} Homeschool Resources`,
+    description: `Browse ${option.label.toLowerCase()} listings in the ${brand.siteName} directory. Filter by philosophy, age, format, and faith-friendly homeschool needs.`,
+    path: canonicalQuery ? `/browse/${category}?${canonicalQuery}` : `/browse/${category}`,
+    keywords: [
+      option.label,
+      "homeschool",
+      `${option.label.toLowerCase()} homeschool`,
+      "Christian homeschool",
+    ],
+  });
 }
 
 export default async function CategoryBrowsePage({
@@ -55,6 +77,10 @@ export default async function CategoryBrowsePage({
   const tier = await getUserTier();
   const result = filterListings(filters, tier);
   const queryString = filtersToSearchParams(filters).toString();
+  const linkFilters = {
+    ...filters,
+    types: filters.types?.length === 1 && filters.types[0] === category ? undefined : filters.types,
+  };
 
   return (
     <div>
@@ -70,11 +96,29 @@ export default async function CategoryBrowsePage({
           </aside>
           <div className="space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <SortGroupControls filters={filters} tier={tier} total={result.total} />
+              <SortGroupControls
+                filters={filters}
+                tier={tier}
+                total={result.total}
+                rangeStart={result.rangeStart}
+                rangeEnd={result.rangeEnd}
+              />
               <SaveSearchButton queryString={queryString} tier={tier} />
             </div>
+            <BrowsePagination
+              page={result.page}
+              pageCount={result.pageCount}
+              filters={linkFilters}
+              basePath={`/browse/${category}`}
+            />
             {category === "online_course" ? <HeritageInlineAd placement="online-course" /> : null}
             <ListingGrid listings={result.listings} grouped={result.grouped} />
+            <BrowsePagination
+              page={result.page}
+              pageCount={result.pageCount}
+              filters={linkFilters}
+              basePath={`/browse/${category}`}
+            />
           </div>
         </div>
       </div>

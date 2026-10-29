@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import { AuthForm } from "@/components/auth/auth-form";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { brand } from "@/lib/brand-vocabulary";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Sign In to Homeschool Lighthouse",
+  description:
+    "Sign in to open saved homeschool resources, premium tools, and The Navigator curriculum chart.",
+  path: "/login",
+});
 
 export default async function LoginPage({
   searchParams,

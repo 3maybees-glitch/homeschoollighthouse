@@ -13,10 +13,14 @@ export function SortGroupControls({
   filters,
   tier,
   total,
+  rangeStart,
+  rangeEnd,
 }: {
   filters: FilterState;
   tier: SubscriptionTier;
   total: number;
+  rangeStart: number;
+  rangeEnd: number;
 }) {
   const router = useRouter();
 
@@ -30,7 +34,9 @@ export function SortGroupControls({
     <div className="flex flex-col gap-4 rounded-[1.75rem] border border-[var(--color-border)] bg-white/90 p-5 shadow-sm lg:flex-row lg:items-end lg:justify-between">
       <div>
         <p className="text-sm font-medium text-[var(--color-muted-foreground)]">
-          {total} beacons in view
+          {total === 0
+            ? "0 beacons in view"
+            : `Showing ${rangeStart.toLocaleString()}–${rangeEnd.toLocaleString()} of ${total.toLocaleString()} beacons`}
         </p>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">

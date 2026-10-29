@@ -2,11 +2,12 @@ import type { MetadataRoute } from "next";
 import { listingTypeOptions } from "@/lib/directory/filter-config";
 import { getAllBlogSlugs } from "@/lib/blog/catalog";
 import { getAllListingSlugs } from "@/lib/listings/catalog";
+import { getSiteUrl } from "@/lib/site-url";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://homeschoollighthouse.com";
+const siteUrl = getSiteUrl();
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/browse", "/social", "/lighthouse-library", "/credit-logbook", "/navigator", "/navigator/sample", "/harbors", "/harbor-huddle", "/blog", "/pricing", "/advertise", "/heritage-academy", "/submit", "/ai", "/account"].map((path) => ({
+  const staticRoutes = ["", "/about", "/browse", "/social", "/lighthouse-library", "/credit-logbook", "/navigator", "/navigator/sample", "/harbors", "/harbor-huddle", "/blog", "/pricing", "/advertise", "/heritage-academy", "/submit", "/ai", "/account"].map((path) => ({
     url: `${siteUrl}${path}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,

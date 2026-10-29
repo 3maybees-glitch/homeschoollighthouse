@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { getStripe, isOneTimePlan, stripePlans, type StripePlan } from "@/lib/stripe";
+import { getSiteUrl } from "@/lib/site-url";
+import { getStripe, isOneTimePlan, resolveNavigatorPriceId, stripePlans, type StripePlan } from "@/lib/stripe";
 import { createClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
@@ -26,7 +27,32 @@ export async function POST(request: Request) {
     );
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+  let checkoutPriceId = priceId;
+  if (plan === "navigator") {
+    try {
+      const resolved = await resolveNavigatorPriceId(stripe, priceId);
+      if (!resolved) {
+        return NextResponse.json(
+          {
+            error:
+              "The Navigator checkout is not using the current $47 price, so no charge was started.",
+          },
+          { status: 503 },
+        );
+      }
+      checkoutPriceId = resolved;
+    } catch (error) {
+      console.error("Navigator price lookup failed", error);
+      return NextResponse.json(
+        {
+          error: "The Navigator price could not be confirmed, so no charge was started.",
+        },
+        { status: 503 },
+      );
+    }
+  }
+
+  const siteUrl = getSiteUrl();
   const mode = isOneTimePlan(plan) ? "payment" : "subscription";
   const successUrl =
     plan === "navigator"
@@ -42,7 +68,7 @@ export async function POST(request: Request) {
 
   const session = await stripe.checkout.sessions.create({
     mode,
-    line_items: [{ price: priceId, quantity: 1 }],
+    line_items: [{ price: checkoutPriceId, quantity: 1 }],
     success_url: successUrl,
     cancel_url: cancelUrl,
     client_reference_id: user?.id,

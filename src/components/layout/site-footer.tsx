@@ -14,6 +14,7 @@ import { PlatformIcon } from "@/components/social/platform-icon";
 
 const freeFooterLinks = [
   ...freeNavItems,
+  { href: "/about", label: "About", description: "What Homeschool Lighthouse is and who it serves" },
   { href: "/submit", label: brand.submit.title, description: brand.submit.subtitle },
   accountNavItem,
 ];

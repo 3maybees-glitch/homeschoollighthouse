@@ -1,12 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { brand } from "@/lib/brand-vocabulary";
 import { getAllBlogPosts } from "@/lib/blog/catalog";
 import { BlogPostCard } from "@/components/blog/blog-post-card";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 
-export const metadata = {
+export const metadata: Metadata = pageMetadata({
   title: brand.blog.title,
   description: brand.blog.subtitle,
-};
+  path: "/blog",
+  keywords: ["homeschool blog", "homeschool encouragement", "Fair Winds Weekly"],
+});
 
 export default async function BlogPage({
   searchParams,

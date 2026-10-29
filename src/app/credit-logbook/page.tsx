@@ -1,14 +1,18 @@
+import type { Metadata } from "next";
 import { Anchor, ClipboardList } from "lucide-react";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { brand } from "@/lib/brand-vocabulary";
 import { getUserTier } from "@/lib/auth/session";
 import { CreditLogbook } from "@/components/tools/credit-logbook";
 import { CreditLogbookPaywall } from "@/components/tools/credit-logbook-paywall";
 import { HeritageInlineAd } from "@/components/heritage-academy/heritage-inline-ad";
 
-export const metadata = {
-  title: brand.creditLogbook.title,
+export const metadata: Metadata = pageMetadata({
+  title: "Homeschool High School Credit Logbook",
   description: brand.creditLogbook.subtitle,
-};
+  path: "/credit-logbook",
+  keywords: ["homeschool transcript", "high school credits", "homeschool GPA"],
+});
 
 export default async function CreditLogbookPage() {
   const tier = await getUserTier();

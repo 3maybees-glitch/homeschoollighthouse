@@ -152,7 +152,7 @@ export function NavigatorChartSheet({ chart }: { chart: NavigatorChart }) {
           {answers.semestersUntilGraduation || "—"}
         </p>
         <p className="mt-1 text-xs text-slate-500">
-          Generated {new Date(chart.updatedAt).toLocaleDateString()} · homeschoollighthouse.com/navigator
+          Generated {new Date(chart.updatedAt).toLocaleDateString()} · www.homeschoollighthouse.com/navigator
         </p>
       </div>
 

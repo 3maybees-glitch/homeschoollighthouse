@@ -1,9 +1,33 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { pageMetadata } from "@/lib/seo/page-metadata";
 import { brand } from "@/lib/brand-vocabulary";
 import { getLocalHarborMapData, getStateHarborCounts } from "@/lib/directory/local-harbors";
 import { HarborsMapPanel } from "@/components/directory/harbors-map-panel";
 import { ListingCard } from "@/components/directory/listing-card";
 import { Button } from "@/components/ui/button";
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const stateParam = params.state;
+  const state = Array.isArray(stateParam) ? stateParam[0] : stateParam;
+  const stateLabel = state?.trim();
+
+  return pageMetadata({
+    title: stateLabel
+      ? `Homeschool Co-ops and Groups in ${stateLabel}`
+      : "Local Homeschool Co-ops and Support Groups",
+    description: stateLabel
+      ? `Find homeschool co-ops, support groups, and field trips in ${stateLabel}.`
+      : "Find homeschool co-ops, support groups, and field trips near you, then chart your family's next local connection.",
+    path: stateLabel ? `/harbors?state=${encodeURIComponent(stateLabel)}` : "/harbors",
+    keywords: ["homeschool co-op", "homeschool support group", "local homeschool", stateLabel ?? "homeschool field trip"],
+  });
+}
 
 export default async function HarborsPage({
   searchParams,
