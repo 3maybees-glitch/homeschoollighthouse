@@ -21,12 +21,6 @@ const brightBeacons: NavItem = {
   description: "Our hand-picked featured resources",
 };
 
-const heritageAcademyNav: NavItem = {
-  href: "/heritage-academy",
-  label: "Heritage Academy",
-  description: "Free Fall 2026 High School Track · apply by September 13",
-};
-
 const localHarbors: NavItem = {
   href: "/harbors",
   label: brand.nav.harbors,
@@ -98,7 +92,6 @@ export const primaryNavItems: NavItem[] = [explore, localHarbors, blog, pricing]
 export const freeNavItems: NavItem[] = [
   explore,
   brightBeacons,
-  heritageAcademyNav,
   localHarbors,
   socialHarbors,
   blog,
@@ -122,4 +115,4 @@ export const standaloneNavItems: NavItem[] = [navigator];
 export const accountNavItem: NavItem = captainsLog;
 
 /** Extra free links that aren't in the primary top bar (for the More menu). */
-export const moreFreeNavItems: NavItem[] = [brightBeacons, heritageAcademyNav];
+export const moreFreeNavItems: NavItem[] = [brightBeacons];

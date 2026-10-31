@@ -4,7 +4,6 @@ import { FilterPanel } from "@/components/directory/filter-panel";
 import { ListingGrid } from "@/components/directory/listing-grid";
 import { SortGroupControls } from "@/components/directory/sort-group-controls";
 import { BrowseHero } from "@/components/directory/browse-hero";
-import { HeritageInlineAd } from "@/components/heritage-academy/heritage-inline-ad";
 import { SaveSearchButton } from "@/components/community/save-search-button";
 import { brand } from "@/lib/brand-vocabulary";
 import { listingTypeOptions } from "@/lib/directory/filter-config";
@@ -111,7 +110,6 @@ export default async function CategoryBrowsePage({
               filters={linkFilters}
               basePath={`/browse/${category}`}
             />
-            {category === "online_course" ? <HeritageInlineAd placement="online-course" /> : null}
             <ListingGrid listings={result.listings} grouped={result.grouped} />
             <BrowsePagination
               page={result.page}

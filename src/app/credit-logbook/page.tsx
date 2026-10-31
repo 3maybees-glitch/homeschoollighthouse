@@ -5,7 +5,6 @@ import { brand } from "@/lib/brand-vocabulary";
 import { getUserTier } from "@/lib/auth/session";
 import { CreditLogbook } from "@/components/tools/credit-logbook";
 import { CreditLogbookPaywall } from "@/components/tools/credit-logbook-paywall";
-import { HeritageInlineAd } from "@/components/heritage-academy/heritage-inline-ad";
 
 export const metadata: Metadata = pageMetadata({
   title: "Homeschool High School Credit Logbook",
@@ -47,8 +46,7 @@ export default async function CreditLogbookPage() {
         <div className="wave-divider h-10 w-full" aria-hidden="true" />
       </section>
 
-      <div className="mx-auto max-w-6xl space-y-8 px-4 py-12 sm:px-6">
-        <HeritageInlineAd placement="credit-logbook" />
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         {isPremium ? <CreditLogbook /> : <CreditLogbookPaywall />}
       </div>
     </div>

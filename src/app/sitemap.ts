@@ -7,7 +7,7 @@ import { getSiteUrl } from "@/lib/site-url";
 const siteUrl = getSiteUrl();
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/about", "/browse", "/social", "/lighthouse-library", "/credit-logbook", "/navigator", "/navigator/sample", "/harbors", "/harbor-huddle", "/blog", "/pricing", "/advertise", "/heritage-academy", "/submit", "/ai", "/account"].map((path) => ({
+  const staticRoutes = ["", "/about", "/browse", "/social", "/lighthouse-library", "/credit-logbook", "/navigator", "/navigator/sample", "/harbors", "/harbor-huddle", "/blog", "/pricing", "/advertise", "/submit", "/ai", "/account"].map((path) => ({
     url: `${siteUrl}${path}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
