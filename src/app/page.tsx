@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { HomeHero } from "@/components/home/home-hero";
 import { pageMetadata } from "@/lib/seo/page-metadata";
 import { BrightBeaconsSection } from "@/components/home/bright-beacons-section";
-import { HeritageAcademyPromo } from "@/components/home/heritage-academy-promo";
 import { NavigatorPromo } from "@/components/home/navigator-promo";
 import { FaithFreedomMapsPromo } from "@/components/home/faith-freedom-maps-promo";
 import { CategoryCards } from "@/components/home/category-cards";
@@ -34,7 +33,6 @@ export default function HomePage() {
     <div>
       <HomeHero demo={demo} />
       <BrightBeaconsSection />
-      <HeritageAcademyPromo />
       <NavigatorPromo />
       <FaithFreedomMapsPromo />
       <CategoryCards />
