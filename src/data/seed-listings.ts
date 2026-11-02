@@ -296,7 +296,7 @@ const rawListings: SeedInput[] = [
     priceType: "one_time",
     priceMin: 5,
     priceMax: 25,
-    websiteUrl: "https://www.etsy.com/shop/MaybeeCreates",
+    websiteUrl: "https://shop.maybeecreations.com/",
     coverImageUrl: "/logos/maybee-creations.jpg",
     philosophies: ["religious", "classical", "charlotte_mason"],
     values: ["parent_led", "screen_free"],
@@ -308,9 +308,9 @@ const rawListings: SeedInput[] = [
     ratingAvg: 4.9,
     ratingCount: 64,
     shortDescription:
-      "Printable Faith & Freedom discovery maps — Soul Explorer Bible maps and Liberty Explorer history maps on Etsy.",
+      "Printable Faith & Freedom discovery maps — Soul Explorer Bible maps and Liberty Explorer history maps from the Maybee Creations shop.",
     description:
-      "Faith & Freedom World Maps from Maybee Creates are printable educational discovery maps for Christian and civics-minded homeschool families. The Faith line (Soul Explorer) walks Scripture category by category with Bible world maps and adventure guides. The Freedom line (Liberty Explorer) charts founders, turning points, and American and world history. Faith and Freedom maps only — digital downloads on Etsy at MaybeeCreates.",
+      "Faith & Freedom World Maps from Maybee Creations are printable educational discovery maps for Christian and civics-minded homeschool families. The Faith line (Soul Explorer) walks Scripture category by category with Bible world maps and adventure guides. The Freedom line (Liberty Explorer) charts founders, turning points, and American and world history. Faith and Freedom maps only — printable digital downloads at shop.maybeecreations.com.",
   },
   { title: "Saxon Math", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 65, priceMax: 120, websiteUrl: "https://www.hmhco.com/programs/saxon-math", philosophies: ["classical", "eclectic"], subjects: ["math"], ageMin: 5, ageMax: 18, isFeatured: true, religions: ["secular", "christian"] },
   { title: "Math-U-See", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 44, priceMax: 152, websiteUrl: "https://mathusee.com", philosophies: ["eclectic"], subjects: ["math"], values: ["parent_led"], ageMin: 4, ageMax: 18, isFeatured: true },

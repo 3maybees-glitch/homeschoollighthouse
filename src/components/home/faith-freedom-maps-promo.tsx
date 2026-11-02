@@ -34,7 +34,7 @@ export function FaithFreedomMapsPromo() {
                 Freedom · Liberty Explorer
               </Badge>
               <Badge className="bg-[var(--color-muted)]/60 text-[var(--color-muted-foreground)]">
-                Etsy digital downloads
+                Printable digital downloads
               </Badge>
             </div>
 
@@ -81,14 +81,14 @@ export function FaithFreedomMapsPromo() {
             </div>
 
             <p className="mt-5 text-sm text-[var(--color-muted-foreground)]">
-              Shop on Etsy ·{" "}
+              Shop at{" "}
               <a
                 href={faithFreedomMaps.shopUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="font-medium text-[var(--color-secondary)] underline-offset-4 hover:underline"
               >
-                MaybeeCreates
+                Maybee Creations
               </a>
               {" · "}Faith &amp; Freedom maps only
             </p>
@@ -99,7 +99,7 @@ export function FaithFreedomMapsPromo() {
             target="_blank"
             rel="noreferrer"
             className="group relative block overflow-hidden rounded-[1.75rem] border border-[var(--color-border)] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg hover:shadow-[rgba(0,31,63,0.08)]"
-            aria-label={`Browse ${faithFreedomMaps.productName} on Etsy`}
+            aria-label={`Browse ${faithFreedomMaps.productName} at the Maybee Creations shop`}
           >
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
@@ -119,7 +119,7 @@ export function FaithFreedomMapsPromo() {
                 </div>
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1.5 text-xs font-semibold backdrop-blur">
                   <Map className="h-3.5 w-3.5" aria-hidden="true" />
-                  On Etsy
+                  Shop maps
                 </span>
               </div>
             </div>
