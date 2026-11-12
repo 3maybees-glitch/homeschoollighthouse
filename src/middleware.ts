@@ -1,6 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
+import listingRedirects from "@/data/listing-redirects.json";
 import { canonicalOriginForHost } from "@/lib/site-url";
 import { updateSession } from "@/lib/supabase/middleware";
+
+const listingRedirectMap = listingRedirects as Record<string, string>;
 
 function headerHost(value: string | null) {
   return value?.split(",")[0]?.trim().split(":")[0]?.toLowerCase() ?? "";
@@ -16,6 +19,23 @@ function requestHostname(request: NextRequest) {
 }
 
 export async function middleware(request: NextRequest) {
+  const listingMatch = request.nextUrl.pathname.match(/^\/listing\/([^/]+)\/?$/);
+  if (listingMatch) {
+    const slug = decodeURIComponent(listingMatch[1] ?? "");
+    const redirectTarget = listingRedirectMap[slug];
+    if (redirectTarget) {
+      const url = request.nextUrl.clone();
+      url.pathname = redirectTarget.split("?")[0];
+      const query = redirectTarget.includes("?") ? redirectTarget.split("?")[1] : "";
+      if (query) {
+        url.search = `?${query}`;
+      } else {
+        url.search = "";
+      }
+      return NextResponse.redirect(url, 308);
+    }
+  }
+
   const canonicalOrigin = canonicalOriginForHost(requestHostname(request));
   if (canonicalOrigin) {
     const url = request.nextUrl.clone();

@@ -163,8 +163,13 @@ def extract_ages(title: str, url: str) -> str:
 
 def clean_title(raw: str) -> str:
     title = raw.strip()
-    title = re.sub(r"\s*\|\s*Memoria Press.*$", "", title, flags=re.I)
-    title = re.sub(r"\s*\|\s*Memoria Press:.*$", "", title, flags=re.I)
+    for pattern in (
+        r"\s*[-|–—]\s*Memoria Press: Classical Education\s*$",
+        r"\s*[-|–—]\s*Memoria Press\s*$",
+        r"\s*\|\s*Memoria Press: Classical Education\s*$",
+        r"\s*\|\s*Memoria Press.*$",
+    ):
+        title = re.sub(pattern, "", title, flags=re.I).strip()
     return title.strip()
 
 

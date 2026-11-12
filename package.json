@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "refresh-imports": "bash scripts/refresh-imports.sh",
+    "generate-listing-continuity": "node scripts/generate-listing-continuity.mjs",
+    "check-slug-continuity": "node scripts/check-slug-continuity.mjs",
     "refresh-imports:verify": "npm run refresh-imports && npm run build",
     "generate-weekly-blog": "node scripts/generate-weekly-blog.mjs",
     "generate-pwa-icons": "python3 scripts/generate-pwa-icons.py"

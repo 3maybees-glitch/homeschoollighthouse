@@ -212,6 +212,12 @@ scrape_and_sync scripts/scrape-a2zhomeschooling.py "A2Z Homeschooling" \
   data/a2zhomeschooling-scraped.json src/data/a2z-imported.json false
 
 echo ""
+echo "==> Generating listing slug continuity (production slug preservation + redirects)..."
+node scripts/generate-listing-continuity.mjs || {
+  echo "WARN: listing continuity generation failed" >&2
+}
+
+echo ""
 echo "==> Post-refresh catalog summary..."
 "$PYTHON" scripts/catalog-refresh-summary.py \
   --compare "$PRE_REFRESH_SNAPSHOT" src/data \
