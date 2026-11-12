@@ -12,7 +12,7 @@ export type NavItem = {
 const explore: NavItem = {
   href: "/browse",
   label: "Explore",
-  description: "Search 16,000+ homeschool resources",
+  description: "Search 17,800+ homeschool resources",
 };
 
 const brightBeacons: NavItem = {

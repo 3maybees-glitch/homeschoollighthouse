@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Homeschool Lighthouse",
     short_name: "Lighthouse",
     description:
-      "Follow the light to your family's perfect homeschool path. Search 16,000+ curricula, classes, co-ops, and trusted resources.",
+      "Follow the light to your family's perfect homeschool path. Search 17,800+ curricula, classes, co-ops, and trusted resources.",
     start_url: "/",
     scope: "/",
     display: "standalone",

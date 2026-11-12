@@ -15,7 +15,7 @@ export const metadata: Metadata = pageMetadata({
   title: "Homeschool Curriculum Directory for Christian Families | Homeschool Lighthouse",
   absoluteTitle: true,
   description:
-    "Follow the light to curricula, co-ops, classes, and trusted resources for Christian and values-minded homeschool families. Search 16,000+ listings.",
+    "Follow the light to curricula, co-ops, classes, and trusted resources for Christian and values-minded homeschool families. Search 17,800+ listings.",
   path: "/",
   keywords: [
     "homeschool curriculum",
