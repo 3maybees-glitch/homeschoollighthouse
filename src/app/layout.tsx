@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | Homeschool Lighthouse",
   },
   description:
-    "Follow the light to your family's perfect homeschool path. Search 16,000+ curricula, classes, co-ops, and trusted resources for Christian and values-minded families.",
+    "Follow the light to your family's perfect homeschool path. Search 17,800+ curricula, classes, co-ops, and trusted resources for Christian and values-minded families.",
   metadataBase: new URL(siteUrl),
   applicationName: "Homeschool Lighthouse",
   openGraph: {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     url: "/",
     title: "Homeschool Lighthouse",
     description:
-      "Follow the light to your family's perfect homeschool path. Search 16,000+ curricula, classes, co-ops, and trusted resources for Christian and values-minded families.",
+      "Follow the light to your family's perfect homeschool path. Search 17,800+ curricula, classes, co-ops, and trusted resources for Christian and values-minded families.",
     images: [
       {
         url: "/brand/homeschool-lighthouse-logo-poster.png",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Homeschool Lighthouse",
     description:
-      "Follow the light to your family's perfect homeschool path. Search 16,000+ curricula, classes, co-ops, and trusted resources for Christian and values-minded families.",
+      "Follow the light to your family's perfect homeschool path. Search 17,800+ curricula, classes, co-ops, and trusted resources for Christian and values-minded families.",
     images: ["/brand/homeschool-lighthouse-logo-poster.png"],
   },
   appleWebApp: {

@@ -35,7 +35,7 @@ export async function generateMetadata({
     ? `Search results for ${query} in the Homeschool Lighthouse directory of curricula, classes, co-ops, and trusted resources.`
     : filters.featuredOnly
       ? "Bright Beacons: hand-picked homeschool curricula, classes, and resources for Christian and values-minded families."
-      : "Filter 16,000+ homeschool curricula, online classes, co-ops, and trusted resources by philosophy, age, format, and location.";
+      : "Filter 17,800+ homeschool curricula, online classes, co-ops, and trusted resources by philosophy, age, format, and location.";
 
   return pageMetadata({
     title,
@@ -65,7 +65,7 @@ export default async function BrowsePage({
   return (
     <div>
       <BrowseHero
-        title="Sweep the horizon across 16,000+ homeschool resources"
+        title="Sweep the horizon across 17,800+ homeschool resources"
         description="Filter by philosophy, age, format, and location. Set your bearing, order your route, and find the beacons your family needs."
       />
 

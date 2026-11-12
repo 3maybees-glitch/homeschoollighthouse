@@ -140,7 +140,7 @@ export const brand = {
     subtitle: "Try adjusting your bearing or widening your search",
   },
   stats: {
-    listings: "16,000+",
+    listings: "17,800+",
     listingsLabel: "trusted resources",
   },
   newsletter: {
