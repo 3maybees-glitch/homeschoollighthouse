@@ -141,7 +141,7 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades K-6",
     "prices_mentioned": "Contact for pricing",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "window.surecookieGcmLayers = [\"dataLayer\"]; (function(w){var o=w.pysOptions,v;if(o){if(o.gdpr){o.google_consent_mode=false;}return;}if(!Object.prototype.hasOwnProperty.call(w,\"pysOptions\")){Object.defineProperty(w,\"pysOptions\",{configurable:true,get:function(){return v;},set:function(o){v=o;if(o&&o.gdpr){o.google_conse"
   },
   {
     "title": "Veritas Press How Can I Draw Like That?",
@@ -157,7 +157,7 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades 2-6",
     "prices_mentioned": "Contact for pricing",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "Veritas Press Journey Through the Bible"
   },
   {
     "title": "Veritas Press Kindergarten Complete Package",
@@ -181,7 +181,7 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades 7-9",
     "prices_mentioned": "Contact for pricing",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "window.surecookieGcmLayers = [\"dataLayer\"]; (function(w){var o=w.pysOptions,v;if(o){if(o.gdpr){o.google_consent_mode=false;}return;}if(!Object.prototype.hasOwnProperty.call(w,\"pysOptions\")){Object.defineProperty(w,\"pysOptions\",{configurable:true,get:function(){return v;},set:function(o){v=o;if(o&&o.gdpr){o.google_conse"
   },
   {
     "title": "Veritas Press Ninjas, Battleships, and Treasure Hunters!",
@@ -197,7 +197,7 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades 7-12",
     "prices_mentioned": "Contact for pricing",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "Veritas Press Omnibus Overview"
   },
   {
     "title": "Veritas Press Online Catalog",
@@ -205,7 +205,7 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "Contact for pricing",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "window.surecookieGcmLayers = [\"dataLayer\"]; (function(w){var o=w.pysOptions,v;if(o){if(o.gdpr){o.google_consent_mode=false;}return;}if(!Object.prototype.hasOwnProperty.call(w,\"pysOptions\")){Object.defineProperty(w,\"pysOptions\",{configurable:true,get:function(){return v;},set:function(o){v=o;if(o&&o.gdpr){o.google_conse"
   },
   {
     "title": "Veritas Press Online Private School",
@@ -213,7 +213,7 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "Contact for pricing",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "window.surecookieGcmLayers = [\"dataLayer\"]; (function(w){var o=w.pysOptions,v;if(o){if(o.gdpr){o.google_consent_mode=false;}return;}if(!Object.prototype.hasOwnProperty.call(w,\"pysOptions\")){Object.defineProperty(w,\"pysOptions\",{configurable:true,get:function(){return v;},set:function(o){v=o;if(o&&o.gdpr){o.google_conse"
   },
   {
     "title": "Veritas Press Passport to the World",
@@ -245,7 +245,7 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades 10-12",
     "prices_mentioned": "Contact for pricing",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "window.surecookieGcmLayers = [\"dataLayer\"]; (function(w){var o=w.pysOptions,v;if(o){if(o.gdpr){o.google_consent_mode=false;}return;}if(!Object.prototype.hasOwnProperty.call(w,\"pysOptions\")){Object.defineProperty(w,\"pysOptions\",{configurable:true,get:function(){return v;},set:function(o){v=o;if(o&&o.gdpr){o.google_conse"
   },
   {
     "title": "Veritas Press Roots, Rhymes, and Rhythms",
@@ -261,7 +261,7 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades 2-12",
     "prices_mentioned": "From $199/course",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "Veritas Press Self-Paced Bible"
   },
   {
     "title": "Veritas Press Self-Paced Courses",
@@ -269,7 +269,7 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "From $199/course",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "window.surecookieGcmLayers = [\"dataLayer\"]; (function(w){var o=w.pysOptions,v;if(o){if(o.gdpr){o.google_consent_mode=false;}return;}if(!Object.prototype.hasOwnProperty.call(w,\"pysOptions\")){Object.defineProperty(w,\"pysOptions\",{configurable:true,get:function(){return v;},set:function(o){v=o;if(o&&o.gdpr){o.google_conse"
   },
   {
     "title": "Veritas Press Self-Paced History",
@@ -277,7 +277,7 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades 2-12",
     "prices_mentioned": "From $199/course",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "window.surecookieGcmLayers = [\"dataLayer\"]; (function(w){var o=w.pysOptions,v;if(o){if(o.gdpr){o.google_consent_mode=false;}return;}if(!Object.prototype.hasOwnProperty.call(w,\"pysOptions\")){Object.defineProperty(w,\"pysOptions\",{configurable:true,get:function(){return v;},set:function(o){v=o;if(o&&o.gdpr){o.google_conse"
   },
   {
     "title": "Veritas Press Self-Paced Omnibus",
@@ -285,7 +285,7 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades 7-12",
     "prices_mentioned": "From $199/course",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "Veritas Press Self-Paced Omnibus"
   },
   {
     "title": "Veritas Press Self-Paced Rhetoric",
@@ -293,7 +293,7 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades 9-12",
     "prices_mentioned": "From $199/course",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "Veritas Press Self-Paced Rhetoric"
   },
   {
     "title": "Veritas Press Stand Up Comedy",
@@ -317,7 +317,7 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "Contact for pricing",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "window.surecookieGcmLayers = [\"dataLayer\"]; (function(w){var o=w.pysOptions,v;if(o){if(o.gdpr){o.google_consent_mode=false;}return;}if(!Object.prototype.hasOwnProperty.call(w,\"pysOptions\")){Object.defineProperty(w,\"pysOptions\",{configurable:true,get:function(){return v;},set:function(o){v=o;if(o&&o.gdpr){o.google_conse"
   },
   {
     "title": "Veritas Scholars Academy Live Online Classes",
@@ -325,6 +325,6 @@
     "source": "Veritas Press",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "Contact for pricing",
-    "description": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataL"
+    "description": "Veritas Scholars Academy Live Online Classes"
   }
 ]

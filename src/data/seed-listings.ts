@@ -52,6 +52,8 @@ import bridgewayImportedJson from "@/data/bridgeway-imported.json";
 import ixlImportedJson from "@/data/ixl-imported.json";
 import k12ImportedJson from "@/data/k12-imported.json";
 import timberdoodleImportedJson from "@/data/timberdoodle-imported.json";
+import goodandbeautifulImportedJson from "@/data/goodandbeautiful-imported.json";
+import mfwbooksImportedJson from "@/data/mfwbooks-imported.json";
 import homeschoolComImportedJson from "@/data/homeschool-com-imported.json";
 import iewImportedJson from "@/data/iew-imported.json";
 import mysteryOfHistoryImportedJson from "@/data/mystery-of-history-imported.json";
@@ -173,6 +175,11 @@ import { bridgewayRowToSeedInput, type BridgewayCsvRow } from "@/lib/import/brid
 import { ixlRowToSeedInput, type IxlCsvRow } from "@/lib/import/ixl-csv";
 import { k12RowToSeedInput, type K12CsvRow } from "@/lib/import/k12-csv";
 import { timberdoodleRowToSeedInput, type TimberdoodleCsvRow } from "@/lib/import/timberdoodle-csv";
+import {
+  goodandbeautifulRowToSeedInput,
+  type GoodandbeautifulCsvRow,
+} from "@/lib/import/goodandbeautiful-csv";
+import { mfwbooksRowToSeedInput, type MfwbooksCsvRow } from "@/lib/import/mfwbooks-csv";
 import { a2zRowToSeedInput, type A2zCsvRow } from "@/lib/import/a2z-csv";
 import {
   homeschoolComRowToSeedInput,
@@ -494,6 +501,12 @@ const acellusImported: SeedInput[] = (acellusImportedJson as AcellusCsvRow[]).ma
 const ixlImported: SeedInput[] = (ixlImportedJson as IxlCsvRow[]).map(ixlRowToSeedInput);
 const timberdoodleImported: SeedInput[] = (timberdoodleImportedJson as TimberdoodleCsvRow[]).map(
   timberdoodleRowToSeedInput,
+);
+const goodandbeautifulImported: SeedInput[] = (
+  goodandbeautifulImportedJson as GoodandbeautifulCsvRow[]
+).map(goodandbeautifulRowToSeedInput);
+const mfwbooksImported: SeedInput[] = (mfwbooksImportedJson as MfwbooksCsvRow[]).map(
+  mfwbooksRowToSeedInput,
 );
 const bridgewayImported: SeedInput[] = (bridgewayImportedJson as BridgewayCsvRow[]).map(
   bridgewayRowToSeedInput,
@@ -818,9 +831,11 @@ const batch6Imported = mergeSeedInputs(
 
 const batch7Imported = mergeSeedInputs(heavImported, collegePrepImported);
 
+const batch8Imported = mergeSeedInputs(goodandbeautifulImported, mfwbooksImported);
+
 const allListings = mergeSeedInputs(
   mergeSeedInputs(mergeSeedInputs(priorImported, batch4Imported), batch5Imported),
-  mergeSeedInputs(batch6Imported, batch7Imported),
+  mergeSeedInputs(mergeSeedInputs(batch6Imported, batch7Imported), batch8Imported),
 );
 
 const coreListings = allListings.map((listing, index) => buildListing(listing, index));

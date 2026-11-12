@@ -60,11 +60,16 @@ def page_title(html: str, fallback: str) -> str:
 
 
 def page_prices(html: str) -> str:
-    amounts = [
-        float(value.replace(",", ""))
-        for value in re.findall(r"\$([\d,]+(?:\.\d{2})?)", html)
-        if float(value.replace(",", "")) >= 10
-    ]
+    amounts: list[float] = []
+    for value in re.findall(r"\$([\d,]+(?:\.\d{2})?)", html):
+        if not value or not re.search(r"\d", value):
+            continue
+        try:
+            amount = float(value.replace(",", ""))
+        except ValueError:
+            continue
+        if amount >= 10:
+            amounts.append(amount)
     amounts = sorted(set(amounts))
     if not amounts:
         return "Contact for pricing"

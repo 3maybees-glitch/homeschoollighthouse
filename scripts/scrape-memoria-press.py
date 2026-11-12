@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Scrape Memoria Press products and Memoria Academy program pages."""
+"""Scrape Memoria Press products from Yoast product sitemaps and product pages."""
 
 from __future__ import annotations
 
@@ -7,14 +7,26 @@ import csv
 import json
 import re
 import sys
+import urllib.error
 import urllib.request
+import xml.etree.ElementTree as ET
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from html import unescape
 from pathlib import Path
 
-USER_AGENT = "HomeschoolLighthouseBot/1.0 (+https://homeschoollighthouse.com)"
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+)
 SITE_NAME = "Memoria Press"
-API_BASE = "https://www.memoriapress.com/wp-json/wc/store/v1/products"
-PER_PAGE = 100
+SITEMAP_URLS = [
+    "https://www.memoriapress.com/product-sitemap.xml",
+    "https://www.memoriapress.com/product-sitemap2.xml",
+    "https://www.memoriapress.com/product-sitemap3.xml",
+    "https://www.memoriapress.com/product-sitemap4.xml",
+    "https://www.memoriapress.com/product-sitemap5.xml",
+]
+MAX_WORKERS = 18
 
 PROGRAM_PAGES = [
     {
@@ -51,10 +63,16 @@ GRADE_SLUGS = {
 }
 
 
-def fetch(url: str) -> bytes:
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+def fetch(url: str) -> str:
+    request = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": USER_AGENT,
+            "Accept": "text/html,application/xhtml+xml;q=0.9,*/*;q=0.8",
+        },
+    )
     with urllib.request.urlopen(request, timeout=90) as response:
-        return response.read()
+        return response.read().decode("utf-8", errors="replace")
 
 
 def strip_html(text: str) -> str:
@@ -65,69 +83,118 @@ def strip_html(text: str) -> str:
     return re.sub(r"\s+", " ", cleaned).strip()
 
 
-def format_price(prices: dict) -> str:
-    minor = prices.get("currency_minor_unit", 2)
-    divisor = 10**minor
-
-    def to_dollars(raw: str | int | None) -> str | None:
-        if raw in (None, ""):
-            return None
-        return f"${int(raw) / divisor:.2f}"
-
-    sale = to_dollars(prices.get("sale_price"))
-    regular = to_dollars(prices.get("regular_price"))
-    base = to_dollars(prices.get("price"))
-    if sale and regular and sale != regular:
-        return f"{sale} (was {regular})"
-    return base or regular or ""
-
-
-def extract_ages(categories: list[dict], title: str) -> str:
-    labels: list[str] = []
+def fetch_product_urls() -> list[str]:
+    ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    urls: list[str] = []
     seen: set[str] = set()
 
-    for category in categories:
-        slug = category.get("slug", "")
-        name = category.get("name", "")
-        label = GRADE_SLUGS.get(slug) or (
-            name if re.search(r"grade|school|kindergarten|preschool", name, re.I) else ""
-        )
-        if label and label.lower() not in seen:
-            seen.add(label.lower())
+    for sitemap_url in SITEMAP_URLS:
+        try:
+            xml_text = fetch(sitemap_url)
+        except urllib.error.HTTPError as exc:
+            print(f"WARN: sitemap {sitemap_url}: {exc}", file=sys.stderr)
+            continue
+        root = ET.fromstring(xml_text)
+        for loc in root.findall(".//sm:loc", ns):
+            url = (loc.text or "").strip()
+            if not url or url.rstrip("/").endswith("/shop"):
+                continue
+            key = url.lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            urls.append(url.split("#")[0])
+
+    return sorted(urls)
+
+
+def parse_meta(html: str, prop: str) -> str:
+    pattern = rf'<meta\s+property="{re.escape(prop)}"\s+content="([^"]*)"'
+    match = re.search(pattern, html, re.I)
+    if match:
+        return unescape(match.group(1)).strip()
+    pattern = rf'<meta\s+content="([^"]*)"\s+property="{re.escape(prop)}"'
+    match = re.search(pattern, html, re.I)
+    return unescape(match.group(1)).strip() if match else ""
+
+
+def parse_prices(html: str) -> str:
+    amounts: list[float] = []
+    for value in re.findall(
+        r'woocommerce-Price-amount amount"><bdi><span[^>]*>[^<]*</span>([\d.,]+)</bdi>',
+        html,
+    ):
+        try:
+            num = float(value.replace(",", ""))
+        except ValueError:
+            continue
+        if num >= 0:
+            amounts.append(num)
+    amounts = sorted(set(amounts))
+    if not amounts:
+        return ""
+    if len(amounts) == 1:
+        return "Free" if amounts[0] == 0 else f"${amounts[0]:.2f}"
+    return f"${amounts[0]:.2f}-${amounts[-1]:.2f}"
+
+
+def extract_ages(title: str, url: str) -> str:
+    labels: list[str] = []
+    seen: set[str] = set()
+    haystack = f"{title} {url}".lower()
+
+    for slug, label in GRADE_SLUGS.items():
+        if slug.replace("-", " ") in haystack or slug in haystack:
+            if label.lower() not in seen:
+                seen.add(label.lower())
+                labels.append(label)
+
+    grade_match = re.search(r"(\d{1,2})(?:st|nd|rd|th)?\s*-?\s*grade", haystack)
+    if grade_match:
+        label = f"Grade {int(grade_match.group(1))}"
+        if label.lower() not in seen:
             labels.append(label)
 
-    if "online class" in title.lower() or "academy" in title.lower():
+    if "online academy" in haystack or "online-academy" in haystack:
         labels.append("Grades 3-12")
-    return "; ".join(list(dict.fromkeys(labels))[:8])
+
+    return "; ".join(labels[:8])
 
 
-def fetch_all_products() -> list[dict]:
-    page = 1
-    products: list[dict] = []
-    while page <= 25:
-        url = f"{API_BASE}?per_page={PER_PAGE}&page={page}"
-        print(f"Fetching page {page}...", file=sys.stderr)
-        payload = json.loads(fetch(url).decode("utf-8"))
-        if not payload:
-            break
-        products.extend(payload)
-        if len(payload) < PER_PAGE:
-            break
-        page += 1
-    return products
+def clean_title(raw: str) -> str:
+    title = raw.strip()
+    title = re.sub(r"\s*\|\s*Memoria Press.*$", "", title, flags=re.I)
+    title = re.sub(r"\s*\|\s*Memoria Press:.*$", "", title, flags=re.I)
+    return title.strip()
 
 
-def product_to_row(product: dict) -> dict:
-    title = strip_html(product.get("name", ""))
+def product_from_url(url: str) -> dict | None:
+    try:
+        html = fetch(url)
+    except Exception as exc:
+        print(f"WARN: failed {url}: {exc}", file=sys.stderr)
+        return None
+
+    if "page can't be found" in html.lower() or "error-404" in html.lower():
+        return None
+
+    title = clean_title(parse_meta(html, "og:title") or "")
+    if not title:
+        h1 = re.search(r"<h1[^>]*>(.*?)</h1>", html, re.S | re.I)
+        title = strip_html(h1.group(1)) if h1 else ""
+    if not title:
+        slug = url.rstrip("/").split("/")[-1]
+        title = slug.replace("-", " ").title()
+
+    description = parse_meta(html, "og:description") or strip_html(html)[:320]
+
     return {
         "title": title,
-        "website_url": product.get("permalink", ""),
+        "website_url": url,
         "source": SITE_NAME,
-        "grades_or_ages": extract_ages(product.get("categories") or [], title),
-        "prices_mentioned": format_price(product.get("prices") or {}),
-        "description": strip_html(
-            product.get("short_description") or product.get("description") or ""
-        )[:320],
+        "grades_or_ages": extract_ages(title, url),
+        "prices_mentioned": parse_prices(html),
+        "description": description[:320],
     }
 
 
@@ -136,10 +203,24 @@ def main() -> int:
     data_dir = root / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
 
-    rows = [product_to_row(product) for product in fetch_all_products()]
-    rows = [row for row in rows if row["title"] and row["website_url"]]
+    urls = fetch_product_urls()
+    print(f"Found {len(urls)} product URLs in sitemaps", file=sys.stderr)
+
+    rows: list[dict] = []
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        futures = {pool.submit(product_from_url, url): url for url in urls}
+        done = 0
+        for future in as_completed(futures):
+            done += 1
+            if done % 200 == 0:
+                print(f"  scraped {done}/{len(urls)}...", file=sys.stderr)
+            row = future.result()
+            if row:
+                rows.append(row)
+
     for entry in PROGRAM_PAGES:
         rows.append({**entry, "source": SITE_NAME})
+
     rows.sort(key=lambda row: row["title"].lower())
 
     fieldnames = [
