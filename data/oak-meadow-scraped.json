@@ -1,5 +1,13 @@
 [
   {
+    "title": "Elementary (PreK-4) Homeschool Curriculum - Oak Meadow | Exceptional Homeschool Curriculum | Secular, Screen-free",
+    "website_url": "https://www.oakmeadow.com/elementary-k-4/",
+    "source": "Oak Meadow",
+    "grades_or_ages": "Grades K-4",
+    "prices_mentioned": "Contact for pricing",
+    "description": "(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)}) (window,'G-TWT1PEVHHJ','google_tags_first_party'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('set', 'developer_id.dYzg1YT', true); gtag('config', 'G-TWT1PEVHHJ'); windo"
+  },
+  {
     "title": "Enrolled or Independent? Deciding How To Use Oak Meadow",
     "website_url": "https://www.oakmeadow.com/enroll/",
     "source": "Oak Meadow",
@@ -8,7 +16,23 @@
     "description": "(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)}) (window,'G-TWT1PEVHHJ','google_tags_first_party'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('set', 'developer_id.dYzg1YT', true); gtag('config', 'G-TWT1PEVHHJ'); windo"
   },
   {
-    "title": "Homeschool Tutoring & Support Services",
+    "title": "High School (9-12) - Oak Meadow | Exceptional Homeschool Curriculum",
+    "website_url": "https://www.oakmeadow.com/high-school/",
+    "source": "Oak Meadow",
+    "grades_or_ages": "Grades 9-12",
+    "prices_mentioned": "Contact for pricing",
+    "description": "(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)}) (window,'G-TWT1PEVHHJ','google_tags_first_party'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('set', 'developer_id.dYzg1YT', true); gtag('config', 'G-TWT1PEVHHJ'); windo"
+  },
+  {
+    "title": "Homeschool Curriculum & Accredited Distance Learning",
+    "website_url": "https://www.oakmeadow.com/",
+    "source": "Oak Meadow",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$150.00",
+    "description": "(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)}) (window,'G-TWT1PEVHHJ','google_tags_first_party'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('set', 'developer_id.dYzg1YT', true); gtag('config', 'G-TWT1PEVHHJ'); windo"
+  },
+  {
+    "title": "Homeschooling Support & Tutoring Services - Oak Meadow | Exceptional Homeschool Curriculum",
     "website_url": "https://www.oakmeadow.com/support-and-tutoring/",
     "source": "Oak Meadow",
     "grades_or_ages": "Grades K-12",
@@ -16,7 +40,7 @@
     "description": "(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)}) (window,'G-TWT1PEVHHJ','google_tags_first_party'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('set', 'developer_id.dYzg1YT', true); gtag('config', 'G-TWT1PEVHHJ'); windo"
   },
   {
-    "title": "Middle School (5-8) - Curriculum & Distance School",
+    "title": "Middle School (5-8) Homeschool Curriculum - Oak Meadow | Exceptional Homeschool Curriculum | Secular, Screen-free",
     "website_url": "https://www.oakmeadow.com/middle-school-5-8/",
     "source": "Oak Meadow",
     "grades_or_ages": "Grades 5-8",
@@ -104,14 +128,6 @@
     "description": "Oak Meadow curriculum package: Algebra 1 Course Package."
   },
   {
-    "title": "Oak Meadow Algebra 2 Course Package",
-    "website_url": "https://shop.oakmeadow.com",
-    "source": "Oak Meadow",
-    "grades_or_ages": "Grades K-12",
-    "prices_mentioned": "$11.00-$295.00",
-    "description": "Oak Meadow curriculum package: Algebra 2 Course Package."
-  },
-  {
     "title": "Oak Meadow American Literature: Social Transformations Course Package",
     "website_url": "https://shop.oakmeadow.com",
     "source": "Oak Meadow",
@@ -120,20 +136,20 @@
     "description": "Oak Meadow curriculum package: American Literature: Social Transformations Course Package."
   },
   {
-    "title": "Oak Meadow Anatomy and Physiology Course Package w/Lab, 2nd Ed",
+    "title": "Oak Meadow Anatomy and Physiology Course Package w\\u002fLab, 2nd Ed",
     "website_url": "https://shop.oakmeadow.com",
     "source": "Oak Meadow",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$11.00-$295.00",
-    "description": "Oak Meadow curriculum package: Anatomy and Physiology Course Package w/Lab, 2nd Ed."
+    "description": "Oak Meadow curriculum package: Anatomy and Physiology Course Package w\\u002fLab, 2nd Ed."
   },
   {
-    "title": "Oak Meadow Biology Course Package w/Lab, 3rd Ed",
+    "title": "Oak Meadow Biology Course Package w\\u002fLab, 3rd Edition",
     "website_url": "https://shop.oakmeadow.com",
     "source": "Oak Meadow",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$11.00-$295.00",
-    "description": "Oak Meadow curriculum package: Biology Course Package w/Lab, 3rd Ed."
+    "description": "Oak Meadow curriculum package: Biology Course Package w\\u002fLab, 3rd Edition."
   },
   {
     "title": "Oak Meadow British Literature Course Package, Second Edition",
@@ -192,12 +208,12 @@
     "description": "Oak Meadow curriculum package: Environmental Science For A Changing World Course Package, Second Edition."
   },
   {
-    "title": "Oak Meadow Forensic Science Course Package w/Lab,  2nd Ed",
+    "title": "Oak Meadow Forensic Science Course Package w\\u002fLab,  2nd Ed",
     "website_url": "https://shop.oakmeadow.com",
     "source": "Oak Meadow",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$11.00-$295.00",
-    "description": "Oak Meadow curriculum package: Forensic Science Course Package w/Lab,  2nd Ed."
+    "description": "Oak Meadow curriculum package: Forensic Science Course Package w\\u002fLab,  2nd Ed."
   },
   {
     "title": "Oak Meadow Geometry Course Package",
@@ -214,22 +230,6 @@
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$11.00-$295.00",
     "description": "Oak Meadow curriculum package: Health and Wellness Course Package."
-  },
-  {
-    "title": "Oak Meadow High School - Curriculum & Distance Learning",
-    "website_url": "https://www.oakmeadow.com/high-school/",
-    "source": "Oak Meadow",
-    "grades_or_ages": "Grades 9-12",
-    "prices_mentioned": "Contact for pricing",
-    "description": "(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)}) (window,'G-TWT1PEVHHJ','google_tags_first_party'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('set', 'developer_id.dYzg1YT', true); gtag('config', 'G-TWT1PEVHHJ'); windo"
-  },
-  {
-    "title": "Oak Meadow Homeschool Curriculum - What Makes Us Different?",
-    "website_url": "https://www.oakmeadow.com/about-us/our-complete-curriculum/",
-    "source": "Oak Meadow",
-    "grades_or_ages": "Grades K-12",
-    "prices_mentioned": "Contact for pricing",
-    "description": "(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)}) (window,'G-TWT1PEVHHJ','google_tags_first_party'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('set', 'developer_id.dYzg1YT', true); gtag('config', 'G-TWT1PEVHHJ'); windo"
   },
   {
     "title": "Oak Meadow Integrated Drawing Course Package",
@@ -320,27 +320,19 @@
     "description": "Oak Meadow curriculum package: World Literature: Classics, 2nd Edition Course Package."
   },
   {
-    "title": "Oak Meadow | K-12 Homeschool Curriculum & Distance Learning",
-    "website_url": "https://www.oakmeadow.com/",
+    "title": "Our Curriculum - Oak Meadow | Exceptional Homeschool Curriculum",
+    "website_url": "https://www.oakmeadow.com/about-us/our-complete-curriculum/",
     "source": "Oak Meadow",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "Contact for pricing",
     "description": "(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)}) (window,'G-TWT1PEVHHJ','google_tags_first_party'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('set', 'developer_id.dYzg1YT', true); gtag('config', 'G-TWT1PEVHHJ'); windo"
   },
   {
-    "title": "Portfolio Evaluation Program For K-4",
+    "title": "Portfolio Evaluation Program Information Request - Oak Meadow | Exceptional Homeschool Curriculum",
     "website_url": "https://www.oakmeadow.com/portfolio-evaluation-program/",
     "source": "Oak Meadow",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "Contact for pricing",
-    "description": "(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)}) (window,'G-TWT1PEVHHJ','google_tags_first_party'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('set', 'developer_id.dYzg1YT', true); gtag('config', 'G-TWT1PEVHHJ'); windo"
-  },
-  {
-    "title": "Preschool to Grade 4 - Elementary",
-    "website_url": "https://www.oakmeadow.com/elementary-k-4/",
-    "source": "Oak Meadow",
-    "grades_or_ages": "Grades K-4",
-    "prices_mentioned": "Contact for pricing",
-    "description": "(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)}) (window,'G-TWT1PEVHHJ','google_tags_first_party'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('set', 'developer_id.dYzg1YT', true); gtag('config', 'G-TWT1PEVHHJ'); windo"
+    "description": "(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push(i)}) (window,'G-TWT1PEVHHJ','google_tags_first_party'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('set', 'developer_id.dYzg1YT', true); gtag('config', 'G-TWT1PEVHHJ'); var g"
   }
 ]

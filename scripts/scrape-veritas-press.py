@@ -7,11 +7,15 @@ import csv
 import json
 import re
 import sys
+import urllib.error
 import urllib.request
 from html import unescape
 from pathlib import Path
 
-USER_AGENT = "HomeschoolLighthouseBot/1.0 (+https://homeschoollighthouse.com)"
+USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+)
 SITE_NAME = "Veritas Press"
 BASE_URL = "https://veritaspress.com"
 
@@ -45,9 +49,26 @@ GRADE_PACKAGES.extend(
 
 
 def fetch(url: str) -> str:
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    request = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": USER_AGENT,
+            "Accept": "text/html,application/xhtml+xml;q=0.9,*/*;q=0.8",
+        },
+    )
     with urllib.request.urlopen(request, timeout=90) as response:
         return response.read().decode("utf-8", errors="replace")
+
+
+def safe_fetch(url: str) -> str | None:
+    try:
+        return fetch(url)
+    except urllib.error.HTTPError as exc:
+        print(f"WARN: HTTP {exc.code} for {url}", file=sys.stderr)
+        return None
+    except Exception as exc:
+        print(f"WARN: failed {url}: {exc}", file=sys.stderr)
+        return None
 
 
 def strip_html(text: str) -> str:
@@ -79,6 +100,19 @@ def parse_mini_courses(html: str) -> list[dict]:
     return rows
 
 
+def load_mini_course_fallback(root: Path) -> list[dict]:
+    imported = root / "src" / "data" / "veritas-press-imported.json"
+    if not imported.is_file():
+        return []
+    payload = json.loads(imported.read_text(encoding="utf-8"))
+    return [
+        row
+        for row in payload
+        if isinstance(row, dict)
+        and "mini-course" in (row.get("description") or "").lower()
+    ]
+
+
 def main() -> int:
     root = Path(__file__).resolve().parents[1]
     data_dir = root / "data"
@@ -86,14 +120,17 @@ def main() -> int:
 
     rows: list[dict] = []
     for path, title, ages, price in PROGRAM_PAGES:
+        url = f"{BASE_URL}{path}"
+        html = safe_fetch(url)
+        description = strip_html(html)[:320] if html else title
         rows.append(
             {
                 "title": title,
-                "website_url": f"{BASE_URL}{path}",
+                "website_url": url,
                 "source": SITE_NAME,
                 "grades_or_ages": ages,
                 "prices_mentioned": price,
-                "description": strip_html(fetch(f"{BASE_URL}{path}"))[:320] or title,
+                "description": description or title,
             }
         )
 
@@ -109,8 +146,16 @@ def main() -> int:
             }
         )
 
-    mini_html = fetch(f"{BASE_URL}/mini-course-descriptions")
-    rows.extend(parse_mini_courses(mini_html))
+    mini_html = safe_fetch(f"{BASE_URL}/mini-course-descriptions")
+    if mini_html:
+        rows.extend(parse_mini_courses(mini_html))
+    else:
+        fallback = load_mini_course_fallback(root)
+        if fallback:
+            print(f"Using {len(fallback)} cached mini-course rows from import JSON", file=sys.stderr)
+            rows.extend(fallback)
+        else:
+            print("WARN: no mini-course HTML and no import fallback", file=sys.stderr)
 
     seen: set[str] = set()
     unique: list[dict] = []
@@ -121,6 +166,10 @@ def main() -> int:
         seen.add(key)
         unique.append(row)
     unique.sort(key=lambda row: row["title"].lower())
+
+    if len(unique) < 10:
+        print("ERROR: too few Veritas Press rows scraped", file=sys.stderr)
+        return 1
 
     fieldnames = [
         "title",

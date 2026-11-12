@@ -677,7 +677,7 @@
     "source": "Well-Trained Mind",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$150.00",
-    "description": "Bring serenity to bedtime with six relaxing sleep stories, each describing a different tranquil scene and followed by a minute of soothing music. Tropical island, mountain cabin, mermaid\u2019s lagoon and more \u2013 a peaceful night\u2019s sleep is sure to follow."
+    "description": "Bring serenity to bedtime with six relaxing sleep stories, each describing a different tranquil scene and followed by a minute of soothing music. Tropical island, mountain cabin, mermaid\u2019s lagoon and more \u2013 a peaceful night\u2019s sleep is sure to follow. Available on digital download or Yoto card."
   },
   {
     "title": "Good Night: Enchanting Story Visualizations With Sleepytime Music - Scratch & Dent",
@@ -936,14 +936,6 @@
     "description": "Adventurer, conqueror, political genius, classical author \u2013 Julius Caesar lived one of history\u2019s most amazing lives. Yet it was the story of his death that William Shakespeare turned into a dramatic masterpiece. Introduce young listeners to this classic with Jim Weiss\u2019s abridged and adapted retelling."
   },
   {
-    "title": "Juneteenth Resource Packets",
-    "website_url": "https://welltrainedmind.com/p/juneteenth-booklist-activities/",
-    "source": "Well-Trained Mind",
-    "grades_or_ages": "Grades K-12",
-    "prices_mentioned": "$150.00",
-    "description": "Age-appropriate book lists, lessons, discussion questions, and activities to help you and your family learn more about Juneteenth, which celebrates the end of slavery in the United States. PDF Download."
-  },
-  {
     "title": "Kindergarten Math With Confidence Instructor Guide",
     "website_url": "https://welltrainedmind.com/p/kmwc-instructor-guide/",
     "source": "Well-Trained Mind",
@@ -1096,6 +1088,14 @@
     "description": "Beloved storyteller Jim Weiss weaves an enchanting spell with four classic tales of magic, bravery, and kindness. Includes tales from Hans Christian Andersen, Irish mythology, Bulgarian folklore, and the literature of ancient Rome."
   },
   {
+    "title": "OPG Magnet Board Bundle - Two Boards And Magnets",
+    "website_url": "https://welltrainedmind.com/p/opg-magnet-board-bundle/",
+    "source": "Well-Trained Mind",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$150.00",
+    "description": "A set of two magnet boards \u2013 one blank, and one with all the alphabet magnets you\u2019ll need to teach reading using The Ordinary Parent\u2019s Guide to Teaching Reading."
+  },
+  {
     "title": "ORIGINAL EDITION Writing With Ease Level 2, Workbook - Scratch & Dent",
     "website_url": "https://welltrainedmind.com/p/original-edition-writing-with-ease-level-2-workbook-scratch-dent/",
     "source": "Well-Trained Mind",
@@ -1182,14 +1182,6 @@
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$150.00",
     "description": "Speak out for freedom with John Adams and Patrick Henry, or explore the wilderness with Daniel Boone. These movable paper figures to cut, color, and assemble let your children create new stories using famous people from the era of the American Revolution."
-  },
-  {
-    "title": "Scratch & Dent: Famous Figures Of The American Revolution",
-    "website_url": "https://welltrainedmind.com/p/sd-am-rev/",
-    "source": "Well-Trained Mind",
-    "grades_or_ages": "Grades K-12",
-    "prices_mentioned": "$150.00",
-    "description": "This is the previous edition of Famous Figures of the American Revolution. We published a new edition in 2026. Speak out for freedom with John Adams and Patrick Henry, or explore the wilderness with Daniel Boone. These movable paper figures to cut, color, and assemble let your children create new stories using famous p"
   },
   {
     "title": "Scratch & Dent: Fourth Grade Math With Confidence Instructor Guide",
@@ -1293,7 +1285,7 @@
     "source": "Well-Trained Mind",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$150.00",
-    "description": "Teach Sixth Grade Math with Confidence! This scripted, open-and-go program from math educator Kate Snow will give you the tools you need to teach math with confidence\u2013even if it\u2019s been years since you learned these concepts yourself. Engaging, hands-on lessons will help your child develop a strong understanding of math"
+    "description": "Teach Sixth Grade Math with Confidence! This scripted, open-and-go program from math educator Kate Snow will give you the tools you need to teach math with confidence\u2013even if it\u2019s been years since you learned these concepts yourself.Engaging, hands-on lessons will help your child develop a strong understanding of math,"
   },
   {
     "title": "Sixth Grade Math With Confidence Student Workbook A",
@@ -1957,7 +1949,7 @@
     "source": "Well-Trained Mind",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$150.00",
-    "description": "A brand-new audio recording of The Story of the World, Volume 1: Ancient Times (25th Anniversary Expanded Edition) by voice actress Katherine de Leiros. New chapters, new biographies, and more!"
+    "description": "A brand-new audio recording of The Story of the World, Volume 1: Ancient Times (25th Anniversary Expanded Edition) by voice actress Katherine de Leiros. New chapters, new biographies, and more! Available on digital download or Yoto card."
   },
   {
     "title": "The Story Of The World Vol. 1: Ancient Times, Revised Ed. Coloring Pages (Downloadable PDF)",
@@ -2177,19 +2169,19 @@
   },
   {
     "title": "The Story Of The World Vol. 4: The Modern Age, Revised Edition Activity Book - Scratch & Dent",
-    "website_url": "https://welltrainedmind.com/p/the-story-of-the-world-vol-4-the-modern-age-revised-edition-activity-book-scratch-dent-2/",
-    "source": "Well-Trained Mind",
-    "grades_or_ages": "Grades K-12",
-    "prices_mentioned": "$150.00",
-    "description": "This is the ORIGINAL edition Activity Book."
-  },
-  {
-    "title": "The Story Of The World Vol. 4: The Modern Age, Revised Edition Activity Book - Scratch & Dent",
     "website_url": "https://welltrainedmind.com/p/the-story-of-the-world-vol-4-the-modern-age-revised-edition-activity-book-scratch-dent/",
     "source": "Well-Trained Mind",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$150.00",
     "description": "This is the REVISED edition Activity book, published in 2021."
+  },
+  {
+    "title": "The Story Of The World Vol. 4: The Modern Age, Revised Edition Activity Book - Scratch & Dent",
+    "website_url": "https://welltrainedmind.com/p/the-story-of-the-world-vol-4-the-modern-age-revised-edition-activity-book-scratch-dent-2/",
+    "source": "Well-Trained Mind",
+    "grades_or_ages": "Grades K-12",
+    "prices_mentioned": "$150.00",
+    "description": "This is the ORIGINAL edition Activity Book."
   },
   {
     "title": "The Story Of The World Vol. 4: The Modern Age, Revised Edition Audiobook",
@@ -2512,20 +2504,20 @@
     "description": "Thrilling true stories of brave women who freed slaves, helped the sick, and spoke up for the truth. These tales from the American Civil War are brought to life by master storyteller Jim Weiss."
   },
   {
-    "title": "Writing With Ease 2, Complete Revised Edition",
+    "title": "Writing With Ease 2, Revised Instructor Guide",
     "website_url": "https://welltrainedmind.com/p/wwe-2-comp/",
     "source": "Well-Trained Mind",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$150.00",
-    "description": "Newly revised, Writing With Ease 2, Complete provides lessons, student worksheets, and teacher instructions for a school year's worth of elementary writing instruction."
+    "description": "Writing With Ease, Level 2 Instructor Guide provides teacher instruction. The Student Workbook, sold separately, contains all of the copywork assignments and comprehension questions. Combine the Instructor Guide and Student workbook to supply everything you need for a year of writing instruction."
   },
   {
-    "title": "Writing With Ease 2, Revised Student Pages",
+    "title": "Writing With Ease 2, Revised Student Workbook",
     "website_url": "https://welltrainedmind.com/p/wwe2-rev-sp/",
     "source": "Well-Trained Mind",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$150.00",
-    "description": "Simplify your life with an extra set of consumable Student Pages for Writing With Ease 2, Revised Edition!"
+    "description": "Writing With Ease Level 2, Revised Student Workbook has everything your student needs to complete the level. The Instructor Guide, required and sold separately, provides a year of lessons. Combine the Instructor Guide and Student Workbook to supply everything you need for a year of writing instruction."
   },
   {
     "title": "Writing With Ease 3 Revised Instructor Guide",
@@ -2533,7 +2525,7 @@
     "source": "Well-Trained Mind",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$150.00",
-    "description": "Newly revised and updated for ease of use! Writing With Ease, Level 3 Instructor Guide provides teacher instruction. The Student Workbook, sold separately contains all of the copywork assignments and comprehension questions. Combine the Instructor Guide and Student workbook to supply everything you need for a year of w"
+    "description": "Newly revised and updated for ease of use! Writing With Ease, Level 3 Instructor Guide provides teacher instruction. The Student Workbook, sold separately, contains all of the copywork assignments and comprehension questions. Combine the Instructor Guide and Student Workbook to supply everything you need for a year of "
   },
   {
     "title": "Writing With Ease 3 Revised Student Workbook",
@@ -2544,20 +2536,20 @@
     "description": "Newly revised and updated for ease of use, Writing With Ease, Level Three Student Workbook continues the popular series that has helped thousands of children learn composition, providing all copywork assignments and comprehension questions required for the year. The Instructor Guide, required and sold separately, provi"
   },
   {
-    "title": "Writing With Ease Complete Level 1, Revised Edition",
-    "website_url": "https://welltrainedmind.com/p/wwe1rev-2/",
+    "title": "Writing With Ease Level 1 Revised Instructor Guide",
+    "website_url": "https://welltrainedmind.com/p/wwe1rev-inst/",
     "source": "Well-Trained Mind",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$150.00",
-    "description": "Newly revised and updated for ease of use! When used along with the core text, the Level 1 Workbook provides scripted guidance for the teacher, plus all of the copywork assignments, comprehension questions, and reading passages needed for a year of composition instruction. And new creative-writing lessons let young nov"
+    "description": "Newly revised and updated for ease of use! When used along with the Student Workbook, Writing With Ease, Level 1 Instructor Guide provides scripted teacher guidance plus all of the copywork assignments, comprehension questions, and reading passages needed for a year of writing instruction.Not compatible with Writing Wi"
   },
   {
-    "title": "Writing With Ease Level 1 Student Pages, Revised Edition",
+    "title": "Writing With Ease Level 1 Revised Student Workbook",
     "website_url": "https://welltrainedmind.com/p/wwesp1rev/",
     "source": "Well-Trained Mind",
     "grades_or_ages": "Grades K-12",
     "prices_mentioned": "$150.00",
-    "description": "Simplify your life with an extra set of consumable Student Pages for Writing With Ease 1, Revised Edition! Ideal for classroom teachers or homeschoolers teaching multiple students, these Student Pages will save you both time and printer-toner. Not compatible with Writing With Ease 1, Original Edition Workbook. Note: Wr"
+    "description": "A student-friendly workbook for a school year\u2019s worth of elementary writing and reading-comprehension."
   },
   {
     "title": "Writing With Skill Level 1, Instructor Text",

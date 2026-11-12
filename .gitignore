@@ -46,3 +46,5 @@ scripts/__pycache__/
 /public/swe-worker-*.js
 /public/swe-worker-*.js.map
 .firecrawl/
+data/.catalog-pre-refresh-counts.json
+data/.continuity-tmp/

@@ -15,6 +15,25 @@ run_scraper() {
   "$PYTHON" "$script"
 }
 
+count_json_rows() {
+  local file="$1"
+  "$PYTHON" -c "
+import json
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+if not path.is_file():
+    print(0)
+    raise SystemExit(0)
+data = json.loads(path.read_text(encoding='utf-8'))
+if isinstance(data, list):
+    print(len(data))
+else:
+    print(len(data.get('listings') or data.get('products') or []))
+" "$file"
+}
+
 copy_import() {
   local source="$1"
   local dest="$2"
@@ -22,8 +41,22 @@ copy_import() {
     echo "Missing scrape output: $source" >&2
     return 1
   fi
+  local new_count=0
+  local old_count=0
+  new_count=$(count_json_rows "$source")
+  if [[ -f "$dest" ]]; then
+    old_count=$(count_json_rows "$dest")
+    if [[ "$old_count" -gt 0 ]] && (( new_count * 10 < old_count * 9 )); then
+      if "$PYTHON" scripts/merge-import-json.py "$source" "$dest"; then
+        echo "Merged $(basename "$dest") after partial scrape (${new_count} fresh rows)"
+        return 0
+      fi
+      echo "GUARD: keeping $(basename "$dest") (${old_count} rows; scraped ${new_count}; >10% drop)" >&2
+      return 1
+    fi
+  fi
   cp "$source" "$dest"
-  echo "Synced $(basename "$dest")"
+  echo "Synced $(basename "$dest") ($(count_json_rows "$dest") rows)"
 }
 
 scrape_and_sync() {
@@ -34,7 +67,10 @@ scrape_and_sync() {
   local required="${5:-true}"
 
   if run_scraper "$script" "$label"; then
-    copy_import "$source" "$dest"
+    if copy_import "$source" "$dest"; then
+      return 0
+    fi
+    echo "WARN: ${label} sync skipped by 10% safety guard; kept existing $(basename "$dest")" >&2
     return 0
   fi
 
@@ -47,6 +83,11 @@ scrape_and_sync() {
 }
 
 mkdir -p data src/data
+
+echo ""
+echo "==> Pre-refresh vendor listing counts (src/data)..."
+PRE_REFRESH_SNAPSHOT="$ROOT/data/.catalog-pre-refresh-counts.json"
+"$PYTHON" scripts/catalog-refresh-summary.py --snapshot "$PRE_REFRESH_SNAPSHOT" src/data
 
 # Fast WooCommerce / Shopify API scrapers (required)
 scrape_and_sync scripts/scrape-apologia.py "Apologia" \
@@ -159,12 +200,28 @@ scrape_and_sync scripts/scrape-outschool-electives.py "Outschool Electives" \
   data/outschool-electives-scraped.json src/data/outschool-electives-imported.json true
 scrape_and_sync scripts/scrape-heav.py "HEAV (Virginia)" \
   data/heav-scraped.json src/data/heav-imported.json true
+scrape_and_sync scripts/scrape-goodandbeautiful.py "The Good and the Beautiful" \
+  data/goodandbeautiful-scraped.json src/data/goodandbeautiful-imported.json true
+scrape_and_sync scripts/scrape-mfwbooks.py "My Father's World" \
+  data/mfwbooks-scraped.json src/data/mfwbooks-imported.json true
 
 # Slower HTML scrapers (optional — keep prior import JSON on failure)
 scrape_and_sync scripts/scrape-homeschool-com.py "Homeschool.com" \
   data/homeschool-com-scraped.json src/data/homeschool-com-imported.json false
 scrape_and_sync scripts/scrape-a2zhomeschooling.py "A2Z Homeschooling" \
   data/a2zhomeschooling-scraped.json src/data/a2z-imported.json false
+
+echo ""
+echo "==> Generating listing slug continuity (production slug preservation + redirects)..."
+node scripts/generate-listing-continuity.mjs || {
+  echo "WARN: listing continuity generation failed" >&2
+}
+
+echo ""
+echo "==> Post-refresh catalog summary..."
+"$PYTHON" scripts/catalog-refresh-summary.py \
+  --compare "$PRE_REFRESH_SNAPSHOT" src/data \
+  --write /opt/cursor/artifacts/catalog-refresh-summary.json
 
 echo ""
 echo "Refresh complete. Run 'npm run refresh-imports:verify' to rebuild and check listing counts."

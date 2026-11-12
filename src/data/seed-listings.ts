@@ -52,6 +52,8 @@ import bridgewayImportedJson from "@/data/bridgeway-imported.json";
 import ixlImportedJson from "@/data/ixl-imported.json";
 import k12ImportedJson from "@/data/k12-imported.json";
 import timberdoodleImportedJson from "@/data/timberdoodle-imported.json";
+import goodandbeautifulImportedJson from "@/data/goodandbeautiful-imported.json";
+import mfwbooksImportedJson from "@/data/mfwbooks-imported.json";
 import homeschoolComImportedJson from "@/data/homeschool-com-imported.json";
 import iewImportedJson from "@/data/iew-imported.json";
 import mysteryOfHistoryImportedJson from "@/data/mystery-of-history-imported.json";
@@ -173,6 +175,11 @@ import { bridgewayRowToSeedInput, type BridgewayCsvRow } from "@/lib/import/brid
 import { ixlRowToSeedInput, type IxlCsvRow } from "@/lib/import/ixl-csv";
 import { k12RowToSeedInput, type K12CsvRow } from "@/lib/import/k12-csv";
 import { timberdoodleRowToSeedInput, type TimberdoodleCsvRow } from "@/lib/import/timberdoodle-csv";
+import {
+  goodandbeautifulRowToSeedInput,
+  type GoodandbeautifulCsvRow,
+} from "@/lib/import/goodandbeautiful-csv";
+import { mfwbooksRowToSeedInput, type MfwbooksCsvRow } from "@/lib/import/mfwbooks-csv";
 import { a2zRowToSeedInput, type A2zCsvRow } from "@/lib/import/a2z-csv";
 import {
   homeschoolComRowToSeedInput,
@@ -197,6 +204,9 @@ import {
   thsmRowToSeedInput,
   type ThsmCsvRow,
 } from "@/lib/import/thsm-csv";
+import { isJunkImportedListing } from "@/lib/import/filter-junk-listing";
+import { normalizeListingTitle, slugifyListingTitle } from "@/lib/listings/title";
+import listingSlugRegistry from "@/data/listing-slug-by-url.json";
 
 export type SeedInput = {
   title: string;
@@ -220,21 +230,26 @@ export type SeedInput = {
   subjects?: string[];
   description?: string;
   shortDescription?: string;
+  slug?: string;
 };
 
-function slugify(title: string) {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
+const slugByProductUrl = listingSlugRegistry.byUrl as Record<string, string>;
+
+function resolveListingSlug(input: SeedInput): string {
+  if (input.slug) return input.slug;
+  const urlKey = normalizeListingUrl(input.websiteUrl);
+  const preserved = slugByProductUrl[urlKey];
+  if (preserved) return preserved;
+  return slugifyListingTitle(input.title);
 }
 
 function buildListing(input: SeedInput, index: number): Listing {
-  const slug = slugify(input.title);
+  const title = normalizeListingTitle(input.title);
+  const slug = resolveListingSlug({ ...input, title });
   return {
     id: `seed-${index + 1}`,
     slug,
-    title: input.title,
+    title,
     description:
       input.description ??
       `${input.title} is a trusted homeschool resource offering ${input.listingType.replace("_", " ")} support for families. Families choose it for quality, flexibility, and alignment with their learning goals.`,
@@ -320,7 +335,20 @@ const rawListings: SeedInput[] = [
   { title: "All About Reading", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 30, priceMax: 160, websiteUrl: "https://www.allaboutlearningpress.com/all-about-reading", philosophies: ["charlotte_mason", "eclectic"], subjects: ["reading", "language_arts"], values: ["parent_led"], ageMin: 4, ageMax: 10 },
   { title: "All About Spelling", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 30, priceMax: 55, websiteUrl: "https://www.allaboutlearningpress.com/all-about-spelling", philosophies: ["charlotte_mason"], subjects: ["language_arts", "writing"], ageMin: 5, ageMax: 12 },
   { title: "Logic of English", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 85, priceMax: 175, websiteUrl: "https://www.logicofenglish.com", philosophies: ["classical"], subjects: ["reading", "language_arts"], values: ["neurodivergent_friendly"], ageMin: 4, ageMax: 12 },
-  { title: "IEW Writing", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 49, priceMax: 189, websiteUrl: "https://iew.com", philosophies: ["classical"], subjects: ["writing", "language_arts"], ageMin: 8, ageMax: 18 },
+  {
+    title: "IEW Writing",
+    slug: "iew-writing",
+    listingType: "curriculum",
+    format: "hybrid",
+    priceType: "one_time",
+    priceMin: 49,
+    priceMax: 189,
+    websiteUrl: "https://iew.com",
+    philosophies: ["classical"],
+    subjects: ["writing", "language_arts"],
+    ageMin: 8,
+    ageMax: 18,
+  },
   { title: "Apologia Science", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 39, priceMax: 89, websiteUrl: "https://apologia.com", philosophies: ["religious"], subjects: ["science"], religions: ["christian"], ageMin: 6, ageMax: 18, isFeatured: true },
   { title: "Real Science-4-Kids", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 35, priceMax: 75, websiteUrl: "https://www.realsecience4kids.com", philosophies: ["secular"], subjects: ["science"], religions: ["secular"], ageMin: 5, ageMax: 14 },
   { title: "Mystery Science", listingType: "online_course", format: "online", priceType: "subscription", priceMin: 9, websiteUrl: "https://mysteryscience.com", philosophies: ["secular"], subjects: ["science"], values: ["tech_friendly"], ageMin: 5, ageMax: 12, religions: ["secular"] },
@@ -328,7 +356,20 @@ const rawListings: SeedInput[] = [
   { title: "Beautiful Feet Books", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 50, priceMax: 200, websiteUrl: "https://www.bfbooks.com", philosophies: ["charlotte_mason"], subjects: ["history", "reading"], ageMin: 6, ageMax: 16 },
   { title: "Sonlight Curriculum", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 200, priceMax: 1200, websiteUrl: "https://www.sonlight.com", philosophies: ["charlotte_mason", "religious"], religions: ["christian"], ageMin: 4, ageMax: 18, isFeatured: true },
   { title: "BookShark", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 200, priceMax: 900, websiteUrl: "https://www.bookshark.com", philosophies: ["charlotte_mason", "secular"], religions: ["secular"], ageMin: 4, ageMax: 16 },
-  { title: "Oak Meadow", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 175, priceMax: 650, websiteUrl: "https://www.oakmeadow.com", philosophies: ["waldorf", "eclectic"], values: ["parent_led"], ageMin: 4, ageMax: 18 },
+  {
+    title: "Oak Meadow",
+    slug: "oak-meadow",
+    listingType: "curriculum",
+    format: "hybrid",
+    priceType: "one_time",
+    priceMin: 175,
+    priceMax: 650,
+    websiteUrl: "https://www.oakmeadow.com",
+    philosophies: ["waldorf", "eclectic"],
+    values: ["parent_led"],
+    ageMin: 4,
+    ageMax: 18,
+  },
   { title: "Timberdoodle", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 300, priceMax: 1100, websiteUrl: "https://timberdoodle.com", philosophies: ["eclectic"], values: ["gifted"], ageMin: 2, ageMax: 18 },
   { title: "MasterBooks", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 25, priceMax: 350, websiteUrl: "https://www.masterbooks.com", philosophies: ["religious"], religions: ["christian"], ageMin: 4, ageMax: 18 },
   { title: "Abeka", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 30, priceMax: 400, websiteUrl: "https://www.abeka.com", philosophies: ["religious", "classical"], religions: ["christian"], ageMin: 4, ageMax: 18 },
@@ -365,10 +406,33 @@ const rawListings: SeedInput[] = [
   { title: "Rainbow Resource Center", listingType: "supplement", format: "online", priceType: "one_time", priceMin: 5, priceMax: 500, websiteUrl: "https://www.rainbowresource.com", philosophies: ["eclectic"], ageMin: 2, ageMax: 18, isFeatured: true },
   { title: "Christianbook Homeschool", listingType: "supplement", format: "online", priceType: "one_time", priceMin: 5, priceMax: 300, websiteUrl: "https://www.christianbook.com", religions: ["christian"], ageMin: 3, ageMax: 18 },
   { title: "Secular Homeschool Curriculum Guide", listingType: "support_group", format: "online", priceType: "free", websiteUrl: "https://www.secularhomeschool.com", philosophies: ["secular"], religions: ["secular"], ageMin: 4, ageMax: 18 },
-  { title: "Homeschool Legal Defense Association", listingType: "support_group", format: "online", priceType: "subscription", priceMin: 12, websiteUrl: "https://hslda.org", religions: ["christian"], ageMin: 4, ageMax: 18 },
+  {
+    title: "Homeschool Legal Defense Association",
+    slug: "homeschool-legal-defense-association",
+    listingType: "support_group",
+    format: "online",
+    priceType: "subscription",
+    priceMin: 12,
+    websiteUrl: "https://hslda.org",
+    religions: ["christian"],
+    ageMin: 4,
+    ageMax: 18,
+  },
   { title: "Homeschool Mom Blog Network", listingType: "support_group", format: "online", priceType: "free", websiteUrl: "https://thehomeschoolmom.com", philosophies: ["eclectic"], ageMin: 4, ageMax: 18 },
   { title: "Wild + Free", listingType: "support_group", format: "hybrid", priceType: "subscription", priceMin: 5, websiteUrl: "https://bewildandfree.org", philosophies: ["charlotte_mason", "unschooling"], values: ["screen_free"], ageMin: 3, ageMax: 14 },
-  { title: "Homeschool Co-op Directory Texas", listingType: "coop", format: "in_person", priceType: "contact", websiteUrl: "https://www.thsc.org", city: "Austin", state: "TX", philosophies: ["eclectic"], ageMin: 4, ageMax: 18 },
+  {
+    title: "Homeschool Co-op Directory Texas",
+    slug: "homeschool-co-op-directory-texas",
+    listingType: "coop",
+    format: "in_person",
+    priceType: "contact",
+    websiteUrl: "https://www.thsc.org",
+    city: "Austin",
+    state: "TX",
+    philosophies: ["eclectic"],
+    ageMin: 4,
+    ageMax: 18,
+  },
   { title: "Austin Nature & Science Center", listingType: "field_trip", format: "in_person", priceType: "donation", websiteUrl: "https://www.austintexas.gov/department/austin-nature-science-center", city: "Austin", state: "TX", subjects: ["science"], ageMin: 4, ageMax: 16 },
   { title: "Smithsonian Learning Lab", listingType: "field_trip", format: "online", priceType: "free", websiteUrl: "https://learninglab.si.edu", subjects: ["history", "science", "art"], ageMin: 6, ageMax: 18 },
   { title: "National Gallery of Art Kids", listingType: "field_trip", format: "online", priceType: "free", websiteUrl: "https://www.nga.gov/education/kids.html", subjects: ["art"], ageMin: 5, ageMax: 14 },
@@ -393,7 +457,6 @@ const rawListings: SeedInput[] = [
   { title: "Reading Eggs", listingType: "online_course", format: "online", priceType: "subscription", priceMin: 10, websiteUrl: "https://readingeggs.com", subjects: ["reading"], values: ["tech_friendly"], ageMin: 2, ageMax: 10 },
   { title: "Handwriting Without Tears", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 15, priceMax: 60, websiteUrl: "https://www.lwtears.com", subjects: ["language_arts"], values: ["neurodivergent_friendly"], ageMin: 4, ageMax: 10 },
   { title: "Explode the Code", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 8, priceMax: 80, websiteUrl: "https://www.explodethecode.com", subjects: ["reading"], ageMin: 4, ageMax: 10 },
-  { title: "Institute for Excellence in Writing", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 49, priceMax: 189, websiteUrl: "https://iew.com", subjects: ["writing"], philosophies: ["classical"], ageMin: 8, ageMax: 18 },
   { title: "NoRedInk", listingType: "supplement", format: "online", priceType: "free", websiteUrl: "https://www.noredink.com", subjects: ["writing", "language_arts"], values: ["tech_friendly"], ageMin: 10, ageMax: 18 },
   { title: "Crash Course", listingType: "online_course", format: "online", priceType: "free", websiteUrl: "https://thecrashcourse.com", subjects: ["history", "science"], philosophies: ["secular"], religions: ["secular"], ageMin: 10, ageMax: 18 },
   { title: "Coursera for Kids", listingType: "online_course", format: "online", priceType: "free", websiteUrl: "https://www.coursera.org", values: ["self_paced", "tech_friendly"], ageMin: 12, ageMax: 18 },
@@ -417,7 +480,6 @@ const rawListings: SeedInput[] = [
   { title: "Albuquerque Homeschool Co-op", listingType: "coop", format: "in_person", priceType: "subscription", priceMin: 25, websiteUrl: "https://www.abqhomeschoolcoop.org", city: "Albuquerque", state: "NM", ageMin: 5, ageMax: 14 },
   { title: "Montessori Homeschool Curriculum", listingType: "curriculum", format: "hybrid", priceType: "one_time", priceMin: 50, priceMax: 300, websiteUrl: "https://www.montessorihomeschool.com", philosophies: ["montessori"], values: ["parent_led"], ageMin: 2, ageMax: 12 },
   { title: "Waldorf Essentials", listingType: "curriculum", format: "hybrid", priceType: "subscription", priceMin: 15, websiteUrl: "https://www.waldorfessentials.com", philosophies: ["waldorf"], values: ["screen_free"], ageMin: 4, ageMax: 14 },
-  { title: "Oak Meadow Distance Learning", listingType: "online_course", format: "online", priceType: "subscription", priceMin: 30, websiteUrl: "https://www.oakmeadow.com", philosophies: ["waldorf"], ageMin: 6, ageMax: 18 },
   { title: "Sustainable Homeschooling", listingType: "support_group", format: "online", priceType: "free", websiteUrl: "https://www.sustainablehomeschooling.com", philosophies: ["unschooling", "eclectic"], ageMin: 4, ageMax: 18 },
   { title: "Project-Based Homeschooling", listingType: "support_group", format: "online", priceType: "one_time", priceMin: 15, websiteUrl: "https://projectbasedhomeschooling.com", philosophies: ["project_based", "unschooling"], ageMin: 4, ageMax: 14 },
   { title: "Homeschooling with Dyslexia", listingType: "support_group", format: "online", priceType: "free", websiteUrl: "https://homeschoolingwithdyslexia.com", values: ["neurodivergent_friendly", "special_needs"], ageMin: 5, ageMax: 18 },
@@ -494,6 +556,12 @@ const acellusImported: SeedInput[] = (acellusImportedJson as AcellusCsvRow[]).ma
 const ixlImported: SeedInput[] = (ixlImportedJson as IxlCsvRow[]).map(ixlRowToSeedInput);
 const timberdoodleImported: SeedInput[] = (timberdoodleImportedJson as TimberdoodleCsvRow[]).map(
   timberdoodleRowToSeedInput,
+);
+const goodandbeautifulImported: SeedInput[] = (
+  goodandbeautifulImportedJson as GoodandbeautifulCsvRow[]
+).map(goodandbeautifulRowToSeedInput);
+const mfwbooksImported: SeedInput[] = (mfwbooksImportedJson as MfwbooksCsvRow[]).map(
+  mfwbooksRowToSeedInput,
 );
 const bridgewayImported: SeedInput[] = (bridgewayImportedJson as BridgewayCsvRow[]).map(
   bridgewayRowToSeedInput,
@@ -818,10 +886,12 @@ const batch6Imported = mergeSeedInputs(
 
 const batch7Imported = mergeSeedInputs(heavImported, collegePrepImported);
 
+const batch8Imported = mergeSeedInputs(goodandbeautifulImported, mfwbooksImported);
+
 const allListings = mergeSeedInputs(
   mergeSeedInputs(mergeSeedInputs(priorImported, batch4Imported), batch5Imported),
-  mergeSeedInputs(batch6Imported, batch7Imported),
-);
+  mergeSeedInputs(mergeSeedInputs(batch6Imported, batch7Imported), batch8Imported),
+).filter((listing) => !isJunkImportedListing(listing));
 
 const coreListings = allListings.map((listing, index) => buildListing(listing, index));
 

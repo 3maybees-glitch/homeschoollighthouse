@@ -1,4 +1,5 @@
 import type { ListingFormat, ListingType } from "@/types/listing";
+import { normalizeListingTitle } from "@/lib/listings/title";
 import { parseAgeRange, parsePrices } from "@/lib/import/thsm-csv";
 
 export type MemoriaPressCsvRow = {
@@ -14,7 +15,7 @@ export function memoriaPressRowToSeedInput(row: MemoriaPressCsvRow) {
   const { priceType, priceMin, priceMax } = parsePrices(row.prices_mentioned);
   const { ageMin, ageMax } = parseAgeRange(row.grades_or_ages);
   return {
-    title: row.title.replace(/™/g, "").trim(),
+    title: normalizeListingTitle(row.title),
     listingType: inferListingType(row.title, row.website_url),
     format: inferFormat(row.title, row.website_url),
     priceType: inferPriceType(row.prices_mentioned, priceType),

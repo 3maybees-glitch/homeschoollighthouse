@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import re
 import sys
+import urllib.error
 import urllib.request
 from html import unescape
 from pathlib import Path
@@ -32,9 +33,34 @@ SKIP_HOSTS = (
 
 
 def fetch(url: str) -> str:
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=60) as response:
-        return response.read().decode("utf-8", errors="replace")
+    headers = {
+        "User-Agent": USER_AGENT,
+        "Accept": "text/html,application/xhtml+xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
+    }
+    last_err: Exception | None = None
+    for attempt in range(3):
+        request = urllib.request.Request(url, headers=headers)
+        try:
+            with urllib.request.urlopen(request, timeout=60) as response:
+                return response.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as exc:
+            last_err = exc
+            if exc.code in (403, 429, 503) and attempt < 2:
+                import time
+
+                time.sleep(1.5 * (attempt + 1))
+                continue
+            raise
+        except Exception as exc:
+            last_err = exc
+            if attempt < 2:
+                import time
+
+                time.sleep(1.0)
+                continue
+            raise
+    raise RuntimeError(f"Failed to fetch {url}: {last_err}")
 
 
 def strip_html(text: str) -> str:

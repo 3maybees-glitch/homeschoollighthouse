@@ -35,10 +35,19 @@ SKIP_SLUGS = {
 }
 
 
-def fetch(url: str) -> str:
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(request, timeout=90) as response:
-        return response.read().decode("utf-8", errors="replace")
+def fetch(url: str, retries: int = 3) -> str:
+    last_err: Exception | None = None
+    for attempt in range(retries):
+        request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        try:
+            with urllib.request.urlopen(request, timeout=90) as response:
+                return response.read().decode("utf-8", errors="replace")
+        except Exception as exc:
+            last_err = exc
+            import time
+
+            time.sleep(0.75 * (attempt + 1))
+    raise RuntimeError(f"Failed to fetch {url}: {last_err}")
 
 
 def fetch_product_urls() -> list[str]:
@@ -125,7 +134,11 @@ def format_offers(offers: list | dict | None) -> str:
 
 def parse_product_page(url: str) -> dict | None:
     html = fetch(url)
-    blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)
+    blocks = re.findall(
+        r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>',
+        html,
+        re.S | re.I,
+    )
 
     for block in blocks:
         try:
