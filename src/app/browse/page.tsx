@@ -5,6 +5,8 @@ import { SortGroupControls } from "@/components/directory/sort-group-controls";
 import { BrowseHero } from "@/components/directory/browse-hero";
 import { BrowsePagination } from "@/components/directory/browse-pagination";
 import { SaveSearchButton } from "@/components/community/save-search-button";
+import { getBrowseHeading } from "@/lib/directory/browse-heading";
+import { isSpecialNeedsValuesFilter } from "@/lib/directory/special-needs-match";
 import { filterListings, filtersToSearchParams, parseFilterState } from "@/lib/directory/query-listings";
 import { pageMetadata } from "@/lib/seo/page-metadata";
 import { getUserTier } from "@/lib/auth/session";
@@ -25,17 +27,22 @@ export async function generateMetadata({
   const filters = parseFilterState(params);
   const query = filters.q?.trim();
 
+  const specialNeeds = isSpecialNeedsValuesFilter(filters.values);
   const title = query
     ? `Homeschool resources for “${query.slice(0, 60)}”`
-    : filters.featuredOnly
-      ? "Featured Homeschool Resources"
-      : "Browse Homeschool Curriculum and Resources";
+    : specialNeeds
+      ? "Special Needs & Neurodivergent-Friendly Homeschool Resources"
+      : filters.featuredOnly
+        ? "Featured Homeschool Resources"
+        : "Browse Homeschool Curriculum and Resources";
 
   const description = query
     ? `Search results for ${query} in the Homeschool Lighthouse directory of curricula, classes, co-ops, and trusted resources.`
-    : filters.featuredOnly
-      ? "Bright Beacons: hand-picked homeschool curricula, classes, and resources for Christian and values-minded families."
-      : "Filter 17,800+ homeschool curricula, online classes, co-ops, and trusted resources by philosophy, age, format, and location.";
+    : specialNeeds
+      ? "Browse homeschool curricula, supports, and adaptive tools for dyslexia, autism, ADHD, learning differences, and related needs."
+      : filters.featuredOnly
+        ? "Bright Beacons: hand-picked homeschool curricula, classes, and resources for Christian and values-minded families."
+        : "Filter 17,800+ homeschool curricula, online classes, co-ops, and trusted resources by philosophy, age, format, and location.";
 
   return pageMetadata({
     title,
@@ -60,14 +67,12 @@ export default async function BrowsePage({
   const filters = parseFilterState(params);
   const tier = await getUserTier();
   const result = filterListings(filters, tier);
+  const hero = getBrowseHeading(filters, result.total);
   const queryString = filtersToSearchParams(filters).toString();
 
   return (
     <div>
-      <BrowseHero
-        title="Sweep the horizon across 17,800+ homeschool resources"
-        description="Filter by philosophy, age, format, and location. Set your bearing, order your route, and find the beacons your family needs."
-      />
+      <BrowseHero eyebrow={hero.eyebrow} title={hero.title} description={hero.description} />
 
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
         <div className="grid gap-8 lg:grid-cols-[320px_1fr]">

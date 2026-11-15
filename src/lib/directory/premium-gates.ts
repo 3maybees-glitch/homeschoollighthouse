@@ -10,6 +10,9 @@ export const FREE_SUBJECT_TAGS = new Set([
   "ap_exams",
 ]);
 
+/** Values filters allowed on the free tier (homepage discovery links). */
+export const FREE_TIER_VALUE_FILTERS = new Set(["special_needs", "neurodivergent_friendly"]);
+
 const premiumFilterKeys = new Set([
   "philosophies",
   "values",
@@ -32,7 +35,7 @@ function splitSubjects(subjects?: string[]) {
 export function isPremiumFilterActive(filters: FilterState) {
   const { premiumSubjects } = splitSubjects(filters.subjects);
   if (filters.philosophies?.length) return true;
-  if (filters.values?.length) return true;
+  if (filters.values?.some((value) => !FREE_TIER_VALUE_FILTERS.has(value))) return true;
   if (filters.religions?.length) return true;
   if (premiumSubjects.length) return true;
   if (filters.minRating != null) return true;
@@ -62,6 +65,9 @@ export function canUseFilter(
     const { premiumSubjects } = splitSubjects(value);
     return premiumSubjects.length === 0;
   }
+  if (filterKey === "values" && Array.isArray(value)) {
+    return value.every((entry) => FREE_TIER_VALUE_FILTERS.has(entry));
+  }
   if (premiumFilterKeys.has(filterKey)) {
     if (Array.isArray(value)) return value.length === 0;
     return value == null || value === "";
@@ -76,11 +82,12 @@ export function sanitizeFiltersForTier(
   if (tier === "premium") return filters;
 
   const { freeSubjects } = splitSubjects(filters.subjects);
+  const freeValues = filters.values?.filter((value) => FREE_TIER_VALUE_FILTERS.has(value));
 
   return {
     ...filters,
     philosophies: undefined,
-    values: undefined,
+    values: freeValues?.length ? freeValues : undefined,
     religions: undefined,
     subjects: freeSubjects.length ? freeSubjects : undefined,
     minRating: undefined,

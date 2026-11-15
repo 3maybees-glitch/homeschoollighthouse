@@ -4,6 +4,7 @@ import {
   philosophyOptions,
 } from "@/lib/directory/filter-config";
 import { sanitizeFiltersForTier } from "@/lib/directory/premium-gates";
+import { listingMatchesSpecialNeeds } from "@/lib/directory/special-needs-match";
 import { paginate } from "@/lib/directory/paginate";
 import { getAllListings } from "@/lib/listings/catalog";
 import type {
@@ -37,6 +38,16 @@ function matchesQuery(listing: Listing, q?: string) {
 function matchesArrayFilter(values: string[], selected?: string[]) {
   if (!selected?.length) return true;
   return selected.some((value) => values.includes(value));
+}
+
+function matchesValuesFilter(listing: Listing, selected?: string[]) {
+  if (!selected?.length) return true;
+  return selected.some((value) => {
+    if (value === "special_needs" || value === "neurodivergent_friendly") {
+      return listing.values.includes(value) || listingMatchesSpecialNeeds(listing);
+    }
+    return listing.values.includes(value);
+  });
 }
 
 function matchesAge(listing: Listing, ageRange?: [number, number]) {
@@ -192,7 +203,7 @@ export function filterListings(
       return false;
     }
     if (!matchesArrayFilter(listing.philosophies, activeFilters.philosophies)) return false;
-    if (!matchesArrayFilter(listing.values, activeFilters.values)) return false;
+    if (!matchesValuesFilter(listing, activeFilters.values)) return false;
     if (!matchesArrayFilter(listing.religions, activeFilters.religions)) return false;
     if (!matchesArrayFilter(listing.subjects, activeFilters.subjects)) return false;
     if (activeFilters.state && listing.state !== activeFilters.state) return false;
